@@ -15,6 +15,7 @@ public class Agenda extends javax.swing.JFrame {
      */
     public Agenda() {
         initComponents();
+        
     }
 
     /**
@@ -43,7 +44,7 @@ public class Agenda extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tConsultaAgenda = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -56,8 +57,8 @@ public class Agenda extends javax.swing.JFrame {
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnSuporte = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,25 +66,12 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(204, 204, 204));
+        panel1.setLayout(null);
 
         label1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         label1.setText("Bem vindo Fulano!");
-
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(821, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        panel1.add(label1);
+        label1.setBounds(698, 1, 240, 19);
 
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
@@ -93,13 +81,21 @@ public class Agenda extends javax.swing.JFrame {
         jPanel6.setLayout(null);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Consulta", "Exame", "Cirúrgia" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jComboBox1);
-        jComboBox1.setBounds(136, 28, 109, 22);
+        jComboBox1.setBounds(190, 30, 170, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Tipo");
+        jLabel4.setMaximumSize(new java.awt.Dimension(34, 15));
+        jLabel4.setMinimumSize(new java.awt.Dimension(34, 15));
+        jLabel4.setName(""); // NOI18N
         jPanel6.add(jLabel4);
-        jLabel4.setBounds(136, 6, 26, 15);
+        jLabel4.setBounds(190, 10, 30, 15);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -111,7 +107,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(134, 449, 110, 35);
+        jButton10.setBounds(142, 440, 120, 35);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         jButton11.setText("Excluir");
@@ -121,7 +117,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton11);
-        jButton11.setBounds(262, 449, 110, 35);
+        jButton11.setBounds(274, 440, 120, 35);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton12.setText("Agendar");
@@ -131,17 +127,22 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(11, 449, 105, 35);
+        jButton12.setBounds(10, 440, 120, 35);
 
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("Mostrar Tudo");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jCheckBox1);
-        jCheckBox1.setBounds(251, 28, 89, 23);
+        jCheckBox1.setBounds(370, 30, 125, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Data");
         jPanel6.add(jLabel8);
-        jLabel8.setBounds(11, 6, 39, 15);
+        jLabel8.setBounds(10, 10, 40, 20);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
         jButton14.setText("Imprimir");
@@ -151,7 +152,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton14);
-        jButton14.setBounds(518, 449, 110, 35);
+        jButton14.setBounds(540, 440, 120, 35);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Dr. Rafael", "Dr. Vinícius", "Dr.Isaque", "Dra.Fernanda" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -160,12 +161,12 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jComboBox2);
-        jComboBox2.setBounds(370, 29, 130, 20);
+        jComboBox2.setBounds(490, 30, 170, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Clinico Veterinário");
         jPanel6.add(jLabel3);
-        jLabel3.setBounds(370, 7, 110, 15);
+        jLabel3.setBounds(490, 10, 130, 15);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton22.setText("Historico");
@@ -175,13 +176,13 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton22);
-        jButton22.setBounds(390, 449, 110, 35);
+        jButton22.setBounds(406, 440, 120, 35);
         jPanel6.add(jDateChooser2);
-        jDateChooser2.setBounds(10, 30, 100, 20);
+        jDateChooser2.setBounds(10, 30, 170, 30);
 
-        jTable2.setBorder(new javax.swing.border.MatteBorder(null));
-        jTable2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tConsultaAgenda.setBorder(new javax.swing.border.MatteBorder(null));
+        tConsultaAgenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tConsultaAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"10:00", "Dr. Edvaldo", "Joel Santana", "Afrix", "Consulta", "Cancelado"},
                 {"13:30", "Dr. Rafael", "Adalberto Batista", "Rex", "Exame", "Realizado"},
@@ -230,15 +231,15 @@ public class Agenda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tConsultaAgenda);
 
         jPanel6.add(jScrollPane2);
-        jScrollPane2.setBounds(11, 68, 617, 370);
+        jScrollPane2.setBounds(10, 60, 650, 370);
 
         jTabbedPane1.addTab("Agenda", jPanel6);
 
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(10, 20, 640, 530);
+        jTabbedPane1.setBounds(10, 20, 680, 530);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_vendas1.png"))); // NOI18N
         getContentPane().add(jButton3);
@@ -293,16 +294,21 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(jButton19);
         jButton19.setBounds(770, 280, 70, 80);
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
-        jButton15.setContentAreaFilled(false);
-        getContentPane().add(jButton15);
-        jButton15.setBounds(110, 550, 100, 50);
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
+        btnSair.setContentAreaFilled(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair);
+        btnSair.setBounds(110, 550, 100, 50);
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton16.setContentAreaFilled(false);
-        getContentPane().add(jButton16);
-        jButton16.setBounds(10, 550, 100, 50);
+        btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
+        btnSuporte.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSuporte.setContentAreaFilled(false);
+        getContentPane().add(btnSuporte);
+        btnSuporte.setBounds(10, 550, 100, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -339,6 +345,18 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -374,14 +392,14 @@ public class Agenda extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnSuporte;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
@@ -404,8 +422,8 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private java.awt.Label label1;
     private java.awt.Panel panel1;
+    private javax.swing.JTable tConsultaAgenda;
     // End of variables declaration//GEN-END:variables
 }
