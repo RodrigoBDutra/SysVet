@@ -52,7 +52,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Vivaldi", 1, 36)); // NOI18N
         jLabel3.setText("Bem Vindo");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(147, 27, 189, 45);
+        jLabel3.setBounds(147, 27, 219, 43);
 
         jlLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlLogin.setText("Login");
@@ -80,7 +80,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(senhaIn);
-        senhaIn.setBounds(59, 166, 360, 20);
+        senhaIn.setBounds(59, 166, 360, 27);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 102, 255));
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(59, 192, 94, 20);
+        jLabel11.setBounds(59, 192, 107, 20);
 
         btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botaoLogin.png"))); // NOI18N
         btnEntrar.setContentAreaFilled(false);
@@ -111,7 +111,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnSair);
-        btnSair.setBounds(334, 223, 85, 49);
+        btnSair.setBounds(334, 223, 85, 52);
 
         btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
         btnSuporte.setActionCommand("suporte");
@@ -121,8 +121,13 @@ public class Login extends javax.swing.JFrame {
                 btnSuporteMouseClicked(evt);
             }
         });
+        btnSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuporteActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnSuporte);
-        btnSuporte.setBounds(211, 223, 117, 49);
+        btnSuporte.setBounds(211, 223, 96, 52);
         jPanel2.add(txt_msg);
         txt_msg.setBounds(209, 192, 210, 20);
 
@@ -171,8 +176,13 @@ public class Login extends javax.swing.JFrame {
 
     private void btnSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSuporteMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Janela de Informações de suporte");
+        JOptionPane.showMessageDialog(null, "Central de atendimento SysVet\n\nTelefone: (11)4647-6035\n"
+                + "E-mail: suporte@sysvet.com.br\nSite: www.-------.com.br");
     }//GEN-LAST:event_btnSuporteMouseClicked
+
+    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSuporteActionPerformed
 
     /**
      * @param args the command line arguments
