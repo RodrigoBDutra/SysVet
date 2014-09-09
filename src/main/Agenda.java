@@ -95,7 +95,7 @@ public class Agenda extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(34, 15));
         jLabel4.setName(""); // NOI18N
         jPanel6.add(jLabel4);
-        jLabel4.setBounds(190, 10, 30, 15);
+        jLabel4.setBounds(190, 10, 26, 15);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -166,7 +166,7 @@ public class Agenda extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Clinico Veterinário");
         jPanel6.add(jLabel3);
-        jLabel3.setBounds(490, 10, 130, 15);
+        jLabel3.setBounds(490, 10, 110, 15);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton22.setText("Historico");
