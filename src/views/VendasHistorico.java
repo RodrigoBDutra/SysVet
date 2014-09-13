@@ -41,15 +41,14 @@ public class VendasHistorico extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        ccb = new comp.JCalendar(false);
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        ccb1 = new comp.JCalendar(false);
         jLabel10 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel28 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jTextField18 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
@@ -197,22 +196,10 @@ public class VendasHistorico extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel27.setText("R$55,00");
 
-        ccb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ccbActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Até");
-
-        ccb1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ccb1ActionPerformed(evt);
-            }
-        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Data de");
@@ -271,29 +258,25 @@ public class VendasHistorico extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jLabel10)
-                        .addGap(10, 10, 10)
-                        .addComponent(ccb, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ccb1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel9)
+                        .addGap(117, 117, 117)
                         .addComponent(jCheckBox1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 82, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ccb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ccb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9)
-                        .addComponent(jCheckBox1)))
+                        .addComponent(jCheckBox1))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
@@ -308,14 +291,14 @@ public class VendasHistorico extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addComponent(jLabel20)
                         .addComponent(jLabel28)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel30)))
         );
 
         jPanel6.add(jPanel1);
-        jPanel1.setBounds(11, 68, 613, 0);
+        jPanel1.setBounds(11, 68, 613, 383);
         jPanel6.add(jTextField18);
         jTextField18.setBounds(11, 42, 70, 20);
 
@@ -431,14 +414,6 @@ public class VendasHistorico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable2AncestorAdded
 
-    private void ccbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ccbActionPerformed
-
-    private void ccb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccb1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ccb1ActionPerformed
-
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
@@ -490,8 +465,6 @@ public class VendasHistorico extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox ccb;
-    private javax.swing.JComboBox ccb1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
@@ -511,6 +484,7 @@ public class VendasHistorico extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

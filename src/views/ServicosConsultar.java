@@ -40,7 +40,6 @@ public class ServicosConsultar extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jButton21 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        ccb = new comp.JCalendar(false);
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -68,6 +67,7 @@ public class ServicosConsultar extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -400,8 +400,8 @@ public class ServicosConsultar extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel7)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(ccb, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28)
+                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(jRadioButton3)
@@ -437,11 +437,12 @@ public class ServicosConsultar extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ccb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jRadioButton3)
+                                .addComponent(jRadioButton2)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -470,7 +471,7 @@ public class ServicosConsultar extends javax.swing.JFrame {
         );
 
         jPanel6.add(jPanel2);
-        jPanel2.setBounds(11, 61, 613, 0);
+        jPanel2.setBounds(11, 61, 613, 389);
 
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/kedit.png"))); // NOI18N
         jButton23.setText("Prontuário");
@@ -642,7 +643,6 @@ public class ServicosConsultar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox ccb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -672,6 +672,7 @@ public class ServicosConsultar extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
