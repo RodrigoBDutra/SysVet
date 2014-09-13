@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package views;
+import dao.Banco;
 
 /**
  *
@@ -13,8 +14,11 @@ public class Inicial extends javax.swing.JFrame {
     /**
      * Creates new form Inicial
      */
+      
     public Inicial() {
         initComponents();
+        
+        
     }
 
     /**
@@ -154,6 +158,11 @@ public class Inicial extends javax.swing.JFrame {
         jButton13.setBounds(840, 280, 70, 80);
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton19);
         jButton19.setBounds(770, 280, 70, 80);
 
@@ -193,6 +202,13 @@ public class Inicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+       Configuracoes conf = new Configuracoes();
+         conf.setVisible(true);
+         this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments

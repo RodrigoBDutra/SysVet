@@ -5,17 +5,18 @@
 package views;
 
 import javax.swing.JOptionPane;
+import dao.Banco;
 
 /**
  *
- * @author Rafael
+ * @author Equipe Sysvet
  */
 public class Login extends javax.swing.JFrame {
+  
+     Banco ba = new Banco();
     
-    //Sistema log = new Sistema();
-    /**
-     * Creates new form Login
-     */
+    
+    
     public Login() {
         initComponents();
     }
@@ -57,30 +58,28 @@ public class Login extends javax.swing.JFrame {
         jlLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlLogin.setText("Login");
         jPanel2.add(jlLogin);
-        jlLogin.setBounds(59, 90, 360, 15);
+        jlLogin.setBounds(60, 80, 360, 15);
 
         jlSenha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlSenha.setText("Senha");
         jPanel2.add(jlSenha);
-        jlSenha.setBounds(59, 145, 360, 15);
+        jlSenha.setBounds(60, 140, 360, 15);
 
-        loginIn.setText("SysVet@SysVet.com");
         loginIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginInActionPerformed(evt);
             }
         });
         jPanel2.add(loginIn);
-        loginIn.setBounds(59, 111, 360, 23);
+        loginIn.setBounds(60, 100, 360, 30);
 
-        senhaIn.setText("jPasswordField1");
         senhaIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senhaInActionPerformed(evt);
             }
         });
         jPanel2.add(senhaIn);
-        senhaIn.setBounds(59, 166, 360, 20);
+        senhaIn.setBounds(60, 160, 360, 30);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 102, 255));
@@ -147,9 +146,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginInActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        /*String login = loginIn.getText();
+        String login = loginIn.getText();
         String senha = senhaIn.getText();
-        if (log.sistema(login, senha)) {
+        if (ba.login(login, senha)) {
 
             Inicial a = new Inicial();
             a.setVisible(true);
@@ -157,7 +156,7 @@ public class Login extends javax.swing.JFrame {
 
         } else {
             txt_msg.setText("Login ou senha incorreto");
-        }*/
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void senhaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaInActionPerformed

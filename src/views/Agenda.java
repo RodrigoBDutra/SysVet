@@ -86,7 +86,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jComboBox1);
-        jComboBox1.setBounds(190, 30, 170, 30);
+        jComboBox1.setBounds(140, 30, 100, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Tipo");
@@ -94,7 +94,7 @@ public class Agenda extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(34, 15));
         jLabel4.setName(""); // NOI18N
         jPanel6.add(jLabel4);
-        jLabel4.setBounds(190, 10, 26, 15);
+        jLabel4.setBounds(140, 10, 26, 15);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -106,7 +106,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(142, 440, 120, 35);
+        jButton10.setBounds(140, 450, 120, 35);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         jButton11.setText("Excluir");
@@ -116,7 +116,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton11);
-        jButton11.setBounds(274, 440, 120, 35);
+        jButton11.setBounds(270, 450, 120, 35);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton12.setText("Agendar");
@@ -126,8 +126,9 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(10, 440, 120, 35);
+        jButton12.setBounds(10, 450, 120, 35);
 
+        jCheckBox1.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("Mostrar Tudo");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +137,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jCheckBox1);
-        jCheckBox1.setBounds(370, 30, 125, 30);
+        jCheckBox1.setBounds(260, 30, 90, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Data");
@@ -151,7 +152,7 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton14);
-        jButton14.setBounds(540, 440, 120, 35);
+        jButton14.setBounds(540, 450, 120, 35);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Dr. Rafael", "Dr. Vinícius", "Dr.Isaque", "Dra.Fernanda" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -160,12 +161,12 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jComboBox2);
-        jComboBox2.setBounds(490, 30, 170, 30);
+        jComboBox2.setBounds(370, 30, 110, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Clinico Veterinário");
         jPanel6.add(jLabel3);
-        jLabel3.setBounds(490, 10, 110, 15);
+        jLabel3.setBounds(370, 10, 110, 15);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton22.setText("Historico");
@@ -175,9 +176,9 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton22);
-        jButton22.setBounds(406, 440, 120, 35);
+        jButton22.setBounds(410, 450, 120, 35);
         jPanel6.add(jDateChooser2);
-        jDateChooser2.setBounds(10, 30, 170, 30);
+        jDateChooser2.setBounds(10, 30, 110, 20);
 
         tConsultaAgenda.setBorder(new javax.swing.border.MatteBorder(null));
         tConsultaAgenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -233,7 +234,7 @@ public class Agenda extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tConsultaAgenda);
 
         jPanel6.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 60, 650, 370);
+        jScrollPane2.setBounds(10, 60, 650, 380);
 
         jTabbedPane1.addTab("Agenda", jPanel6);
 

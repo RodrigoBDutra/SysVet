@@ -4,6 +4,13 @@
  */
 package views;
 
+import dao.Banco;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Rafael
@@ -13,8 +20,31 @@ public class Configuracoes extends javax.swing.JFrame {
     /**
      * Creates new form Configuracoes
      */
+    Banco ba = new Banco();
+    String sen;
+    int flag = 0;
+
     public Configuracoes() {
         initComponents();
+
+    }
+
+    public boolean valida() {
+
+        if ("".equals(txtNome.getText())) {
+            JOptionPane.showMessageDialog(rootPane, "Preenche o campo nome");
+            return false;
+        }
+        if ("".equals(txtLogin.getText())) {
+            JOptionPane.showMessageDialog(rootPane, "Preenche o campo login");
+            return false;
+        }
+        if ("".equals(txtSenha.getText()) && flag == 1) {
+            JOptionPane.showMessageDialog(rootPane, "Preenche o campo senha");
+            return false;
+        }
+        return true;
+
     }
 
     /**
@@ -30,17 +60,59 @@ public class Configuracoes extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jTextField16 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txtCod = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        txtLogin = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JTextField();
+        btnAlterar = new javax.swing.JButton();
+        btnInserir = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel14 = new javax.swing.JLabel();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        txtNovaSenha = new javax.swing.JTextField();
+        txtSenhaAtual = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        manterSenha = new javax.swing.JCheckBox();
+        txtLoginBusca = new javax.swing.JTextField();
+        btnExcluir = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        checkPerAgenda = new javax.swing.JCheckBox();
+        checkPerProprietario = new javax.swing.JCheckBox();
+        checkPerAnimal = new javax.swing.JCheckBox();
+        checkPerServico = new javax.swing.JCheckBox();
+        checkPerEstoque = new javax.swing.JCheckBox();
+        checkPerVenda = new javax.swing.JCheckBox();
+        checkPerFinanceiro = new javax.swing.JCheckBox();
+        checkPerProdutos = new javax.swing.JCheckBox();
+        checkPerHistoricos = new javax.swing.JCheckBox();
+        checkPerAltera = new javax.swing.JCheckBox();
+        checkPerExclui = new javax.swing.JCheckBox();
         panel1 = new java.awt.Panel();
         label1 = new java.awt.Label();
         jButton8 = new javax.swing.JButton();
@@ -75,75 +147,6 @@ public class Configuracoes extends javax.swing.JFrame {
         jPanel6.add(jLabel6);
         jLabel6.setBounds(261, 1, 87, 15);
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Grupos de Acesso");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Administrador");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Rafael");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Vinicius");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Fernanda");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Edvaldo");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Isaque");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Clinico Veterinario");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ubaldo");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Carlos");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Joao");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Carla");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Recepção");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Mariana");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Leandro");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane2.setViewportView(jTree1);
-
-        jPanel6.add(jScrollPane2);
-        jScrollPane2.setBounds(11, 85, 139, 360);
-
-        jScrollPane1.setViewportView(jEditorPane1);
-
-        jPanel6.add(jScrollPane1);
-        jScrollPane1.setBounds(168, 85, 456, 360);
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel17.setText("Login");
-        jPanel6.add(jLabel17);
-        jLabel17.setBounds(222, 21, 30, 14);
-        jPanel6.add(jTextField15);
-        jTextField15.setBounds(222, 48, 150, 20);
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton10.setText("Consultar");
-        jButton10.setToolTipText("");
-        jButton10.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton10);
-        jButton10.setBounds(401, 41, 110, 35);
-
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton16.setText("Inserir");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton16);
-        jButton16.setBounds(529, 41, 95, 35);
-
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/backup.png"))); // NOI18N
         jButton11.setText("Realizar Backup");
         jButton11.setToolTipText("");
@@ -164,6 +167,315 @@ public class Configuracoes extends javax.swing.JFrame {
         jLabel18.setText("Diretório Backup:");
         jPanel6.add(jLabel18);
         jLabel18.setBounds(53, 466, 97, 14);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Empregados"));
+        jPanel2.setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Código");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(20, 170, 50, 20);
+
+        txtCod.setEditable(false);
+        jPanel2.add(txtCod);
+        txtCod.setBounds(20, 190, 40, 20);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Nome");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(80, 170, 100, 20);
+        jPanel2.add(txtNome);
+        txtNome.setBounds(80, 190, 350, 20);
+
+        txtLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLoginMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txtLogin);
+        txtLogin.setBounds(20, 250, 160, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Login");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(20, 230, 90, 20);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("Senha");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(20, 280, 90, 20);
+        jPanel2.add(txtSenha);
+        txtSenha.setBounds(20, 300, 160, 20);
+
+        btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
+        btnAlterar.setText("Salvar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAlterar);
+        btnAlterar.setBounds(130, 360, 100, 30);
+
+        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
+        btnInserir.setText("Inserir");
+        btnInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnInserir);
+        btnInserir.setBounds(20, 360, 100, 30);
+        jPanel2.add(jSeparator1);
+        jSeparator1.setBounds(10, 160, 600, 10);
+
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setResizable(true);
+        jInternalFrame1.getContentPane().setLayout(null);
+
+        jLabel10.setText("Código");
+        jInternalFrame1.getContentPane().add(jLabel10);
+        jLabel10.setBounds(20, 10, 110, 20);
+
+        jTextField6.setEditable(false);
+        jInternalFrame1.getContentPane().add(jTextField6);
+        jTextField6.setBounds(20, 30, 40, 20);
+
+        jLabel11.setText("Nome");
+        jInternalFrame1.getContentPane().add(jLabel11);
+        jLabel11.setBounds(70, 10, 100, 20);
+        jInternalFrame1.getContentPane().add(jTextField7);
+        jTextField7.setBounds(70, 30, 160, 20);
+        jInternalFrame1.getContentPane().add(jTextField8);
+        jTextField8.setBounds(20, 80, 100, 20);
+
+        jLabel12.setText("Login");
+        jInternalFrame1.getContentPane().add(jLabel12);
+        jLabel12.setBounds(20, 60, 110, 20);
+
+        jLabel13.setText("Senha");
+        jInternalFrame1.getContentPane().add(jLabel13);
+        jLabel13.setBounds(130, 60, 110, 20);
+        jInternalFrame1.getContentPane().add(jTextField9);
+        jTextField9.setBounds(130, 80, 100, 20);
+
+        jCheckBox4.setText("Colorir");
+        jInternalFrame1.getContentPane().add(jCheckBox4);
+        jCheckBox4.setBounds(260, 70, 110, 23);
+
+        jLabel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Permissões", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jInternalFrame1.getContentPane().add(jLabel14);
+        jLabel14.setBounds(240, 10, 140, 90);
+
+        jCheckBox5.setText("NPR");
+        jInternalFrame1.getContentPane().add(jCheckBox5);
+        jCheckBox5.setBounds(260, 40, 45, 23);
+
+        jButton3.setText("Alterar");
+        jInternalFrame1.getContentPane().add(jButton3);
+        jButton3.setBounds(310, 110, 70, 23);
+
+        jButton4.setText("Inserir");
+        jInternalFrame1.getContentPane().add(jButton4);
+        jButton4.setBounds(240, 110, 70, 23);
+        jInternalFrame1.getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(10, 150, 360, 10);
+
+        jLabel15.setText("Login");
+        jInternalFrame1.getContentPane().add(jLabel15);
+        jLabel15.setBounds(20, 160, 110, 20);
+        jInternalFrame1.getContentPane().add(jTextField10);
+        jTextField10.setBounds(20, 180, 100, 20);
+
+        jPanel2.add(jInternalFrame1);
+        jInternalFrame1.setBounds(10, 20, 79, 34);
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnBuscar);
+        btnBuscar.setBounds(10, 90, 100, 30);
+        jPanel2.add(txtNovaSenha);
+        txtNovaSenha.setBounds(280, 120, 250, 20);
+        jPanel2.add(txtSenhaAtual);
+        txtSenhaAtual.setBounds(280, 70, 250, 20);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setText("Senha Atual");
+        jPanel2.add(jLabel16);
+        jLabel16.setBounds(280, 50, 140, 20);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("Nova Senha");
+        jPanel2.add(jLabel19);
+        jLabel19.setBounds(280, 100, 140, 20);
+
+        manterSenha.setBackground(new java.awt.Color(204, 204, 204));
+        manterSenha.setSelected(true);
+        manterSenha.setText("Manter senha atual");
+        jPanel2.add(manterSenha);
+        manterSenha.setBounds(360, 20, 170, 20);
+
+        txtLoginBusca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLoginBuscaMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txtLoginBusca);
+        txtLoginBusca.setBounds(10, 60, 200, 20);
+
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnExcluir);
+        btnExcluir.setBounds(120, 90, 95, 30);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Login");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(20, 30, 90, 20);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Permissões"));
+        jPanel1.setLayout(null);
+
+        checkPerAgenda.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerAgenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerAgenda.setText("Agenda");
+        checkPerAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerAgendaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerAgenda);
+        checkPerAgenda.setBounds(12, 68, 67, 23);
+
+        checkPerProprietario.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerProprietario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerProprietario.setText("Proprietário");
+        checkPerProprietario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerProprietarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerProprietario);
+        checkPerProprietario.setBounds(12, 16, 125, 23);
+
+        checkPerAnimal.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerAnimal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerAnimal.setText("Animal");
+        checkPerAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerAnimalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerAnimal);
+        checkPerAnimal.setBounds(12, 42, 125, 23);
+
+        checkPerServico.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerServico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerServico.setText("Serviço");
+        checkPerServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerServicoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerServico);
+        checkPerServico.setBounds(12, 95, 65, 23);
+
+        checkPerEstoque.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerEstoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerEstoque.setText("Estoque");
+        checkPerEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerEstoqueActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerEstoque);
+        checkPerEstoque.setBounds(139, 16, 71, 23);
+
+        checkPerVenda.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerVenda.setText("Vendas");
+        checkPerVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerVendaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerVenda);
+        checkPerVenda.setBounds(139, 42, 65, 23);
+
+        checkPerFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerFinanceiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerFinanceiro.setText("Financeiro");
+        checkPerFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerFinanceiroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerFinanceiro);
+        checkPerFinanceiro.setBounds(139, 68, 79, 23);
+
+        checkPerProdutos.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerProdutos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerProdutos.setText("Produtos");
+        checkPerProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerProdutosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerProdutos);
+        checkPerProdutos.setBounds(139, 95, 75, 23);
+
+        checkPerHistoricos.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerHistoricos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerHistoricos.setText("Visualizar Históricos");
+        checkPerHistoricos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerHistoricosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerHistoricos);
+        checkPerHistoricos.setBounds(256, 16, 127, 23);
+
+        checkPerAltera.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerAltera.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerAltera.setText("Alterar Dados");
+        checkPerAltera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerAlteraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerAltera);
+        checkPerAltera.setBounds(256, 42, 99, 23);
+
+        checkPerExclui.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerExclui.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerExclui.setText("Excluir Dados");
+        checkPerExclui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPerExcluiActionPerformed(evt);
+            }
+        });
+        jPanel1.add(checkPerExclui);
+        checkPerExclui.setBounds(256, 68, 97, 23);
+
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(200, 220, 0, 0);
+
+        jPanel6.add(jPanel2);
+        jPanel2.setBounds(10, 30, 0, 420);
 
         jTabbedPane1.addTab("Vendas", jPanel6);
 
@@ -195,6 +507,11 @@ public class Configuracoes extends javax.swing.JFrame {
         panel1.setBounds(0, 0, 960, 20);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_proprietario1.png"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton8);
         jButton8.setBounds(770, 40, 70, 80);
 
@@ -266,14 +583,6 @@ public class Configuracoes extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -281,6 +590,368 @@ public class Configuracoes extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void txtLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLoginMouseClicked
+        int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
+        txtCod.setText(cod + "");
+    }//GEN-LAST:event_txtLoginMouseClicked
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+
+        flag = 0;
+        int codigo;
+
+        String nome, login, senhaNova, senhaAtual, permissao="", senha;
+        codigo = Integer.parseInt(txtLogin.getText());
+        nome = txtNome.getText();
+        login = txtLogin.getText();
+        senhaNova = txtNovaSenha.getText();
+
+        if (manterSenha.isSelected()) {
+            senha = sen;
+        } else {
+
+            senha = senhaNova;
+        }
+        senhaAtual = txtSenhaAtual.getText();
+
+        if (checkPerProprietario.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+
+        if (checkPerAnimal.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAgenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerServico.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerEstoque.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerVenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerFinanceiro.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerProdutos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerHistoricos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAltera.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerExclui.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (valida()) {
+
+            if (Integer.parseInt(ba.abreUsuarios()) + 1 != codigo) {
+
+                if (ba.verificaSenha(codigo, senhaAtual) || manterSenha.isSelected()) {
+                    ba.atualizaUsuario(codigo, nome, login, senha, permissao);
+                    txtNome.setText("");
+                    txtSenha.setText("");
+                    txtLogin.setText("");
+
+                    checkPerProprietario.setSelected(false);
+                    checkPerAnimal.setSelected(false);
+                    checkPerAgenda.setSelected(false);
+                    checkPerServico.setSelected(false);
+                    checkPerEstoque.setSelected(false);
+                    checkPerVenda.setSelected(false);
+                    checkPerFinanceiro.setSelected(false);
+                    checkPerProdutos.setSelected(false);
+                    checkPerHistoricos.setSelected(false);
+                    checkPerAltera.setSelected(false);
+                    checkPerExclui.setSelected(false);
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "senha Atual incorreta para o login " + login);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "O código do usuario não existe,"
+                        + " para alterar um usuario faça uma busca.");
+            }
+        }
+
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        flag = 1;
+        int codigo;
+        String nome, login, senha, permissao = "";
+        codigo = Integer.parseInt(ba.abreUsuarios()) + 1;
+        nome = txtNome.getText();
+        login = txtLogin.getText();
+        senha = txtSenha.getText();
+        if (checkPerProprietario.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+
+        if (checkPerAnimal.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAgenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerServico.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerEstoque.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerVenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerFinanceiro.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerProdutos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerHistoricos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAltera.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerExclui.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+
+        if (valida()) {
+
+            if (ba.gravaUsuario(codigo, nome, login, senha, permissao)) {
+
+                txtNome.setText("");
+                txtSenha.setText("");
+                txtLogin.setText("");
+
+                checkPerProprietario.setSelected(false);
+                checkPerAnimal.setSelected(false);
+                checkPerAgenda.setSelected(false);
+                checkPerServico.setSelected(false);
+                checkPerEstoque.setSelected(false);
+                checkPerVenda.setSelected(false);
+                checkPerFinanceiro.setSelected(false);
+                checkPerProdutos.setSelected(false);
+                checkPerHistoricos.setSelected(false);
+                checkPerAltera.setSelected(false);
+                checkPerExclui.setSelected(false);
+                int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
+                txtCod.setText(cod + "");
+            }
+        }
+
+    }//GEN-LAST:event_btnInserirActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        flag = 0;
+        int codigo = Integer.parseInt(txtCod.getText());
+        if (valida()) {
+
+            if (Integer.parseInt(ba.abreUsuarios()) + 1 != codigo) {
+
+                if (ba.excluiUsuario(codigo)) {
+                    JOptionPane.showMessageDialog(rootPane, "Excluido com sucesso");
+                    txtNome.setText("");
+                    txtLogin.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Não encontrado");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Codigo do usuario incorreto. Para excluir busque o usuário primeiro");
+            }
+
+        }
+                                            
+
+   
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void checkPerExcluiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerExcluiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerExcluiActionPerformed
+
+    private void checkPerAlteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerAlteraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerAlteraActionPerformed
+
+    private void checkPerHistoricosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerHistoricosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerHistoricosActionPerformed
+
+    private void checkPerProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerProdutosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerProdutosActionPerformed
+
+    private void checkPerFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerFinanceiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerFinanceiroActionPerformed
+
+    private void checkPerVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerVendaActionPerformed
+
+    private void checkPerEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerEstoqueActionPerformed
+
+    private void checkPerServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerServicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerServicoActionPerformed
+
+    private void checkPerAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerAnimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerAnimalActionPerformed
+
+    private void checkPerProprietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerProprietarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerProprietarioActionPerformed
+
+    private void checkPerAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerAgendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerAgendaActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    
+        ResultSet rs;
+        String login = txtLoginBusca.getText();
+        String permissao;
+
+        rs = ba.buscaUsuario(login);
+        try {
+            if (ba.buscaUsuario(login) != null) {
+                txtNome.setText(rs.getString("nome"));
+                txtCod.setText(rs.getString("codigo"));
+                sen = rs.getString("senha");
+                permissao = rs.getString("permissao");
+
+              if (checkPerProprietario.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+
+        if (checkPerAnimal.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAgenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerServico.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerEstoque.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerVenda.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerFinanceiro.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerProdutos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerHistoricos.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerAltera.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+        if (checkPerExclui.isSelected()) {
+            permissao += "1";
+        } else {
+            permissao += "0";
+        }
+
+                txtLogin.setText(txtLoginBusca.getText());
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "não encontrado");
+                txtNome.setText("");
+                txtLogin.setText("");
+            }
+        } catch (SQLException ex) {
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtLoginBuscaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLoginBuscaMouseClicked
+
+    }//GEN-LAST:event_txtLoginBuscaMouseClicked
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,12 +988,25 @@ public class Configuracoes extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnInserir;
+    private javax.swing.JCheckBox checkPerAgenda;
+    private javax.swing.JCheckBox checkPerAltera;
+    private javax.swing.JCheckBox checkPerAnimal;
+    private javax.swing.JCheckBox checkPerEstoque;
+    private javax.swing.JCheckBox checkPerExclui;
+    private javax.swing.JCheckBox checkPerFinanceiro;
+    private javax.swing.JCheckBox checkPerHistoricos;
+    private javax.swing.JCheckBox checkPerProdutos;
+    private javax.swing.JCheckBox checkPerProprietario;
+    private javax.swing.JCheckBox checkPerServico;
+    private javax.swing.JCheckBox checkPerVenda;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton20;
@@ -333,21 +1017,50 @@ public class Configuracoes extends javax.swing.JFrame {
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
-    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private java.awt.Label label1;
+    private javax.swing.JCheckBox manterSenha;
     private java.awt.Panel panel1;
+    private javax.swing.JTextField txtCod;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JTextField txtLoginBusca;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNovaSenha;
+    private javax.swing.JTextField txtSenha;
+    private javax.swing.JTextField txtSenhaAtual;
     // End of variables declaration//GEN-END:variables
 }
