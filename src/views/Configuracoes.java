@@ -483,25 +483,12 @@ public class Configuracoes extends javax.swing.JFrame {
         jTabbedPane1.setBounds(10, 20, 640, 530);
 
         panel1.setBackground(new java.awt.Color(204, 204, 204));
+        panel1.setLayout(null);
 
         label1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         label1.setText("Bem vindo Fulano!");
-
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(833, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        panel1.add(label1);
+        label1.setBounds(833, 1, 117, 19);
 
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
@@ -577,7 +564,7 @@ public class Configuracoes extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-16, -6, 970, 610);
+        jLabel2.setBounds(0, 0, 970, 610);
 
         setSize(new java.awt.Dimension(959, 637));
         setLocationRelativeTo(null);
@@ -597,11 +584,10 @@ public class Configuracoes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLoginMouseClicked
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-
         flag = 0;
         int codigo;
 
-        String nome, login, senhaNova, senhaAtual, permissao="", senha;
+        String nome, login, senhaNova, senhaAtual, permissao = "", senha;
         codigo = Integer.parseInt(txtLogin.getText());
         nome = txtNome.getText();
         login = txtLogin.getText();
@@ -814,9 +800,8 @@ public class Configuracoes extends javax.swing.JFrame {
             }
 
         }
-                                            
 
-   
+
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void checkPerExcluiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerExcluiActionPerformed
@@ -864,7 +849,7 @@ public class Configuracoes extends javax.swing.JFrame {
     }//GEN-LAST:event_checkPerAgendaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-    
+
         ResultSet rs;
         String login = txtLoginBusca.getText();
         String permissao;
@@ -877,62 +862,62 @@ public class Configuracoes extends javax.swing.JFrame {
                 sen = rs.getString("senha");
                 permissao = rs.getString("permissao");
 
-              if (checkPerProprietario.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
+                if (checkPerProprietario.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
 
-        if (checkPerAnimal.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAgenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerServico.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerEstoque.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerVenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerFinanceiro.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerProdutos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerHistoricos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAltera.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerExclui.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
+                if (checkPerAnimal.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerAgenda.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerServico.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerEstoque.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerVenda.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerFinanceiro.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerProdutos.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerHistoricos.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerAltera.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
+                if (checkPerExclui.isSelected()) {
+                    permissao += "1";
+                } else {
+                    permissao += "0";
+                }
 
                 txtLogin.setText(txtLoginBusca.getText());
 

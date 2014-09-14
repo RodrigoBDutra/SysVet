@@ -15,13 +15,11 @@ public class Inicial extends javax.swing.JFrame {
     /**
      * Creates new form Inicial
      */
-      
     public Inicial() {
         initComponents();
-        
-        
-    }
 
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +48,7 @@ public class Inicial extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        btnConfiguracoes = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
@@ -163,14 +161,14 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(btnSair);
         btnSair.setBounds(840, 280, 70, 80);
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
+        btnConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                btnConfiguracoesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton19);
-        jButton19.setBounds(770, 280, 70, 80);
+        getContentPane().add(btnConfiguracoes);
+        btnConfiguracoes.setBounds(770, 280, 70, 80);
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_ajuda1.png"))); // NOI18N
         getContentPane().add(jButton18);
@@ -205,16 +203,14 @@ public class Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-       Configuracoes conf = new Configuracoes();
-         conf.setVisible(true);
-         this.setVisible(false);
-        
-    }//GEN-LAST:event_jButton19ActionPerformed
+    private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
+        Configuracoes conf = new Configuracoes();
+        this.setVisible(false);
+        conf.setVisible(true);
+    }//GEN-LAST:event_btnConfiguracoesActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
@@ -255,13 +251,13 @@ public class Inicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConfiguracoes;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
