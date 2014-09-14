@@ -12,11 +12,9 @@ import dao.Banco;
  * @author Equipe Sysvet
  */
 public class Login extends javax.swing.JFrame {
-  
-     Banco ba = new Banco();
-    
-    
-    
+
+    Banco ba = new Banco();
+
     public Login() {
         initComponents();
     }
@@ -30,39 +28,39 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jpLogin = new javax.swing.JPanel();
+        jlBemVindo = new javax.swing.JLabel();
         jlLogin = new javax.swing.JLabel();
         jlSenha = new javax.swing.JLabel();
         loginIn = new javax.swing.JTextField();
         senhaIn = new javax.swing.JPasswordField();
-        jLabel11 = new javax.swing.JLabel();
+        jlEsqueceuSenha = new javax.swing.JLabel();
         btnEntrar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         btnSuporte = new javax.swing.JButton();
         txt_msg = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlPincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
-        jPanel2.setLayout(null);
+        jpLogin.setBackground(new java.awt.Color(153, 153, 153));
+        jpLogin.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
+        jpLogin.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Vivaldi", 1, 36)); // NOI18N
-        jLabel3.setText("Bem Vindo");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(147, 27, 189, 45);
+        jlBemVindo.setFont(new java.awt.Font("Vivaldi", 1, 36)); // NOI18N
+        jlBemVindo.setText("Bem Vindo");
+        jpLogin.add(jlBemVindo);
+        jlBemVindo.setBounds(147, 27, 189, 45);
 
         jlLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlLogin.setText("Login");
-        jPanel2.add(jlLogin);
+        jpLogin.add(jlLogin);
         jlLogin.setBounds(60, 80, 360, 15);
 
         jlSenha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlSenha.setText("Senha");
-        jPanel2.add(jlSenha);
+        jpLogin.add(jlSenha);
         jlSenha.setBounds(60, 140, 360, 15);
 
         loginIn.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +68,7 @@ public class Login extends javax.swing.JFrame {
                 loginInActionPerformed(evt);
             }
         });
-        jPanel2.add(loginIn);
+        jpLogin.add(loginIn);
         loginIn.setBounds(60, 100, 360, 30);
 
         senhaIn.addActionListener(new java.awt.event.ActionListener() {
@@ -78,19 +76,19 @@ public class Login extends javax.swing.JFrame {
                 senhaInActionPerformed(evt);
             }
         });
-        jPanel2.add(senhaIn);
+        jpLogin.add(senhaIn);
         senhaIn.setBounds(60, 160, 360, 30);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel11.setText("Esqueceu a Senha?");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        jlEsqueceuSenha.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jlEsqueceuSenha.setForeground(new java.awt.Color(0, 102, 255));
+        jlEsqueceuSenha.setText("Esqueceu a Senha?");
+        jlEsqueceuSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                jlEsqueceuSenhaMouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel11);
-        jLabel11.setBounds(59, 192, 94, 20);
+        jpLogin.add(jlEsqueceuSenha);
+        jlEsqueceuSenha.setBounds(59, 192, 94, 20);
 
         btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botaoLogin.png"))); // NOI18N
         btnEntrar.setContentAreaFilled(false);
@@ -99,7 +97,7 @@ public class Login extends javax.swing.JFrame {
                 btnEntrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnEntrar);
+        jpLogin.add(btnEntrar);
         btnEntrar.setBounds(59, 223, 100, 49);
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
@@ -109,7 +107,7 @@ public class Login extends javax.swing.JFrame {
                 btnSairActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSair);
+        jpLogin.add(btnSair);
         btnSair.setBounds(334, 223, 85, 49);
 
         btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
@@ -125,24 +123,24 @@ public class Login extends javax.swing.JFrame {
                 btnSuporteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSuporte);
+        jpLogin.add(btnSuporte);
         btnSuporte.setBounds(211, 223, 117, 49);
-        jPanel2.add(txt_msg);
+        jpLogin.add(txt_msg);
         txt_msg.setBounds(209, 192, 210, 20);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(100, 90, 480, 300);
+        getContentPane().add(jpLogin);
+        jpLogin.setBounds(140, 110, 480, 300);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-10, -10, 970, 620);
+        jlPincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
+        getContentPane().add(jlPincipal);
+        jlPincipal.setBounds(0, -10, 970, 620);
 
         setSize(new java.awt.Dimension(962, 639));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginInActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_loginInActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
@@ -165,13 +163,11 @@ public class Login extends javax.swing.JFrame {
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        // TODO add your handling code here:
+    private void jlEsqueceuSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlEsqueceuSenhaMouseClicked
         JOptionPane.showMessageDialog(null, "Alterar Senha");
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_jlEsqueceuSenhaMouseClicked
 
     private void btnSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSuporteMouseClicked
         // TODO add your handling code here:
@@ -221,12 +217,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSuporte;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jlBemVindo;
+    private javax.swing.JLabel jlEsqueceuSenha;
     private javax.swing.JLabel jlLogin;
+    private javax.swing.JLabel jlPincipal;
     private javax.swing.JLabel jlSenha;
+    private javax.swing.JPanel jpLogin;
     private javax.swing.JTextField loginIn;
     private javax.swing.JPasswordField senhaIn;
     private javax.swing.JLabel txt_msg;

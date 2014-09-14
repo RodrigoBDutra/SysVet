@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package views;
+
 import dao.Banco;
 
 /**
@@ -48,7 +49,7 @@ public class Inicial extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
@@ -153,9 +154,14 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(jButton17);
         jButton17.setBounds(840, 200, 70, 80);
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_sair1.png"))); // NOI18N
-        getContentPane().add(jButton13);
-        jButton13.setBounds(840, 280, 70, 80);
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_sair1.png"))); // NOI18N
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair);
+        btnSair.setBounds(840, 280, 70, 80);
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +216,10 @@ public class Inicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton19ActionPerformed
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,8 +255,8 @@ public class Inicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
