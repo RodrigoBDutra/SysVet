@@ -65,7 +65,7 @@ public class Configuracoes extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         btnInserir = new javax.swing.JButton();
-        txt_cod2 = new javax.swing.JLabel();
+        CodFuncionario = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
@@ -88,7 +88,7 @@ public class Configuracoes extends javax.swing.JFrame {
         checkPerAltera = new javax.swing.JCheckBox();
         checkPerExclui = new javax.swing.JCheckBox();
         jButton8 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
@@ -100,7 +100,7 @@ public class Configuracoes extends javax.swing.JFrame {
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -244,10 +244,10 @@ public class Configuracoes extends javax.swing.JFrame {
         jPanel9.add(btnInserir);
         btnInserir.setBounds(480, 300, 100, 30);
 
-        txt_cod2.setBackground(new java.awt.Color(255, 255, 255));
-        txt_cod2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.add(txt_cod2);
-        txt_cod2.setBounds(20, 170, 40, 20);
+        CodFuncionario.setBackground(new java.awt.Color(255, 255, 255));
+        CodFuncionario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel9.add(CodFuncionario);
+        CodFuncionario.setBounds(20, 170, 40, 20);
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         btnExcluir.setText("Excluir");
@@ -444,14 +444,19 @@ public class Configuracoes extends javax.swing.JFrame {
         getContentPane().add(jButton8);
         jButton8.setBounds(770, 40, 70, 80);
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_inicio1.png"))); // NOI18N
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_inicio1.png"))); // NOI18N
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInicioMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton12);
-        jButton12.setBounds(700, 40, 70, 80);
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInicio);
+        btnInicio.setBounds(700, 40, 70, 80);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_animal1.png"))); // NOI18N
         getContentPane().add(jButton14);
@@ -499,10 +504,20 @@ public class Configuracoes extends javax.swing.JFrame {
         getContentPane().add(jButton17);
         jButton17.setBounds(10, 550, 100, 50);
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
-        jButton18.setContentAreaFilled(false);
-        getContentPane().add(jButton18);
-        jButton18.setBounds(110, 550, 100, 50);
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
+        btnSair.setContentAreaFilled(false);
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSairMouseClicked(evt);
+            }
+        });
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair);
+        btnSair.setBounds(110, 550, 100, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -516,9 +531,9 @@ public class Configuracoes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackupActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_btnInicioActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -574,7 +589,7 @@ public class Configuracoes extends javax.swing.JFrame {
 
     private void btnExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluir1ActionPerformed
         flag = 0;
-        int codigo = Integer.parseInt(txt_cod2.getText());
+        int codigo = Integer.parseInt(CodFuncionario.getText());
         if (valida()) {
 
             if (Integer.parseInt(ba.abreUsuarios()) + 1 != codigo) {
@@ -679,7 +694,7 @@ public class Configuracoes extends javax.swing.JFrame {
                 checkPerAltera.setSelected(false);
                 checkPerExclui.setSelected(false);
                 int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
-                txt_cod2.setText(cod + "");
+                CodFuncionario.setText(cod + "");
             }
         }
     }//GEN-LAST:event_btnInserir1ActionPerformed
@@ -693,7 +708,7 @@ public class Configuracoes extends javax.swing.JFrame {
         try {
             if (ba.buscaUsuario(login) != null) {
                 txt_nome2.setText(rs.getString("nome"));
-                txt_cod2.setText(rs.getString("codigo"));
+                CodFuncionario.setText(rs.getString("codigo"));
                 sen = rs.getString("senha");
                 permissao = rs.getString("permissao");
 
@@ -787,7 +802,7 @@ public class Configuracoes extends javax.swing.JFrame {
 
     private void txt_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_loginMouseClicked
         int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
-        txt_cod2.setText(cod + "");
+        CodFuncionario.setText(cod + "");
     }//GEN-LAST:event_txt_loginMouseClicked
 
     private void btnAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterar1ActionPerformed
@@ -899,12 +914,26 @@ public class Configuracoes extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
-        txt_cod2.setText(cod + "");
+        CodFuncionario.setText(cod + "");
     }//GEN-LAST:event_formWindowOpened
 
     private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField16ActionPerformed
+
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
+        Inicial a = new Inicial();
+        a.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnInicioMouseClicked
+
+    private void btnSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnSairMouseClicked
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -941,11 +970,14 @@ public class Configuracoes extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CodFuncionario;
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnBackup;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnInserir;
+    private javax.swing.JButton btnSair;
     private javax.swing.JCheckBox checkPerAgenda;
     private javax.swing.JCheckBox checkPerAltera;
     private javax.swing.JCheckBox checkPerAnimal;
@@ -957,11 +989,9 @@ public class Configuracoes extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkPerProprietario;
     private javax.swing.JCheckBox checkPerServico;
     private javax.swing.JCheckBox checkPerVenda;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
@@ -991,7 +1021,6 @@ public class Configuracoes extends javax.swing.JFrame {
     private javax.swing.JCheckBox manterSenha3;
     private javax.swing.JTextField txt_BuscaLogin2;
     private javax.swing.JPasswordField txt_NovaSenha2;
-    private javax.swing.JLabel txt_cod2;
     private javax.swing.JTextField txt_login2;
     private javax.swing.JTextField txt_nome2;
     private javax.swing.JPasswordField txt_senha2;

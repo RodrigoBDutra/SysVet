@@ -179,7 +179,6 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jlEsqueceuSenhaMouseClicked
 
     private void btnSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSuporteMouseClicked
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Central de atendimento SysVet\n\nTelefone: (11)4647-6035\n"
                 + "E-mail: suporte@sysvet.com.br\nSite: www.-------.com.br");
     }//GEN-LAST:event_btnSuporteMouseClicked

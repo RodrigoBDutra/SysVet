@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dao;
 
+import classes.Transferencia;
+import classes.Usuario;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -36,8 +37,6 @@ public class Banco {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
-  
 
     public void conecta() {
         try {
@@ -89,9 +88,7 @@ public class Banco {
         conecta();
         String sql;
 
-
 //Captura os dados digitados
-
         try {
 
             if (valida(codigo, login)) {
@@ -104,7 +101,6 @@ public class Banco {
 
                 JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
                 return true;
-
 
             } else {
                 JOptionPane.showMessageDialog(null, "O login já existe");
@@ -122,7 +118,6 @@ public class Banco {
         conecta();
 
 //Captura os dados digitados
-
         try {
 //Cria comando SQl para inserir na tabela
             sql = "INSERT INTO calcnpr(infixa, npr, resultado, codigo) VALUES ('" + infixa + "', '" + npr + "','" + resultado + "'," + codigo + ")";
@@ -167,7 +162,6 @@ public class Banco {
             JOptionPane.showMessageDialog(null, "Usuário Atualizado com sucesso");
 
 //            JOptionPane.showMessageDialog(null, "Usuario atualizado");
-
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
 
@@ -189,7 +183,6 @@ public class Banco {
             } else {
                 return false;
             }
-
 
         } catch (SQLException e) {
 
@@ -231,7 +224,7 @@ public class Banco {
             sql = "DELETE FROM calcnpr WHERE codigo=" + codigo + ";";
             System.out.println(sql);
             stmt.executeUpdate(sql);
-            
+
             return true;
 
         } catch (SQLException e) {
@@ -245,21 +238,28 @@ public class Banco {
         String sql;
         conecta();
 
-
         try {
 
-            sql = "UPDATE usuario SET logado='n'"; //analisar codigo para não deslogar todo mundo.
-            System.out.println(sql);
-            stmt.executeUpdate(sql);
-
+            /*Retirado este trecho de codigo para não deslogar quem estiver logado no sistema em REDE.*/
+            /*sql = "UPDATE usuario SET logado='n' WHERE login='" + login + "'";
+             System.out.println(sql);
+             stmt.executeUpdate(sql);
+             */
             sql = "SELECT * FROM usuario WHERE login='" + login + "'";
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
             rs.first();
 
-
-
             if (rs.getString("senha").equals(senha)) {
+                Usuario user = new Usuario();
+                user.setCodigo(rs.getInt("codigo"));
+                user.setNome(rs.getString("nome"));
+                user.setLogin(rs.getString("login"));
+                user.setSenha(rs.getString("senha"));
+                user.setPermissao(rs.getString("permissao"));
+                user.setLogado(rs.getString("logado"));
+                Transferencia.logado = user;
+
                 sql = "UPDATE usuario SET logado='s' WHERE login='" + login + "'";
                 System.out.println(sql);
                 stmt.executeUpdate(sql);
@@ -274,6 +274,30 @@ public class Banco {
             return false;
         }
 
+    }
+
+    public boolean logoff(String login) {
+        String sql;
+        conecta();
+
+        try {
+            sql = "SELECT login FROM usuario WHERE login='" + Transferencia.logado.getLogin() + "'";
+            System.out.println(sql);
+            rs = stmt.executeQuery(sql);
+            rs.first();
+            if (rs.getString("login").equals(Transferencia.logado.getLogin())) {
+
+                sql = "UPDATE usuario SET logado='n' WHERE login='" + Transferencia.logado.getLogin() + "'";
+                System.out.println(sql);
+                stmt.executeUpdate(sql);
+
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            return false;
+        }
     }
 
     public boolean getPermissao(int i) {
@@ -299,9 +323,9 @@ public class Banco {
         }
 
     }
-    
-    public void logado(){
-        
+
+    public void logado() {
+
         String sql;
         conecta();
 
@@ -312,17 +336,14 @@ public class Banco {
             rs = stmt.executeQuery(sql);
             rs.first();
 
-           nom=rs.getString("nome");
-           codi=Integer.parseInt(rs.getString("codigo"));
+            nom = rs.getString("nome");
+            codi = Integer.parseInt(rs.getString("codigo"));
 
         } catch (SQLException e) {
-           
+
             System.out.println("Erro ao executar o comando SQL:" + e.toString());
         }
     }
-    
-    
-    
 
     public String historico(int codigo) {
         String sql;
@@ -332,14 +353,12 @@ public class Banco {
         String resultado;
         String tudo = "";
 
-
         try {
             sql = "SELECT * FROM calcnpr WHERE codigo=" + codigo;
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
             rs.first();
             rs.previous();
-
 
             while (rs.next()) {
 
@@ -361,25 +380,22 @@ public class Banco {
         }
 
     }
-    
-    
-    public void apagaHistorico(){
-         String sql;
+
+    public void apagaHistorico() {
+        String sql;
         conecta();
-        
+
         try {
             sql = "DELETE FROM calcnpr where codigo=" + codi;
             System.out.println(sql);
-             stmt.executeUpdate(sql);
+            stmt.executeUpdate(sql);
             rs.first();
             JOptionPane.showMessageDialog(null, "Excluido com sucesso");
-          
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-           
+
         }
 
-        
     }
 }

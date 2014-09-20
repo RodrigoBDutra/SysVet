@@ -4,7 +4,9 @@
  */
 package views;
 
+import classes.Transferencia;
 import dao.Banco;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,14 +14,16 @@ import dao.Banco;
  */
 public class Inicial extends javax.swing.JFrame {
 
+    
+    Banco ba = new Banco();
     /**
      * Creates new form Inicial
      */
     public Inicial() {
         initComponents();
-
+        lblFulano.setText("Bem vindo " + Transferencia.logado.getLogin());
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +41,7 @@ public class Inicial extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         panel1 = new java.awt.Panel();
-        label1 = new java.awt.Label();
+        lblFulano = new java.awt.Label();
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -47,11 +51,11 @@ public class Inicial extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
         btnConfiguracoes = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        btnSuporte = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnLogoff = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,10 +107,9 @@ public class Inicial extends javax.swing.JFrame {
         panel1.setBackground(new java.awt.Color(204, 204, 204));
         panel1.setLayout(null);
 
-        label1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        label1.setText("Bem vindo Fulano!");
-        panel1.add(label1);
-        label1.setBounds(833, 1, 117, 19);
+        lblFulano.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        panel1.add(lblFulano);
+        lblFulano.setBounds(710, 1, 230, 19);
 
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
@@ -152,15 +155,6 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(jButton17);
         jButton17.setBounds(840, 200, 70, 80);
 
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_sair1.png"))); // NOI18N
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnSair);
-        btnSair.setBounds(840, 280, 70, 80);
-
         btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
         btnConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,21 +168,47 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(jButton18);
         jButton18.setBounds(700, 280, 70, 80);
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton16.setContentAreaFilled(false);
-        getContentPane().add(jButton16);
-        jButton16.setBounds(10, 550, 100, 50);
-
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
-        jButton15.setContentAreaFilled(false);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+        btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
+        btnSuporte.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSuporte.setContentAreaFilled(false);
+        btnSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSuporteMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton15);
-        jButton15.setBounds(110, 550, 100, 50);
+        btnSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuporteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSuporte);
+        btnSuporte.setBounds(10, 550, 100, 50);
+
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
+        btnSair.setContentAreaFilled(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair);
+        btnSair.setBounds(280, 550, 100, 50);
+
+        btnLogoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconeLogoff.png"))); // NOI18N
+        btnLogoff.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLogoff.setContentAreaFilled(false);
+        btnLogoff.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLogoffMouseClicked(evt);
+            }
+        });
+        btnLogoff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoffActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLogoff);
+        btnLogoff.setBounds(140, 550, 100, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -202,9 +222,9 @@ public class Inicial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
         Configuracoes conf = new Configuracoes();
@@ -212,9 +232,28 @@ public class Inicial extends javax.swing.JFrame {
         conf.setVisible(true);
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSairActionPerformed
+    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSuporteActionPerformed
+
+    private void btnSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSuporteMouseClicked
+        JOptionPane.showMessageDialog(null, "Central de atendimento SysVet\n\nTelefone: (11)4647-6035\n"
+                + "E-mail: suporte@sysvet.com.br\nSite: www.-------.com.br");
+    }//GEN-LAST:event_btnSuporteMouseClicked
+
+    private void btnLogoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoffActionPerformed
+        
+    }//GEN-LAST:event_btnLogoffActionPerformed
+
+    private void btnLogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoffMouseClicked
+        // TODO add your handling code here:
+        
+        ba.logoff(Transferencia.logado.getLogin());
+        Login log = new Login();
+        this.setVisible(false);
+        log.setVisible(true);
+        
+    }//GEN-LAST:event_btnLogoffMouseClicked
 
     /**
      * @param args the command line arguments
@@ -252,10 +291,10 @@ public class Inicial extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfiguracoes;
+    private javax.swing.JButton btnLogoff;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnSuporte;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
@@ -273,7 +312,7 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private java.awt.Label label1;
+    private java.awt.Label lblFulano;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
 }
