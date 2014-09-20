@@ -76,6 +76,11 @@ public class Login extends javax.swing.JFrame {
                 senhaInActionPerformed(evt);
             }
         });
+        senhaIn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                senhaInKeyPressed(evt);
+            }
+        });
         jpLogin.add(senhaIn);
         senhaIn.setBounds(60, 160, 360, 30);
 
@@ -145,14 +150,13 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginInActionPerformed
-        
+
     }//GEN-LAST:event_loginInActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         String login = loginIn.getText();
         String senha = senhaIn.getText();
         if (ba.login(login, senha)) {
-
             Inicial a = new Inicial();
             a.setVisible(true);
             this.setVisible(false);
@@ -163,7 +167,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void senhaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaInActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_senhaInActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -185,8 +189,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSuporteActionPerformed
 
     private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
-      
+
     }//GEN-LAST:event_btnEntrarKeyPressed
+
+    private void senhaInKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_senhaInKeyPressed
+        if (evt.getKeyCode() == 10) {
+            String login = loginIn.getText();
+            String senha = senhaIn.getText();
+            if (ba.login(login, senha)) {
+                Inicial a = new Inicial();
+                a.setVisible(true);
+                this.setVisible(false);
+
+            } else {
+                txt_msg.setText("Login ou senha incorreto");
+            }
+        }
+    }//GEN-LAST:event_senhaInKeyPressed
 
     /**
      * @param args the command line arguments

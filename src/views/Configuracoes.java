@@ -47,7 +47,6 @@ public class Configuracoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -112,10 +111,6 @@ public class Configuracoes extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/suporte_sair.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 560, 0, 0);
-
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
@@ -138,8 +133,13 @@ public class Configuracoes extends javax.swing.JFrame {
         btnBackup.setBounds(484, 456, 140, 35);
 
         jTextField16.setText("C:\\Users\\Rafael\\Documentos/SysVet");
+        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField16ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jTextField16);
-        jTextField16.setBounds(168, 463, 301, 20);
+        jTextField16.setBounds(170, 458, 301, 30);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Diretório Backup:");
@@ -197,7 +197,7 @@ public class Configuracoes extends javax.swing.JFrame {
             }
         });
         jPanel9.add(txt_senha2);
-        txt_senha2.setBounds(20, 260, 140, 20);
+        txt_senha2.setBounds(20, 250, 140, 20);
 
         txt_senhaAtual2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senhaAtual2.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +279,7 @@ public class Configuracoes extends javax.swing.JFrame {
         jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel55.setText("Senha");
         jPanel9.add(jLabel55);
-        jLabel55.setBounds(20, 240, 90, 20);
+        jLabel55.setBounds(20, 230, 90, 20);
 
         txt_NovaSenha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_NovaSenha2.addActionListener(new java.awt.event.ActionListener() {
@@ -297,6 +297,7 @@ public class Configuracoes extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Permissões"));
+        jPanel8.setLayout(null);
 
         checkPerAgenda.setBackground(new java.awt.Color(204, 204, 204));
         checkPerAgenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -306,6 +307,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerAgenda);
+        checkPerAgenda.setBounds(12, 68, 67, 23);
 
         checkPerProprietario.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProprietario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -315,6 +318,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox3ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerProprietario);
+        checkPerProprietario.setBounds(12, 16, 125, 23);
 
         checkPerAnimal.setBackground(new java.awt.Color(204, 204, 204));
         checkPerAnimal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -324,6 +329,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox8ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerAnimal);
+        checkPerAnimal.setBounds(12, 42, 125, 23);
 
         checkPerServico.setBackground(new java.awt.Color(204, 204, 204));
         checkPerServico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -333,6 +340,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox9ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerServico);
+        checkPerServico.setBounds(12, 95, 65, 23);
 
         checkPerEstoque.setBackground(new java.awt.Color(204, 204, 204));
         checkPerEstoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -342,6 +351,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox10ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerEstoque);
+        checkPerEstoque.setBounds(139, 16, 71, 23);
 
         checkPerVenda.setBackground(new java.awt.Color(204, 204, 204));
         checkPerVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -351,6 +362,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox11ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerVenda);
+        checkPerVenda.setBounds(139, 42, 65, 23);
 
         checkPerFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
         checkPerFinanceiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -360,6 +373,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox12ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerFinanceiro);
+        checkPerFinanceiro.setBounds(139, 68, 79, 23);
 
         checkPerProdutos.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProdutos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -369,8 +384,12 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox13ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerProdutos);
+        checkPerProdutos.setBounds(139, 95, 75, 23);
 
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel8.add(jSeparator11);
+        jSeparator11.setBounds(236, 16, 2, 102);
 
         checkPerHistoricos.setBackground(new java.awt.Color(204, 204, 204));
         checkPerHistoricos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -380,6 +399,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox14ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerHistoricos);
+        checkPerHistoricos.setBounds(256, 16, 127, 23);
 
         checkPerAltera.setBackground(new java.awt.Color(204, 204, 204));
         checkPerAltera.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -389,6 +410,8 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox15ActionPerformed(evt);
             }
         });
+        jPanel8.add(checkPerAltera);
+        checkPerAltera.setBounds(256, 42, 99, 23);
 
         checkPerExclui.setBackground(new java.awt.Color(204, 204, 204));
         checkPerExclui.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -398,72 +421,11 @@ public class Configuracoes extends javax.swing.JFrame {
                 jCheckBox16ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(checkPerProprietario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkPerAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkPerAgenda)
-                    .addComponent(checkPerServico))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkPerEstoque)
-                            .addComponent(checkPerProdutos)
-                            .addComponent(checkPerVenda))
-                        .addGap(22, 22, 22))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addComponent(checkPerFinanceiro)
-                        .addGap(18, 18, 18)))
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(checkPerHistoricos)
-                    .addComponent(checkPerAltera)
-                    .addComponent(checkPerExclui))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator11)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(checkPerEstoque)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerVenda)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerFinanceiro)
-                                .addGap(4, 4, 4)
-                                .addComponent(checkPerProdutos))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(checkPerProprietario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerAnimal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerAgenda)
-                                .addGap(4, 4, 4)
-                                .addComponent(checkPerServico))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(checkPerHistoricos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerAltera)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(checkPerExclui)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        jPanel8.add(checkPerExclui);
+        checkPerExclui.setBounds(256, 68, 97, 23);
 
         jPanel9.add(jPanel8);
-        jPanel8.setBounds(20, 290, 395, 136);
+        jPanel8.setBounds(20, 280, 410, 140);
 
         jPanel6.add(jPanel9);
         jPanel9.setBounds(10, 20, 610, 430);
@@ -940,6 +902,10 @@ public class Configuracoes extends javax.swing.JFrame {
         txt_cod2.setText(cod + "");
     }//GEN-LAST:event_formWindowOpened
 
+    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1005,7 +971,6 @@ public class Configuracoes extends javax.swing.JFrame {
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel50;

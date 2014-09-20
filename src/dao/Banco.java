@@ -248,7 +248,7 @@ public class Banco {
 
         try {
 
-            sql = "UPDATE usuario SET logado='n'";
+            sql = "UPDATE usuario SET logado='n'"; //analisar codigo para não deslogar todo mundo.
             System.out.println(sql);
             stmt.executeUpdate(sql);
 
