@@ -8,14 +8,13 @@ package views;
  *
  * @author Rafael
  */
-public class Agenda extends javax.swing.JFrame {
+public class Produtos extends javax.swing.JFrame {
 
     /**
-     * Creates new form Agenda
+     * Creates new form ProdutosConsultar
      */
-    public Agenda() {
+    public Produtos() {
         initComponents();
-        
     }
 
     /**
@@ -31,22 +30,46 @@ public class Agenda extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jButton20 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tConsultaAgenda = new javax.swing.JTable();
-        btnSair = new javax.swing.JButton();
-        btnSuporte = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
         btnProprietario = new javax.swing.JButton();
         btnAnimal = new javax.swing.JButton();
@@ -64,12 +87,25 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(204, 204, 204));
-        panel1.setLayout(null);
 
         label1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         label1.setText("Bem vindo Fulano!");
-        panel1.add(label1);
-        label1.setBounds(698, 1, 240, 19);
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                .addContainerGap(833, Short.MAX_VALUE)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
@@ -77,23 +113,6 @@ public class Agenda extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Consulta", "Exame", "Cirúrgia" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jComboBox1);
-        jComboBox1.setBounds(140, 30, 100, 20);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("Tipo");
-        jLabel4.setMaximumSize(new java.awt.Dimension(34, 15));
-        jLabel4.setMinimumSize(new java.awt.Dimension(34, 15));
-        jLabel4.setName(""); // NOI18N
-        jPanel6.add(jLabel4);
-        jLabel4.setBounds(140, 10, 26, 15);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -105,156 +124,180 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(130, 450, 120, 35);
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        jButton11.setText("Excluir");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton11);
-        jButton11.setBounds(260, 450, 110, 35);
+        jButton10.setBounds(397, 52, 110, 32);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton12.setText("Agendar");
+        jButton12.setText("Inserir");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(10, 450, 110, 35);
+        jButton12.setBounds(517, 53, 101, 30);
 
-        jCheckBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jCheckBox1.setSelected(true);
-        jCheckBox1.setText("Mostrar Tudo");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jCheckBox1);
-        jCheckBox1.setBounds(260, 30, 90, 20);
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(jTextField2);
+        jTextField2.setBounds(11, 57, 165, 21);
+
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(jTextField1);
+        jTextField1.setBounds(186, 57, 201, 21);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("EAN");
+        jPanel6.add(jLabel4);
+        jLabel4.setBounds(11, 31, 24, 15);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Produto");
+        jPanel6.add(jLabel5);
+        jLabel5.setBounds(186, 31, 51, 15);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setText("Consultar Produtos");
+        jPanel6.add(jLabel6);
+        jLabel6.setBounds(278, 1, 120, 15);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserir Produtos"));
+        jPanel2.setLayout(null);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setText("Data");
-        jPanel6.add(jLabel8);
-        jLabel8.setBounds(10, 10, 40, 20);
+        jLabel8.setText("Validade");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(375, 150, 61, 15);
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
-        jButton14.setText("Imprimir");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton14);
-        jButton14.setBounds(500, 450, 120, 35);
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Produto");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(16, 27, 51, 15);
+        jPanel2.add(jTextField3);
+        jTextField3.setBounds(16, 50, 251, 20);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Dr. Rafael", "Dr. Vinícius", "Dr.Isaque", "Dra.Fernanda" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jComboBox2);
-        jComboBox2.setBounds(370, 30, 110, 20);
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setText("EAN");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(16, 91, 24, 15);
+        jPanel2.add(jTextField4);
+        jTextField4.setBounds(16, 112, 134, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("Clinico Veterinário");
-        jPanel6.add(jLabel3);
-        jLabel3.setBounds(370, 10, 110, 15);
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setText("NCM");
+        jPanel2.add(jLabel11);
+        jLabel11.setBounds(168, 91, 27, 15);
+        jPanel2.add(jTextField5);
+        jTextField5.setBounds(168, 112, 154, 20);
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
-        jButton22.setText("Historico");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton22);
-        jButton22.setBounds(380, 450, 110, 35);
-        jPanel6.add(jDateChooser2);
-        jDateChooser2.setBounds(10, 30, 110, 20);
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setText("Categoria");
+        jPanel2.add(jLabel13);
+        jLabel13.setBounds(16, 150, 59, 15);
 
-        tConsultaAgenda.setBorder(new javax.swing.border.MatteBorder(null));
-        tConsultaAgenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tConsultaAgenda.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"10:00", "Dr. Edvaldo", "Joel Santana", "Afrix", "Consulta", "Cancelado"},
-                {"13:30", "Dr. Rafael", "Adalberto Batista", "Rex", "Exame", "Realizado"},
-                {"14:00", "Dra. Fernanda", "Juca Teles", "Bila", "Cirurgia", "Agendado"},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "HORA", "VETERINARIO", "PROPRIETÁRIO", "CLIENTE", "TIPO", "STATUS"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel15.setText("Fornecedor");
+        jPanel2.add(jLabel15);
+        jLabel15.setBounds(160, 150, 68, 15);
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setText("Observação");
+        jPanel2.add(jLabel17);
+        jLabel17.setBounds(16, 362, 70, 15);
+        jPanel2.add(jTextField7);
+        jTextField7.setBounds(16, 388, 515, 20);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tConsultaAgenda);
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setText("Marca");
+        jPanel2.add(jLabel14);
+        jLabel14.setBounds(303, 27, 36, 15);
+        jPanel2.add(jTextField8);
+        jTextField8.setBounds(303, 48, 154, 20);
 
-        jPanel6.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 60, 610, 380);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Medicamentos", "Estética", "Materiais Cirúrgicos", "Materiais Descartáveis" }));
+        jPanel2.add(jComboBox2);
+        jComboBox2.setBounds(16, 171, 120, 20);
 
-        jTabbedPane1.addTab("Agenda", jPanel6);
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Farma Pet", "PetCLean", "Cirur-cão", "Pet Embalagens" }));
+        jPanel2.add(jComboBox3);
+        jComboBox3.setBounds(160, 171, 120, 20);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "UN", "KG", "PT", "LT", " " }));
+        jPanel2.add(jComboBox1);
+        jComboBox1.setBounds(298, 171, 50, 20);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setText("Unidade");
+        jPanel2.add(jLabel18);
+        jLabel18.setBounds(298, 150, 59, 15);
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Valor Unidade");
+        jPanel2.add(jLabel20);
+        jLabel20.setBounds(114, 212, 84, 15);
+        jPanel2.add(jTextField10);
+        jTextField10.setBounds(114, 233, 84, 20);
+        jPanel2.add(jTextField11);
+        jTextField11.setBounds(16, 233, 80, 20);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel21.setText("Estoque Min.");
+        jPanel2.add(jLabel21);
+        jLabel21.setBounds(16, 212, 80, 15);
+        jPanel2.add(jTextField12);
+        jTextField12.setBounds(216, 233, 84, 20);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel22.setText("Lucro(%)");
+        jPanel2.add(jLabel22);
+        jLabel22.setBounds(216, 212, 84, 15);
+        jPanel2.add(jTextField13);
+        jTextField13.setBounds(318, 233, 84, 20);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel23.setText("Valor Venda");
+        jPanel2.add(jLabel23);
+        jLabel23.setBounds(318, 212, 84, 15);
+        jPanel2.add(jDateChooser1);
+        jDateChooser1.setBounds(375, 171, 87, 20);
+
+        jPanel6.add(jPanel2);
+        jPanel2.setBounds(11, 95, 0, 340);
+
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
+        jButton20.setText("Histórico");
+        jPanel6.add(jButton20);
+        jButton20.setBounds(196, 446, 105, 35);
+
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
+        jButton15.setText("Salvar");
+        jPanel6.add(jButton15);
+        jButton15.setBounds(311, 446, 93, 35);
+
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
+        jButton16.setText("Cancelar");
+        jPanel6.add(jButton16);
+        jButton16.setBounds(519, 446, 105, 35);
+
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
+        jButton21.setText("Excluir");
+        jPanel6.add(jButton21);
+        jButton21.setBounds(414, 446, 95, 35);
+
+        jTabbedPane1.addTab("Produto", jPanel6);
 
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(10, 20, 640, 530);
 
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
-        btnSair.setContentAreaFilled(false);
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnSair);
-        btnSair.setBounds(110, 550, 100, 50);
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
+        jButton22.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton22.setContentAreaFilled(false);
+        getContentPane().add(jButton22);
+        jButton22.setBounds(10, 550, 100, 50);
 
-        btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
-        btnSuporte.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnSuporte.setContentAreaFilled(false);
-        getContentPane().add(btnSuporte);
-        btnSuporte.setBounds(10, 550, 100, 50);
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
+        jButton23.setContentAreaFilled(false);
+        getContentPane().add(jButton23);
+        jButton23.setBounds(110, 550, 100, 50);
 
         btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_inicio1.png"))); // NOI18N
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -357,9 +400,9 @@ public class Agenda extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-16, -6, 970, 610);
+        jLabel2.setBounds(0, 0, 960, 610);
 
-        setSize(new java.awt.Dimension(959, 640));
+        setSize(new java.awt.Dimension(974, 646));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -367,37 +410,9 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSairActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
@@ -435,7 +450,10 @@ public class Agenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btnServicosActionPerformed
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
-        // TODO add your handling code here:        
+        // TODO add your handling code here:
+        Agenda agen = new Agenda();
+        this.setVisible(false);
+        agen.setVisible(true);
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
@@ -453,10 +471,7 @@ public class Agenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
-        // TODO add your handling code here:
-        Produtos pro = new Produtos();
-        this.setVisible(false);
-        pro.setVisible(true);
+        // TODO add your handling code here:        
     }//GEN-LAST:event_btnProdutosActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
@@ -489,20 +504,20 @@ public class Agenda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agenda().setVisible(true);
+                new Produtos().setVisible(true);
             }
         });
     }
@@ -516,28 +531,52 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnProdutos;
     private javax.swing.JButton btnProprietario;
-    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnServicos;
-    private javax.swing.JButton btnSuporte;
     private javax.swing.JButton btnVendas;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton jButton23;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JComboBox jComboBox3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private java.awt.Label label1;
     private java.awt.Panel panel1;
-    private javax.swing.JTable tConsultaAgenda;
     // End of variables declaration//GEN-END:variables
 }

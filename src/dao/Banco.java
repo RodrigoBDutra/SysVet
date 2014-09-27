@@ -41,9 +41,9 @@ public class Banco {
     public void conecta() {
         try {
             String serverName = "localhost";
-            String mydatabase = "banco";
+            String mydatabase = "bancosysvet";
             String username = "root";
-            String password = "";
+            String password = "root";
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
@@ -111,25 +111,7 @@ public class Banco {
             System.out.println("Erro ao executar o comando SQL:" + e.toString());
             return false;
         }
-    }
-
-    public void gravaExpressao(String infixa, String npr, String resultado, int codigo) {
-        String sql;
-        conecta();
-
-//Captura os dados digitados
-        try {
-//Cria comando SQl para inserir na tabela
-            sql = "INSERT INTO calcnpr(infixa, npr, resultado, codigo) VALUES ('" + infixa + "', '" + npr + "','" + resultado + "'," + codigo + ")";
-//Executa o comando sql
-//            JOptionPane.showMessageDialog(null, sql);
-            stmt.executeUpdate(sql);
-            //Exibe mensagem
-            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
-        } catch (SQLException e) {
-            System.out.println("Erro ao executar o comando SQL:" + e.toString());
-        }
-    }
+    }  
 
     public String abreUsuarios() {
         String sql;
@@ -220,10 +202,7 @@ public class Banco {
         try {
             sql = "DELETE FROM usuario WHERE codigo=" + codigo + ";";
             System.out.println(sql);
-            stmt.executeUpdate(sql);
-            sql = "DELETE FROM calcnpr WHERE codigo=" + codigo + ";";
-            System.out.println(sql);
-            stmt.executeUpdate(sql);
+            stmt.executeUpdate(sql);            
 
             return true;
 
@@ -249,23 +228,25 @@ public class Banco {
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
             rs.first();
-
-            if (rs.getString("senha").equals(senha)) {
-                Usuario user = new Usuario();
-                user.setCodigo(rs.getInt("codigo"));
-                user.setNome(rs.getString("nome"));
-                user.setLogin(rs.getString("login"));
-                user.setSenha(rs.getString("senha"));
-                user.setPermissao(rs.getString("permissao"));
-                user.setLogado(rs.getString("logado"));
-                Transferencia.logado = user;
-
-                sql = "UPDATE usuario SET logado='s' WHERE login='" + login + "'";
-                System.out.println(sql);
-                stmt.executeUpdate(sql);
-
-                return true;
+            if(rs.getString("logado").equalsIgnoreCase("n")){
+                if (rs.getString("senha").equals(senha)) {
+                    Usuario user = new Usuario();
+                    user.setCodigo(rs.getInt("codigo"));
+                    user.setNome(rs.getString("nome"));
+                    user.setLogin(rs.getString("login"));
+                    user.setSenha(rs.getString("senha"));
+                    user.setPermissao(rs.getString("permissao"));
+                    user.setLogado(rs.getString("logado"));
+                    Transferencia.logado = user;
+                    
+                    sql = "UPDATE usuario SET logado='s' WHERE login='" + login + "'";
+                    System.out.println(sql);
+                    stmt.executeUpdate(sql); 
+                    return true;
+                }
+                return false;
             } else {
+                System.out.println("Usuario já está logado na rede!");
                 return false;
             }
 

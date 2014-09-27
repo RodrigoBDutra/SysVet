@@ -6,6 +6,8 @@ package views;
 
 import classes.Transferencia;
 import dao.Banco;
+import java.awt.Frame;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +23,7 @@ public class Inicial extends javax.swing.JFrame {
      */
     public Inicial() {
         initComponents();
-        lblFulano.setText("Bem vindo " + Transferencia.logado.getLogin());
+        lblFulano.setText("Bem vindo " + Transferencia.logado.getNome());
     }
 
     /**
@@ -42,23 +44,28 @@ public class Inicial extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         panel1 = new java.awt.Panel();
         lblFulano = new java.awt.Label();
-        jButton6 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        btnProprietario = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
+        btnAnimal = new javax.swing.JButton();
+        btnEstoque = new javax.swing.JButton();
+        btnServicos = new javax.swing.JButton();
+        btnAgenda = new javax.swing.JButton();
+        btnVendas = new javax.swing.JButton();
+        btnFinanceiro = new javax.swing.JButton();
+        btnProdutos = new javax.swing.JButton();
         btnConfiguracoes = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        btnAjuda = new javax.swing.JButton();
         btnSuporte = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         btnLogoff = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -114,46 +121,86 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_proprietario1.png"))); // NOI18N
-        getContentPane().add(jButton6);
-        jButton6.setBounds(770, 40, 70, 80);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_inicio1.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnProprietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_proprietario1.png"))); // NOI18N
+        btnProprietario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnProprietarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(700, 40, 70, 80);
+        getContentPane().add(btnProprietario);
+        btnProprietario.setBounds(770, 40, 70, 80);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_animal1.png"))); // NOI18N
-        getContentPane().add(jButton5);
-        jButton5.setBounds(840, 40, 70, 80);
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_inicio1.png"))); // NOI18N
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInicio);
+        btnInicio.setBounds(700, 40, 70, 80);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_estoque1.png"))); // NOI18N
-        getContentPane().add(jButton4);
-        jButton4.setBounds(840, 120, 70, 80);
+        btnAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_animal1.png"))); // NOI18N
+        btnAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnimalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAnimal);
+        btnAnimal.setBounds(840, 40, 70, 80);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_serviço1.png"))); // NOI18N
-        getContentPane().add(jButton7);
-        jButton7.setBounds(770, 120, 70, 80);
+        btnEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_estoque1.png"))); // NOI18N
+        btnEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstoqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEstoque);
+        btnEstoque.setBounds(840, 120, 70, 80);
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_agenda1.png"))); // NOI18N
-        getContentPane().add(jButton9);
-        jButton9.setBounds(700, 120, 70, 80);
+        btnServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_serviço1.png"))); // NOI18N
+        btnServicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServicosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnServicos);
+        btnServicos.setBounds(770, 120, 70, 80);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_vendas1.png"))); // NOI18N
-        getContentPane().add(jButton3);
-        jButton3.setBounds(700, 200, 70, 80);
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_agenda1.png"))); // NOI18N
+        btnAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgendaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgenda);
+        btnAgenda.setBounds(700, 120, 70, 80);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_financeiro1.png"))); // NOI18N
-        getContentPane().add(jButton2);
-        jButton2.setBounds(770, 200, 70, 80);
+        btnVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_vendas1.png"))); // NOI18N
+        btnVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVendas);
+        btnVendas.setBounds(700, 200, 70, 80);
 
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_produtos1.png"))); // NOI18N
-        getContentPane().add(jButton17);
-        jButton17.setBounds(840, 200, 70, 80);
+        btnFinanceiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_financeiro1.png"))); // NOI18N
+        btnFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinanceiroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFinanceiro);
+        btnFinanceiro.setBounds(770, 200, 70, 80);
+
+        btnProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_produtos1.png"))); // NOI18N
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProdutos);
+        btnProdutos.setBounds(840, 200, 70, 80);
 
         btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
         btnConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
@@ -164,9 +211,14 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(btnConfiguracoes);
         btnConfiguracoes.setBounds(770, 280, 70, 80);
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_ajuda1.png"))); // NOI18N
-        getContentPane().add(jButton18);
-        jButton18.setBounds(700, 280, 70, 80);
+        btnAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_ajuda1.png"))); // NOI18N
+        btnAjuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjudaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAjuda);
+        btnAjuda.setBounds(700, 280, 70, 80);
 
         btnSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/suporte.png"))); // NOI18N
         btnSuporte.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -218,9 +270,9 @@ public class Inicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
@@ -246,14 +298,86 @@ public class Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoffActionPerformed
 
     private void btnLogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoffMouseClicked
-        // TODO add your handling code here:
-        
         ba.logoff(Transferencia.logado.getLogin());
         Login log = new Login();
         this.setVisible(false);
         log.setVisible(true);
         
     }//GEN-LAST:event_btnLogoffMouseClicked
+
+    private void btnProprietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProprietarioActionPerformed
+        // TODO add your handling code here:
+        Proprietario prop = new Proprietario();
+        this.setVisible(false);
+        prop.setVisible(true);
+    }//GEN-LAST:event_btnProprietarioActionPerformed
+
+    private void btnAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnimalActionPerformed
+        // TODO add your handling code here:
+        Animal ani = new Animal();
+        this.setVisible(false);
+       ani.setVisible(true);
+    }//GEN-LAST:event_btnAnimalActionPerformed
+
+    private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
+        // TODO add your handling code here:
+        Agenda agen = new Agenda();
+        this.setVisible(false);
+        agen.setVisible(true);
+    }//GEN-LAST:event_btnAgendaActionPerformed
+
+    private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
+        // TODO add your handling code here:
+        Servicos ser = new Servicos();
+        this.setVisible(false);
+        ser.setVisible(true);
+    }//GEN-LAST:event_btnServicosActionPerformed
+
+    private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
+        // TODO add your handling code here:
+        Estoque est = new Estoque();
+        this.setVisible(false);
+        est.setVisible(true);
+    }//GEN-LAST:event_btnEstoqueActionPerformed
+
+    private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
+        // TODO add your handling code here:
+        Vendas ven = new Vendas();
+        this.setVisible(false);
+        ven.setVisible(true);
+    }//GEN-LAST:event_btnVendasActionPerformed
+
+    private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
+        // TODO add your handling code here:
+        FinanceiroPagar fin = new FinanceiroPagar();
+        this.setVisible(false);
+        fin.setVisible(true);
+    }//GEN-LAST:event_btnFinanceiroActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        // TODO add your handling code here:
+        Produtos pro = new Produtos();
+        this.setVisible(false);
+        pro.setVisible(true);
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjudaActionPerformed
+        // TODO add your handling code here:
+        Ajuda aju = new Ajuda();
+        this.setVisible(false);
+        aju.setVisible(true);
+    }//GEN-LAST:event_btnAjudaActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        int sair = JOptionPane.showConfirmDialog(null,"Você realmente deseja sair do sistema?","Confirmação",JOptionPane.YES_NO_OPTION);
+        if(sair == JOptionPane.YES_OPTION){
+            ba.logoff(Transferencia.logado.getLogin());
+        }else if(sair == JOptionPane.NO_OPTION){
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        }
+        
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -290,20 +414,20 @@ public class Inicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgenda;
+    private javax.swing.JButton btnAjuda;
+    private javax.swing.JButton btnAnimal;
     private javax.swing.JButton btnConfiguracoes;
+    private javax.swing.JButton btnEstoque;
+    private javax.swing.JButton btnFinanceiro;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnLogoff;
+    private javax.swing.JButton btnProdutos;
+    private javax.swing.JButton btnProprietario;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnServicos;
     private javax.swing.JButton btnSuporte;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnVendas;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
