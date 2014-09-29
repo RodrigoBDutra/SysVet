@@ -62,6 +62,27 @@ public class AgendaIC extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jComboBox6 = new javax.swing.JComboBox();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jComboBox8 = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
@@ -309,6 +330,121 @@ public class AgendaIC extends javax.swing.JFrame {
         jPanel1.add(jButton23);
         jButton23.setBounds(403, 450, 105, 35);
 
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Consulta Agenda"));
+        jPanel3.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setText("Data");
+        jPanel3.add(jLabel14);
+        jLabel14.setBounds(10, 20, 29, 15);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setText("Hora");
+        jPanel3.add(jLabel18);
+        jLabel18.setBounds(168, 27, 29, 15);
+        jPanel3.add(jTextField9);
+        jTextField9.setBounds(168, 47, 98, 20);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("Proprietário");
+        jPanel3.add(jLabel19);
+        jLabel19.setBounds(16, 79, 73, 15);
+
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField10);
+        jTextField10.setBounds(16, 100, 134, 20);
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Cliente");
+        jPanel3.add(jLabel20);
+        jLabel20.setBounds(168, 79, 42, 15);
+        jPanel3.add(jTextField11);
+        jTextField11.setBounds(168, 100, 154, 20);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel21.setText("Telefone");
+        jPanel3.add(jLabel21);
+        jLabel21.setBounds(340, 79, 52, 15);
+        jPanel3.add(jTextField12);
+        jTextField12.setBounds(340, 100, 117, 20);
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Consulta", "Exame", "Cirúrgia" }));
+        jPanel3.add(jComboBox6);
+        jComboBox6.setBounds(16, 165, 109, 29);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel22.setText("Tipo");
+        jPanel3.add(jLabel22);
+        jLabel22.setBounds(16, 138, 26, 15);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel23.setText("Clinico Veterinario");
+        jPanel3.add(jLabel23);
+        jLabel23.setBounds(143, 138, 110, 15);
+
+        jComboBox8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dr. Rafael", "Dr. Vinícius", "Dr.Isaque", "Dra.Fernanda" }));
+        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox8ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox8);
+        jComboBox8.setBounds(143, 164, 168, 29);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel24.setText("Status:");
+        jPanel3.add(jLabel24);
+        jLabel24.setBounds(16, 205, 45, 15);
+
+        jRadioButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton4.setSelected(true);
+        jRadioButton4.setText("Agendado");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton4);
+        jRadioButton4.setBounds(67, 202, 75, 23);
+
+        jRadioButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton5.setText("Atendido");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton5);
+        jRadioButton5.setBounds(160, 202, 69, 23);
+
+        jRadioButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton6.setText("Cancelado");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton6);
+        jRadioButton6.setBounds(247, 202, 75, 23);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel25.setText("Observação");
+        jPanel3.add(jLabel25);
+        jLabel25.setBounds(16, 232, 70, 15);
+        jPanel3.add(jTextField13);
+        jTextField13.setBounds(16, 253, 539, 66);
+        jPanel3.add(jDateChooser2);
+        jDateChooser2.setBounds(10, 40, 87, 20);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(10, 97, 620, 340);
+
         jTabbedPane1.addTab("Agenda", jPanel1);
 
         getContentPane().add(jTabbedPane1);
@@ -550,6 +686,26 @@ public class AgendaIC extends javax.swing.JFrame {
         aju.setVisible(true);
     }//GEN-LAST:event_btnAjudaActionPerformed
 
+    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox8ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -605,16 +761,28 @@ public class AgendaIC extends javax.swing.JFrame {
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JComboBox jComboBox5;
+    private javax.swing.JComboBox jComboBox6;
     private javax.swing.JComboBox jComboBox7;
+    private javax.swing.JComboBox jComboBox8;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -623,17 +791,26 @@ public class AgendaIC extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private java.awt.Label label1;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables

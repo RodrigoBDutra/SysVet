@@ -74,6 +74,40 @@ public class Animal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox();
+        jComboBox5 = new javax.swing.JComboBox();
+        jTextField16 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jTextField18 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jButton21 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
@@ -140,7 +174,7 @@ public class Animal extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(511, 33, 114, 35);
+        jButton12.setBounds(511, 33, 110, 35);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Animal");
@@ -347,17 +381,17 @@ public class Animal extends javax.swing.JFrame {
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton20.setText("Histórico");
         jPanel6.add(jButton20);
-        jButton20.setBounds(174, 458, 105, 35);
+        jButton20.setBounds(145, 460, 110, 35);
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         jButton15.setText("Salvar");
         jPanel6.add(jButton15);
-        jButton15.setBounds(409, 458, 93, 35);
+        jButton15.setBounds(393, 460, 100, 35);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
         jPanel6.add(jButton16);
-        jButton16.setBounds(520, 458, 105, 35);
+        jButton16.setBounds(510, 460, 105, 35);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Inserir Animal");
@@ -367,12 +401,200 @@ public class Animal extends javax.swing.JFrame {
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/kedit.png"))); // NOI18N
         jButton22.setText("Prontuário");
         jPanel6.add(jButton22);
-        jButton22.setBounds(43, 458, 113, 35);
+        jButton22.setBounds(20, 460, 113, 35);
 
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         jButton23.setText("Excluir");
         jPanel6.add(jButton23);
-        jButton23.setBounds(297, 458, 106, 35);
+        jButton23.setBounds(270, 460, 106, 35);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Animal"));
+        jPanel3.setLayout(null);
+        jPanel3.add(jTextField13);
+        jTextField13.setBounds(16, 64, 321, 20);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel25.setText("Nome do Animal");
+        jPanel3.add(jLabel25);
+        jLabel25.setBounds(16, 43, 99, 15);
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel26.setText("Sexo");
+        jPanel3.add(jLabel26);
+        jLabel26.setBounds(354, 43, 30, 15);
+
+        jRadioButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton5.setSelected(true);
+        jRadioButton5.setText("M");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton5);
+        jRadioButton5.setBounds(370, 63, 33, 23);
+
+        jRadioButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton6.setText("F");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton6);
+        jRadioButton6.setBounds(405, 63, 31, 23);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel27.setText("Cor");
+        jPanel3.add(jLabel27);
+        jLabel27.setBounds(16, 104, 21, 15);
+        jPanel3.add(jTextField14);
+        jTextField14.setBounds(16, 125, 114, 20);
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel28.setText("Idade");
+        jPanel3.add(jLabel28);
+        jLabel28.setBounds(148, 104, 35, 15);
+        jPanel3.add(jTextField15);
+        jTextField15.setBounds(148, 125, 99, 20);
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setText("Espécie");
+        jPanel3.add(jLabel29);
+        jLabel29.setBounds(390, 104, 44, 15);
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel30.setText("Raça");
+        jPanel3.add(jLabel30);
+        jLabel30.setBounds(477, 104, 29, 15);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox4);
+        jComboBox4.setBounds(390, 125, 69, 20);
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "pequeno", "Medio", "Grande" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox5);
+        jComboBox5.setBounds(274, 172, 84, 20);
+        jPanel3.add(jTextField16);
+        jTextField16.setBounds(16, 172, 114, 20);
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel31.setText("Peso");
+        jPanel3.add(jLabel31);
+        jLabel31.setBounds(16, 151, 29, 15);
+        jPanel3.add(jTextField17);
+        jTextField17.setBounds(148, 172, 114, 20);
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel32.setText("Altura");
+        jPanel3.add(jLabel32);
+        jLabel32.setBounds(148, 151, 38, 15);
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setText("Chip");
+        jPanel3.add(jLabel33);
+        jLabel33.setBounds(16, 210, 27, 15);
+
+        jRadioButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton7.setText("Sim");
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton7ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton7);
+        jRadioButton7.setBounds(16, 232, 41, 23);
+
+        jRadioButton8.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton8.setSelected(true);
+        jRadioButton8.setText("Não");
+        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton8ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jRadioButton8);
+        jRadioButton8.setBounds(59, 232, 45, 23);
+        jPanel3.add(jTextField18);
+        jTextField18.setBounds(477, 125, 114, 20);
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel34.setText("Porte");
+        jPanel3.add(jLabel34);
+        jLabel34.setBounds(274, 151, 34, 15);
+        jPanel3.add(jTextField19);
+        jTextField19.setBounds(16, 281, 321, 20);
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel35.setText("Proprietário");
+        jPanel3.add(jLabel35);
+        jLabel35.setBounds(16, 261, 73, 15);
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Foto do Animal"));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        jPanel3.add(jPanel4);
+        jPanel4.setBounds(390, 151, 200, 160);
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel36.setText("Nascimento");
+        jPanel3.add(jLabel36);
+        jLabel36.setBounds(265, 104, 70, 15);
+
+        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField20ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField20);
+        jTextField20.setBounds(146, 231, 116, 23);
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel37.setText("Nº Chip/Anilha");
+        jPanel3.add(jLabel37);
+        jLabel37.setBounds(149, 210, 90, 15);
+        jPanel3.add(jTextField21);
+        jTextField21.setBounds(80, 320, 510, 38);
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel38.setText("Observação");
+        jPanel3.add(jLabel38);
+        jLabel38.setBounds(80, 300, 70, 15);
+
+        jCheckBox2.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox2.setText("Óbito");
+        jPanel3.add(jCheckBox2);
+        jCheckBox2.setBounds(16, 324, 51, 23);
+        jPanel3.add(jDateChooser2);
+        jDateChooser2.setBounds(260, 120, 87, 20);
+
+        jPanel6.add(jPanel3);
+        jPanel3.setBounds(10, 80, 610, 370);
 
         jTabbedPane1.addTab("Animal", jPanel6);
 
@@ -608,6 +830,34 @@ public class Animal extends javax.swing.JFrame {
         aju.setVisible(true);
     }//GEN-LAST:event_btnAjudaActionPerformed
 
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton7ActionPerformed
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField20ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -664,9 +914,13 @@ public class Animal extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -683,19 +937,49 @@ public class Animal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;

@@ -68,6 +68,33 @@ public class Produtos extends javax.swing.JFrame {
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        jComboBox4 = new javax.swing.JComboBox();
+        jComboBox5 = new javax.swing.JComboBox();
+        jComboBox6 = new javax.swing.JComboBox();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
@@ -282,6 +309,110 @@ public class Produtos extends javax.swing.JFrame {
         jButton21.setText("Excluir");
         jPanel6.add(jButton21);
         jButton21.setBounds(414, 446, 95, 35);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserir Produtos"));
+        jPanel3.setLayout(null);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("Validade");
+        jPanel3.add(jLabel12);
+        jLabel12.setBounds(375, 150, 61, 15);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setText("Produto");
+        jPanel3.add(jLabel16);
+        jLabel16.setBounds(16, 27, 51, 15);
+        jPanel3.add(jTextField6);
+        jTextField6.setBounds(16, 50, 251, 20);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("EAN");
+        jPanel3.add(jLabel19);
+        jLabel19.setBounds(16, 91, 24, 15);
+        jPanel3.add(jTextField9);
+        jTextField9.setBounds(16, 112, 134, 20);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel24.setText("NCM");
+        jPanel3.add(jLabel24);
+        jLabel24.setBounds(168, 91, 27, 15);
+        jPanel3.add(jTextField14);
+        jTextField14.setBounds(168, 112, 154, 20);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel25.setText("Categoria");
+        jPanel3.add(jLabel25);
+        jLabel25.setBounds(16, 150, 59, 15);
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel26.setText("Fornecedor");
+        jPanel3.add(jLabel26);
+        jLabel26.setBounds(160, 150, 68, 15);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel27.setText("Observação");
+        jPanel3.add(jLabel27);
+        jLabel27.setBounds(16, 259, 70, 15);
+        jPanel3.add(jTextField15);
+        jTextField15.setBounds(16, 285, 515, 20);
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel28.setText("Marca");
+        jPanel3.add(jLabel28);
+        jLabel28.setBounds(303, 27, 36, 15);
+        jPanel3.add(jTextField16);
+        jTextField16.setBounds(303, 48, 154, 20);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Medicamentos", "Estética", "Materiais Cirúrgicos", "Materiais Descartáveis" }));
+        jPanel3.add(jComboBox4);
+        jComboBox4.setBounds(16, 171, 120, 20);
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Farma Pet", "PetCLean", "Cirur-cão", "Pet Embalagens" }));
+        jPanel3.add(jComboBox5);
+        jComboBox5.setBounds(160, 171, 120, 20);
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "UN", "KG", "PT", "LT", " " }));
+        jPanel3.add(jComboBox6);
+        jComboBox6.setBounds(298, 171, 50, 20);
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setText("Unidade");
+        jPanel3.add(jLabel29);
+        jLabel29.setBounds(298, 150, 59, 15);
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel30.setText("Valor Unidade");
+        jPanel3.add(jLabel30);
+        jLabel30.setBounds(114, 212, 84, 15);
+        jPanel3.add(jTextField17);
+        jTextField17.setBounds(114, 233, 84, 20);
+        jPanel3.add(jTextField18);
+        jTextField18.setBounds(16, 233, 80, 20);
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel31.setText("Estoque Min.");
+        jPanel3.add(jLabel31);
+        jLabel31.setBounds(16, 212, 80, 15);
+        jPanel3.add(jTextField19);
+        jTextField19.setBounds(216, 233, 84, 20);
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel32.setText("Lucro(%)");
+        jPanel3.add(jLabel32);
+        jLabel32.setBounds(216, 212, 84, 15);
+        jPanel3.add(jTextField20);
+        jTextField20.setBounds(318, 233, 84, 20);
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setText("Valor Venda");
+        jPanel3.add(jLabel33);
+        jLabel33.setBounds(318, 212, 84, 15);
+        jPanel3.add(jDateChooser2);
+        jDateChooser2.setBounds(370, 170, 87, 20);
+
+        jPanel6.add(jPanel3);
+        jPanel3.setBounds(10, 90, 610, 330);
 
         jTabbedPane1.addTab("Produto", jPanel6);
 
@@ -544,25 +675,43 @@ public class Produtos extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
+    private javax.swing.JComboBox jComboBox6;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
@@ -570,12 +719,21 @@ public class Produtos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private java.awt.Label label1;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables

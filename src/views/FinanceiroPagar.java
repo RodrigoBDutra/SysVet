@@ -1,18 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
-/**
- *
- * @author Rafael
- */
 public class FinanceiroPagar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FinanceiroPagarConsultar
-     */
     public FinanceiroPagar() {
         initComponents();
     }
@@ -295,7 +284,7 @@ public class FinanceiroPagar extends javax.swing.JFrame {
         jDateChooser2.setBounds(10, 150, 87, 20);
 
         jPanel6.add(jPanel2);
-        jPanel2.setBounds(11, 78, 0, 0);
+        jPanel2.setBounds(9, 76, 610, 360);
 
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         jButton21.setText("Excluir");
