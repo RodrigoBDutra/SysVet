@@ -98,6 +98,35 @@ public class Proprietario extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
         jDateChooser4 = new com.toedter.calendar.JDateChooser();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField29 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField31 = new javax.swing.JTextField();
+        jTextField32 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jTextField35 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox();
+        jLabel44 = new javax.swing.JLabel();
+        jTextField36 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jTextField37 = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jTextField38 = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jTextField39 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jDateChooser5 = new com.toedter.calendar.JDateChooser();
+        jDateChooser6 = new com.toedter.calendar.JDateChooser();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
@@ -467,7 +496,139 @@ public class Proprietario extends javax.swing.JFrame {
         jDateChooser4.setBounds(132, 188, 87, 20);
 
         jPanel6.add(jPanel2);
-        jPanel2.setBounds(20, 80, 602, 360);
+        jPanel2.setBounds(20, 80, 0, 0);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Proprietário"));
+        jPanel3.setLayout(null);
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel37.setText("Nome");
+        jPanel3.add(jLabel37);
+        jLabel37.setBounds(6, 22, 34, 15);
+
+        jTextField29.setText("Joao Candido Vieira");
+        jPanel3.add(jTextField29);
+        jTextField29.setBounds(6, 42, 337, 20);
+
+        jTextField30.setText("365.052.368-05");
+        jPanel3.add(jTextField30);
+        jTextField30.setBounds(361, 42, 103, 20);
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel38.setText("CPF");
+        jPanel3.add(jLabel38);
+        jLabel38.setBounds(361, 22, 22, 15);
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel39.setText("RG");
+        jPanel3.add(jLabel39);
+        jLabel39.setBounds(482, 22, 17, 15);
+
+        jTextField31.setText("368.553.748-2");
+        jPanel3.add(jTextField31);
+        jTextField31.setBounds(482, 42, 104, 20);
+
+        jTextField32.setText("Rua: Serra do Itaqueri");
+        jPanel3.add(jTextField32);
+        jTextField32.setBounds(6, 89, 337, 20);
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel40.setText("Endereço");
+        jPanel3.add(jLabel40);
+        jLabel40.setBounds(6, 68, 66, 15);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("Data Nascimento");
+        jPanel3.add(jLabel12);
+        jLabel12.setBounds(6, 167, 103, 15);
+
+        jTextField33.setText("Pq. Cruzeiro");
+        jPanel3.add(jTextField33);
+        jTextField33.setBounds(361, 89, 103, 20);
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel41.setText("Bairro");
+        jPanel3.add(jLabel41);
+        jLabel41.setBounds(361, 68, 66, 15);
+
+        jTextField34.setText("08070-080");
+        jPanel3.add(jTextField34);
+        jTextField34.setBounds(482, 89, 104, 20);
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setText("CEP");
+        jPanel3.add(jLabel42);
+        jLabel42.setBounds(482, 68, 66, 15);
+
+        jTextField35.setText("São Paulo");
+        jPanel3.add(jTextField35);
+        jTextField35.setBounds(6, 141, 238, 20);
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel43.setText("Cidade");
+        jPanel3.add(jLabel43);
+        jLabel43.setBounds(6, 121, 51, 15);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SP", "RJ", "ES", "MS", "CE" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox4);
+        jComboBox4.setBounds(265, 141, 39, 20);
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel44.setText("Estado");
+        jPanel3.add(jLabel44);
+        jLabel44.setBounds(262, 121, 42, 15);
+
+        jTextField36.setText("(11)1111-1111");
+        jPanel3.add(jTextField36);
+        jTextField36.setBounds(322, 141, 123, 20);
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel45.setText("Telefone Residencial");
+        jPanel3.add(jLabel45);
+        jLabel45.setBounds(322, 121, 123, 15);
+
+        jTextField37.setText("(11)1111-1111");
+        jPanel3.add(jTextField37);
+        jTextField37.setBounds(463, 141, 123, 20);
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel46.setText("Telefone Celular");
+        jPanel3.add(jLabel46);
+        jLabel46.setBounds(463, 121, 97, 15);
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel47.setText("Data Cadastro");
+        jPanel3.add(jLabel47);
+        jLabel47.setBounds(131, 167, 88, 15);
+
+        jTextField38.setText("email@email.com.br");
+        jPanel3.add(jTextField38);
+        jTextField38.setBounds(256, 188, 330, 20);
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel48.setText("E-mail");
+        jPanel3.add(jLabel48);
+        jLabel48.setBounds(256, 168, 51, 15);
+        jPanel3.add(jTextField39);
+        jTextField39.setBounds(6, 229, 580, 107);
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel49.setText("Observação");
+        jPanel3.add(jLabel49);
+        jLabel49.setBounds(6, 208, 70, 15);
+        jPanel3.add(jDateChooser5);
+        jDateChooser5.setBounds(10, 180, 87, 20);
+        jPanel3.add(jDateChooser6);
+        jDateChooser6.setBounds(130, 180, 87, 20);
+
+        jPanel6.add(jPanel3);
+        jPanel3.setBounds(20, 84, 602, 360);
 
         jTabbedPane1.addTab("Proprietário", jPanel6);
 
@@ -685,6 +846,10 @@ public class Proprietario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -741,12 +906,16 @@ public class Proprietario extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private com.toedter.calendar.JDateChooser jDateChooser4;
+    private com.toedter.calendar.JDateChooser jDateChooser5;
+    private com.toedter.calendar.JDateChooser jDateChooser6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -772,12 +941,26 @@ public class Proprietario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField10;
@@ -799,6 +982,17 @@ public class Proprietario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
+    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
