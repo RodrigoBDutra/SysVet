@@ -412,7 +412,7 @@ public class Animal extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Animal"));
         jPanel3.setLayout(null);
         jPanel3.add(jTextField13);
-        jTextField13.setBounds(16, 64, 321, 20);
+        jTextField13.setBounds(16, 64, 321, 28);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Nome do Animal");

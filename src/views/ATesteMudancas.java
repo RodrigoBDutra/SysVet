@@ -35,11 +35,9 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jTextField29 = new javax.swing.JTextField();
         jTextField30 = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         jTextField31 = new javax.swing.JTextField();
         jTextField32 = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
         jTextField33 = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jTextField34 = new javax.swing.JTextField();
@@ -56,26 +54,25 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         jTextField39 = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jDateChooser5 = new com.toedter.calendar.JDateChooser();
         jDateChooser6 = new com.toedter.calendar.JDateChooser();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
         jTextField40 = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jTextField41 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
         jLabel54 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jComboBox6 = new javax.swing.JComboBox();
+        jLabel55 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jDateChooser5 = new com.toedter.calendar.JDateChooser();
+        jLabel43 = new javax.swing.JLabel();
         jButton17 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jTextField22 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
@@ -192,25 +189,20 @@ public class ATesteMudancas extends javax.swing.JFrame {
 
         jTextField29.setText("Joao Candido Vieira");
         jPanel7.add(jTextField29);
-        jTextField29.setBounds(10, 30, 450, 28);
+        jTextField29.setBounds(10, 30, 480, 28);
 
         jTextField30.setText("365.052.368-05");
         jPanel7.add(jTextField30);
-        jTextField30.setBounds(10, 80, 110, 28);
+        jTextField30.setBounds(140, 80, 110, 28);
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel40.setText("CPF");
         jPanel7.add(jLabel40);
-        jLabel40.setBounds(10, 60, 22, 15);
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel41.setText("RG");
-        jPanel7.add(jLabel41);
-        jLabel41.setBounds(140, 60, 17, 15);
+        jLabel40.setBounds(140, 60, 22, 15);
 
         jTextField31.setText("368.553.748-2");
         jPanel7.add(jTextField31);
-        jTextField31.setBounds(140, 80, 110, 28);
+        jTextField31.setBounds(280, 80, 110, 28);
 
         jTextField32.setText("Rua: Serra do Itaqueri");
         jPanel7.add(jTextField32);
@@ -220,11 +212,6 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jLabel42.setText("Endereço");
         jPanel7.add(jLabel42);
         jLabel42.setBounds(10, 160, 66, 15);
-
-        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel43.setText("Data Nascimento");
-        jPanel7.add(jLabel43);
-        jLabel43.setBounds(480, 10, 103, 15);
 
         jTextField33.setText("Pq. Cruzeiro");
         jPanel7.add(jTextField33);
@@ -302,25 +289,9 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jPanel7.add(jLabel52);
         jLabel52.setBounds(10, 260, 70, 15);
 
-        jDateChooser5.setBackground(new java.awt.Color(153, 153, 153));
-        jDateChooser5.setAlignmentX(0.0F);
-        jDateChooser5.setAlignmentY(0.0F);
-        jPanel7.add(jDateChooser5);
-        jDateChooser5.setBounds(480, 30, 140, 28);
-
         jDateChooser6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel7.add(jDateChooser6);
         jDateChooser6.setBounds(490, 230, 130, 28);
-
-        jRadioButton9.setBackground(new java.awt.Color(153, 153, 153));
-        jRadioButton9.setText("Pessoa Física");
-        jPanel7.add(jRadioButton9);
-        jRadioButton9.setBounds(280, 80, 89, 23);
-
-        jRadioButton10.setBackground(new java.awt.Color(153, 153, 153));
-        jRadioButton10.setText("Pessoa Jurídica");
-        jPanel7.add(jRadioButton10);
-        jRadioButton10.setBounds(380, 80, 100, 23);
         jPanel7.add(jTextField40);
         jTextField40.setBounds(420, 230, 50, 28);
 
@@ -330,10 +301,6 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jLabel53.setBounds(420, 160, 20, 15);
         jPanel7.add(jTextField41);
         jTextField41.setBounds(420, 180, 50, 28);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Rex", " " }));
-        jPanel7.add(jComboBox1);
-        jComboBox1.setBounds(10, 330, 240, 28);
 
         jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel54.setText("Estado");
@@ -349,7 +316,7 @@ public class ATesteMudancas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton11);
-        jButton11.setBounds(300, 320, 30, 35);
+        jButton11.setBounds(590, 380, 30, 35);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -358,10 +325,111 @@ public class ATesteMudancas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton14);
-        jButton14.setBounds(260, 320, 30, 35);
+        jButton14.setBounds(590, 330, 30, 35);
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
+        jButton13.setText("Consultar");
+        jButton13.setToolTipText("");
+        jButton13.setPreferredSize(new java.awt.Dimension(100, 35));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton13);
+        jButton13.setBounds(501, 30, 120, 28);
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pessoa Física", "Pessoa Jurídica" }));
+        jPanel7.add(jComboBox6);
+        jComboBox6.setBounds(420, 80, 100, 28);
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel55.setText("RG");
+        jPanel7.add(jLabel55);
+        jLabel55.setBounds(280, 60, 17, 15);
+
+        jTable2.setBorder(new javax.swing.border.MatteBorder(null));
+        jTable2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Rex", "1", "R$10,00", "R$10,00"},
+                {"Pou", "1", "R$200,00", "R$200,00"},
+                {"Bila", "2", "R$150,00", "R$300,00"},
+                {"Miau", "1", "R$30,00", "R$30,00"},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "CLIENTE", "ESPÉCIE", "RAÇA", "Nº CHIP/ANILHA"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTable2AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel7.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 330, 570, 90);
+
+        jDateChooser5.setBackground(new java.awt.Color(153, 153, 153));
+        jDateChooser5.setAlignmentX(0.0F);
+        jDateChooser5.setAlignmentY(0.0F);
+        jPanel7.add(jDateChooser5);
+        jDateChooser5.setBounds(10, 80, 110, 28);
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel43.setText("Data Nascimento");
+        jPanel7.add(jLabel43);
+        jLabel43.setBounds(10, 60, 103, 15);
 
         jPanel5.add(jPanel7);
-        jPanel7.setBounds(9, 84, 630, 370);
+        jPanel7.setBounds(9, 24, 630, 430);
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton17.setText("Cancelar");
@@ -392,37 +460,6 @@ public class ATesteMudancas extends javax.swing.JFrame {
         jLabel8.setText("Proprietário");
         jPanel5.add(jLabel8);
         jLabel8.setBounds(280, 0, 80, 15);
-
-        jPanel8.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel8.setLayout(null);
-
-        jTextField22.setText("Joao Candido Vieira");
-        jTextField22.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField22.setMinimumSize(new java.awt.Dimension(6, 16));
-        jTextField22.setPreferredSize(new java.awt.Dimension(100, 17));
-        jPanel8.add(jTextField22);
-        jTextField22.setBounds(10, 20, 450, 28);
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Nome");
-        jPanel8.add(jLabel7);
-        jLabel7.setBounds(10, 0, 40, 15);
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton13.setText("Consultar");
-        jButton13.setToolTipText("");
-        jButton13.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton13);
-        jButton13.setBounds(470, 10, 121, 35);
-
-        jPanel5.add(jPanel8);
-        jPanel8.setBounds(10, 20, 630, 60);
 
         jTabbedPane1.addTab("Proprietário", jPanel5);
 
@@ -1176,6 +1213,10 @@ public class ATesteMudancas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField38ActionPerformed
 
+    private void jTable2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable2AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable2AncestorAdded
+
     /**
      * @param args the command line arguments
      */
@@ -1241,11 +1282,11 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JButton jButton26;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
     private javax.swing.JComboBox jComboBox5;
+    private javax.swing.JComboBox jComboBox6;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser5;
@@ -1283,7 +1324,6 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -1298,8 +1338,8 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1308,9 +1348,7 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
@@ -1318,8 +1356,9 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -1332,7 +1371,6 @@ public class ATesteMudancas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
