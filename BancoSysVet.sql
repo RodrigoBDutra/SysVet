@@ -31,5 +31,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
+insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Administrador','sysvet','sysvet','11111111111','n');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
