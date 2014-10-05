@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
         String login = loginIn.getText();
         String senha = senhaIn.getText();
         if (ba.login(login, senha)) {
-            Inicio a = new Inicio();
+            Home a = new Home();
             a.setVisible(true);
             this.setVisible(false);
 
@@ -197,7 +197,7 @@ public class Login extends javax.swing.JFrame {
             String login = loginIn.getText();
             String senha = senhaIn.getText();
             if (ba.login(login, senha)) {
-                Inicio a = new Inicio();
+                Home a = new Home();
                 a.setVisible(true);
                 this.setVisible(false);
 

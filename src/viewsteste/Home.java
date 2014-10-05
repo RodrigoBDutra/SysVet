@@ -3,12 +3,14 @@ package viewsteste;
 import classes.Transferencia;
 import classes.Usuario;
 import dao.Banco;
+import java.awt.CardLayout;
 
 import javax.swing.*;
 
 public class Home extends javax.swing.JFrame {
 
     Banco ba = new Banco();
+     private CardLayout card;
     
 
     public Home() {
@@ -16,6 +18,7 @@ public class Home extends javax.swing.JFrame {
         initComponents();
 
         lblFulano.setText("Bem vindo " + Transferencia.logado.getNome());
+         card = new CardLayout();
 
     }
     
@@ -255,6 +258,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Inicio());
             bInicio = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnProprietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProprietarioActionPerformed
@@ -264,6 +268,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Proprietario());
             bProprietario = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnProprietarioActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
@@ -274,6 +279,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Estoque());
             bEstoque = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
@@ -284,6 +290,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Servico());
             bServicos = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnServicosActionPerformed
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
@@ -294,6 +301,8 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Agenda());
             bAgenda = false;
         }
+        this.card.show(this.pnConteudo,"");
+        
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
@@ -304,6 +313,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Vendas());
             bVendas = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnVendasActionPerformed
 
     private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
@@ -314,6 +324,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Financeiro());
             bFinanceiro = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
@@ -324,6 +335,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Produtos());
             bProdutos = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnProdutosActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
@@ -333,6 +345,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Configuracao());
             bConfiguracoes = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -368,6 +381,7 @@ public class Home extends javax.swing.JFrame {
             pnConteudo.add(new Fornecedor());
             bFornecedor = false;
         }
+        this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnFornecedorActionPerformed
 
 
