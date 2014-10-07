@@ -218,6 +218,7 @@ public class Home extends javax.swing.JFrame {
         btnSuporte.setBounds(690, 550, 80, 50);
 
         pnConteudo.setName(""); // NOI18N
+        pnConteudo.setPreferredSize(new java.awt.Dimension(660, 560));
 
         javax.swing.GroupLayout pnConteudoLayout = new javax.swing.GroupLayout(pnConteudo);
         pnConteudo.setLayout(pnConteudoLayout);

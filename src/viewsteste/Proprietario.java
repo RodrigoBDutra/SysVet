@@ -147,6 +147,8 @@ public class Proprietario extends javax.swing.JPanel {
         jCheckBox2 = new javax.swing.JCheckBox();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
+        setLayout(null);
+
         jtpPropCli.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jpProprietario.setBackground(new java.awt.Color(153, 153, 153));
@@ -855,26 +857,8 @@ public class Proprietario extends javax.swing.JPanel {
 
         jtpPropCli.addTab("Cliente", jpCliente);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jtpPropCli, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jtpPropCli, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jtpPropCli);
+        jtpPropCli.setBounds(10, 11, 650, 537);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38ActionPerformed
@@ -882,9 +866,7 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField38ActionPerformed
 
     private void adicionarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarClienteMouseClicked
-        jpProprietario.setVisible(false);
-        //jpCliente.setSelectedIndex();
-        jpCliente.setVisible(true);
+        jtpPropCli.setSelectedIndex(1);
         nomeCliente.requestFocusInWindow();
     }//GEN-LAST:event_adicionarClienteMouseClicked
 
