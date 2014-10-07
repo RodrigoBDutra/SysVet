@@ -1,7 +1,6 @@
 package viewsteste;
 
-import classes.Transferencia;
-import classes.Usuario;
+import classes.*;
 import dao.Banco;
 import java.awt.CardLayout;
 
@@ -10,20 +9,24 @@ import javax.swing.*;
 public class Home extends javax.swing.JFrame {
 
     Banco ba = new Banco();
-     private CardLayout card;
-    
+    private CardLayout card;
 
     public Home() {
 
         initComponents();
-
         lblFulano.setText("Bem vindo " + Transferencia.logado.getNome());
-         card = new CardLayout();
-         pnConteudo.setLayout(card);
-         pnConteudo.add(new Inicio());
+        card = new CardLayout();
+        pnConteudo.setLayout(card);
+        pnConteudo.add(new Inicio());
+
+        if (Transferencia.logado.getCodigo() == 1) {
+            btnConfiguracoes.setVisible(true);
+        } else {
+            btnConfiguracoes.setVisible(false);
+        }
 
     }
-    
+
     boolean bInicio = true;
     boolean bProprietario = true;
     boolean bAgenda = true;
@@ -64,7 +67,11 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
-        setFocusableWindowState(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -212,6 +219,7 @@ public class Home extends javax.swing.JFrame {
         btnSuporte.setBounds(690, 550, 80, 50);
 
         pnConteudo.setName(""); // NOI18N
+        pnConteudo.setPreferredSize(new java.awt.Dimension(660, 560));
 
         javax.swing.GroupLayout pnConteudoLayout = new javax.swing.GroupLayout(pnConteudo);
         pnConteudo.setLayout(pnConteudoLayout);
@@ -251,28 +259,24 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
+
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
         Inicio i = new Inicio();
         i.setVisible(true);
         if (bInicio) {
-            pnConteudo.add(new Inicio(),"");
-            
+            pnConteudo.add(new Inicio(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnProprietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProprietarioActionPerformed
         Proprietario p = new Proprietario();
         p.setVisible(true);
         if (bProprietario) {
-            pnConteudo.add(new Proprietario(),"");
-            
+            pnConteudo.add(new Proprietario(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnProprietarioActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
@@ -280,10 +284,9 @@ public class Home extends javax.swing.JFrame {
         Estoque e = new Estoque();
         e.setVisible(true);
         if (bEstoque) {
-            pnConteudo.add(new Estoque(),"");
-           
+            pnConteudo.add(new Estoque(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
@@ -291,10 +294,9 @@ public class Home extends javax.swing.JFrame {
         Servico s = new Servico();
         s.setVisible(true);
         if (bServicos) {
-            pnConteudo.add(new Servico(),"");
-            
+            pnConteudo.add(new Servico(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnServicosActionPerformed
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
@@ -302,11 +304,10 @@ public class Home extends javax.swing.JFrame {
         Agenda a = new Agenda();
         a.setVisible(true);
         if (bAgenda) {
-            pnConteudo.add(new Agenda(),"");
-            
+            pnConteudo.add(new Agenda(), "");
         }
-        this.card.show(this.pnConteudo,"");
-        
+        this.card.show(this.pnConteudo, "");
+
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
@@ -314,10 +315,9 @@ public class Home extends javax.swing.JFrame {
         Vendas v = new Vendas();
         v.setVisible(true);
         if (bVendas) {
-            pnConteudo.add(new Vendas(),"");
-            
+            pnConteudo.add(new Vendas(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnVendasActionPerformed
 
     private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
@@ -325,10 +325,9 @@ public class Home extends javax.swing.JFrame {
         Financeiro f = new Financeiro();
         f.setVisible(true);
         if (bFinanceiro) {
-            pnConteudo.add(new Financeiro(),"");
-           
+            pnConteudo.add(new Financeiro(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
@@ -336,20 +335,18 @@ public class Home extends javax.swing.JFrame {
         Produtos pr = new Produtos();
         pr.setVisible(true);
         if (bProdutos) {
-            pnConteudo.add(new Produtos(),"");
-            
+            pnConteudo.add(new Produtos(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnProdutosActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
         Configuracao c = new Configuracao();
         c.setVisible(true);
         if (bConfiguracoes) {
-            pnConteudo.add(new Configuracao(),"");
-            
+            pnConteudo.add(new Configuracao(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -357,7 +354,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnLogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoffMouseClicked
-        //ba.logoff(Transferencia.logado.getLogin());
+        ba.logoff(Transferencia.logado.getLogin());
         Login log = new Login();
         this.setVisible(false);
         log.setVisible(true);
@@ -382,11 +379,19 @@ public class Home extends javax.swing.JFrame {
         Fornecedor fo = new Fornecedor();
         fo.setVisible(true);
         if (bFornecedor) {
-            pnConteudo.add(new Fornecedor(),"");
-            
+            pnConteudo.add(new Fornecedor(), "");
         }
-        this.card.show(this.pnConteudo,"");
+        this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnFornecedorActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        int sair = JOptionPane.showConfirmDialog(null, "Você realmente deseja sair do sistema?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        if (sair == JOptionPane.YES_OPTION) {
+            ba.logoff(Transferencia.logado.getLogin());
+        } else if (sair == JOptionPane.NO_OPTION) {
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -138,5 +138,26 @@ public class Proprietario {
         this.observacao = observacao;
     }
     
+    public Proprietario(){
+    }
+    
+   public Proprietario(String nome, String data, int cpf, String rg, int telResidencia, int telCelular, String email, String endereco, int numero, int cep, String bairro, String cidade, char estado, String dataCadastro, String observacao){
+        this.nome = nome;
+        this.data = data;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.telResidencia = telResidencia;
+        this.telCelular = telCelular;
+        this.email = email;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.cep = cep;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.dataCadastro = dataCadastro;
+        this.observacao = observacao;        
+    } 
+    
     
 }
