@@ -74,40 +74,6 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel39 = new javax.swing.JLabel();
         jTextField29 = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        txtNomePropH = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton19 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        txtNomeCliH = new javax.swing.JTextField();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton27 = new javax.swing.JButton();
-        jLabel41 = new javax.swing.JLabel();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel56 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
         jpCliente = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
@@ -183,6 +149,42 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel38 = new javax.swing.JLabel();
         jCheckBox2 = new javax.swing.JCheckBox();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jPanel6 = new javax.swing.JPanel();
+        jButton10 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtNomePropH = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jButton19 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jButton14 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        txtNomeCliH = new javax.swing.JTextField();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jButton27 = new javax.swing.JButton();
+        jLabel41 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+
+        setLayout(null);
 
         jtpPropCli.setBackground(new java.awt.Color(204, 204, 204));
         jtpPropCli.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -492,390 +494,6 @@ public class Proprietario extends javax.swing.JPanel {
         jButton13.setBounds(510, 30, 120, 28);
 
         jtpPropCli.addTab("Proprietário", jpProprietario);
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setLayout(null);
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton10.setText("Consultar");
-        jButton10.setToolTipText("");
-        jButton10.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton10);
-        jButton10.setBounds(360, 30, 121, 35);
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton12.setText("Inserir");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton12);
-        jButton12.setBounds(510, 30, 113, 35);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Proprietário");
-        jPanel6.add(jLabel5);
-        jLabel5.setBounds(20, 12, 73, 15);
-
-        txtNomePropH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomePropHActionPerformed(evt);
-            }
-        });
-        jPanel6.add(txtNomePropH);
-        txtNomePropH.setBounds(20, 30, 334, 28);
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Histórico Proprietário");
-        jPanel6.add(jLabel7);
-        jLabel7.setBounds(268, 1, 131, 15);
-
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Proprietário"));
-
-        jTable3.setBorder(new javax.swing.border.MatteBorder(null));
-        jTable3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Rex", "22/02/2014", "15:00", "Dinheiro", "25/03/2014", "R$100,00", "Pago"},
-                {"Rex", "22/02/2014", "13:30", "Débito", "25/03/2014", "R$200,00", "Pago"},
-                {"Jhony", "21/01/2014", "10:00", "Crédito", "19/02/2014", "R$150,00", "Pago"},
-                {"Rex", "13/03/2014", "7:00", "Dinheiro", "27/03/2014", "R$30,00", "Pago"},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ANIMAL", "ATENDIMENTO", "HORÁRIO", "PAGAMENTO", "DATA PAG.", "VALOR", "STATUS"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable3.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTable3AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane3.setViewportView(jTable3);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(5, 5, 5)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        jPanel6.add(jPanel5);
-        jPanel5.setBounds(11, 68, 613, 370);
-
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
-        jButton19.setText("Voltar");
-        jPanel6.add(jButton19);
-        jButton19.setBounds(480, 450, 140, 35);
-
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
-        jButton25.setText("Imprimir");
-        jPanel6.add(jButton25);
-        jButton25.setBounds(330, 450, 140, 35);
-
-        jtpPropCli.addTab("Histórico Proprietário", jPanel6);
-
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setLayout(null);
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton14.setText("Consultar");
-        jButton14.setToolTipText("");
-        jButton14.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton14);
-        jButton14.setBounds(360, 30, 121, 35);
-
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton26.setText("Inserir");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton26);
-        jButton26.setBounds(500, 30, 113, 35);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setText("Animal");
-        jPanel7.add(jLabel9);
-        jLabel9.setBounds(20, 12, 41, 15);
-
-        txtNomeCliH.setText("Rex");
-        jPanel7.add(txtNomeCliH);
-        txtNomeCliH.setBounds(20, 30, 334, 28);
-
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Animal"));
-
-        jTable4.setBorder(new javax.swing.border.MatteBorder(null));
-        jTable4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"22/02/2014", "15:00", "Dr. Edvaldo", "Adalberto Batista", "Rex", "Cirurgia", "Aguardando"},
-                {"22/02/2014", "13:30", "Dr. Rafael", "Adalberto Batista", "Rex", "Exame", "Realizado"},
-                {"21/01/2014", "10:00", "Dra. Fernanda", "Adalberto Batista", "Rex", "Consulta", "Realizado"},
-                {"13/03/2014", "7:00", "Dr. Rafael", "Adalberto Batista", "Rex", "Consulta", "Cancelaldo"},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ATENDIMENTO", "HORÁRIO", "CLINICO", "PROPRIETÁRIO", "CLIENTE", "TIPO", "STATUS"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable4.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTable4AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane4.setViewportView(jTable4);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addGap(5, 5, 5)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        jPanel7.add(jPanel8);
-        jPanel8.setBounds(11, 86, 613, 370);
-
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/kedit.png"))); // NOI18N
-        jButton27.setText("Prontuário");
-        jPanel7.add(jButton27);
-        jButton27.setBounds(340, 460, 140, 35);
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel41.setText("Histórico do Animal");
-        jPanel7.add(jLabel41);
-        jLabel41.setBounds(271, 1, 119, 15);
-
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
-        jButton28.setText("Imprimir");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton28);
-        jButton28.setBounds(200, 460, 130, 32);
-
-        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
-        jButton29.setText("Voltar");
-        jPanel7.add(jButton29);
-        jButton29.setBounds(490, 460, 130, 35);
-
-        jtpPropCli.addTab("Histórico Cliente", jPanel7);
-
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setLayout(null);
-
-        jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel56.setText("Prontuário");
-        jPanel9.add(jLabel56);
-        jLabel56.setBounds(290, 1, 66, 15);
-
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Prontuário");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Exames Laboratoriais");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Hemograma Completo");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Urina");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Fezes");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Exames de Imagem");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ultrasom");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Raio-X");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ressonancia Magnética");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tomografia");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Outros Procedimentos");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Exames Psicológicos");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Exames Bacterológicos");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Virais");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Procedimentos Cirúrgicos");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Outros");
-        treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane5.setViewportView(jTree1);
-
-        jPanel9.add(jScrollPane5);
-        jScrollPane5.setBounds(1, 34, 177, 412);
-
-        jScrollPane1.setViewportView(jEditorPane1);
-
-        jPanel9.add(jScrollPane1);
-        jScrollPane1.setBounds(196, 34, 426, 412);
-
-        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
-        jButton30.setText("Imprimir");
-        jPanel9.add(jButton30);
-        jButton30.setBounds(150, 460, 140, 35);
-
-        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
-        jButton31.setText("Cancelar");
-        jPanel9.add(jButton31);
-        jButton31.setBounds(510, 460, 110, 35);
-
-        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/anexo.png"))); // NOI18N
-        jButton32.setText("Anexar Arquivo");
-        jPanel9.add(jButton32);
-        jButton32.setBounds(-1, 460, 150, 35);
-
-        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
-        jButton33.setText("Salvar");
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton33);
-        jButton33.setBounds(290, 460, 110, 35);
-
-        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        jButton34.setText("Excluir");
-        jPanel9.add(jButton34);
-        jButton34.setBounds(400, 460, 110, 35);
-
-        jtpPropCli.addTab("Prontuário Cliente", jPanel9);
 
         jpCliente.setBackground(new java.awt.Color(204, 204, 204));
         jpCliente.setLayout(null);
@@ -1302,6 +920,390 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.setBounds(10, 30, 620, 420);
 
         jtpPropCli.addTab("Cliente", jpCliente);
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setLayout(null);
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
+        jButton10.setText("Consultar");
+        jButton10.setToolTipText("");
+        jButton10.setPreferredSize(new java.awt.Dimension(100, 35));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton10);
+        jButton10.setBounds(360, 30, 121, 35);
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
+        jButton12.setText("Inserir");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton12);
+        jButton12.setBounds(510, 30, 113, 35);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Proprietário");
+        jPanel6.add(jLabel5);
+        jLabel5.setBounds(20, 12, 73, 15);
+
+        txtNomePropH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomePropHActionPerformed(evt);
+            }
+        });
+        jPanel6.add(txtNomePropH);
+        txtNomePropH.setBounds(20, 30, 334, 28);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("Histórico Proprietário");
+        jPanel6.add(jLabel7);
+        jLabel7.setBounds(268, 1, 131, 15);
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Proprietário"));
+
+        jTable3.setBorder(new javax.swing.border.MatteBorder(null));
+        jTable3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Rex", "22/02/2014", "15:00", "Dinheiro", "25/03/2014", "R$100,00", "Pago"},
+                {"Rex", "22/02/2014", "13:30", "Débito", "25/03/2014", "R$200,00", "Pago"},
+                {"Jhony", "21/01/2014", "10:00", "Crédito", "19/02/2014", "R$150,00", "Pago"},
+                {"Rex", "13/03/2014", "7:00", "Dinheiro", "27/03/2014", "R$30,00", "Pago"},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ANIMAL", "ATENDIMENTO", "HORÁRIO", "PAGAMENTO", "DATA PAG.", "VALOR", "STATUS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable3.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTable3AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(jTable3);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 347, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel6.add(jPanel5);
+        jPanel5.setBounds(11, 68, 613, 370);
+
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
+        jButton19.setText("Voltar");
+        jPanel6.add(jButton19);
+        jButton19.setBounds(480, 450, 140, 35);
+
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
+        jButton25.setText("Imprimir");
+        jPanel6.add(jButton25);
+        jButton25.setBounds(330, 450, 140, 35);
+
+        jtpPropCli.addTab("Histórico Proprietário", jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel7.setLayout(null);
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
+        jButton14.setText("Consultar");
+        jButton14.setToolTipText("");
+        jButton14.setPreferredSize(new java.awt.Dimension(100, 35));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton14);
+        jButton14.setBounds(360, 30, 121, 35);
+
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
+        jButton26.setText("Inserir");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton26);
+        jButton26.setBounds(500, 30, 113, 35);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Animal");
+        jPanel7.add(jLabel9);
+        jLabel9.setBounds(20, 12, 41, 15);
+
+        txtNomeCliH.setText("Rex");
+        jPanel7.add(txtNomeCliH);
+        txtNomeCliH.setBounds(20, 30, 334, 28);
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Animal"));
+
+        jTable4.setBorder(new javax.swing.border.MatteBorder(null));
+        jTable4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"22/02/2014", "15:00", "Dr. Edvaldo", "Adalberto Batista", "Rex", "Cirurgia", "Aguardando"},
+                {"22/02/2014", "13:30", "Dr. Rafael", "Adalberto Batista", "Rex", "Exame", "Realizado"},
+                {"21/01/2014", "10:00", "Dra. Fernanda", "Adalberto Batista", "Rex", "Consulta", "Realizado"},
+                {"13/03/2014", "7:00", "Dr. Rafael", "Adalberto Batista", "Rex", "Consulta", "Cancelaldo"},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ATENDIMENTO", "HORÁRIO", "CLINICO", "PROPRIETÁRIO", "CLIENTE", "TIPO", "STATUS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable4.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTable4AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 347, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel7.add(jPanel8);
+        jPanel8.setBounds(11, 86, 613, 370);
+
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/kedit.png"))); // NOI18N
+        jButton27.setText("Prontuário");
+        jPanel7.add(jButton27);
+        jButton27.setBounds(340, 460, 140, 35);
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel41.setText("Histórico do Animal");
+        jPanel7.add(jLabel41);
+        jLabel41.setBounds(271, 1, 119, 15);
+
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
+        jButton28.setText("Imprimir");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton28);
+        jButton28.setBounds(200, 460, 130, 32);
+
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
+        jButton29.setText("Voltar");
+        jPanel7.add(jButton29);
+        jButton29.setBounds(490, 460, 130, 35);
+
+        jtpPropCli.addTab("Histórico Cliente", jPanel7);
+
+        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setLayout(null);
+
+        jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel56.setText("Prontuário");
+        jPanel9.add(jLabel56);
+        jLabel56.setBounds(290, 1, 66, 15);
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Prontuário");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Exames Laboratoriais");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Hemograma Completo");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Urina");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Fezes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Exames de Imagem");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ultrasom");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Raio-X");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ressonancia Magnética");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tomografia");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Outros Procedimentos");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Exames Psicológicos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Exames Bacterológicos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Virais");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Procedimentos Cirúrgicos");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Outros");
+        treeNode1.add(treeNode2);
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane5.setViewportView(jTree1);
+
+        jPanel9.add(jScrollPane5);
+        jScrollPane5.setBounds(1, 34, 177, 412);
+
+        jScrollPane1.setViewportView(jEditorPane1);
+
+        jPanel9.add(jScrollPane1);
+        jScrollPane1.setBounds(196, 34, 426, 412);
+
+        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
+        jButton30.setText("Imprimir");
+        jPanel9.add(jButton30);
+        jButton30.setBounds(150, 460, 140, 35);
+
+        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
+        jButton31.setText("Cancelar");
+        jPanel9.add(jButton31);
+        jButton31.setBounds(510, 460, 110, 35);
+
+        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/anexo.png"))); // NOI18N
+        jButton32.setText("Anexar Arquivo");
+        jPanel9.add(jButton32);
+        jButton32.setBounds(-1, 460, 150, 35);
+
+        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
+        jButton33.setText("Salvar");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton33);
+        jButton33.setBounds(290, 460, 110, 35);
+
+        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
+        jButton34.setText("Excluir");
+        jPanel9.add(jButton34);
+        jButton34.setBounds(400, 460, 110, 35);
+
+        jtpPropCli.addTab("Prontuário Cliente", jPanel9);
 
         add(jtpPropCli);
         jtpPropCli.setBounds(10, 11, 650, 537);
