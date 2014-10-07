@@ -96,6 +96,7 @@ public class Login extends javax.swing.JFrame {
         jpLogin.add(jlEsqueceuSenha);
         jlEsqueceuSenha.setBounds(59, 192, 94, 20);
 
+        btnEntrar.setBackground(new java.awt.Color(0, 0, 0));
         btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botaoLogin.png"))); // NOI18N
         btnEntrar.setContentAreaFilled(false);
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {

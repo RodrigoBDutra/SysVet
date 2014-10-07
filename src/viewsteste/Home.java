@@ -19,6 +19,8 @@ public class Home extends javax.swing.JFrame {
 
         lblFulano.setText("Bem vindo " + Transferencia.logado.getNome());
          card = new CardLayout();
+         pnConteudo.setLayout(card);
+         pnConteudo.add(new Inicio());
 
     }
     
@@ -62,15 +64,17 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        setFocusableWindowState(false);
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(204, 204, 204));
         panel1.setLayout(null);
 
+        lblFulano.setAlignment(java.awt.Label.RIGHT);
         lblFulano.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblFulano.setText("Bem vindo Fulano!");
         panel1.add(lblFulano);
-        lblFulano.setBounds(817, 1, 117, 19);
+        lblFulano.setBounds(584, 1, 350, 19);
 
         getContentPane().add(panel1);
         panel1.setBounds(0, 0, 960, 20);
@@ -233,7 +237,7 @@ public class Home extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 594, Short.MAX_VALUE)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +247,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jInternalFrame1);
         jInternalFrame1.setBounds(50, 50, 610, 530);
 
-        setSize(new java.awt.Dimension(976, 640));
+        setSize(new java.awt.Dimension(975, 640));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -255,8 +259,8 @@ public class Home extends javax.swing.JFrame {
         Inicio i = new Inicio();
         i.setVisible(true);
         if (bInicio) {
-            pnConteudo.add(new Inicio());
-            bInicio = false;
+            pnConteudo.add(new Inicio(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnInicioActionPerformed
@@ -265,8 +269,8 @@ public class Home extends javax.swing.JFrame {
         Proprietario p = new Proprietario();
         p.setVisible(true);
         if (bProprietario) {
-            pnConteudo.add(new Proprietario());
-            bProprietario = false;
+            pnConteudo.add(new Proprietario(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnProprietarioActionPerformed
@@ -276,8 +280,8 @@ public class Home extends javax.swing.JFrame {
         Estoque e = new Estoque();
         e.setVisible(true);
         if (bEstoque) {
-            pnConteudo.add(new Estoque());
-            bEstoque = false;
+            pnConteudo.add(new Estoque(),"");
+           
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnEstoqueActionPerformed
@@ -287,8 +291,8 @@ public class Home extends javax.swing.JFrame {
         Servico s = new Servico();
         s.setVisible(true);
         if (bServicos) {
-            pnConteudo.add(new Servico());
-            bServicos = false;
+            pnConteudo.add(new Servico(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnServicosActionPerformed
@@ -298,8 +302,8 @@ public class Home extends javax.swing.JFrame {
         Agenda a = new Agenda();
         a.setVisible(true);
         if (bAgenda) {
-            pnConteudo.add(new Agenda());
-            bAgenda = false;
+            pnConteudo.add(new Agenda(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
         
@@ -310,8 +314,8 @@ public class Home extends javax.swing.JFrame {
         Vendas v = new Vendas();
         v.setVisible(true);
         if (bVendas) {
-            pnConteudo.add(new Vendas());
-            bVendas = false;
+            pnConteudo.add(new Vendas(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnVendasActionPerformed
@@ -321,8 +325,8 @@ public class Home extends javax.swing.JFrame {
         Financeiro f = new Financeiro();
         f.setVisible(true);
         if (bFinanceiro) {
-            pnConteudo.add(new Financeiro());
-            bFinanceiro = false;
+            pnConteudo.add(new Financeiro(),"");
+           
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnFinanceiroActionPerformed
@@ -332,8 +336,8 @@ public class Home extends javax.swing.JFrame {
         Produtos pr = new Produtos();
         pr.setVisible(true);
         if (bProdutos) {
-            pnConteudo.add(new Produtos());
-            bProdutos = false;
+            pnConteudo.add(new Produtos(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnProdutosActionPerformed
@@ -342,8 +346,8 @@ public class Home extends javax.swing.JFrame {
         Configuracao c = new Configuracao();
         c.setVisible(true);
         if (bConfiguracoes) {
-            pnConteudo.add(new Configuracao());
-            bConfiguracoes = false;
+            pnConteudo.add(new Configuracao(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
@@ -378,8 +382,8 @@ public class Home extends javax.swing.JFrame {
         Fornecedor fo = new Fornecedor();
         fo.setVisible(true);
         if (bFornecedor) {
-            pnConteudo.add(new Fornecedor());
-            bFornecedor = false;
+            pnConteudo.add(new Fornecedor(),"");
+            
         }
         this.card.show(this.pnConteudo,"");
     }//GEN-LAST:event_btnFornecedorActionPerformed

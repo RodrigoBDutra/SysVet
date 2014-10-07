@@ -54,7 +54,6 @@ public class Ajuda extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

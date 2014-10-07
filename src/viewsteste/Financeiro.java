@@ -16,6 +16,7 @@ public class Financeiro extends javax.swing.JPanel {
      */
     public Financeiro() {
         initComponents();
+        jpFinanceiro.setVisible(false);
     }
 
     /**
@@ -37,7 +38,7 @@ public class Financeiro extends javax.swing.JPanel {
         jButton20 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jpFinanceiro = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -76,17 +77,16 @@ public class Financeiro extends javax.swing.JPanel {
         jButton17 = new javax.swing.JButton();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Consultar Contas a Pagar");
+        jLabel5.setText("Financeiro");
         jPanel6.add(jLabel5);
-        jLabel5.setBounds(256, 1, 156, 15);
+        jLabel5.setBounds(256, 1, 61, 15);
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(jTextField6);
-        jTextField6.setBounds(11, 46, 324, 21);
+        jTextField6.setBounds(10, 40, 324, 28);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -113,7 +113,7 @@ public class Financeiro extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Fornecedor");
         jPanel6.add(jLabel14);
-        jLabel14.setBounds(11, 22, 68, 15);
+        jLabel14.setBounds(10, 20, 68, 15);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton20.setText("Histórico");
@@ -130,71 +130,71 @@ public class Financeiro extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(519, 446, 105, 35);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Contas à Pagar"));
-        jPanel2.setLayout(null);
+        jpFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
+        jpFinanceiro.setBorder(javax.swing.BorderFactory.createTitledBorder("Financeiro"));
+        jpFinanceiro.setLayout(null);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Data Emissão");
-        jPanel2.add(jLabel8);
+        jpFinanceiro.add(jLabel8);
         jLabel8.setBounds(16, 82, 81, 15);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Descrição");
-        jPanel2.add(jLabel6);
+        jpFinanceiro.add(jLabel6);
         jLabel6.setBounds(16, 24, 57, 15);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Valor Emitido");
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(133, 79, 81, 15);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(16, 45, 458, 20);
+        jpFinanceiro.add(jLabel7);
+        jLabel7.setBounds(180, 80, 81, 15);
+        jpFinanceiro.add(jTextField2);
+        jTextField2.setBounds(16, 45, 458, 28);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(133, 100, 107, 20);
-        jPanel2.add(jTextField13);
-        jTextField13.setBounds(16, 241, 581, 108);
+        jpFinanceiro.add(jTextField1);
+        jTextField1.setBounds(180, 100, 107, 28);
+        jpFinanceiro.add(jTextField13);
+        jTextField13.setBounds(16, 249, 581, 100);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Observação");
-        jPanel2.add(jLabel11);
-        jLabel11.setBounds(16, 220, 70, 15);
+        jpFinanceiro.add(jLabel11);
+        jLabel11.setBounds(20, 230, 70, 15);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(250, 100, 107, 20);
+        jpFinanceiro.add(jTextField3);
+        jTextField3.setBounds(300, 100, 107, 28);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Desconto (%)");
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(250, 79, 97, 15);
+        jpFinanceiro.add(jLabel9);
+        jLabel9.setBounds(300, 80, 97, 15);
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField7);
-        jTextField7.setBounds(367, 100, 107, 20);
+        jpFinanceiro.add(jTextField7);
+        jTextField7.setBounds(410, 100, 107, 28);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Valor");
-        jPanel2.add(jLabel10);
-        jLabel10.setBounds(367, 79, 97, 15);
+        jpFinanceiro.add(jLabel10);
+        jLabel10.setBounds(410, 80, 97, 15);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Data Venc.");
-        jPanel2.add(jLabel15);
+        jpFinanceiro.add(jLabel15);
         jLabel15.setBounds(16, 134, 66, 15);
 
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
@@ -202,79 +202,78 @@ public class Financeiro extends javax.swing.JPanel {
                 jTextField8ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField8);
-        jTextField8.setBounds(133, 155, 107, 20);
+        jpFinanceiro.add(jTextField8);
+        jTextField8.setBounds(180, 160, 107, 28);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setText("Juros(%)");
-        jPanel2.add(jLabel16);
-        jLabel16.setBounds(133, 134, 57, 15);
+        jpFinanceiro.add(jLabel16);
+        jLabel16.setBounds(180, 140, 57, 15);
 
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField9);
-        jTextField9.setBounds(250, 155, 107, 20);
+        jpFinanceiro.add(jTextField9);
+        jTextField9.setBounds(300, 160, 107, 28);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Valor Multa");
-        jPanel2.add(jLabel17);
-        jLabel17.setBounds(250, 134, 70, 15);
+        jpFinanceiro.add(jLabel17);
+        jLabel17.setBounds(300, 140, 70, 15);
 
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField10);
-        jTextField10.setBounds(367, 155, 107, 20);
+        jpFinanceiro.add(jTextField10);
+        jTextField10.setBounds(410, 160, 107, 28);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setText("Valor");
-        jPanel2.add(jLabel18);
-        jLabel18.setBounds(367, 134, 31, 15);
+        jpFinanceiro.add(jLabel18);
+        jLabel18.setBounds(410, 140, 31, 15);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Situação");
-        jPanel2.add(jLabel12);
-        jLabel12.setBounds(16, 189, 53, 15);
+        jpFinanceiro.add(jLabel12);
+        jLabel12.setBounds(20, 200, 53, 15);
 
         jComboBox1.setForeground(new java.awt.Color(255, 51, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aguardando Pagamento", " " }));
-        jPanel2.add(jComboBox1);
-        jComboBox1.setBounds(79, 189, 252, 20);
+        jpFinanceiro.add(jComboBox1);
+        jComboBox1.setBounds(80, 200, 252, 28);
 
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField12);
-        jTextField12.setBounds(484, 45, 107, 20);
+        jpFinanceiro.add(jTextField12);
+        jTextField12.setBounds(484, 45, 107, 28);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("Nº Nota");
-        jPanel2.add(jLabel19);
+        jpFinanceiro.add(jLabel19);
         jLabel19.setBounds(484, 24, 97, 15);
-        jPanel2.add(jDateChooser1);
-        jDateChooser1.setBounds(10, 100, 87, 20);
-        jPanel2.add(jDateChooser2);
-        jDateChooser2.setBounds(10, 150, 87, 20);
+        jpFinanceiro.add(jDateChooser1);
+        jDateChooser1.setBounds(10, 100, 140, 28);
+        jpFinanceiro.add(jDateChooser2);
+        jDateChooser2.setBounds(10, 150, 140, 28);
 
-        jPanel6.add(jPanel2);
-        jPanel2.setBounds(9, 76, 610, 360);
+        jPanel6.add(jpFinanceiro);
+        jpFinanceiro.setBounds(9, 76, 610, 360);
 
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         jButton21.setText("Excluir");
         jPanel6.add(jButton21);
         jButton21.setBounds(414, 446, 95, 35);
 
-        jTabbedPane1.addTab("Contas a Pagar", jPanel6);
+        jTabbedPane1.addTab("Financeiro", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.setLayout(null);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -370,7 +369,7 @@ public class Financeiro extends javax.swing.JPanel {
         jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField11.setForeground(new java.awt.Color(204, 204, 204));
         jPanel7.add(jTextField11);
-        jTextField11.setBounds(11, 46, 324, 21);
+        jTextField11.setBounds(11, 46, 324, 28);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton11.setText("Consultar");
@@ -409,7 +408,7 @@ public class Financeiro extends javax.swing.JPanel {
         jPanel7.add(jButton17);
         jButton17.setBounds(521, 445, 103, 35);
 
-        jTabbedPane1.addTab("Histórico Contas a Pagar", jPanel7);
+        jTabbedPane1.addTab("Histórico Financeiro", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -512,7 +511,6 @@ public class Financeiro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -530,5 +528,6 @@ public class Financeiro extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel jpFinanceiro;
     // End of variables declaration//GEN-END:variables
 }

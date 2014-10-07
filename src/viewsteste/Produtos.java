@@ -16,6 +16,7 @@ public class Produtos extends javax.swing.JPanel {
      */
     public Produtos() {
         initComponents();
+        jpProdutos.setVisible(false);
     }
 
     /**
@@ -67,7 +68,7 @@ public class Produtos extends javax.swing.JPanel {
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jpProdutos = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
@@ -109,7 +110,6 @@ public class Produtos extends javax.swing.JPanel {
         jButton22 = new javax.swing.JButton();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
@@ -122,7 +122,7 @@ public class Produtos extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(397, 52, 110, 32);
+        jButton10.setBounds(400, 50, 110, 32);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton12.setText("Inserir");
@@ -132,30 +132,30 @@ public class Produtos extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(517, 53, 101, 30);
+        jButton12.setBounds(520, 50, 101, 30);
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(jTextField2);
-        jTextField2.setBounds(11, 57, 165, 21);
+        jTextField2.setBounds(10, 50, 165, 28);
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(jTextField1);
-        jTextField1.setBounds(186, 57, 201, 21);
+        jTextField1.setBounds(190, 50, 201, 28);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("EAN");
         jPanel6.add(jLabel4);
-        jLabel4.setBounds(11, 31, 24, 15);
+        jLabel4.setBounds(10, 30, 24, 15);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Produto");
         jPanel6.add(jLabel5);
-        jLabel5.setBounds(186, 31, 51, 15);
+        jLabel5.setBounds(190, 30, 51, 15);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Consultar Produtos");
+        jLabel6.setText("Produtos");
         jPanel6.add(jLabel6);
-        jLabel6.setBounds(278, 1, 120, 15);
+        jLabel6.setBounds(278, 1, 57, 15);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserir Produtos"));
@@ -281,114 +281,119 @@ public class Produtos extends javax.swing.JPanel {
         jPanel6.add(jButton21);
         jButton21.setBounds(414, 446, 95, 35);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserir Produtos"));
-        jPanel3.setLayout(null);
+        jpProdutos.setBackground(new java.awt.Color(204, 204, 204));
+        jpProdutos.setBorder(javax.swing.BorderFactory.createTitledBorder("Produtos"));
+        jpProdutos.setLayout(null);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Validade");
-        jPanel3.add(jLabel12);
-        jLabel12.setBounds(375, 150, 61, 15);
+        jpProdutos.add(jLabel12);
+        jLabel12.setBounds(380, 130, 61, 15);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setText("Produto");
-        jPanel3.add(jLabel16);
-        jLabel16.setBounds(16, 27, 51, 15);
-        jPanel3.add(jTextField6);
-        jTextField6.setBounds(16, 50, 251, 20);
+        jpProdutos.add(jLabel16);
+        jLabel16.setBounds(20, 20, 51, 15);
+
+        jTextField6.setVerifyInputWhenFocusTarget(false);
+        jpProdutos.add(jTextField6);
+        jTextField6.setBounds(20, 40, 251, 28);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("EAN");
-        jPanel3.add(jLabel19);
-        jLabel19.setBounds(16, 91, 24, 15);
-        jPanel3.add(jTextField9);
-        jTextField9.setBounds(16, 112, 134, 20);
+        jpProdutos.add(jLabel19);
+        jLabel19.setBounds(20, 80, 24, 15);
+        jpProdutos.add(jTextField9);
+        jTextField9.setBounds(20, 100, 134, 28);
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("NCM");
-        jPanel3.add(jLabel24);
-        jLabel24.setBounds(168, 91, 27, 15);
-        jPanel3.add(jTextField14);
-        jTextField14.setBounds(168, 112, 154, 20);
+        jpProdutos.add(jLabel24);
+        jLabel24.setBounds(170, 80, 27, 15);
+        jpProdutos.add(jTextField14);
+        jTextField14.setBounds(170, 100, 154, 28);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Categoria");
-        jPanel3.add(jLabel25);
-        jLabel25.setBounds(16, 150, 59, 15);
+        jpProdutos.add(jLabel25);
+        jLabel25.setBounds(20, 130, 59, 15);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Fornecedor");
-        jPanel3.add(jLabel26);
-        jLabel26.setBounds(160, 150, 68, 15);
+        jpProdutos.add(jLabel26);
+        jLabel26.setBounds(160, 130, 68, 15);
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("Observação");
-        jPanel3.add(jLabel27);
-        jLabel27.setBounds(16, 259, 70, 15);
-        jPanel3.add(jTextField15);
-        jTextField15.setBounds(16, 285, 515, 20);
+        jpProdutos.add(jLabel27);
+        jLabel27.setBounds(20, 250, 70, 15);
+        jLabel27.getAccessibleContext().setAccessibleName("Observações");
+
+        jpProdutos.add(jTextField15);
+        jTextField15.setBounds(20, 270, 570, 50);
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel28.setText("Marca");
-        jPanel3.add(jLabel28);
-        jLabel28.setBounds(303, 27, 36, 15);
-        jPanel3.add(jTextField16);
-        jTextField16.setBounds(303, 48, 154, 20);
+        jpProdutos.add(jLabel28);
+        jLabel28.setBounds(300, 20, 36, 15);
+
+        jTextField16.setVerifyInputWhenFocusTarget(false);
+        jpProdutos.add(jTextField16);
+        jTextField16.setBounds(300, 40, 154, 28);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Medicamentos", "Estética", "Materiais Cirúrgicos", "Materiais Descartáveis" }));
-        jPanel3.add(jComboBox4);
-        jComboBox4.setBounds(16, 171, 120, 20);
+        jpProdutos.add(jComboBox4);
+        jComboBox4.setBounds(20, 150, 120, 28);
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Farma Pet", "PetCLean", "Cirur-cão", "Pet Embalagens" }));
-        jPanel3.add(jComboBox5);
-        jComboBox5.setBounds(160, 171, 120, 20);
+        jpProdutos.add(jComboBox5);
+        jComboBox5.setBounds(160, 150, 120, 28);
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "UN", "KG", "PT", "LT", " " }));
-        jPanel3.add(jComboBox6);
-        jComboBox6.setBounds(298, 171, 50, 20);
+        jpProdutos.add(jComboBox6);
+        jComboBox6.setBounds(300, 150, 50, 28);
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setText("Unidade");
-        jPanel3.add(jLabel29);
-        jLabel29.setBounds(298, 150, 59, 15);
+        jpProdutos.add(jLabel29);
+        jLabel29.setBounds(300, 130, 59, 15);
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel30.setText("Valor Unidade");
-        jPanel3.add(jLabel30);
-        jLabel30.setBounds(114, 212, 84, 15);
-        jPanel3.add(jTextField17);
-        jTextField17.setBounds(114, 233, 84, 20);
-        jPanel3.add(jTextField18);
-        jTextField18.setBounds(16, 233, 80, 20);
+        jpProdutos.add(jLabel30);
+        jLabel30.setBounds(120, 190, 84, 15);
+        jpProdutos.add(jTextField17);
+        jTextField17.setBounds(120, 210, 84, 28);
+        jpProdutos.add(jTextField18);
+        jTextField18.setBounds(20, 210, 80, 28);
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel31.setText("Estoque Min.");
-        jPanel3.add(jLabel31);
-        jLabel31.setBounds(16, 212, 80, 15);
-        jPanel3.add(jTextField19);
-        jTextField19.setBounds(216, 233, 84, 20);
+        jpProdutos.add(jLabel31);
+        jLabel31.setBounds(20, 190, 80, 15);
+        jpProdutos.add(jTextField19);
+        jTextField19.setBounds(220, 210, 84, 28);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel32.setText("Lucro(%)");
-        jPanel3.add(jLabel32);
-        jLabel32.setBounds(216, 212, 84, 15);
-        jPanel3.add(jTextField20);
-        jTextField20.setBounds(318, 233, 84, 20);
+        jpProdutos.add(jLabel32);
+        jLabel32.setBounds(220, 190, 84, 15);
+        jpProdutos.add(jTextField20);
+        jTextField20.setBounds(320, 210, 84, 28);
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel33.setText("Valor Venda");
-        jPanel3.add(jLabel33);
-        jLabel33.setBounds(318, 212, 84, 15);
-        jPanel3.add(jDateChooser2);
-        jDateChooser2.setBounds(370, 170, 87, 20);
+        jpProdutos.add(jLabel33);
+        jLabel33.setBounds(320, 190, 84, 15);
+        jpProdutos.add(jDateChooser2);
+        jDateChooser2.setBounds(370, 150, 87, 28);
 
-        jPanel6.add(jPanel3);
-        jPanel3.setBounds(10, 90, 610, 330);
+        jPanel6.add(jpProdutos);
+        jpProdutos.setBounds(10, 90, 610, 330);
 
         jTabbedPane1.addTab("Produto", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.setLayout(null);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
@@ -401,7 +406,7 @@ public class Produtos extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton11);
-        jButton11.setBounds(397, 52, 110, 32);
+        jButton11.setBounds(400, 40, 110, 32);
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton13.setText("Inserir");
@@ -411,27 +416,27 @@ public class Produtos extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton13);
-        jButton13.setBounds(517, 53, 101, 30);
+        jButton13.setBounds(520, 40, 101, 30);
 
         jTextField21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField21.setForeground(new java.awt.Color(204, 204, 204));
         jPanel7.add(jTextField21);
-        jTextField21.setBounds(11, 57, 165, 21);
+        jTextField21.setBounds(10, 40, 165, 28);
 
         jTextField22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField22.setForeground(new java.awt.Color(204, 204, 204));
         jPanel7.add(jTextField22);
-        jTextField22.setBounds(186, 57, 201, 21);
+        jTextField22.setBounds(190, 40, 201, 28);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("EAN");
         jPanel7.add(jLabel7);
-        jLabel7.setBounds(11, 31, 24, 15);
+        jLabel7.setBounds(10, 20, 24, 15);
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel34.setText("Produto");
         jPanel7.add(jLabel34);
-        jLabel34.setBounds(186, 31, 51, 15);
+        jLabel34.setBounds(190, 20, 51, 15);
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel35.setText("Historico de Produtos");
@@ -635,7 +640,6 @@ public class Produtos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
@@ -663,5 +667,6 @@ public class Produtos extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel jpProdutos;
     // End of variables declaration//GEN-END:variables
 }

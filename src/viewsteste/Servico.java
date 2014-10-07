@@ -16,6 +16,7 @@ public class Servico extends javax.swing.JPanel {
      */
     public Servico() {
         initComponents();
+        jpServicos.setVisible(false);
     }
 
     /**
@@ -38,7 +39,7 @@ public class Servico extends javax.swing.JPanel {
         jButton12 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jButton21 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jpServicos = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -81,13 +82,12 @@ public class Servico extends javax.swing.JPanel {
         jButton22 = new javax.swing.JButton();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Consultar Serviços");
+        jLabel5.setText("Serviços");
         jPanel6.add(jLabel5);
-        jLabel5.setBounds(265, 1, 113, 15);
+        jLabel5.setBounds(265, 1, 50, 15);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
@@ -106,7 +106,7 @@ public class Servico extends javax.swing.JPanel {
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(jTextField6);
-        jTextField6.setBounds(11, 33, 367, 21);
+        jTextField6.setBounds(10, 30, 367, 28);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -118,7 +118,7 @@ public class Servico extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(388, 22, 115, 32);
+        jButton10.setBounds(390, 30, 115, 32);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton12.setText("Inserir");
@@ -128,7 +128,7 @@ public class Servico extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton12);
-        jButton12.setBounds(513, 23, 103, 30);
+        jButton12.setBounds(510, 30, 103, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Proprietário");
@@ -140,26 +140,39 @@ public class Servico extends javax.swing.JPanel {
         jPanel6.add(jButton21);
         jButton21.setBounds(414, 456, 95, 35);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Serviço"));
+        jpServicos.setBackground(new java.awt.Color(204, 204, 204));
+        jpServicos.setBorder(javax.swing.BorderFactory.createTitledBorder("Serviço"));
+        jpServicos.setLayout(null);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Data");
+        jpServicos.add(jLabel8);
+        jLabel8.setBounds(20, 20, 39, 15);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Proprietário");
+        jpServicos.add(jLabel6);
+        jLabel6.setBounds(20, 70, 73, 15);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Animal");
+        jpServicos.add(jLabel7);
+        jLabel7.setBounds(20, 120, 41, 15);
+        jpServicos.add(jTextField2);
+        jTextField2.setBounds(20, 90, 408, 28);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jpServicos.add(jTextField1);
+        jTextField1.setBounds(20, 140, 408, 28);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Chip");
+        jpServicos.add(jLabel9);
+        jLabel9.setBounds(190, 20, 39, 15);
 
         jRadioButton2.setBackground(new java.awt.Color(204, 204, 204));
         jRadioButton2.setText("não");
@@ -168,6 +181,8 @@ public class Servico extends javax.swing.JPanel {
                 jRadioButton2ActionPerformed(evt);
             }
         });
+        jpServicos.add(jRadioButton2);
+        jRadioButton2.setBounds(240, 40, 43, 23);
 
         jRadioButton3.setBackground(new java.awt.Color(204, 204, 204));
         jRadioButton3.setText("sim");
@@ -176,27 +191,41 @@ public class Servico extends javax.swing.JPanel {
                 jRadioButton3ActionPerformed(evt);
             }
         });
+        jpServicos.add(jRadioButton3);
+        jRadioButton3.setBounds(190, 40, 41, 23);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Nº Chip/Anilha");
+        jpServicos.add(jLabel10);
+        jLabel10.setBounds(300, 20, 90, 15);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
+        jpServicos.add(jTextField3);
+        jTextField3.setBounds(300, 40, 102, 28);
+        jpServicos.add(jTextField13);
+        jTextField13.setBounds(167, 337, 430, 45);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Observação");
+        jpServicos.add(jLabel11);
+        jLabel11.setBounds(167, 319, 70, 15);
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
+        jpServicos.add(jTextField4);
+        jTextField4.setBounds(16, 337, 116, 28);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Valor Final");
+        jpServicos.add(jLabel12);
+        jLabel12.setBounds(16, 319, 62, 15);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -270,14 +299,21 @@ public class Servico extends javax.swing.JPanel {
                 .addComponent(jCheckBox7))
         );
 
+        jpServicos.add(jPanel1);
+        jPanel1.setBounds(454, 16, 143, 200);
+
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
+        jpServicos.add(jTextField5);
+        jTextField5.setBounds(20, 190, 408, 28);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Produtos usados no serviço");
+        jpServicos.add(jLabel13);
+        jLabel13.setBounds(20, 170, 170, 15);
 
         jTable2.setBorder(new javax.swing.border.MatteBorder(null));
         jTable2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -345,99 +381,13 @@ public class Servico extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField5))
-                                .addGap(30, 30, 30))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jRadioButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jRadioButton2))
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10)))
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(157, 157, 157))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jRadioButton3)
-                                .addComponent(jRadioButton2)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11))
-                .addGap(3, 3, 3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addComponent(jTextField13)))
-        );
+        jpServicos.add(jScrollPane2);
+        jScrollPane2.setBounds(17, 222, 580, 91);
+        jpServicos.add(jDateChooser1);
+        jDateChooser1.setBounds(20, 40, 160, 28);
 
-        jPanel6.add(jPanel2);
-        jPanel2.setBounds(11, 61, 613, 389);
+        jPanel6.add(jpServicos);
+        jpServicos.setBounds(11, 61, 613, 390);
 
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton24.setText("Histórico");
@@ -447,7 +397,6 @@ public class Servico extends javax.swing.JPanel {
         jTabbedPane1.addTab("Serviços", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.setLayout(null);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -458,7 +407,7 @@ public class Servico extends javax.swing.JPanel {
         jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField7.setForeground(new java.awt.Color(204, 204, 204));
         jPanel7.add(jTextField7);
-        jTextField7.setBounds(11, 27, 347, 21);
+        jTextField7.setBounds(10, 30, 347, 28);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton11.setText("Consultar");
@@ -470,7 +419,7 @@ public class Servico extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton11);
-        jButton11.setBounds(376, 22, 128, 32);
+        jButton11.setBounds(370, 30, 128, 32);
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton13.setText("Inserir");
@@ -480,7 +429,7 @@ public class Servico extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton13);
-        jButton13.setBounds(514, 23, 105, 30);
+        jButton13.setBounds(510, 30, 105, 30);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setText("Proprietário");
@@ -697,7 +646,6 @@ public class Servico extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -716,5 +664,6 @@ public class Servico extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JPanel jpServicos;
     // End of variables declaration//GEN-END:variables
 }

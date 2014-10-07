@@ -101,7 +101,6 @@ public class Configuracao extends javax.swing.JPanel {
         checkPerExclui = new javax.swing.JCheckBox();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel6.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -119,7 +118,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel6.add(btnBackup);
-        btnBackup.setBounds(484, 456, 140, 35);
+        btnBackup.setBounds(460, 460, 140, 30);
 
         jTextField16.setText("C:\\Users\\Rafael\\Documentos/SysVet");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
@@ -128,12 +127,12 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jTextField16);
-        jTextField16.setBounds(170, 458, 301, 30);
+        jTextField16.setBounds(150, 460, 301, 30);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Diretório Backup:");
         jPanel6.add(jLabel18);
-        jLabel18.setBounds(53, 466, 97, 14);
+        jLabel18.setBounds(30, 470, 97, 10);
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Configurações"));
@@ -141,7 +140,7 @@ public class Configuracao extends javax.swing.JPanel {
 
         txt_BuscaLogin2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(txt_BuscaLogin2);
-        txt_BuscaLogin2.setBounds(30, 50, 180, 20);
+        txt_BuscaLogin2.setBounds(30, 50, 180, 28);
 
         btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         btnAlterar.setText("Salvar");
@@ -173,11 +172,11 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_login2);
-        txt_login2.setBounds(20, 210, 210, 20);
+        txt_login2.setBounds(20, 220, 210, 28);
 
         txt_nome2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(txt_nome2);
-        txt_nome2.setBounds(70, 170, 380, 20);
+        txt_nome2.setBounds(70, 170, 380, 28);
 
         txt_senha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senha2.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +185,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_senha2);
-        txt_senha2.setBounds(20, 250, 140, 20);
+        txt_senha2.setBounds(20, 270, 210, 28);
 
         txt_senhaAtual2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senhaAtual2.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +194,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_senhaAtual2);
-        txt_senhaAtual2.setBounds(420, 60, 180, 20);
+        txt_senhaAtual2.setBounds(420, 50, 180, 28);
 
         manterSenha3.setBackground(new java.awt.Color(204, 204, 204));
         manterSenha3.setSelected(true);
@@ -206,7 +205,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(manterSenha3);
-        manterSenha3.setBounds(420, 20, 170, 20);
+        manterSenha3.setBounds(420, 10, 170, 20);
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel51.setText("Nome");
@@ -236,7 +235,7 @@ public class Configuracao extends javax.swing.JPanel {
         CodFuncionario.setBackground(new java.awt.Color(255, 255, 255));
         CodFuncionario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(CodFuncionario);
-        CodFuncionario.setBounds(20, 170, 40, 20);
+        CodFuncionario.setBounds(20, 170, 40, 28);
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         btnExcluir.setText("Excluir");
@@ -251,14 +250,14 @@ public class Configuracao extends javax.swing.JPanel {
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel52.setText("Login");
         jPanel9.add(jLabel52);
-        jLabel52.setBounds(20, 190, 90, 20);
+        jLabel52.setBounds(20, 200, 90, 20);
         jPanel9.add(jSeparator10);
         jSeparator10.setBounds(20, 140, 590, 10);
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel53.setText("Senha Atual");
         jPanel9.add(jLabel53);
-        jLabel53.setBounds(420, 40, 140, 20);
+        jLabel53.setBounds(420, 30, 140, 20);
 
         jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel54.setText("Código");
@@ -268,7 +267,7 @@ public class Configuracao extends javax.swing.JPanel {
         jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel55.setText("Senha");
         jPanel9.add(jLabel55);
-        jLabel55.setBounds(20, 230, 90, 20);
+        jLabel55.setBounds(20, 250, 90, 20);
 
         txt_NovaSenha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_NovaSenha2.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +276,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_NovaSenha2);
-        txt_NovaSenha2.setBounds(420, 100, 180, 20);
+        txt_NovaSenha2.setBounds(420, 100, 180, 28);
 
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel56.setText("Nova Senha");
@@ -414,12 +413,12 @@ public class Configuracao extends javax.swing.JPanel {
         checkPerExclui.setBounds(256, 68, 97, 23);
 
         jPanel9.add(jPanel8);
-        jPanel8.setBounds(20, 280, 410, 140);
+        jPanel8.setBounds(20, 300, 410, 140);
 
         jPanel6.add(jPanel9);
-        jPanel9.setBounds(10, 20, 610, 430);
+        jPanel9.setBounds(10, 20, 610, 440);
 
-        jTabbedPane1.addTab("Vendas", jPanel6);
+        jTabbedPane1.addTab("Configurações", jPanel6);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
