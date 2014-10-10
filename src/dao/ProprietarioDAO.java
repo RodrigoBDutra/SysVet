@@ -31,7 +31,7 @@ public class ProprietarioDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM proprietario ORDERBY name";
+            String sql = "SELECT * FROM proprietario ORDERBY nome";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 Proprietario prop = new Proprietario();
