@@ -350,6 +350,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        ba.logoff(Transferencia.logado.getLogin());
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 

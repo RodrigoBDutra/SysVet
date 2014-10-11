@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package viewsteste;
 
-/**
- *
- * @author vini
- */
+import classes.*;
+import dao.*;
+import javax.swing.JOptionPane;
+
 public class Proprietario extends javax.swing.JPanel {
 
     /**
@@ -1342,7 +1337,7 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPesquisarCliActionPerformed
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
-           jpPropri.setVisible(true);
+        jpPropri.setVisible(true);
 
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
 
@@ -1350,8 +1345,63 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtbClienteAncestorAdded
 
+    public Proprietarios montarProprietario() {
+        Proprietarios prop = new Proprietarios();
+        prop.setCodProprietario(1);
+        prop.setDataCadastro(txtDataCadastro.getDateFormatString());
+        prop.setObservacao(txtObservacao.getText());
+        return prop;
+    }
+
+    public Contato montarContato() {
+        Contato cont = new Contato();
+        cont.setCodContato(1);
+        cont.setEmail(txtEmail.getText());
+        cont.setSite(null);
+        cont.setTelefoneResidencial(Integer.parseInt(txtTelResid.getText()));
+        cont.setTelefoneCelular(Integer.parseInt(txtTelCell.getText()));
+        cont.setTelefoneComercial(0);
+        return cont;
+    }
+
+    public Endereco montarEndereco() {
+        Endereco end = new Endereco();
+        end.setBairro(txtBairro.getText());
+        end.setCEP(Integer.parseInt(txtCEP.getText()));
+        end.setCidade(txtCidade.getText());
+        end.setEstado(txtEstado.getText());
+        end.setEndereco(txtEndereco.getText());
+        end.setCodEndereco(2);
+        end.setComplemento(txtComplemento.getText());
+        end.setNumero(Integer.parseInt(txtNumEnd.getText()));
+        return end;
+    }
+
+    public DadosPessoais montarDadosPessoais() {
+        DadosPessoais dadosP = new DadosPessoais();
+        dadosP.setCPF(Integer.parseInt(txtCPF.getText()));
+        dadosP.setCodDadosPessoais(3);
+        dadosP.setNome(txtNome.getText());
+        dadosP.setDataNascimento(txtDataNascimento.getDateFormatString());
+        dadosP.setRG(Integer.parseInt(txtRG.getText()));
+        return dadosP;
+    }
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        // TODO add your handling code here:
+        Contato cont = montarContato();
+        Endereco end = montarEndereco();
+        DadosPessoais dad = montarDadosPessoais();
+        Proprietarios prop = montarProprietario();
+        String resp;
+        ProprietarioDAO propDao = new ProprietarioDAO();
+        resp = propDao.incluirProp(cont,end,dad,prop);
+        
+        if(resp.equals("OK")){
+            JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+        }else{
+            JOptionPane.showMessageDialog(null, resp);
+        }
+            
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -1462,7 +1512,7 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnProntuarioMouseClicked
 
     private void btnPesquisarPropMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesquisarPropMouseClicked
-       jpPropri.setVisible(true);
+        jpPropri.setVisible(true);
     }//GEN-LAST:event_btnPesquisarPropMouseClicked
 
 
