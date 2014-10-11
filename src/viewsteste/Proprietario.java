@@ -2,6 +2,7 @@ package viewsteste;
 
 import classes.*;
 import dao.*;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 public class Proprietario extends javax.swing.JPanel {
@@ -195,7 +196,12 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpPropri.setLayout(null);
 
-        txtCPF.setText("365.052.368-05");
+        txtCPF.setText("76543");
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFActionPerformed(evt);
+            }
+        });
         jpPropri.add(txtCPF);
         txtCPF.setBounds(150, 30, 120, 28);
 
@@ -204,7 +210,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel40);
         jLabel40.setBounds(150, 10, 120, 15);
 
-        txtRG.setText("368.553.748-2");
+        txtRG.setText("6543");
         jpPropri.add(txtRG);
         txtRG.setBounds(280, 30, 110, 28);
 
@@ -226,7 +232,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel44);
         jLabel44.setBounds(10, 160, 130, 15);
 
-        txtCEP.setText("08070-080");
+        txtCEP.setText("87654");
         jpPropri.add(txtCEP);
         txtCEP.setBounds(520, 130, 100, 28);
 
@@ -249,7 +255,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel47);
         jLabel47.setBounds(10, 260, 100, 15);
 
-        txtTelResid.setText("(11)1111-1111");
+        txtTelResid.setText("098765");
         jpPropri.add(txtTelResid);
         txtTelResid.setBounds(10, 80, 130, 28);
 
@@ -258,7 +264,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel48);
         jLabel48.setBounds(10, 60, 130, 15);
 
-        txtTelCell.setText("(11)1111-1111");
+        txtTelCell.setText("76543");
         jpPropri.add(txtTelCell);
         txtTelCell.setBounds(160, 80, 120, 28);
 
@@ -285,6 +291,8 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel51.setText("E-mail");
         jpPropri.add(jLabel51);
         jLabel51.setBounds(300, 60, 51, 15);
+
+        txtObservacao.setText("myjrnthbegvfcd");
         jpPropri.add(txtObservacao);
         txtObservacao.setBounds(10, 230, 610, 28);
 
@@ -296,6 +304,8 @@ public class Proprietario extends javax.swing.JPanel {
         txtDataCadastro.setBackground(new java.awt.Color(153, 153, 153));
         jpPropri.add(txtDataCadastro);
         txtDataCadastro.setBounds(470, 180, 150, 28);
+
+        txtEstado.setText("ed");
         jpPropri.add(txtEstado);
         txtEstado.setBounds(400, 180, 60, 28);
 
@@ -303,6 +313,8 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel53.setText("Nº");
         jpPropri.add(jLabel53);
         jLabel53.setBounds(300, 110, 60, 15);
+
+        txtNumEnd.setText("765");
         jpPropri.add(txtNumEnd);
         txtNumEnd.setBounds(300, 130, 60, 28);
 
@@ -425,6 +437,8 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel57.setText("Complemento");
         jpPropri.add(jLabel57);
         jLabel57.setBounds(370, 110, 100, 15);
+
+        txtComplemento.setText("mgnbfv");
         jpPropri.add(txtComplemento);
         txtComplemento.setBounds(370, 130, 140, 28);
 
@@ -1344,18 +1358,21 @@ public class Proprietario extends javax.swing.JPanel {
     private void jtbClienteAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtbClienteAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jtbClienteAncestorAdded
-
+    ProprietarioDAO propD = new ProprietarioDAO();
+    
     public Proprietarios montarProprietario() {
         Proprietarios prop = new Proprietarios();
-        prop.setCodProprietario(1);
-        prop.setDataCadastro(txtDataCadastro.getDateFormatString());
+        prop.setCodProprietario(Integer.parseInt(propD.abreProprietario()) + 1);
+        java.util.Date pega = txtDataCadastro.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        prop.setDataCadastro(formato.format(pega));
         prop.setObservacao(txtObservacao.getText());
         return prop;
     }
 
     public Contato montarContato() {
-        Contato cont = new Contato();
-        cont.setCodContato(1);
+        Contato cont = new Contato();        
+        cont.setCodContato(Integer.parseInt(propD.abreContatos()) + 1);
         cont.setEmail(txtEmail.getText());
         cont.setSite(null);
         cont.setTelefoneResidencial(Integer.parseInt(txtTelResid.getText()));
@@ -1371,7 +1388,7 @@ public class Proprietario extends javax.swing.JPanel {
         end.setCidade(txtCidade.getText());
         end.setEstado(txtEstado.getText());
         end.setEndereco(txtEndereco.getText());
-        end.setCodEndereco(2);
+        end.setCodEndereco(Integer.parseInt(propD.abreEndereco()) + 1);
         end.setComplemento(txtComplemento.getText());
         end.setNumero(Integer.parseInt(txtNumEnd.getText()));
         return end;
@@ -1380,9 +1397,12 @@ public class Proprietario extends javax.swing.JPanel {
     public DadosPessoais montarDadosPessoais() {
         DadosPessoais dadosP = new DadosPessoais();
         dadosP.setCPF(Integer.parseInt(txtCPF.getText()));
-        dadosP.setCodDadosPessoais(3);
+        dadosP.setCodDadosPessoais(Integer.parseInt(propD.abreDadosPessoais()) + 1);
         dadosP.setNome(txtNome.getText());
-        dadosP.setDataNascimento(txtDataNascimento.getDateFormatString());
+        java.util.Date pega = txtDataCadastro.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        dadosP.setDataNascimento(formato.format(pega));
+        //dadosP.setDataNascimento(txtDataNascimento.getDate().toString());
         dadosP.setRG(Integer.parseInt(txtRG.getText()));
         return dadosP;
     }
@@ -1514,6 +1534,10 @@ public class Proprietario extends javax.swing.JPanel {
     private void btnPesquisarPropMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesquisarPropMouseClicked
         jpPropri.setVisible(true);
     }//GEN-LAST:event_btnPesquisarPropMouseClicked
+
+    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
