@@ -188,6 +188,11 @@ public class ProprietarioDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
+            String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
+            ResultSet rs = stmt.executeQuery(sql4);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+            } else {
             String sql = "INSERT INTO contatos(codContato,telefoneResidencial,telefoneCelular,telefoneComercial,email,site)"
                     + "VALUES(" + cont.getCodContato() + "," + cont.getTelefoneResidencial() + "," + cont.getTelefoneCelular() + "," + cont.getTelefoneComercial() + ",'" + cont.getEmail() + "','" + cont.getSite() + "')";
             String sql1 = "INSERT INTO endereco(codEndereco, endereco, numero, bairro, complemento, cep, cidade, estado)"
@@ -207,8 +212,10 @@ public class ProprietarioDAO extends Banco {
             stmt.executeUpdate(sql2);
             stmt.executeUpdate(sql3);
             stmt.close();
+            rs.close();
             con.close();
             resp = "OK";
+            }
         } catch (Exception e) {
             resp = e.toString();
         }

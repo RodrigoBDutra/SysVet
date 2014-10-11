@@ -1401,8 +1401,7 @@ public class Proprietario extends javax.swing.JPanel {
         dadosP.setNome(txtNome.getText());
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        dadosP.setDataNascimento(formato.format(pega));
-        //dadosP.setDataNascimento(txtDataNascimento.getDate().toString());
+        dadosP.setDataNascimento(formato.format(pega));        
         dadosP.setRG(Integer.parseInt(txtRG.getText()));
         return dadosP;
     }
@@ -1417,11 +1416,7 @@ public class Proprietario extends javax.swing.JPanel {
         
         if(resp.equals("OK")){
             JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-        }else{
-            JOptionPane.showMessageDialog(null, resp);
-        }
-            
-        
+        }    
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
