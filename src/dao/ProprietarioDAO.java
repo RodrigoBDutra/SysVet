@@ -183,39 +183,27 @@ public class ProprietarioDAO extends Banco {
      * @param prop
      * @return ok para sucesso ou mensagem de erro
      */
-    public String incluirProp(Contato cont, Endereco end, DadosPessoais dad, Proprietarios prop) {
+    public String incluirProp(Proprietarios prop) {
         String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
+            /*String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
             ResultSet rs = stmt.executeQuery(sql4);
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-            } else {
-            String sql = "INSERT INTO contatos(codContato,telefoneResidencial,telefoneCelular,telefoneComercial,email,site)"
-                    + "VALUES(" + cont.getCodContato() + "," + cont.getTelefoneResidencial() + "," + cont.getTelefoneCelular() + "," + cont.getTelefoneComercial() + ",'" + cont.getEmail() + "','" + cont.getSite() + "')";
-            String sql1 = "INSERT INTO endereco(codEndereco, endereco, numero, bairro, complemento, cep, cidade, estado)"
-                    + "VALUES(" + end.getCodEndereco() + ",'" + end.getEndereco() + "'," + end.getNumero() + ",'" + end.getBairro() + "','" + end.getComplemento() + "'," + end.getCEP() + ",'" + end.getCidade() + "','" + end.getEstado() + "')";
-            String sql2 = "INSERT INTO dadospessoais(codDadosPessoais, nome, datanascimento, cpf, rg) "
-                    + "VALUES(" + dad.getCodDadosPessoais() + ",'" + dad.getNome() + "','" + dad.getDataNascimento() + "'," + dad.getCPF() + "," + dad.getRG() + ")";
-            String sql3 = "INSERT INTO proprietario(codProprietario, dataCadastro, observacoes, codContato, codEndereco, codDadosPessoais)"
-                    + "VALUES(" + prop.getCodProprietario() + ",'" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + cont.getCodContato() + "," + end.getCodEndereco() + "," + dad.getCodDadosPessoais() + ")";
-            /* String sql = "INSERT INTO proprietario(nome,data,cpf,rg,telResidencial,TelCelular,email,endereco,numero,cep,bairro,cidade,estado,dataCadastro,observacao)";
-             sql+= "Values('" + prop.getNome()+"','" +prop.getData()+"',"+prop.getCpf()+",'"+prop.getRg()+ "'," 
-             + prop.getTelResidencia()+"," + prop.getTelCelular()+",'" +prop.getEmail()+"','"+prop.getEndereco()+"',"
-             + prop.getNumero()+",'"+prop.getBairro()+"','"+prop.getCidade()+"','"
-             +prop.getEstado()+"','"+prop.getDataCadastro()+"','"+prop.getObservacao()+"')"*/;
-
+            } else {*/
+            String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codContato, codEndereco, codDadosPessoais)"
+                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodProprietario() + "," + prop.getCodProprietario() + "," + prop.getCodProprietario() + ")";
+            
             stmt.executeUpdate(sql);
-            stmt.executeUpdate(sql1);
-            stmt.executeUpdate(sql2);
-            stmt.executeUpdate(sql3);
+            ResultSet rs = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+            
+            resp = rs.getString(1)+"";            
             stmt.close();
             rs.close();
             con.close();
-            resp = "OK";
-            }
+            
         } catch (Exception e) {
             resp = e.toString();
         }

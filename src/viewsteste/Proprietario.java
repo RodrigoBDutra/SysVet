@@ -1358,11 +1358,14 @@ public class Proprietario extends javax.swing.JPanel {
     private void jtbClienteAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtbClienteAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jtbClienteAncestorAdded
-    ProprietarioDAO propD = new ProprietarioDAO();
+    ProprietarioDAO propDa = new ProprietarioDAO();
+    DadosPessoaisDAO dadosDa = new DadosPessoaisDAO();
+    EnderecoDAO endDa = new EnderecoDAO();
+    ContatoDAO contDa = new ContatoDAO();
     
     public Proprietarios montarProprietario() {
         Proprietarios prop = new Proprietarios();
-        prop.setCodProprietario(Integer.parseInt(propD.abreProprietario()) + 1);
+        prop.setCodProprietario(Integer.parseInt(propDa.abreProprietario()) + 1);
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         prop.setDataCadastro(formato.format(pega));
@@ -1372,7 +1375,7 @@ public class Proprietario extends javax.swing.JPanel {
 
     public Contato montarContato() {
         Contato cont = new Contato();        
-        cont.setCodContato(Integer.parseInt(propD.abreContatos()) + 1);
+        cont.setCodContato(Integer.parseInt(contDa.abreContatos()) + 1);
         cont.setEmail(txtEmail.getText());
         cont.setSite(null);
         cont.setTelefoneResidencial(Integer.parseInt(txtTelResid.getText()));
@@ -1388,7 +1391,7 @@ public class Proprietario extends javax.swing.JPanel {
         end.setCidade(txtCidade.getText());
         end.setEstado(txtEstado.getText());
         end.setEndereco(txtEndereco.getText());
-        end.setCodEndereco(Integer.parseInt(propD.abreEndereco()) + 1);
+        end.setCodEndereco(Integer.parseInt(endDa.abreEndereco()) + 1);
         end.setComplemento(txtComplemento.getText());
         end.setNumero(Integer.parseInt(txtNumEnd.getText()));
         return end;
@@ -1397,7 +1400,7 @@ public class Proprietario extends javax.swing.JPanel {
     public DadosPessoais montarDadosPessoais() {
         DadosPessoais dadosP = new DadosPessoais();
         dadosP.setCPF(Integer.parseInt(txtCPF.getText()));
-        dadosP.setCodDadosPessoais(Integer.parseInt(propD.abreDadosPessoais()) + 1);
+        dadosP.setCodDadosPessoais(Integer.parseInt(dadosDa.abreDadosPessoais()) + 1);
         dadosP.setNome(txtNome.getText());
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -1410,13 +1413,30 @@ public class Proprietario extends javax.swing.JPanel {
         Endereco end = montarEndereco();
         DadosPessoais dad = montarDadosPessoais();
         Proprietarios prop = montarProprietario();
-        String resp;
-        ProprietarioDAO propDao = new ProprietarioDAO();
-        resp = propDao.incluirProp(cont,end,dad,prop);
+        String respP,respD,respE,respC;
+        ProprietarioDAO propDAO = new ProprietarioDAO();
+        EnderecoDAO endDAO = new EnderecoDAO();
+        DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+        ContatoDAO contDAO = new ContatoDAO();
+        respD = dadDAO.incluirDados(dad);
+        JOptionPane.showMessageDialog(null, respD);
+       // respE = endDAO.incluirEnd(end);
+        //respC = contDAO.incluirCont(cont);
+        //respP = propDAO.incluirProp(prop);
         
-        if(resp.equals("OK")){
-            JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-        }    
+        /*if(respP.equals("OK")){
+            if(respD.equals("OK")){
+                if(respE.equals("OK")){
+                    if(respC.equals("OK")){
+                        JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+                    }
+                    JOptionPane.showMessageDialog(null,respC);
+                }
+                JOptionPane.showMessageDialog(null,respE);
+            }
+            JOptionPane.showMessageDialog(null,respD);
+        }   
+        JOptionPane.showMessageDialog(null,respP);*/
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
