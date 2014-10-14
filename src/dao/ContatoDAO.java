@@ -51,8 +51,8 @@ public class ContatoDAO extends Banco{
         return cont;
     }
     
-     public String incluirCont(Contato cont) {
-        String resp = "";
+     public int incluirCont(Contato cont) {
+        int resp = 0;
         try {
             conecta();
             Statement stmt = con.createStatement();
@@ -65,14 +65,18 @@ public class ContatoDAO extends Banco{
                     + "VALUES("+ cont.getTelefoneResidencial() + "," + cont.getTelefoneCelular() + "," + cont.getTelefoneComercial() + ",'" + cont.getEmail() + "','" + cont.getSite() + "')";
         
             stmt.executeUpdate(sql);
-       
+            ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+            while(rs2.next()){
+            resp = rs2.getInt(1); 
+            }
+            rs2.close();       
             stmt.close();
             rs.close();
             con.close();
-            resp = "OK";
+            
             
         } catch (Exception e) {
-            resp = e.toString();
+            JOptionPane.showMessageDialog(null, e.toString());
         }
         return resp;
     }

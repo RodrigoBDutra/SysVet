@@ -1365,17 +1365,21 @@ public class Proprietario extends javax.swing.JPanel {
     
     public Proprietarios montarProprietario() {
         Proprietarios prop = new Proprietarios();
-        prop.setCodProprietario(Integer.parseInt(propDa.abreProprietario()) + 1);
+        prop.setCodProprietario(0);
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         prop.setDataCadastro(formato.format(pega));
         prop.setObservacao(txtObservacao.getText());
+        prop.setCodDadosPessoais(0);
+        prop.setCodContato(0);
+        prop.setCodEndereco(0);
+        prop.setCodAnimal(0);
         return prop;
     }
 
     public Contato montarContato() {
         Contato cont = new Contato();        
-        cont.setCodContato(Integer.parseInt(contDa.abreContatos()) + 1);
+        cont.setCodContato(0);
         cont.setEmail(txtEmail.getText());
         cont.setSite(null);
         cont.setTelefoneResidencial(Integer.parseInt(txtTelResid.getText()));
@@ -1391,7 +1395,7 @@ public class Proprietario extends javax.swing.JPanel {
         end.setCidade(txtCidade.getText());
         end.setEstado(txtEstado.getText());
         end.setEndereco(txtEndereco.getText());
-        end.setCodEndereco(Integer.parseInt(endDa.abreEndereco()) + 1);
+        end.setCodEndereco(0);
         end.setComplemento(txtComplemento.getText());
         end.setNumero(Integer.parseInt(txtNumEnd.getText()));
         return end;
@@ -1400,7 +1404,7 @@ public class Proprietario extends javax.swing.JPanel {
     public DadosPessoais montarDadosPessoais() {
         DadosPessoais dadosP = new DadosPessoais();
         dadosP.setCPF(Integer.parseInt(txtCPF.getText()));
-        dadosP.setCodDadosPessoais(Integer.parseInt(dadosDa.abreDadosPessoais()) + 1);
+        dadosP.setCodDadosPessoais(0);
         dadosP.setNome(txtNome.getText());
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -1413,17 +1417,22 @@ public class Proprietario extends javax.swing.JPanel {
         Endereco end = montarEndereco();
         DadosPessoais dad = montarDadosPessoais();
         Proprietarios prop = montarProprietario();
-        String respP,respD,respE,respC;
+        int respD,respE,respC;
+        String respP;
         ProprietarioDAO propDAO = new ProprietarioDAO();
         EnderecoDAO endDAO = new EnderecoDAO();
         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
         ContatoDAO contDAO = new ContatoDAO();
         respD = dadDAO.incluirDados(dad);
-        JOptionPane.showMessageDialog(null, respD);
-       // respE = endDAO.incluirEnd(end);
-        //respC = contDAO.incluirCont(cont);
-        //respP = propDAO.incluirProp(prop);
-        
+        respE = endDAO.incluirEnd(end);
+        respC = contDAO.incluirCont(cont);
+        prop.setCodDadosPessoais(respD);
+        prop.setCodContato(respE);
+        prop.setCodEndereco(respC);
+        respP = propDAO.incluirProp(prop);
+        if(respP.equals("OK")){
+            JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+        }
         /*if(respP.equals("OK")){
             if(respD.equals("OK")){
                 if(respE.equals("OK")){

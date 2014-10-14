@@ -193,17 +193,14 @@ public class ProprietarioDAO extends Banco {
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
             } else {*/
-            String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codContato, codEndereco, codDadosPessoais)"
-                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodProprietario() + "," + prop.getCodProprietario() + "," + prop.getCodProprietario() + ")";
+            String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codDadosPessoais, codContato, codEndereco)"
+                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodDadosPessoais() + "," + prop.getCodContato() + "," + prop.getCodEndereco() + ")";
             
-            stmt.executeUpdate(sql);
-            ResultSet rs = stmt.executeQuery("SELECT LAST_INSERT_ID()");
-            
-            resp = rs.getString(1)+"";            
+            stmt.executeUpdate(sql);                        
             stmt.close();
-            rs.close();
+            //rs.close();
             con.close();
-            
+            resp = "OK";            
         } catch (Exception e) {
             resp = e.toString();
         }

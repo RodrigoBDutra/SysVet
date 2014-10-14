@@ -54,8 +54,8 @@ public class EnderecoDAO  extends Banco {
         return end;
     }
 
-    public String incluirEnd(Endereco end) {
-        String resp = "";
+    public int incluirEnd(Endereco end) {
+        int resp = 0;
         try {
             conecta();
             Statement stmt = con.createStatement();
@@ -70,14 +70,18 @@ public class EnderecoDAO  extends Banco {
                         end.getComplemento() + "'," + end.getCEP() + ",'" + end.getCidade() + "','" + end.getEstado() + "')";
                
                 stmt.executeUpdate(sql);
-
+                ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+                while(rs2.next()){
+                    resp = rs2.getInt(1); 
+                 }
+                rs2.close();
                 stmt.close();
-                rs.close();
+                //rs.close();
                 con.close();
-                resp = "OK";
+                
             
         } catch (Exception e) {
-            resp = e.toString();
+            JOptionPane.showMessageDialog(null, e.toString());
         }
         return resp;
     }

@@ -53,8 +53,8 @@ public class DadosPessoaisDAO extends Banco{
     }
     
     
-    public String incluirDados(DadosPessoais dad) {
-        String resp = "";
+    public int incluirDados(DadosPessoais dad) {
+        int resp = 0;
         try {
             conecta();
             Statement stmt = con.createStatement();
@@ -70,7 +70,7 @@ public class DadosPessoaisDAO extends Banco{
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
             while(rs2.next()){
-            resp = rs2.getInt(1)+""; 
+            resp = rs2.getInt(1); 
             }
             rs2.close();
             }
@@ -78,7 +78,7 @@ public class DadosPessoaisDAO extends Banco{
             rs.close();            
             con.close();
         } catch (Exception e) {
-            resp = e.toString();
+            JOptionPane.showMessageDialog(null, e.toString());
         }
         return resp;
     }
