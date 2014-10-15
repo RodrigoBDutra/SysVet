@@ -70,8 +70,8 @@ public class Proprietario extends javax.swing.JPanel {
         btnHistorico = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         btnPesquisarProp = new javax.swing.JButton();
-        txtCPF = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
+        txtCPF = new javax.swing.JFormattedTextField();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jpCliente = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -491,16 +491,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpProprietario.add(btnPesquisarProp);
-        btnPesquisarProp.setBounds(220, 30, 120, 28);
-
-        txtCPF.setText("76543");
-        txtCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFActionPerformed(evt);
-            }
-        });
-        jpProprietario.add(txtCPF);
-        txtCPF.setBounds(80, 30, 120, 28);
+        btnPesquisarProp.setBounds(210, 30, 120, 28);
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel40.setText("CPF");
@@ -508,12 +499,20 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel40.setBounds(30, 40, 30, 15);
 
         try {
+            txtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpProprietario.add(txtCPF);
+        txtCPF.setBounds(70, 30, 120, 28);
+
+        try {
             jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         jpProprietario.add(jFormattedTextField1);
-        jFormattedTextField1.setBounds(430, 30, 120, 28);
+        jFormattedTextField1.setBounds(410, 30, 48, 20);
 
         jtpPropCli.addTab("Proprietário", jpProprietario);
 
@@ -1561,10 +1560,6 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.setVisible(true);
     }//GEN-LAST:event_btnPesquisarPropMouseClicked
 
-    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;
@@ -1700,7 +1695,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JTextField txtAnimal;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCEP;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JFormattedTextField txtCPF;
     private javax.swing.JButton txtCancelarAnimal;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtComplemento;
