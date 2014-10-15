@@ -29,8 +29,6 @@ public class Proprietario extends javax.swing.JPanel {
         jtpPropCli = new javax.swing.JTabbedPane();
         jpProprietario = new javax.swing.JPanel();
         jpPropri = new javax.swing.JPanel();
-        txtCPF = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
         txtRG = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
@@ -64,14 +62,17 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel43 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         txtComplemento = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnHistorico = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
         btnPesquisarProp = new javax.swing.JButton();
+        txtCPF = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jpCliente = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
@@ -196,23 +197,9 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpPropri.setLayout(null);
 
-        txtCPF.setText("76543");
-        txtCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFActionPerformed(evt);
-            }
-        });
-        jpPropri.add(txtCPF);
-        txtCPF.setBounds(150, 30, 120, 28);
-
-        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel40.setText("CPF");
-        jpPropri.add(jLabel40);
-        jLabel40.setBounds(150, 10, 120, 15);
-
         txtRG.setText("6543");
         jpPropri.add(txtRG);
-        txtRG.setBounds(280, 30, 110, 28);
+        txtRG.setBounds(510, 30, 110, 28);
 
         txtEndereco.setText("Rua: Serra do Itaqueri");
         jpPropri.add(txtEndereco);
@@ -351,7 +338,7 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel55.setText("RG");
         jpPropri.add(jLabel55);
-        jLabel55.setBounds(280, 10, 110, 15);
+        jLabel55.setBounds(510, 10, 110, 15);
 
         jtbCliente.setBorder(new javax.swing.border.MatteBorder(null));
         jtbCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -426,12 +413,12 @@ public class Proprietario extends javax.swing.JPanel {
         txtDataNascimento.setAlignmentX(0.0F);
         txtDataNascimento.setAlignmentY(0.0F);
         jpPropri.add(txtDataNascimento);
-        txtDataNascimento.setBounds(10, 30, 130, 28);
+        txtDataNascimento.setBounds(370, 30, 130, 28);
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel43.setText("Data Nascimento");
         jpPropri.add(jLabel43);
-        jLabel43.setBounds(10, 10, 130, 15);
+        jLabel43.setBounds(370, 10, 130, 15);
 
         jLabel57.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel57.setText("Complemento");
@@ -441,6 +428,15 @@ public class Proprietario extends javax.swing.JPanel {
         txtComplemento.setText("mgnbfv");
         jpPropri.add(txtComplemento);
         txtComplemento.setBounds(370, 130, 140, 28);
+
+        txtNome.setText("Joao Candido Vieira");
+        jpPropri.add(txtNome);
+        txtNome.setBounds(10, 30, 350, 28);
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel39.setText("Nome");
+        jpPropri.add(jLabel39);
+        jLabel39.setBounds(10, 10, 100, 15);
 
         jpProprietario.add(jpPropri);
         jpPropri.setBounds(9, 74, 630, 380);
@@ -480,15 +476,6 @@ public class Proprietario extends javax.swing.JPanel {
         jpProprietario.add(jLabel8);
         jLabel8.setBounds(270, 10, 100, 15);
 
-        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel39.setText("Nome");
-        jpProprietario.add(jLabel39);
-        jLabel39.setBounds(20, 40, 100, 15);
-
-        txtNome.setText("Joao Candido Vieira");
-        jpProprietario.add(txtNome);
-        txtNome.setBounds(70, 30, 430, 28);
-
         btnPesquisarProp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         btnPesquisarProp.setText("Consultar");
         btnPesquisarProp.setToolTipText("");
@@ -504,7 +491,29 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpProprietario.add(btnPesquisarProp);
-        btnPesquisarProp.setBounds(510, 30, 120, 28);
+        btnPesquisarProp.setBounds(220, 30, 120, 28);
+
+        txtCPF.setText("76543");
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFActionPerformed(evt);
+            }
+        });
+        jpProprietario.add(txtCPF);
+        txtCPF.setBounds(80, 30, 120, 28);
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel40.setText("CPF");
+        jpProprietario.add(jLabel40);
+        jLabel40.setBounds(30, 40, 30, 15);
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpProprietario.add(jFormattedTextField1);
+        jFormattedTextField1.setBounds(430, 30, 120, 28);
 
         jtpPropCli.addTab("Proprietário", jpProprietario);
 
@@ -1352,7 +1361,7 @@ public class Proprietario extends javax.swing.JPanel {
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
         jpPropri.setVisible(true);
-
+        
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
 
     private void jtbClienteAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtbClienteAncestorAdded
@@ -1362,7 +1371,7 @@ public class Proprietario extends javax.swing.JPanel {
     DadosPessoaisDAO dadosDa = new DadosPessoaisDAO();
     EnderecoDAO endDa = new EnderecoDAO();
     ContatoDAO contDa = new ContatoDAO();
-    
+
     public Proprietarios montarProprietario() {
         Proprietarios prop = new Proprietarios();
         prop.setCodProprietario(0);
@@ -1378,20 +1387,20 @@ public class Proprietario extends javax.swing.JPanel {
     }
 
     public Contato montarContato() {
-        Contato cont = new Contato();        
+        Contato cont = new Contato();
         cont.setCodContato(0);
         cont.setEmail(txtEmail.getText());
-        cont.setSite(null);
-        cont.setTelefoneResidencial(Integer.parseInt(txtTelResid.getText()));
-        cont.setTelefoneCelular(Integer.parseInt(txtTelCell.getText()));
-        cont.setTelefoneComercial(0);
+        cont.setSite("");
+        cont.setTelefoneResidencial(txtTelResid.getText());
+        cont.setTelefoneCelular(txtTelCell.getText());
+        cont.setTelefoneComercial("");
         return cont;
     }
 
     public Endereco montarEndereco() {
         Endereco end = new Endereco();
         end.setBairro(txtBairro.getText());
-        end.setCEP(Integer.parseInt(txtCEP.getText()));
+        end.setCEP(txtCEP.getText());
         end.setCidade(txtCidade.getText());
         end.setEstado(txtEstado.getText());
         end.setEndereco(txtEndereco.getText());
@@ -1403,13 +1412,13 @@ public class Proprietario extends javax.swing.JPanel {
 
     public DadosPessoais montarDadosPessoais() {
         DadosPessoais dadosP = new DadosPessoais();
-        dadosP.setCPF(Integer.parseInt(txtCPF.getText()));
+        dadosP.setCPF(txtCPF.getText());
         dadosP.setCodDadosPessoais(0);
         dadosP.setNome(txtNome.getText());
         java.util.Date pega = txtDataCadastro.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        dadosP.setDataNascimento(formato.format(pega));        
-        dadosP.setRG(Integer.parseInt(txtRG.getText()));
+        dadosP.setDataNascimento(formato.format(pega));
+        dadosP.setRG(txtRG.getText());
         return dadosP;
     }
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -1417,35 +1426,28 @@ public class Proprietario extends javax.swing.JPanel {
         Endereco end = montarEndereco();
         DadosPessoais dad = montarDadosPessoais();
         Proprietarios prop = montarProprietario();
-        int respD,respE,respC;
+        int respD, respE, respC;
         String respP;
         ProprietarioDAO propDAO = new ProprietarioDAO();
         EnderecoDAO endDAO = new EnderecoDAO();
         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
         ContatoDAO contDAO = new ContatoDAO();
         respD = dadDAO.incluirDados(dad);
-        respE = endDAO.incluirEnd(end);
-        respC = contDAO.incluirCont(cont);
-        prop.setCodDadosPessoais(respD);
-        prop.setCodContato(respE);
-        prop.setCodEndereco(respC);
-        respP = propDAO.incluirProp(prop);
-        if(respP.equals("OK")){
-            JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-        }
-        /*if(respP.equals("OK")){
-            if(respD.equals("OK")){
-                if(respE.equals("OK")){
-                    if(respC.equals("OK")){
-                        JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-                    }
-                    JOptionPane.showMessageDialog(null,respC);
-                }
-                JOptionPane.showMessageDialog(null,respE);
+        if (respD < 0) {
+             JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+        } else {
+            respE = endDAO.incluirEnd(end);
+            respC = contDAO.incluirCont(cont);
+            prop.setCodDadosPessoais(respD);
+            prop.setCodContato(respC);
+            prop.setCodEndereco(respE);
+            respP = propDAO.incluirProp(prop);
+            if (respP.equals("OK")) {
+                JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+            } else {
+                JOptionPane.showMessageDialog(null, respP);
             }
-            JOptionPane.showMessageDialog(null,respD);
-        }   
-        JOptionPane.showMessageDialog(null,respP);*/
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -1598,6 +1600,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JComboBox jComboBox4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

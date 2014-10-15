@@ -5,8 +5,8 @@ public class DadosPessoais {
     private int codDadosPessoais;
     private String nome;
     private String dataNascimento;
-    private int CPF;
-    private int RG;
+    private String CPF;
+    private String RG;
 
     public int getCodDadosPessoais() {
         return codDadosPessoais;
@@ -32,19 +32,19 @@ public class DadosPessoais {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
-    public int getRG() {
+    public String getRG() {
         return RG;
     }
 
-    public void setRG(int RG) {
+    public void setRG(String RG) {
         this.RG = RG;
     }
     
@@ -52,12 +52,11 @@ public class DadosPessoais {
         
     }
     
-    public DadosPessoais(int codDadosPesso, String nome, String dataNasc, int CPF, int RG){
+    public DadosPessoais(int codDadosPesso, String nome, String dataNasc, String CPF, String RG){
         this.codDadosPessoais = codDadosPesso;
         this.nome = nome;
         this.dataNascimento = dataNasc;
         this.CPF = CPF;
         this.RG = RG;
     }
-    
 }

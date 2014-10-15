@@ -3,11 +3,24 @@ package classes;
 public class Contato {
     
     private int codContato;
-    private int telefoneResidencial;
-    private int telefoneCelular;
-    private int telefoneComercial;
+    private String telefoneResidencial;
+    private String telefoneCelular;
+    private String telefoneComercial;
     private String email;
     private String site;
+
+    
+    public Contato(){
+        
+    }
+    public Contato(int codCont,String telRes, String telCel, String telCom, String mail, String site){
+        this.codContato = codCont;
+        this.telefoneResidencial = telRes;
+        this.telefoneCelular = telCel;
+        this.telefoneComercial = telCom;
+        this.email = mail;
+        this.site = site;
+    }
 
     public int getCodContato() {
         return codContato;
@@ -17,27 +30,27 @@ public class Contato {
         this.codContato = codContato;
     }
 
-    public int getTelefoneResidencial() {
+    public String getTelefoneResidencial() {
         return telefoneResidencial;
     }
 
-    public void setTelefoneResidencial(int telefoneResidencial) {
+    public void setTelefoneResidencial(String telefoneResidencial) {
         this.telefoneResidencial = telefoneResidencial;
     }
 
-    public int getTelefoneCelular() {
+    public String getTelefoneCelular() {
         return telefoneCelular;
     }
 
-    public void setTelefoneCelular(int telefoneCelular) {
+    public void setTelefoneCelular(String telefoneCelular) {
         this.telefoneCelular = telefoneCelular;
     }
 
-    public int getTelefoneComercial() {
+    public String getTelefoneComercial() {
         return telefoneComercial;
     }
 
-    public void setTelefoneComercial(int telefoneComercial) {
+    public void setTelefoneComercial(String telefoneComercial) {
         this.telefoneComercial = telefoneComercial;
     }
 
@@ -54,18 +67,6 @@ public class Contato {
     }
 
     public void setSite(String site) {
-        this.site = site;
-    }
-    
-    public Contato(){
-        
-    }
-    public Contato(int codCont, int telRes, int telCel, int telCom, String mail, String site){
-        this.codContato = codCont;
-        this.telefoneResidencial = telRes;
-        this.telefoneCelular = telCel;
-        this.telefoneComercial = telCom;
-        this.email = mail;
         this.site = site;
     }
     

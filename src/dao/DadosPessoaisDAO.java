@@ -35,11 +35,10 @@ public class DadosPessoaisDAO extends Banco{
             String sql = "SELECT * FROM dadosPessoais where cpf = '" + dad.getCPF() + "'";
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                
                  dad.setNome(rs.getString("nome"));
                  dad.setDataNascimento(rs.getString("dataNascimento"));
-                 dad.setCPF(rs.getInt("cpf"));
-                 dad.setRG(rs.getInt("rg"));
+                 dad.setCPF(rs.getString("cpf"));
+                 dad.setRG(rs.getString("rg"));
             } else {
                 dad = null;
             }
@@ -61,11 +60,11 @@ public class DadosPessoaisDAO extends Banco{
             String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
             ResultSet rs = stmt.executeQuery(sql4);
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+                resp = -1;
             } else {
             String sql = "INSERT INTO dadospessoais(nome, datanascimento, cpf, rg) "
-                    + "VALUES('"+ dad.getNome() + "','" + dad.getDataNascimento() + "'," 
-                    + dad.getCPF() + "," + dad.getRG() + ")";
+                    + "VALUES('"+ dad.getNome() + "','" + dad.getDataNascimento() + "','" 
+                    + dad.getCPF() + "','" + dad.getRG() + "')";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");

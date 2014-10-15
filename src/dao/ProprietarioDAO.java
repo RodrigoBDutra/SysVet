@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,92 +9,8 @@ import classes.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author vinicius
- */
 public class ProprietarioDAO extends Banco {
 
-    public String abreProprietario() {
-        String sql;
-        conecta();
-        try {
-            sql = "SELECT MAX(codProprietario) FROM proprietario";
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-//            rs.previous();
-            if (rs.getString("MAX(codProprietario)") == null) {
-                return "0";
-            } else {
-            return rs.getString("MAX(codProprietario)");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-    }
-
-    public String abreContatos() {
-        String sql;
-        conecta();
-        try {
-            sql = "SELECT MAX(codContato) FROM contatos";
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-//            rs.previous();
-            if (rs.getString("MAX(codContato)") == null) {
-                return "0";
-            } else {
-            return rs.getString("MAX(codContato)");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-    }
-
-    public String abreEndereco() {
-        String sql;
-        conecta();
-        try {
-            sql = "SELECT MAX(codEndereco) FROM endereco";
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-//            rs.previous();
-            if (rs.getString("MAX(codEndereco)") == null) {
-                return "0";
-            } else {
-                return rs.getString("MAX(codEndereco)");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-    }
-
-    public String abreDadosPessoais() {
-        String sql;
-        conecta();
-        try {
-            sql = "SELECT MAX(codDadosPessoais) FROM dadospessoais";
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-//            rs.previous();
-            if (rs.getString("MAX(codDadosPessoais)") == null) {
-                return "0";
-            } else {
-            return rs.getString("MAX(codDadosPessoais)");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-
-    }
     /* public ArrayList<Proprietario> getListagem() {
      ArrayList<Proprietario> listaProprietario = new ArrayList<Proprietario>();
      try {
@@ -135,7 +46,6 @@ public class ProprietarioDAO extends Banco {
      return listaProprietario;
      }
      */
-
     /**
      * Pesquisa um Proprietarios pelo nome
      *
@@ -188,21 +98,16 @@ public class ProprietarioDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            /*String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
-            ResultSet rs = stmt.executeQuery(sql4);
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-            } else {*/
             String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codDadosPessoais, codContato, codEndereco)"
                     + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodDadosPessoais() + "," + prop.getCodContato() + "," + prop.getCodEndereco() + ")";
-            
-            stmt.executeUpdate(sql);                        
+
+            stmt.executeUpdate(sql);
             stmt.close();
             //rs.close();
             con.close();
-            resp = "OK";            
+            resp = "OK";
         } catch (Exception e) {
-            resp = e.toString();
+            resp = "ERRO AQUI" + e.toString();
         }
         return resp;
     }
