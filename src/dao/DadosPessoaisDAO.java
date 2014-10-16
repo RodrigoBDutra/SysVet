@@ -27,12 +27,13 @@ public class DadosPessoaisDAO extends Banco{
 
     }
     
-    public DadosPessoais getDados(String cpf) {
+    public DadosPessoais consultaDados(String cpf) {
         DadosPessoais dad = new DadosPessoais();
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM dadosPessoais where cpf = '" + dad.getCPF() + "'";
+            String sql = "SELECT p.codProprietario, p. FROM"
+                    + " * FROM dadosPessoais where cpf = '" + dad.getCPF() + "' INNER";
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                  dad.setNome(rs.getString("nome"));
@@ -57,14 +58,14 @@ public class DadosPessoaisDAO extends Banco{
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql4 = "SELECT cpf FROM dadospessoais where cpf = " + dad.getCPF();
+            String sql4 = "SELECT cpf FROM dadospessoais where cpf = '" + dad.getCPF()+"'";
             ResultSet rs = stmt.executeQuery(sql4);
             if (rs.next()) {
                 resp = -1;
             } else {
             String sql = "INSERT INTO dadospessoais(nome, datanascimento, cpf, rg) "
-                    + "VALUES('"+ dad.getNome() + "','" + dad.getDataNascimento() + "','" 
-                    + dad.getCPF() + "','" + dad.getRG() + "')";
+                    + "VALUES('"+ dad.getNome() + "','" + dad.getDataNascimento() + 
+                    "','" + dad.getCPF() + "','" + dad.getRG() + "')";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");

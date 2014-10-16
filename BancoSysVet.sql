@@ -54,7 +54,7 @@ CREATE TABLE `contatos` (
   `email` varchar(50) DEFAULT NULL,
   `site` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `dadospessoais` */
 
@@ -62,12 +62,12 @@ DROP TABLE IF EXISTS `dadospessoais`;
 
 CREATE TABLE `dadospessoais` (
   `codDadosPessoais` int(6) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `dataNascimento` varchar(15) NOT NULL,
-  `cpf` varchar(14) NOT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `dataNascimento` varchar(15) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
   `rg` varchar(13) NOT NULL,
   PRIMARY KEY (`codDadosPessoais`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `endereco` */
 
@@ -83,7 +83,7 @@ CREATE TABLE `endereco` (
   `cidade` varchar(50) DEFAULT NULL,
   `estado` char(2) DEFAULT NULL,
   PRIMARY KEY (`codEndereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `especie` */
 
@@ -152,7 +152,7 @@ CREATE TABLE `proprietario` (
   CONSTRAINT `FK_endereco` FOREIGN KEY (`codEndereco`) REFERENCES `endereco` (`codEndereco`),
   CONSTRAINT `FK_codDadosPessoais` FOREIGN KEY (`codDadosPessoais`) REFERENCES `dadospessoais` (`codDadosPessoais`),
   CONSTRAINT `FK_contato` FOREIGN KEY (`codContato`) REFERENCES `contatos` (`codContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `raca` */
 

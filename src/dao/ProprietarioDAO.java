@@ -52,27 +52,37 @@ public class ProprietarioDAO extends Banco {
      * @param nome a ser pesquisado
      * @return null se não achar ou o objeto preenchido se achar
      */
-    public Proprietarios getProp(String nome) {
-        Proprietarios prop = new Proprietarios();
+    public ArrayList<ProprietarioDAO> consultaProp(String cpf) {
+     ArrayList<ProprietarioDAO> listaProprietario = new ArrayList<ProprietarioDAO>();
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM proprietario where nome = '" + nome + "'";
+            String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular, \n"
+                    + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado\n"
+                    + "FROM dadospessoais d INNER JOIN proprietario p \n"
+                    + "ON p.codDadosPessoais = d.codDadosPessoais\n"
+                    + "INNER JOIN contatos c\n"
+                    + "ON p.codContato = c.codContato\n"
+                    + "INNER JOIN endereco e\n"
+                    + "ON p.codEndereco = e.codEndereco\n"
+                    + "WHERE d.cpf = '" + cpf + "'";
+
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                /*prop.setNome(rs.getString("nome"));
-                 prop.setData(rs.getString("data"));
-                 prop.setCpf(rs.getInt("cpf"));
-                 prop.setRg(rs.getString("rg"));
-                 prop.setTelResidencia(rs.getInt("telResidencial"));
-                 prop.setTelCelular(rs.getInt("telCelular"));
-                 prop.setEmail(rs.getString("email"));
-                 prop.setEndereco(rs.getString("endereco"));
-                 prop.setNumero(rs.getInt("numero"));
-                 prop.setCep(rs.getInt("cep"));
-                 prop.setBairro(rs.getString("bairro"));
-                 prop.setCidade(rs.getString("cidade"));
-                 prop.setEstado((char) rs.getObject("estado")); // ainda não vi como colocar variavel CHAR acho que é assim*/
+                Proprietarios prop = new Proprietarios();
+               /* prop.setNome(rs.getString("nome"));
+                prop.setData(rs.getString("data"));
+                prop.setCpf(rs.getInt("cpf"));
+                prop.setRg(rs.getString("rg"));
+                prop.setTelResidencia(rs.getInt("telResidencial"));
+                prop.setTelCelular(rs.getInt("telCelular"));
+                prop.setEmail(rs.getString("email"));
+                prop.setEndereco(rs.getString("endereco"));
+                prop.setNumero(rs.getInt("numero"));
+                prop.setCep(rs.getInt("cep"));
+                prop.setBairro(rs.getString("bairro"));
+                prop.setCidade(rs.getString("cidade"));
+                prop.setEstado((char) rs.getObject("estado")); // ainda não vi como colocar variavel CHAR acho que é assim*/
                 prop.setDataCadastro(rs.getString("dataCadastro"));
                 prop.setObservacao(rs.getString("observacao"));
             } else {
@@ -86,7 +96,6 @@ public class ProprietarioDAO extends Banco {
         }
         return prop;
     }
-
     /**
      * Cadastro um Proprietarios no banco de dados
      *

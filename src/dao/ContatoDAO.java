@@ -39,7 +39,9 @@ public class ContatoDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO contatos(telefoneResidencial,telefoneCelular,telefoneComercial,email,site)"
-                    + "VALUES('" + cont.getTelefoneResidencial() + "','" + cont.getTelefoneCelular() + "','" + cont.getTelefoneComercial() + "','" + cont.getEmail() + "','" + cont.getSite() + "')";
+                    + "VALUES('" + cont.getTelefoneResidencial() + "','" + 
+                    cont.getTelefoneCelular() + "','" + cont.getTelefoneComercial() + "','" + cont.getEmail() + 
+                    "','" + cont.getSite() + "')";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
