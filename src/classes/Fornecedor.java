@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Fornecedor {
     private int codFornecedor;
     private int CNPJ;
@@ -18,19 +8,6 @@ public class Fornecedor {
     private String nomeFantasia;
     private String observacao;
     
-    public Fornecedor(){
-        
-    }
-    
-    public Fornecedor(int codFornecedor, int CNPJ, int IE, String razaoSocial, String nomeFantasia, String observacao){
-        this.codFornecedor = codFornecedor;
-        this.CNPJ = CNPJ;
-        this.IE = IE;
-        this.razaoSocial = razaoSocial;
-        this.nomeFantasia = nomeFantasia;
-        this.observacao = observacao;
-    }
-
     public int getCodFornecedor() {
         return codFornecedor;
     }
@@ -78,4 +55,18 @@ public class Fornecedor {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
+    
+     public Fornecedor(){
+        
+    }
+    
+    public Fornecedor(int codFornecedor, int CNPJ, int IE, String razaoSocial, String nomeFantasia, String observacao){
+        this.codFornecedor = codFornecedor;
+        this.CNPJ = CNPJ;
+        this.IE = IE;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.observacao = observacao;
+    }
+
 }

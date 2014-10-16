@@ -1,18 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package classes;
 
-/**
- *
- * @author Rodrigo
- */
 public class Raca {
-    
     private int codRaca;
-    private String nomeRaca;    
+    private String nomeRaca;
 
     public int getCodRaca() {
         return codRaca;
@@ -29,13 +19,13 @@ public class Raca {
     public void setNomeRaca(String nomeRaca) {
         this.nomeRaca = nomeRaca;
     }
-public Raca(){
+
+    public Raca() {
+        
     }
-    
-    public Raca(int codRaca, String nomeRaca){
-    
+
+    public Raca(int codRaca, String nomeRaca) {
         this.codRaca = codRaca;
         this.nomeRaca = nomeRaca;
-        
     }
 }

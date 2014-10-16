@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Produto {
     private int codProduto;
     private int EAN;
@@ -21,23 +11,6 @@ public class Produto {
     private float valorVenda;
     private int estoqueMinimo;
     
-    public Produto (){
-        
-    }
-    
-    public Produto(int codProduto, int EAN, String nomeProduto, int NCM, int unidade, float valorUnidade, float lucro, float valorVenda, int estoqueMinimo){
-        this.codProduto = codProduto;
-        this.EAN = EAN;
-        this.nomeProduto = nomeProduto;
-        this.NCM = NCM;
-        this.unidade = unidade;
-        this.valorUnidade = valorUnidade;
-        this.valorVenda = valorVenda;
-        this.lucro = lucro;
-        this.valorVenda = valorVenda;
-        this.estoqueMinimo = estoqueMinimo;
-    }
-
     public int getCodProduto() {
         return codProduto;
     }
@@ -107,6 +80,23 @@ public class Produto {
     }
 
     public void setEstoqueMinimo(int estoqueMinimo) {
+        this.estoqueMinimo = estoqueMinimo;
+    }
+    
+     public Produto (){
+        
+    }
+    
+    public Produto(int codProduto, int EAN, String nomeProduto, int NCM, int unidade, float valorUnidade, float lucro, float valorVenda, int estoqueMinimo){
+        this.codProduto = codProduto;
+        this.EAN = EAN;
+        this.nomeProduto = nomeProduto;
+        this.NCM = NCM;
+        this.unidade = unidade;
+        this.valorUnidade = valorUnidade;
+        this.valorVenda = valorVenda;
+        this.lucro = lucro;
+        this.valorVenda = valorVenda;
         this.estoqueMinimo = estoqueMinimo;
     }
 }

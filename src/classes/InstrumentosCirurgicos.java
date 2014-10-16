@@ -1,32 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class InstrumentosCirurgicos {
     private int codInstCirurgico;
     private String nome;
     private String garantia;
     private String marca;
     
-    public InstrumentosCirurgicos(){
-        
-    }
-    
-    public InstrumentosCirurgicos(int codInstCirurgico, String nome, String garantia, String marca){
-        this.codInstCirurgico = codInstCirurgico;
-        this.nome = nome;
-        this.garantia = garantia;
-        this.marca = marca;
-    }
-
     public int getCodInstCirurgico() {
         return codInstCirurgico;
     }
@@ -59,4 +38,14 @@ public class InstrumentosCirurgicos {
         this.marca = marca;
     }
     
+    public InstrumentosCirurgicos(){
+        
+    }
+    
+    public InstrumentosCirurgicos(int codInstCirurgico, String nome, String garantia, String marca){
+        this.codInstCirurgico = codInstCirurgico;
+        this.nome = nome;
+        this.garantia = garantia;
+        this.marca = marca;
+    }    
 }

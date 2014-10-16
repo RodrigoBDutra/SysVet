@@ -1,32 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Internacao {
     private int codInternacao;
     private String dataInicio;
     private String dataFim;
     private String descricao;
     
-    public Internacao(){
-        
-    }
-    
-    public Internacao(int codInternacao, String dataInicio, String dataFim, String descricao){
-        this.codInternacao = codInternacao;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.descricao = descricao;
-    }
-
     public int getCodInternacao() {
         return codInternacao;
     }
@@ -56,6 +35,17 @@ public class Internacao {
     }
 
     public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
+    public Internacao(){
+        
+    }
+    
+    public Internacao(int codInternacao, String dataInicio, String dataFim, String descricao){
+        this.codInternacao = codInternacao;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
         this.descricao = descricao;
     }
 }

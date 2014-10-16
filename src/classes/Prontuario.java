@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Prontuario {
     private int codProntuario;
     private String Ectoparasitas;
@@ -21,22 +11,6 @@ public class Prontuario {
     private int frequenciaCardiaca;
     private String observacoes;
     
-    public Prontuario(){
-        
-    }
-    
-    public Prontuario(int codProntuario, String Ectoparasitas, String estadoGeral, String tumor, String ferida, float temperatura, int frequenciaRespiratoria, int frequenciaCardiaca, String observacoes){
-       this.codProntuario = codProntuario;
-       this.Ectoparasitas = Ectoparasitas;
-       this.estadoGeral = estadoGeral;
-       this.tumor = tumor;
-       this.ferida = ferida;
-       this.temperatura = temperatura;
-       this.frequenciaRespiratoria = frequenciaRespiratoria;
-       this.frequenciaCardiaca = frequenciaCardiaca;
-       this.observacoes = observacoes;
-    }
-
     public int getCodProntuario() {
         return codProntuario;
     }
@@ -107,5 +81,21 @@ public class Prontuario {
 
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
+    }
+    
+    public Prontuario(){
+        
+    }
+    
+    public Prontuario(int codProntuario, String Ectoparasitas, String estadoGeral, String tumor, String ferida, float temperatura, int frequenciaRespiratoria, int frequenciaCardiaca, String observacoes){
+       this.codProntuario = codProntuario;
+       this.Ectoparasitas = Ectoparasitas;
+       this.estadoGeral = estadoGeral;
+       this.tumor = tumor;
+       this.ferida = ferida;
+       this.temperatura = temperatura;
+       this.frequenciaRespiratoria = frequenciaRespiratoria;
+       this.frequenciaCardiaca = frequenciaCardiaca;
+       this.observacoes = observacoes;
     }
 }

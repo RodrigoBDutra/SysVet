@@ -1,7 +1,7 @@
 package classes;
 
 public class GrupoAcesso {
-    
+
     private int codGrupo;
     private String nome;
     private String descricao;
@@ -29,15 +29,14 @@ public class GrupoAcesso {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public GrupoAcesso(){
-        
+
+    public GrupoAcesso() {
+
     }
-    
-    public GrupoAcesso(int codGrupo, String nome, String descricao){
-    
+
+    public GrupoAcesso(int codGrupo, String nome, String descricao) {
         this.codGrupo = codGrupo;
         this.nome = nome;
         this.descricao = descricao;
-                
     }
 }

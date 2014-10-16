@@ -1,35 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Agenda {
+
     private int codAgenda;
     private String dataAgendamento;
     private String horaAgendamento;
     private String tipoAtendimento;
     private String status;
     private String observacao;
-    
-    public Agenda(){
-        
-    }
-    
-    public Agenda(int codAgenda, String dataAgendamento, String horaAgendamento, String tipoAtendimento, String status, String observacoes){
-        this.codAgenda = codAgenda;
-        this.dataAgendamento = dataAgendamento;
-        this.horaAgendamento = horaAgendamento;
-        this.tipoAtendimento = tipoAtendimento;
-        this.status = status;
-        this.observacao = observacoes;
-    }
 
     public int getCodAgenda() {
         return codAgenda;
@@ -77,5 +55,18 @@ public class Agenda {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+    
+    public Agenda(){
+        
+    }
+    
+    public Agenda(int codAgenda, String dataAgendamento, String horaAgendamento, String tipoAtendimento, String status, String observacoes){
+        this.codAgenda = codAgenda;
+        this.dataAgendamento = dataAgendamento;
+        this.horaAgendamento = horaAgendamento;
+        this.tipoAtendimento = tipoAtendimento;
+        this.status = status;
+        this.observacao = observacoes;
     }
 }

@@ -1,8 +1,6 @@
-
 package classes;
 
 public class Permissoes {
-    
     private int codPermissao;
     private String tipoAcesso;
     private int nivelPermissao;
@@ -41,10 +39,10 @@ public class Permissoes {
     }
     
     public Permissoes(){
+        
     }
     
     public Permissoes(int codPermissao, String tipoAcesso, int nivelPermissao, String descricao){
-    
         this.codPermissao = codPermissao;
         this.tipoAcesso = tipoAcesso;
         this.nivelPermissao = nivelPermissao;

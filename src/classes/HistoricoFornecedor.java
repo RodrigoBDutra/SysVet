@@ -1,9 +1,6 @@
-
 package classes;
 
-
 public class HistoricoFornecedor {
-    
     private int codHistFornecedor;
     private int entrega;
     private String status;
@@ -31,15 +28,14 @@ public class HistoricoFornecedor {
     public void setStatus(String status) {
         this.status = status;
     }
+    
     public HistoricoFornecedor(){
         
     }
     
     public HistoricoFornecedor(int codHistFornecedor, int entrega, String status){
-    
         this.codHistFornecedor = codHistFornecedor;
         this.entrega = entrega;
-        this.status = status;
-                
+        this.status = status;           
     }   
 }

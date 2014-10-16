@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class HistoricoAnimal {
     private int codHistorico;
     private String atendimento;
@@ -19,20 +9,6 @@ public class HistoricoAnimal {
     private String tipoAtendimento;
     private String status;
     
-    public HistoricoAnimal(){
-        
-    }
-    
-    public HistoricoAnimal(int codHistorico, String atendimento, String horario, String nomeMedico, int CRMV, String tipoAtendimento, String status){
-        this.codHistorico = codHistorico;
-        this.atendimento = atendimento;
-        this.horario = horario;
-        this.nomeMedico = nomeMedico;
-        this.CRMV = CRMV;
-        this.tipoAtendimento = tipoAtendimento;
-        this.status = status;
-    }
-
     public int getCodHistorico() {
         return codHistorico;
     }
@@ -86,6 +62,20 @@ public class HistoricoAnimal {
     }
 
     public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    public HistoricoAnimal(){
+        
+    }
+    
+    public HistoricoAnimal(int codHistorico, String atendimento, String horario, String nomeMedico, int CRMV, String tipoAtendimento, String status){
+        this.codHistorico = codHistorico;
+        this.atendimento = atendimento;
+        this.horario = horario;
+        this.nomeMedico = nomeMedico;
+        this.CRMV = CRMV;
+        this.tipoAtendimento = tipoAtendimento;
         this.status = status;
     }
 }

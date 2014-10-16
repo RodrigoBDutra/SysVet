@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package classes;
 
-/**
- *
- * @author Dani
- */
 public class Mucosa {
     private int codMucosa;
     private String bucal;
@@ -18,19 +8,6 @@ public class Mucosa {
     private String vulva;
     private String prepucial;
     
-    public Mucosa(){
-        
-    }
-    
-    public Mucosa(int codMucosa, String bucal, String labial, String ocular, String vulva, String prepucial){
-        this.codMucosa = codMucosa;
-        this.bucal = bucal;
-        this.labial = labial;
-        this.ocular = ocular;
-        this.vulva = vulva;
-        this.prepucial = prepucial;
-    }
-
     public int getCodMucosa() {
         return codMucosa;
     }
@@ -76,6 +53,19 @@ public class Mucosa {
     }
 
     public void setPrepucial(String prepucial) {
+        this.prepucial = prepucial;
+    }
+    
+    public Mucosa(){
+        
+    }
+    
+    public Mucosa(int codMucosa, String bucal, String labial, String ocular, String vulva, String prepucial){
+        this.codMucosa = codMucosa;
+        this.bucal = bucal;
+        this.labial = labial;
+        this.ocular = ocular;
+        this.vulva = vulva;
         this.prepucial = prepucial;
     }
     

@@ -1,8 +1,6 @@
-
 package classes;
 
 public class Medicacao {
-    
     private int codMedicacao;
     private String validade;
     private String fabricante;
@@ -36,11 +34,8 @@ public class Medicacao {
     }
     
     public Medicacao(int codMedicacao, String validade, String fabricante){
-    
         this.codMedicacao = codMedicacao;
         this.validade = validade;
-        this.fabricante = fabricante;
-                
+        this.fabricante = fabricante;          
     }
-  
 }

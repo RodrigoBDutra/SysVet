@@ -1,6 +1,4 @@
-
 package classes;
-
 
 public class TipoAnimal {
     private int codTipoAnimal;
@@ -19,6 +17,15 @@ public class TipoAnimal {
     }
 
     public void setTipoAnimal(String tipoAnimal) {
+        this.tipoAnimal = tipoAnimal;
+    }
+    
+    public TipoAnimal(){
+        
+    }
+    
+    public TipoAnimal(int codTipoAnimal, String tipoAnimal){
+        this.codTipoAnimal = codTipoAnimal;
         this.tipoAnimal = tipoAnimal;
     }
        

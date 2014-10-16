@@ -48,7 +48,6 @@ public class Equipamentos {
         this.codEquipamento = codEquipamento;
         this.nome = nome;
         this.garantia = garantia;
-        this.marca = marca;
-                
+        this.marca = marca;           
     }
 }
