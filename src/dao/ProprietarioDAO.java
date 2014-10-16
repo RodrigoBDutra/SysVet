@@ -53,7 +53,7 @@ public class ProprietarioDAO extends Banco {
      * @return null se não achar ou o objeto preenchido se achar
      */
     public ArrayList<ProprietarioDAO> consultaProp(String cpf) {
-     ArrayList<ProprietarioDAO> listaProprietario = new ArrayList<ProprietarioDAO>();
+        ArrayList<ProprietarioDAO> listaProprietario = new ArrayList<ProprietarioDAO>();
         try {
             conecta();
             Statement stmt = con.createStatement();
@@ -66,36 +66,40 @@ public class ProprietarioDAO extends Banco {
                     + "INNER JOIN endereco e\n"
                     + "ON p.codEndereco = e.codEndereco\n"
                     + "WHERE d.cpf = '" + cpf + "'";
-
             ResultSet rs = stmt.executeQuery(sql);
-            if (rs.next()) {
+            while (rs.next()) {
                 Proprietarios prop = new Proprietarios();
-               /* prop.setNome(rs.getString("nome"));
-                prop.setData(rs.getString("data"));
-                prop.setCpf(rs.getInt("cpf"));
-                prop.setRg(rs.getString("rg"));
-                prop.setTelResidencia(rs.getInt("telResidencial"));
-                prop.setTelCelular(rs.getInt("telCelular"));
-                prop.setEmail(rs.getString("email"));
-                prop.setEndereco(rs.getString("endereco"));
-                prop.setNumero(rs.getInt("numero"));
-                prop.setCep(rs.getInt("cep"));
-                prop.setBairro(rs.getString("bairro"));
-                prop.setCidade(rs.getString("cidade"));
-                prop.setEstado((char) rs.getObject("estado")); // ainda não vi como colocar variavel CHAR acho que é assim*/
+                DadosPessoais dad = new DadosPessoais();
+                Contato cont = new Contato();
+                Endereco end = new Endereco();
+                //pega os atributos
+                dad.setNome(rs.getString("nome"));
+                dad.setDataNascimento(rs.getString("data"));
+                dad.setCPF(rs.getString("cpf"));
+                dad.setRG(rs.getString("rg"));
+                cont.setTelefoneResidencial(rs.getString("telResidencial"));
+                cont.setTelefoneCelular(rs.getString("telCelular"));
+                cont.setEmail(rs.getString("email"));
+                end.setEndereco(rs.getString("endereco"));
+                end.setNumero(rs.getInt("numero"));
+                end.setCEP(rs.getString("cep"));
+                end.setBairro(rs.getString("bairro"));
+                end.setCidade(rs.getString("cidade"));
+                end.setEstado(rs.getString("estado"));
                 prop.setDataCadastro(rs.getString("dataCadastro"));
                 prop.setObservacao(rs.getString("observacao"));
-            } else {
-                prop = null;
+                listaProprietario.add(temp);
             }
             rs.close();
             stmt.close();
             con.close();
         } catch (Exception e) {
-            prop = null;
+            imprimeErro("Erro ao buscar pessoas", e.getMessage());
+            return null;
         }
-        return prop;
+        return null;
     }
+
     /**
      * Cadastro um Proprietarios no banco de dados
      *
@@ -116,11 +120,14 @@ public class ProprietarioDAO extends Banco {
             con.close();
             resp = "OK";
         } catch (Exception e) {
-            resp = "ERRO AQUI" + e.toString();
+            imprimeErro("Erro em IncluirProprietário", e.toString());
         }
         return resp;
     }
 
+    /**
+     * Alterar um Proprietarios
+     */
     public String alteraProp(Proprietarios prop) {
         String resp = "";
         try {
@@ -143,29 +150,29 @@ public class ProprietarioDAO extends Banco {
     }
 
     /**
-     * Inclui um Proprietarios na tabela
-     */
-    public void adicionaLinha(Proprietarios prop) {
-
-    }
-
-    /**
      * Deleta um Proprietarios
      */
     public String excluirProp(Proprietarios prop) {
+        DadosPessoais dad = new DadosPessoais();
         String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "DELETE from proprietario WHERE nome='" + prop.getDataCadastro() + "'"; //Reescrever está linha corretamente.
+            String sql = "ON DELETE CASCADE FROM proprietario USING dadospessoais WHERE cpf='" + dad.getCPF() + "'";
             stmt.executeUpdate(sql);
             stmt.close();
             con.close();
 
         } catch (Exception e) {
-            resp = e.toString();
+            imprimeErro("Erro ao deletarProprietário", e.toString());
         }
         return resp;
     }
 
+    private void imprimeErro(String msg, String msgErro) {
+        JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);
+        System.err.println(msg);
+        System.out.println(msgErro);
+        System.exit(0);
+    }
 }
