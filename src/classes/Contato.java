@@ -9,18 +9,6 @@ public class Contato {
     private String email;
     private String site;
 
-    
-    public Contato(){
-        
-    }
-    public Contato(int codCont,String telRes, String telCel, String telCom, String mail, String site){
-        this.codContato = codCont;
-        this.telefoneResidencial = telRes;
-        this.telefoneCelular = telCel;
-        this.telefoneComercial = telCom;
-        this.email = mail;
-        this.site = site;
-    }
 
     public int getCodContato() {
         return codContato;
@@ -69,5 +57,17 @@ public class Contato {
     public void setSite(String site) {
         this.site = site;
     }
+    public Contato(){
+        
+    }
     
+    public Contato(int codContato, String telefoneResidencial, String telefoneCelular, String telefoneComercial, String email, String site){
+    
+        this.codContato = codContato;
+        this.telefoneResidencial = telefoneResidencial;
+        this.telefoneCelular = telefoneCelular;
+        this.telefoneComercial = telefoneComercial;
+        this.email = email;
+        this.site = site;
+    }
 }

@@ -1,4 +1,4 @@
-package classes;
+ package classes;
 
 
 public class Cliente {
@@ -130,4 +130,26 @@ public class Cliente {
         this.observacao = observacao;
     }
     
+    public Cliente(){
+        
+    }
+    
+    public Cliente(String nomeAnimal, String nascimento, int idade, boolean sexo, float peso, float altura, String porte, String cor, boolean chip, int numeroChip, String raca,
+    String especie, boolean obito, String observacao){
+    
+        this.nomeAnimal = nomeAnimal; 
+        this.nascimento = nascimento;
+        this.idade = idade; 
+        this.sexo = sexo;
+        this.peso = peso;
+        this.altura = altura;
+        this.porte = porte; 
+        this.cor = cor; 
+        this.chip = chip; 
+        this.numeroChip = numeroChip; 
+        this.raca = raca;
+        this.especie = especie; 
+        this.obito = obito; 
+        this.observacao = observacao;
+       }
 }
