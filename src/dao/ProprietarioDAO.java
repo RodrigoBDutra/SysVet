@@ -1,13 +1,14 @@
 package dao;
 
+import classes.*;
+import java.sql.Array;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import classes.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class ProprietarioDAO extends Banco {
 
@@ -49,47 +50,78 @@ public class ProprietarioDAO extends Banco {
     /**
      * Pesquisa um Proprietarios pelo nome
      *
-     * @param nome a ser pesquisado
+     * @param cpf
      * @return null se não achar ou o objeto preenchido se achar
      */
-    public ArrayList<ProprietarioDAO> consultaProp(String cpf) {
-        ArrayList<ProprietarioDAO> listaProprietario = new ArrayList<ProprietarioDAO>();
+    public String[] consultaProp(String cpf) {
+         String[] lista = new String[15];
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular, \n"
-                    + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado\n"
-                    + "FROM dadospessoais d INNER JOIN proprietario p \n"
-                    + "ON p.codDadosPessoais = d.codDadosPessoais\n"
-                    + "INNER JOIN contatos c\n"
-                    + "ON p.codContato = c.codContato\n"
-                    + "INNER JOIN endereco e\n"
-                    + "ON p.codEndereco = e.codEndereco\n"
+            String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
+                    + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado "
+                    + "FROM dadospessoais d "
+                    + "INNER JOIN proprietario p "
+                    + "ON p.codDadosPessoais = d.codDadosPessoais "
+                    + "INNER JOIN contatos c "
+                    + "ON p.codContato = c.codContato "
+                    + "INNER JOIN endereco e "
+                    + "ON p.codEndereco = e.codEndereco "
                     + "WHERE d.cpf = '" + cpf + "'";
             ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                Proprietarios prop = new Proprietarios();
-                DadosPessoais dad = new DadosPessoais();
-                Contato cont = new Contato();
-                Endereco end = new Endereco();
-                //pega os atributos
-                dad.setNome(rs.getString("nome"));
-                dad.setDataNascimento(rs.getString("data"));
-                dad.setCPF(rs.getString("cpf"));
-                dad.setRG(rs.getString("rg"));
-                cont.setTelefoneResidencial(rs.getString("telResidencial"));
-                cont.setTelefoneCelular(rs.getString("telCelular"));
-                cont.setEmail(rs.getString("email"));
-                end.setEndereco(rs.getString("endereco"));
-                end.setNumero(rs.getInt("numero"));
-                end.setCEP(rs.getString("cep"));
-                end.setBairro(rs.getString("bairro"));
-                end.setCidade(rs.getString("cidade"));
-                end.setEstado(rs.getString("estado"));
-                prop.setDataCadastro(rs.getString("dataCadastro"));
-                prop.setObservacao(rs.getString("observacao"));
-                listaProprietario.add(temp);
-            }
+           /* Proprietarios prop = new Proprietarios();
+            DadosPessoais dad = new DadosPessoais();
+            Contato cont = new Contato();
+            Endereco end = new Endereco();
+            if (rs.next()) {
+                while (rs.next()) {
+
+                    //pega os atributos
+                    dad.setNome(rs.getString("nome"));
+                    dad.setDataNascimento(rs.getString("dataNascimento"));
+                    dad.setCPF(rs.getString("cpf"));
+                    dad.setRG(rs.getString("rg"));
+                    cont.setTelefoneResidencial(rs.getString("telefoneResidencial"));
+                    cont.setTelefoneCelular(rs.getString("telefoneCelular"));
+                    cont.setEmail(rs.getString("email"));
+                    end.setEndereco(rs.getString("endereco"));
+                    end.setNumero(rs.getInt("numero"));
+                    end.setCEP(rs.getString("cep"));
+                    end.setBairro(rs.getString("bairro"));
+                    end.setCidade(rs.getString("cidade"));
+                    end.setEstado(rs.getString("estado"));
+                    prop.setDataCadastro(rs.getString("dataCadastro"));
+                    prop.setObservacao(rs.getString("observacoes"));
+
+                    prop.setEndereco(end);
+                    prop.setContato(cont);
+                    prop.setDadospessoais(dad);
+
+                    lista.add(prop);*/
+                    
+                    while (rs.next()) {
+                    lista[0] = rs.getString("nome");
+                    lista[1] = rs.getString("dataNascimento");
+                    lista[2] = rs.getString("cpf");
+                    lista[3] = rs.getString("rg");
+                    lista[4] = rs.getString("telefoneResidencial");
+                    lista[5] = rs.getString("telefoneCelular");
+                    lista[6] = rs.getString("email");
+                    lista[7] = rs.getString("endereco");
+                    lista[8] = rs.getInt("numero")+"";
+                    lista[9] = rs.getString("cep");
+                    lista[10] = rs.getString("bairro");
+                    lista[11] = rs.getString("cidade");
+                    lista[12] = rs.getString("estado");
+                    lista[13] = rs.getString("dataCadastro");
+                    lista[14] = rs.getString("observacoes");
+
+                    
+              }
+            /*} else {
+                prop = null;
+
+            }*/
             rs.close();
             stmt.close();
             con.close();
@@ -112,7 +144,7 @@ public class ProprietarioDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codDadosPessoais, codContato, codEndereco)"
-                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodDadosPessoais() + "," + prop.getCodContato() + "," + prop.getCodEndereco() + ")";
+                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getDadospessoais().getCodDadosPessoais() + "," + prop.getContato().getCodContato() + "," + prop.getEndereco().getCodEndereco() + ")";
 
             stmt.executeUpdate(sql);
             stmt.close();

@@ -5,10 +5,25 @@ public class Proprietarios {
     private int codProprietario;
     private String dataCadastro;
     private String observacao;
-    private int codDadosPessoais;
-    private int codContato;
-    private int codEndereco;
-    private int codAnimal;
+    private DadosPessoais dadospessoais;
+    private Contato contato;
+    private Endereco endereco;
+    private Cliente cliente;
+
+
+    public Proprietarios() {
+        this.codProprietario = 0;
+        this.dataCadastro = "";
+        this.observacao = "";
+
+       
+    }
+
+    public Proprietarios(int codProp, String dataCadastro, String observacao, int codDadP, int codCont, int codEnd, int codAni) {
+        this.codProprietario = codProp;
+        this.dataCadastro = dataCadastro;
+        this.observacao = observacao;
+    }
 
     public int getCodProprietario() {
         return codProprietario;
@@ -34,55 +49,37 @@ public class Proprietarios {
         this.observacao = observacao;
     }
 
-    public int getCodDadosPessoais() {
-        return codDadosPessoais;
+    public DadosPessoais getDadospessoais() {
+        return dadospessoais;
     }
 
-    public void setCodDadosPessoais(int codDadosPessoais) {
-        this.codDadosPessoais = codDadosPessoais;
+    public void setDadospessoais(DadosPessoais dadospessoais) {
+        this.dadospessoais = dadospessoais;
     }
 
-    public int getCodContato() {
-        return codContato;
+    public Contato getContato() {
+        return contato;
     }
 
-    public void setCodContato(int codContato) {
-        this.codContato = codContato;
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
 
-    public int getCodEndereco() {
-        return codEndereco;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setCodEndereco(int codEndereco) {
-        this.codEndereco = codEndereco;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
-    public int getCodAnimal() {
-        return codAnimal;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCodAnimal(int codAnimal) {
-        this.codAnimal = codAnimal;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Proprietarios() {
-        this.codProprietario = 0;
-        this.dataCadastro = "";
-        this.observacao = "";
-        this.codDadosPessoais = 0;
-        this.codContato = 0;
-        this.codEndereco = 0;
-        this.codAnimal = 0;
-    }
-
-    public Proprietarios(int codProp, String dataCadastro, String observacao, int codDadP, int codCont, int codEnd, int codAni) {
-        this.codProprietario = codProp;
-        this.dataCadastro = dataCadastro;
-        this.observacao = observacao;
-        this.codDadosPessoais = codDadP;
-        this.codContato = codCont;
-        this.codEndereco = codEnd;
-        this.codAnimal = codAni;
-    }
+    
 }

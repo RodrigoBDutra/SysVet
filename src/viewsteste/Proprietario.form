@@ -79,9 +79,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="txtEndereco">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Rua: Serra do Itaqueri"/>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="130" width="280" height="28"/>
@@ -102,9 +99,9 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtBairro">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Pq. Cruzeiro"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBairroActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="180" width="130" height="28"/>
@@ -138,9 +135,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCidade">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="S&#xe3;o Paulo"/>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="150" y="180" width="240" height="28"/>
@@ -213,9 +207,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtEmail">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="email@email.com.br"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailActionPerformed"/>
                   </Events>
@@ -239,9 +230,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtObservacao">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="myjrnthbegvfcd"/>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="230" width="610" height="28"/>
@@ -274,9 +262,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtEstado">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ed"/>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="400" y="180" width="60" height="28"/>
@@ -297,9 +282,9 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNumEnd">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="765"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumEndActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="300" y="130" width="60" height="28"/>
@@ -573,22 +558,9 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtComplemento">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="mgnbfv"/>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="370" y="130" width="140" height="28"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtNome">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Joao Candido Vieira"/>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="10" y="30" width="350" height="28"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -650,6 +622,16 @@
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="520" y="130" width="100" height="28"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtNome">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
+                  </Events>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="30" width="350" height="28"/>
                     </Constraint>
                   </Constraints>
                 </Component>
