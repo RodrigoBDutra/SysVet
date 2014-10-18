@@ -1435,11 +1435,11 @@ public class Proprietario extends javax.swing.JPanel {
         for (int i=0; i<lista.size();i++) {
         
         
-                txtNome.setText(lista.get(0).getDadospessoais().getNome());
-                txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
-                txtRG.setText(lista.get(0).getDadospessoais().getRG());
-                txtDataNascimento.setDateFormatString(lista.get(0).getDadospessoais().getDataNascimento());
-                txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
+                txtNome.setText(lista.get(i).getDadospessoais().getNome());
+                txtCPF.setText(lista.get(i).getDadospessoais().getCPF());
+                txtRG.setText(lista.get(i).getDadospessoais().getRG());
+                txtDataNascimento.setDateFormatString(lista.get(i).getDadospessoais().getDataNascimento());
+                txtTelResid.setText(lista.get(i).getContato().getTelefoneResidencial());
                 txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
                 txtEmail.setText(lista.get(0).getContato().getEmail());
                 txtEndereco.setText(lista.get(0).getEndereco().getEndereco());
