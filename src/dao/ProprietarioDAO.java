@@ -1,6 +1,7 @@
 package dao;
 
 import classes.*;
+
 import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+
 
 public class ProprietarioDAO extends Banco {
 
@@ -53,11 +56,11 @@ public class ProprietarioDAO extends Banco {
      * @param cpf
      * @return null se não achar ou o objeto preenchido se achar
      */
-    public String[] consultaProp(String cpf) {
-         String[] lista = new String[15];
+    public ArrayList<Proprietarios> consultaProp(String cpf) {
+         ArrayList<Proprietarios> lista = new ArrayList<Proprietarios>();
         try {
             conecta();
-            Statement stmt = con.createStatement();
+          
             String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
                     + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado "
                     + "FROM dadospessoais d "
@@ -67,14 +70,18 @@ public class ProprietarioDAO extends Banco {
                     + "ON p.codContato = c.codContato "
                     + "INNER JOIN endereco e "
                     + "ON p.codEndereco = e.codEndereco "
-                    + "WHERE d.cpf = '" + cpf + "'";
+                    + "WHERE d.cpf = ?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+        
+            stmt.setString(1, cpf);
             ResultSet rs = stmt.executeQuery(sql);
-           /* Proprietarios prop = new Proprietarios();
+            
+            
+           Proprietarios prop = new Proprietarios();
             DadosPessoais dad = new DadosPessoais();
             Contato cont = new Contato();
             Endereco end = new Endereco();
-            if (rs.next()) {
-                while (rs.next()) {
+                   while (rs.next()) {
 
                     //pega os atributos
                     dad.setNome(rs.getString("nome"));
@@ -97,27 +104,9 @@ public class ProprietarioDAO extends Banco {
                     prop.setContato(cont);
                     prop.setDadospessoais(dad);
 
-                    lista.add(prop);*/
+                    lista.add(prop);
                     
-                    while (rs.next()) {
-                    lista[0] = rs.getString("nome");
-                    lista[1] = rs.getString("dataNascimento");
-                    lista[2] = rs.getString("cpf");
-                    lista[3] = rs.getString("rg");
-                    lista[4] = rs.getString("telefoneResidencial");
-                    lista[5] = rs.getString("telefoneCelular");
-                    lista[6] = rs.getString("email");
-                    lista[7] = rs.getString("endereco");
-                    lista[8] = rs.getInt("numero")+"";
-                    lista[9] = rs.getString("cep");
-                    lista[10] = rs.getString("bairro");
-                    lista[11] = rs.getString("cidade");
-                    lista[12] = rs.getString("estado");
-                    lista[13] = rs.getString("dataCadastro");
-                    lista[14] = rs.getString("observacoes");
-
-                    
-              }
+                }
             /*} else {
                 prop = null;
 

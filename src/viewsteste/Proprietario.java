@@ -1428,28 +1428,13 @@ public class Proprietario extends javax.swing.JPanel {
         /*Proprietarios prop = new Proprietarios();
         DadosPessoais dad = new DadosPessoais();
         ProprietarioDAO propDAO = new ProprietarioDAO();*/
-        String [] lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
-        
-        txtNome.setText(lista[0]);
-        txtDataNascimento.setDateFormatString(lista[1]);
-        txtCPF.setText(lista[2]);
-        txtRG.setText(lista[3]);
-        txtTelResid.setText(lista[4]);
-        txtTelCell.setText(lista[5]);
-        txtEmail.setText(lista[6]);
-        txtEndereco.setText(lista[7]);
-        txtNumEnd.setText(lista[8]);
-        txtCEP.setText(lista[9]);
-        txtBairro.setText(lista[10]);
-        txtCidade.setText(lista[11]);
-        txtEstado.setText(lista[12]);
-        txtDataCadastro.setDateFormatString(lista[13]);
-        txtObservacao.setText(lista[14]);
+        ArrayList<Proprietarios> lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
         
         
-        /*if (lista.size() < 0) {
-            JOptionPane.showMessageDialog(null, "Proprietario não cadastrado!");
-        } else {
+        
+        for (int i=0; i<lista.size();i++) {
+        
+        
                 txtNome.setText(lista.get(0).getDadospessoais().getNome());
                 txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
                 txtRG.setText(lista.get(0).getDadospessoais().getRG());
@@ -1466,8 +1451,8 @@ public class Proprietario extends javax.swing.JPanel {
                 txtEstado.setText(lista.get(0).getEndereco().getEstado());
                 txtDataCadastro.setDateFormatString(lista.get(0).getDataCadastro());
                 txtObservacao.setText(lista.get(0).getObservacao());
-                */
-           // }
+                
+            }
      
 
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
