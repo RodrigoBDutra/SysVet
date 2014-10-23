@@ -74,7 +74,7 @@ public class ProprietarioDAO extends Banco {
             PreparedStatement stmt = con.prepareStatement(sql);
         
             stmt.setString(1, cpf);
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery();
             
             
            Proprietarios prop = new Proprietarios();
@@ -118,7 +118,7 @@ public class ProprietarioDAO extends Banco {
             imprimeErro("Erro ao buscar pessoas", e.getMessage());
             return null;
         }
-        return null;
+        return lista;
     }
 
     /**
