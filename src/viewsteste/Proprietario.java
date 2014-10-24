@@ -1429,43 +1429,39 @@ public class Proprietario extends javax.swing.JPanel {
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
         jpPropri.setVisible(true);
-
-        /*Proprietarios prop = new Proprietarios();
-         DadosPessoais dad = new DadosPessoais();
-         ProprietarioDAO propDAO = new ProprietarioDAO();*/
         ArrayList<Proprietarios> lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
 
-        for (int i = 0; i < lista.size(); i++) {
+        if(lista != null) {
 
             Date date = null;
             Date date1 = null;
-            txtNome.setText(lista.get(i).getDadospessoais().getNome());
-            txtCPF.setText(lista.get(i).getDadospessoais().getCPF());
-            txtRG.setText(lista.get(i).getDadospessoais().getRG());
+            txtNome.setText(lista.get(0).getDadospessoais().getNome());
+            txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
+            txtRG.setText(lista.get(0).getDadospessoais().getRG());
             DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                date = (java.util.Date) formato.parse(lista.get(i).getDadospessoais().getDataNascimento());
+                date = (java.util.Date) formato.parse(lista.get(0).getDadospessoais().getDataNascimento());
             } catch (ParseException ex) {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
             txtDataNascimento.setDate(date);
-            txtTelResid.setText(lista.get(i).getContato().getTelefoneResidencial());
-            txtTelCell.setText(lista.get(i).getContato().getTelefoneCelular());
-            txtEmail.setText(lista.get(i).getContato().getEmail());
-            txtEndereco.setText(lista.get(i).getEndereco().getEndereco());
-            txtNumEnd.setText(lista.get(i).getEndereco().getNumero() + "");
-            txtBairro.setText(lista.get(i).getEndereco().getBairro());
-            txtComplemento.setText(lista.get(i).getEndereco().getComplemento());
-            txtCEP.setText(lista.get(i).getEndereco().getCEP());
-            txtCidade.setText(lista.get(i).getEndereco().getCidade());
-            txtEstado.setText(lista.get(i).getEndereco().getEstado());
+            txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
+            txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
+            txtEmail.setText(lista.get(0).getContato().getEmail());
+            txtEndereco.setText(lista.get(0).getEndereco().getEndereco());
+            txtNumEnd.setText(lista.get(0).getEndereco().getNumero() + "");
+            txtBairro.setText(lista.get(0).getEndereco().getBairro());
+            txtComplemento.setText(lista.get(0).getEndereco().getComplemento());
+            txtCEP.setText(lista.get(0).getEndereco().getCEP());
+            txtCidade.setText(lista.get(0).getEndereco().getCidade());
+            txtEstado.setText(lista.get(0).getEndereco().getEstado());
             try {
-                date1 = (java.util.Date) formato.parse(lista.get(i).getDataCadastro());
+                date1 = (java.util.Date) formato.parse(lista.get(0).getDataCadastro());
             } catch (ParseException ex) {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
             txtDataCadastro.setDate(date1);
-            txtObservacao.setText(lista.get(i).getObservacao());
+            txtObservacao.setText(lista.get(0).getObservacao());
 
         }
 
