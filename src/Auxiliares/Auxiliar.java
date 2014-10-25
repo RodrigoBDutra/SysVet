@@ -3,6 +3,10 @@ package Auxiliares;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -23,7 +27,21 @@ public class Auxiliar {
             }
         }
     }
-    
+
+    public static Date formataData(String data) throws Exception {
+        if (data == null || data.equals("")) {
+            return null;
+        }
+        Date date = null;
+        try {
+            SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy");
+            date = (java.util.Date) formatar.parse(data);
+        } catch (ParseException e) {
+            throw e;
+        }
+        return date;
+    }
+
     // verify email
     public static boolean validarEmail(JTextField txt) {
         if ((txt.getText().contains("@")) && (txt.getText().contains(".")) && (!txt.getText().contains(" "))) {
@@ -33,31 +51,30 @@ public class Auxiliar {
                 txt.setForeground(Color.BLACK);
                 return true;
             } else {
-                JOptionPane.showMessageDialog(null,"E-mail Inválido, favor revalidar");
+                JOptionPane.showMessageDialog(null, "E-mail Inválido!");
                 txt.requestFocus();
                 txt.setForeground(Color.RED);
                 return false;
             }
         } else {
-            JOptionPane.showMessageDialog(null,"E-mail Inválido, favor revalidar");
+            JOptionPane.showMessageDialog(null, "E-mail Inválido!");
             txt.requestFocus();
             txt.setForeground(Color.RED);
             return false;
         }
     }
-    
+
     // verify campo
     public static boolean validarCampo(JTextField txt) {
-        if (txt.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(null,"Preencha o campo selecionado");
+        if (txt.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo selecionado");
             txt.requestFocus();
             return false;
-        } 
-        else {
+        } else {
             return true;
         }
     }
-    
+
     // verify cpf
     public static boolean validarCPF(JTextField strCpf) {
 
@@ -67,6 +84,14 @@ public class Auxiliar {
             if (strCpf.getText().charAt(i) != '.' && strCpf.getText().charAt(i) != '-') {
                 cpf += String.valueOf(strCpf.getText().charAt(i));
             }
+        }
+        if (cpf.length() != 11 || cpf.equals("11111111111") || cpf.equals("22222222222") || cpf.equals("33333333333")
+                || cpf.equals("44444444444") || cpf.equals("55555555555") || cpf.equals("66666666666")
+                || cpf.equals("777777777777") || cpf.equals("88888888888") || cpf.equals("99999999999")) {
+            JOptionPane.showMessageDialog(null, "CPF Inválido!");
+            strCpf.requestFocus();
+            strCpf.setForeground(Color.RED);
+            return false;
         }
 
         int d1, d2;
@@ -97,14 +122,14 @@ public class Auxiliar {
         String nDigVerific = cpf.substring(cpf.length() - 2, cpf.length());       //Concatenando o primeiro resto com o segundo.    
         nDigResult = String.valueOf(digito1) + String.valueOf(digito2);       //comparar o digito verificador do cpf com o primeiro resto + o segundo resto.  
 
-        if (nDigVerific.equals(nDigResult)){
+        if (nDigVerific.equals(nDigResult)) {
             strCpf.setForeground(Color.BLACK);
             return true;
         }
-        JOptionPane.showMessageDialog(null,"CPF Inválido, favor revalidar");
+        JOptionPane.showMessageDialog(null, "CPF Inválido!");
         strCpf.requestFocus();
         strCpf.setForeground(Color.RED);
         return false;
     }
-    
+
 }

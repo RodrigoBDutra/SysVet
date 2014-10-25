@@ -60,7 +60,6 @@ public class ProprietarioDAO extends Banco {
          ArrayList<Proprietarios> lista = new ArrayList<Proprietarios>();
         try {
             conecta();
-          
             String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
                     + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado "
                     + "FROM dadospessoais d "
@@ -72,18 +71,15 @@ public class ProprietarioDAO extends Banco {
                     + "ON p.codEndereco = e.codEndereco "
                     + "WHERE d.cpf = ?";
             PreparedStatement stmt = con.prepareStatement(sql);
-        
             stmt.setString(1, cpf);
             ResultSet rs = stmt.executeQuery();
             
-            
-           Proprietarios prop = new Proprietarios();
+            Proprietarios prop = new Proprietarios();
             DadosPessoais dad = new DadosPessoais();
             Contato cont = new Contato();
             Endereco end = new Endereco();
-                   while (rs.next()) {
-
-                    //pega os atributos
+            
+                   if(rs.next()) {
                     dad.setNome(rs.getString("nome"));
                     dad.setDataNascimento(rs.getString("dataNascimento"));
                     dad.setCPF(rs.getString("cpf"));
@@ -106,11 +102,9 @@ public class ProprietarioDAO extends Banco {
 
                     lista.add(prop);
                     
-                }
-            /*} else {
-                prop = null;
-
-            }*/
+                }else {
+                    lista = null;
+            }
             rs.close();
             stmt.close();
             con.close();

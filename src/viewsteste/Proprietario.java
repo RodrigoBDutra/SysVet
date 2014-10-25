@@ -1,6 +1,7 @@
 package viewsteste;
 
 import classes.*;
+import Auxiliares.Auxiliar;
 import dao.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -324,7 +325,9 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel52);
         jLabel52.setBounds(10, 210, 130, 15);
 
-        txtDataCadastro.setBackground(new java.awt.Color(153, 153, 153));
+        txtDataCadastro.setBackground(new java.awt.Color(204, 204, 204));
+        txtDataCadastro.setEnabled(false);
+        txtDataCadastro.setMaxSelectableDate(new java.util.Date(253370775669000L));
         jpPropri.add(txtDataCadastro);
         txtDataCadastro.setBounds(470, 180, 150, 28);
         jpPropri.add(txtEstado);
@@ -447,7 +450,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jScrollPane2);
         jScrollPane2.setBounds(10, 280, 570, 90);
 
-        txtDataNascimento.setBackground(new java.awt.Color(153, 153, 153));
+        txtDataNascimento.setBackground(new java.awt.Color(204, 204, 204));
         txtDataNascimento.setAlignmentX(0.0F);
         txtDataNascimento.setAlignmentY(0.0F);
         jpPropri.add(txtDataNascimento);
@@ -1428,23 +1431,18 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPesquisarCliActionPerformed
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
-        jpPropri.setVisible(true);
+        if(Auxiliar.validarCPF(txtCPF)){
         ArrayList<Proprietarios> lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
-
         if(lista != null) {
-
-            Date date = null;
-            Date date1 = null;
+            jpPropri.setVisible(true);
             txtNome.setText(lista.get(0).getDadospessoais().getNome());
             txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
             txtRG.setText(lista.get(0).getDadospessoais().getRG());
-            DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                date = (java.util.Date) formato.parse(lista.get(0).getDadospessoais().getDataNascimento());
-            } catch (ParseException ex) {
+                txtDataNascimento.setDate(Auxiliar.formataData(lista.get(0).getDadospessoais().getDataNascimento()));
+            } catch (Exception ex) {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            txtDataNascimento.setDate(date);
             txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
             txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
             txtEmail.setText(lista.get(0).getContato().getEmail());
@@ -1456,16 +1454,25 @@ public class Proprietario extends javax.swing.JPanel {
             txtCidade.setText(lista.get(0).getEndereco().getCidade());
             txtEstado.setText(lista.get(0).getEndereco().getEstado());
             try {
-                date1 = (java.util.Date) formato.parse(lista.get(0).getDataCadastro());
-            } catch (ParseException ex) {
+                txtDataCadastro.setDate(Auxiliar.formataData(lista.get(0).getDataCadastro()));
+            } catch (Exception ex) {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            txtDataCadastro.setDate(date1);
             txtObservacao.setText(lista.get(0).getObservacao());
 
+        }else{
+               Object[] options = { "Sim", "Não" };   
+               int opcao =JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado", 
+                            JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+               if(opcao == 0 || opcao == -1){
+                   jpPropri.setVisible(true);
+                    txtDataCadastro.setDate(new Date());
+               }else{
+                   jpPropri.setVisible(false);
+               }
         }
 
-
+        }
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
 
     private void jtbClienteAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtbClienteAncestorAdded
@@ -1473,6 +1480,9 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jtbClienteAncestorAdded
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if(Auxiliar.validarEmail(txtEmail)){
+            
+        
         Contato cont = montarContato();
         Endereco end = montarEndereco();
         DadosPessoais dad = montarDadosPessoais();
@@ -1499,6 +1509,8 @@ public class Proprietario extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, respP);
             }
         }
+        
+        }//valida email
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
