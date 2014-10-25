@@ -34,11 +34,17 @@ public class Proprietario extends javax.swing.JPanel {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         prop.setDataCadastro(formato.format(pega));
         prop.setObservacao(txtObservacao.getText());
+        prop.setCodContato(0);
+        prop.setCodDadosPessoais(0);
+        prop.setCodEndereco(0);
+        prop.setCodAnimal(0);
+        /*
         prop.setDadospessoais(null);
         prop.setContato(null);
         prop.setEndereco(null);
-        prop.setCliente(null);
+        prop.setCliente(null);*/
         return prop;
+                
     }
 
     public Contato montarContato() {
@@ -1481,8 +1487,6 @@ public class Proprietario extends javax.swing.JPanel {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if(Auxiliar.validarEmail(txtEmail)){
-            
-        
         Contato cont = montarContato();
         Endereco end = montarEndereco();
         DadosPessoais dad = montarDadosPessoais();
@@ -1499,9 +1503,9 @@ public class Proprietario extends javax.swing.JPanel {
         } else {
             respE = endDAO.incluirEnd(end);
             respC = contDAO.incluirCont(cont);
-            dad.setCodDadosPessoais(respD);
-            cont.setCodContato(respC);
-            end.setCodEndereco(respE);
+            prop.setCodDadosPessoais(respD);
+            prop.setCodContato(respC);
+            prop.setCodEndereco(respE);
             respP = propDAO.incluirProp(prop);
             if (respP.equals("OK")) {
                 JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");

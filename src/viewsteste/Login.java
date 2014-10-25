@@ -172,7 +172,6 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaInActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        ba.logoff(Transferencia.logado.getLogin());
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 

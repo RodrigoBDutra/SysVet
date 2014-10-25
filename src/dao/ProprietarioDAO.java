@@ -127,11 +127,10 @@ public class ProprietarioDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO proprietario(dataCadastro, observacoes, codDadosPessoais, codContato, codEndereco)"
-                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getDadospessoais().getCodDadosPessoais() + "," + prop.getContato().getCodContato() + "," + prop.getEndereco().getCodEndereco() + ")";
+                    + "VALUES('" + prop.getDataCadastro() + "','" + prop.getObservacao() + "'," + prop.getCodDadosPessoais() + "," + prop.getCodContato() + "," + prop.getCodEndereco() + ")";
 
             stmt.executeUpdate(sql);
             stmt.close();
-            //rs.close();
             con.close();
             resp = "OK";
         } catch (Exception e) {
@@ -188,6 +187,5 @@ public class ProprietarioDAO extends Banco {
         JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);
         System.err.println(msg);
         System.out.println(msgErro);
-        System.exit(0);
     }
 }
