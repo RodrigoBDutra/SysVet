@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-public class EnderecoDAO  extends Banco {
-        
+public class EnderecoDAO extends Banco {
+
     public Endereco getEnd(int codEndereco) {
         Endereco end = new Endereco();
         try {
@@ -20,6 +20,7 @@ public class EnderecoDAO  extends Banco {
                 end.setNumero(rs.getInt("numero"));
                 end.setCEP(rs.getString("cep"));
                 end.setBairro(rs.getString("bairro"));
+                end.setComplemento(rs.getString("complemento"));
                 end.setCidade(rs.getString("cidade"));
                 end.setEstado(rs.getString("estado"));
             } else {
@@ -39,30 +40,40 @@ public class EnderecoDAO  extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-                String sql = "INSERT INTO endereco(endereco, numero, bairro, complemento, cep, cidade, estado)"
-                        + "VALUES('" + end.getEndereco() + "'," + end.getNumero() + ",'" + end.getBairro() + "','" + 
-                        end.getComplemento() + "','" + end.getCEP() + "','" + end.getCidade() + "','" + end.getEstado() + "')";
-               
-                stmt.executeUpdate(sql);
-                ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
-                while(rs2.next()){
-                    resp = rs2.getInt(1); 
-                 }
-                rs2.close();
-                stmt.close();
-                con.close();
+            String sql = "INSERT INTO endereco(endereco, numero, bairro, complemento, cep, cidade, estado)"
+                    + "VALUES('" + end.getEndereco() + "'," + end.getNumero() + ",'" + end.getBairro() + "','"
+                    + end.getComplemento() + "','" + end.getCEP() + "','" + end.getCidade() + "','" + end.getEstado() + "')";
+
+            stmt.executeUpdate(sql);
+            ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+            while (rs2.next()) {
+                resp = rs2.getInt(1);
+            }
+            rs2.close();
+            stmt.close();
+            con.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }
         return resp;
     }
 
-    public String alteraEnd(Endereco end) {
+    public String alteraEnd(Endereco end, String cpf) {
         String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "UPDATE endereco set codEndereco =" + end.getCodEndereco() + "";
+            String sql = "UPDATE endereco SET endereco = '" + end.getEndereco() + "', "
+                    + "numero = " + end.getNumero() + ", "
+                    + "bairro = '" + end.getBairro() + "', "
+                    + "complemento = '" + end.getComplemento() + "',"
+                    + "cep = '" + end.getCEP() + "', "
+                    + "cidade = '" + end.getCidade() + "', "
+                    + "estado = '" + end.getEstado() + "' "
+                    + "WHERE codEndereco = ("
+                    + "SELECT codEndereco FROM proprietario WHERE codDadosPessoais = "
+                    + "(SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '" + cpf + "')"
+                    + ")";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();
@@ -80,7 +91,7 @@ public class EnderecoDAO  extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "DELETE from Endereco WHERE codEndereco='" +end.getCodEndereco() + "'"; //Reescrever está linha corretamente.
+            String sql = "DELETE from Endereco WHERE codEndereco='" + end.getCodEndereco() + "'"; //Reescrever está linha corretamente.
             stmt.executeUpdate(sql);
             stmt.close();
             con.close();

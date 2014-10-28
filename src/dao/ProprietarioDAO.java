@@ -91,6 +91,7 @@ public class ProprietarioDAO extends Banco {
                     end.setNumero(rs.getInt("numero"));
                     end.setCEP(rs.getString("cep"));
                     end.setBairro(rs.getString("bairro"));
+                    end.setComplemento(rs.getString("complemento"));
                     end.setCidade(rs.getString("cidade"));
                     end.setEstado(rs.getString("estado"));
                     prop.setDataCadastro(rs.getString("dataCadastro"));
@@ -142,15 +143,14 @@ public class ProprietarioDAO extends Banco {
     /**
      * Alterar um Proprietarios
      */
-    public String alteraProp(Proprietarios prop) {
+    public String alteraProp(Proprietarios prop, String cpf) {
         String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "UPDATE proprietario set nome ='"/* + prop.getNome() + "' , data ='" +prop.getData()+ "' , cpf ='"+prop.getCpf()+
-                     "', rg='"+prop.getRg()+ "', telResidencial='"+ prop.getTelResidencia()+"', telCelular='"+ prop.getTelCelular()+
-                     "', email='"+prop.getEmail()+"', endereco='"+prop.getEndereco()+"', numero='" + prop.getNumero()+"', cidade='"+prop.getCidade()+
-                     "', estado='"+prop.getEstado()+"', dataCadastro='"+prop.getDataCadastro()+"', observacao="+prop.getObservacao()+"')"*/;
+            String sql = "UPDATE proprietario SET observacoes = '"+ prop.getObservacao()+"' "+
+                          "WHERE codDadosPessoais = ("+
+                                             "SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '"+cpf+"')";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();

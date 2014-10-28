@@ -7,26 +7,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class DadosPessoaisDAO extends Banco{
-    public String abreDadosPessoais() {
-        String sql;
-        conecta();
-        try {
-            sql = "SELECT MAX(codDadosPessoais) FROM dadospessoais";
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-            if (rs.getString("MAX(codDadosPessoais)") == null) {
-                return "0";
-            } else {
-            return rs.getString("MAX(codDadosPessoais)");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-
-    }
-    
+        
     public DadosPessoais consultaDados(String cpf) {
         DadosPessoais dad = new DadosPessoais();
         try {
@@ -88,7 +69,9 @@ public class DadosPessoaisDAO extends Banco{
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "UPDATE DadosPessoais set cpf ="+dad.getCPF()+"";
+           
+            String sql = "UPDATE dadospessoais set nome ='"+dad.getNome()+"',datanascimento = '"+dad.getDataNascimento()+"',"
+                    + "rg = '"+dad.getRG()+"' WHERE cpf = '"+dad.getCPF()+"';";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();

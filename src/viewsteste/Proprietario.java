@@ -21,7 +21,9 @@ public class Proprietario extends javax.swing.JPanel {
         initComponents();
         jpPropri.setVisible(false);
     }
-
+    
+    boolean verificaConsulta = true;
+    
     ProprietarioDAO propDa = new ProprietarioDAO();
     DadosPessoaisDAO dadosDa = new DadosPessoaisDAO();
     EnderecoDAO endDa = new EnderecoDAO();
@@ -1444,11 +1446,6 @@ public class Proprietario extends javax.swing.JPanel {
             txtNome.setText(lista.get(0).getDadospessoais().getNome());
             txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
             txtRG.setText(lista.get(0).getDadospessoais().getRG());
-            try {
-                txtDataNascimento.setDate(Auxiliar.formataData(lista.get(0).getDadospessoais().getDataNascimento()));
-            } catch (Exception ex) {
-                Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
-            }
             txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
             txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
             txtEmail.setText(lista.get(0).getContato().getEmail());
@@ -1461,6 +1458,7 @@ public class Proprietario extends javax.swing.JPanel {
             txtEstado.setText(lista.get(0).getEndereco().getEstado());
             try {
                 txtDataCadastro.setDate(Auxiliar.formataData(lista.get(0).getDataCadastro()));
+                txtDataNascimento.setDate(Auxiliar.formataData(lista.get(0).getDadospessoais().getDataNascimento()));
             } catch (Exception ex) {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1469,15 +1467,19 @@ public class Proprietario extends javax.swing.JPanel {
         }else{
                Object[] options = { "Sim", "Não" };   
                int opcao =JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado", 
-                            JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+                            JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                if(opcao == 0 || opcao == -1){
                    jpPropri.setVisible(true);
                     txtDataCadastro.setDate(new Date());
+                    verificaConsulta = false;
                }else{
                    jpPropri.setVisible(false);
+                   verificaConsulta = true;
                }
         }
 
+        }else{
+            jpPropri.setVisible(false);
         }
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
 
@@ -1486,6 +1488,7 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jtbClienteAncestorAdded
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+       if(verificaConsulta == false){        
         if(Auxiliar.validarEmail(txtEmail)){
         Contato cont = montarContato();
         Endereco end = montarEndereco();
@@ -1515,6 +1518,26 @@ public class Proprietario extends javax.swing.JPanel {
         }
         
         }//valida email
+       }else{//se nao for insercao será alteração
+        Contato cont = montarContato();
+        Endereco end = montarEndereco();
+        DadosPessoais dad = montarDadosPessoais();
+        Proprietarios prop = montarProprietario();
+        ProprietarioDAO propDAO = new ProprietarioDAO();
+        EnderecoDAO endDAO = new EnderecoDAO();
+        DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+        ContatoDAO contDAO = new ContatoDAO();
+        String D,P,C,E;
+        D = dadDAO.alteraDados(dad);
+        C = contDAO.alteraCont(cont, dad.getCPF());
+        E = endDAO.alteraEnd(end, dad.getCPF());
+        P = propDAO.alteraProp(prop, dad.getCPF());
+        if(D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")){
+            JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
+            
+        }
+        
+       }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
