@@ -1,5 +1,6 @@
 package Auxiliares;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
 
 public class Auxiliar {
 
-    public void limparTodosCampos(Container container) {//1 sugestao de limpar campos da tela
+    public static void limparTodosCampos(Container container) {//1 sugestao de limpar campos da tela
         Component components[] = container.getComponents();
         for (Component component : components) {
             if (component instanceof JFormattedTextField) {
@@ -22,6 +23,9 @@ public class Auxiliar {
             } else if (component instanceof JTextField) {
                 JTextField field = (JTextField) component;
                 field.setText("");
+            } else if(component instanceof JDateChooser){
+                JDateChooser field = (JDateChooser) component;
+                field.setDate(null);
             } else if (component instanceof Container) {
                 limparTodosCampos((Container) component);
             }

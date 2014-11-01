@@ -526,6 +526,11 @@ public class Proprietario extends javax.swing.JPanel {
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         jpProprietario.add(btnCancelar);
         btnCancelar.setBounds(450, 460, 130, 35);
 
@@ -1666,6 +1671,16 @@ public class Proprietario extends javax.swing.JPanel {
     private void txtBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBairroActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        if(verificaConsulta = false){
+            verificaConsulta = true;
+        }
+        txtCPF.setText(null);
+        Auxiliar.limparTodosCampos(jpPropri);
+        jpPropri.setVisible(false);
+        
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
