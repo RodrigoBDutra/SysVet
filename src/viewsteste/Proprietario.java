@@ -393,10 +393,6 @@ public class Proprietario extends javax.swing.JPanel {
         jtbCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtbCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Rex", "1", "R$10,00", "R$10,00"},
-                {"Pou", "1", "R$200,00", "R$200,00"},
-                {"Bila", "2", "R$150,00", "R$300,00"},
-                {"Miau", "1", "R$30,00", "R$30,00"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},

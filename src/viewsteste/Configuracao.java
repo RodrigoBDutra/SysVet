@@ -140,7 +140,7 @@ public class Configuracao extends javax.swing.JPanel {
 
         txt_BuscaLogin2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(txt_BuscaLogin2);
-        txt_BuscaLogin2.setBounds(30, 50, 180, 28);
+        txt_BuscaLogin2.setBounds(20, 40, 180, 28);
 
         btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         btnAlterar.setText("Salvar");
@@ -150,12 +150,12 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(btnAlterar);
-        btnAlterar.setBounds(480, 340, 100, 30);
+        btnAlterar.setBounds(480, 330, 100, 30);
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel50.setText("Login");
         jPanel9.add(jLabel50);
-        jLabel50.setBounds(30, 30, 90, 20);
+        jLabel50.setBounds(20, 20, 90, 20);
 
         txt_login2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_login2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,11 +172,11 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_login2);
-        txt_login2.setBounds(20, 220, 210, 28);
+        txt_login2.setBounds(20, 210, 210, 28);
 
         txt_nome2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(txt_nome2);
-        txt_nome2.setBounds(70, 170, 380, 28);
+        txt_nome2.setBounds(70, 160, 390, 28);
 
         txt_senha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senha2.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +185,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_senha2);
-        txt_senha2.setBounds(20, 270, 210, 28);
+        txt_senha2.setBounds(250, 210, 210, 28);
 
         txt_senhaAtual2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senhaAtual2.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +194,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_senhaAtual2);
-        txt_senhaAtual2.setBounds(420, 50, 180, 28);
+        txt_senhaAtual2.setBounds(410, 40, 180, 28);
 
         manterSenha3.setBackground(new java.awt.Color(204, 204, 204));
         manterSenha3.setSelected(true);
@@ -205,12 +205,12 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(manterSenha3);
-        manterSenha3.setBounds(420, 10, 170, 20);
+        manterSenha3.setBounds(20, 80, 170, 20);
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel51.setText("Nome");
         jPanel9.add(jLabel51);
-        jLabel51.setBounds(70, 150, 100, 20);
+        jLabel51.setBounds(70, 140, 100, 20);
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         btnBuscar.setText("Consultar");
@@ -220,7 +220,7 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(btnBuscar);
-        btnBuscar.setBounds(250, 40, 110, 30);
+        btnBuscar.setBounds(210, 40, 120, 28);
 
         btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         btnInserir.setText("Inserir");
@@ -230,12 +230,12 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(btnInserir);
-        btnInserir.setBounds(480, 300, 100, 30);
+        btnInserir.setBounds(480, 290, 100, 30);
 
         CodFuncionario.setBackground(new java.awt.Color(255, 255, 255));
         CodFuncionario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(CodFuncionario);
-        CodFuncionario.setBounds(20, 170, 40, 28);
+        CodFuncionario.setBounds(20, 160, 40, 28);
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         btnExcluir.setText("Excluir");
@@ -245,29 +245,29 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(btnExcluir);
-        btnExcluir.setBounds(480, 380, 100, 30);
+        btnExcluir.setBounds(480, 370, 100, 30);
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel52.setText("Login");
         jPanel9.add(jLabel52);
-        jLabel52.setBounds(20, 200, 90, 20);
+        jLabel52.setBounds(20, 190, 90, 20);
         jPanel9.add(jSeparator10);
-        jSeparator10.setBounds(20, 140, 590, 10);
+        jSeparator10.setBounds(20, 130, 580, 10);
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel53.setText("Senha Atual");
         jPanel9.add(jLabel53);
-        jLabel53.setBounds(420, 30, 140, 20);
+        jLabel53.setBounds(410, 20, 140, 20);
 
         jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel54.setText("Código");
         jPanel9.add(jLabel54);
-        jLabel54.setBounds(20, 150, 50, 20);
+        jLabel54.setBounds(20, 140, 50, 20);
 
         jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel55.setText("Senha");
         jPanel9.add(jLabel55);
-        jLabel55.setBounds(20, 250, 90, 20);
+        jLabel55.setBounds(250, 190, 90, 20);
 
         txt_NovaSenha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_NovaSenha2.addActionListener(new java.awt.event.ActionListener() {
@@ -276,12 +276,12 @@ public class Configuracao extends javax.swing.JPanel {
             }
         });
         jPanel9.add(txt_NovaSenha2);
-        txt_NovaSenha2.setBounds(420, 100, 180, 28);
+        txt_NovaSenha2.setBounds(410, 90, 180, 28);
 
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel56.setText("Nova Senha");
         jPanel9.add(jLabel56);
-        jLabel56.setBounds(420, 80, 140, 20);
+        jLabel56.setBounds(410, 70, 140, 20);
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Permissões"));
@@ -377,7 +377,7 @@ public class Configuracao extends javax.swing.JPanel {
 
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel8.add(jSeparator11);
-        jSeparator11.setBounds(236, 16, 2, 102);
+        jSeparator11.setBounds(240, 30, 2, 102);
 
         checkPerHistoricos.setBackground(new java.awt.Color(204, 204, 204));
         checkPerHistoricos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -413,10 +413,10 @@ public class Configuracao extends javax.swing.JPanel {
         checkPerExclui.setBounds(256, 68, 97, 23);
 
         jPanel9.add(jPanel8);
-        jPanel8.setBounds(20, 300, 410, 140);
+        jPanel8.setBounds(20, 270, 410, 150);
 
         jPanel6.add(jPanel9);
-        jPanel9.setBounds(10, 20, 610, 440);
+        jPanel9.setBounds(10, 20, 620, 430);
 
         jTabbedPane1.addTab("Configurações", jPanel6);
 
