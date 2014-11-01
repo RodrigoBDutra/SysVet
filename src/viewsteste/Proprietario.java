@@ -129,10 +129,9 @@ public class Proprietario extends javax.swing.JPanel {
         txtTelCell = new javax.swing.JFormattedTextField();
         txtCEP = new javax.swing.JFormattedTextField();
         txtNome = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
-        btnSalvar = new javax.swing.JButton();
         btnHistorico = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         btnPesquisarProp = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
@@ -517,23 +516,15 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(txtNome);
         txtNome.setBounds(10, 30, 350, 28);
 
-        jpProprietario.add(jpPropri);
-        jpPropri.setBounds(9, 74, 630, 380);
-
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+        btnHistorico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
+        btnHistorico.setText("Histórico");
+        btnHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHistoricoMouseClicked(evt);
             }
         });
-        jpProprietario.add(btnCancelar);
-        btnCancelar.setBounds(450, 460, 130, 35);
-
-        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        btnExcluir.setText("Excluir");
-        jpProprietario.add(btnExcluir);
-        btnExcluir.setBounds(320, 460, 120, 35);
+        jpPropri.add(btnHistorico);
+        btnHistorico.setBounds(90, 380, 140, 35);
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         btnSalvar.setText("Salvar");
@@ -542,18 +533,21 @@ public class Proprietario extends javax.swing.JPanel {
                 btnSalvarActionPerformed(evt);
             }
         });
-        jpProprietario.add(btnSalvar);
-        btnSalvar.setBounds(180, 460, 130, 35);
+        jpPropri.add(btnSalvar);
+        btnSalvar.setBounds(250, 380, 130, 35);
 
-        btnHistorico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
-        btnHistorico.setText("Histórico");
-        btnHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnHistoricoMouseClicked(evt);
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
             }
         });
-        jpProprietario.add(btnHistorico);
-        btnHistorico.setBounds(20, 460, 140, 35);
+        jpPropri.add(btnCancelar);
+        btnCancelar.setBounds(400, 380, 130, 35);
+
+        jpProprietario.add(jpPropri);
+        jpPropri.setBounds(9, 74, 630, 420);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Proprietário");
@@ -1682,7 +1676,6 @@ public class Proprietario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnExcluirAnimal;
     private javax.swing.JButton btnHistorico;
     private javax.swing.JButton btnHistoricoAnimal;
