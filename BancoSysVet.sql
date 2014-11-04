@@ -21,24 +21,24 @@ USE `bancosysvet`;
 DROP TABLE IF EXISTS `animal`;
 
 CREATE TABLE `animal` (
-  `codAnimal` int(6) NOT NULL,
+  `codAnimal` int(6) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
-  `sexo` binary(1) DEFAULT NULL,
+  `sexo` tinyint(1) DEFAULT NULL,
   `cor` varchar(15) DEFAULT NULL,
-  `dataNascimento` date DEFAULT NULL,
+  `dataNascimento` varchar(10) DEFAULT NULL,
   `peso` float DEFAULT NULL,
   `altura` float DEFAULT NULL,
   `porte` varchar(15) DEFAULT NULL,
-  `chip` binary(1) DEFAULT NULL,
+  `chip` tinyint(1) DEFAULT NULL,
   `numChip` int(12) DEFAULT NULL,
-  `obito` binary(1) DEFAULT NULL,
+  `obito` tinyint(1) DEFAULT NULL,
   `observacao` varchar(1000) DEFAULT NULL,
   `codEspecie` int(6) DEFAULT NULL,
   `codProntuario` int(6) DEFAULT NULL,
   PRIMARY KEY (`codAnimal`),
   KEY `FK_especie` (`codEspecie`),
   KEY `FK_prontuario` (`codProntuario`),
-  CONSTRAINT `FK_especie` FOREIGN KEY (`codEspecie`) REFERENCES `especie` (`codEspecie`),
+  CONSTRAINT `FK_Especie` FOREIGN KEY (`codEspecie`) REFERENCES `especie` (`codEspecie`),
   CONSTRAINT `FK_prontuario` FOREIGN KEY (`codProntuario`) REFERENCES `prontuario` (`codProntuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -54,7 +54,7 @@ CREATE TABLE `contatos` (
   `email` varchar(50) DEFAULT NULL,
   `site` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `dadospessoais` */
 
@@ -67,7 +67,7 @@ CREATE TABLE `dadospessoais` (
   `cpf` varchar(14) DEFAULT NULL,
   `rg` varchar(13) NOT NULL,
   PRIMARY KEY (`codDadosPessoais`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `endereco` */
 
@@ -83,14 +83,14 @@ CREATE TABLE `endereco` (
   `cidade` varchar(50) DEFAULT NULL,
   `estado` char(2) DEFAULT NULL,
   PRIMARY KEY (`codEndereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `especie` */
 
 DROP TABLE IF EXISTS `especie`;
 
 CREATE TABLE `especie` (
-  `codEspecie` int(6) NOT NULL,
+  `codEspecie` int(6) NOT NULL AUTO_INCREMENT,
   `especie` varchar(50) DEFAULT NULL,
   `codTipoAnimal` int(6) DEFAULT NULL,
   PRIMARY KEY (`codEspecie`),
@@ -149,17 +149,17 @@ CREATE TABLE `proprietario` (
   KEY `FK_codAnimal` (`codAnimal`),
   KEY `FK_endereco` (`codEndereco`),
   KEY `FK_contato` (`codContato`),
-  CONSTRAINT `FK_endereco` FOREIGN KEY (`codEndereco`) REFERENCES `endereco` (`codEndereco`),
   CONSTRAINT `FK_codDadosPessoais` FOREIGN KEY (`codDadosPessoais`) REFERENCES `dadospessoais` (`codDadosPessoais`),
-  CONSTRAINT `FK_contato` FOREIGN KEY (`codContato`) REFERENCES `contatos` (`codContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_contato` FOREIGN KEY (`codContato`) REFERENCES `contatos` (`codContato`),
+  CONSTRAINT `FK_endereco` FOREIGN KEY (`codEndereco`) REFERENCES `endereco` (`codEndereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `raca` */
 
 DROP TABLE IF EXISTS `raca`;
 
 CREATE TABLE `raca` (
-  `codRaca` int(6) NOT NULL,
+  `codRaca` int(6) NOT NULL AUTO_INCREMENT,
   `nomeRaca` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codRaca`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -169,12 +169,12 @@ CREATE TABLE `raca` (
 DROP TABLE IF EXISTS `tipoanimal`;
 
 CREATE TABLE `tipoanimal` (
-  `codTipoAnimal` int(6) NOT NULL,
+  `codTipoAnimal` int(6) NOT NULL AUTO_INCREMENT,
   `tipoAnimal` varchar(50) DEFAULT NULL,
   `codRaca` int(6) DEFAULT NULL,
   PRIMARY KEY (`codTipoAnimal`),
   KEY `FK_raca` (`codRaca`),
-  CONSTRAINT `FK_raca` FOREIGN KEY (`codRaca`) REFERENCES `raca` (`codRaca`)
+  CONSTRAINT `FK_Raca` FOREIGN KEY (`codRaca`) REFERENCES `raca` (`codRaca`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Table structure for table `usuario` */
