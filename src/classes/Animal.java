@@ -1,8 +1,8 @@
  package classes;
 
 
-public class Cliente {
-    
+public class Animal {
+    private int codAnimal;
     private String nomeAnimal;
     private String nascimento;
     private int idade;
@@ -13,10 +13,55 @@ public class Cliente {
     private String cor;
     private boolean chip;
     private int numeroChip;
-    private String raca;
-    private String especie;
+    private int codEspecie;
+    private int codProntuario;
     private boolean obito;
     private String observacao;
+    private Especie especie;
+    private Raca raca;
+    private TipoAnimal tipoanimal;
+    
+   
+    public Animal(){
+        this.codAnimal =0;
+        this.nomeAnimal ="";
+        this.nascimento ="";
+        this.idade =0;
+        this.sexo =false;
+        this.peso =0;
+        this.altura =0;
+        this.porte ="";
+        this.cor ="";
+        this.chip =false;
+        this.numeroChip=0;
+        this.codEspecie=0;
+        this.obito=false;
+        this.observacao="";
+        
+         }
+    
+    public Animal(String nomeAnimal, String nascimento,
+            int idade, boolean sexo, float peso, float altura,
+            String porte, String cor, boolean chip, int numeroChip,
+            String raca, int codEspecie, boolean obito, 
+            String observacao){
+    
+        this.nomeAnimal = nomeAnimal; 
+        this.nascimento = nascimento;
+        this.idade = idade; 
+        this.sexo = sexo;
+        this.peso = peso;
+        this.altura = altura;
+        this.porte = porte; 
+        this.cor = cor; 
+        this.chip = chip; 
+        this.numeroChip = numeroChip; 
+        
+        this.codEspecie = codEspecie; 
+        
+        this.obito = obito; 
+        this.observacao = observacao;
+       }
 
     public String getNomeAnimal() {
         return nomeAnimal;
@@ -98,19 +143,19 @@ public class Cliente {
         this.numeroChip = numeroChip;
     }
 
-    public String getRaca() {
-        return raca;
+    public int getCodEspecie() {
+        return codEspecie;
     }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
+    public void setCodEspecie(int codEspecie) {
+        this.codEspecie = codEspecie;
     }
 
-    public String getEspecie() {
+    public Especie getEspecie() {
         return especie;
     }
 
-    public void setEspecie(String especie) {
+    public void setEspecie(Especie especie) {
         this.especie = especie;
     }
 
@@ -129,27 +174,29 @@ public class Cliente {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
-    public Cliente(){
-        
+
+    public Raca getRaca() {
+        return raca;
     }
-    
-    public Cliente(String nomeAnimal, String nascimento, int idade, boolean sexo, float peso, float altura, String porte, String cor, boolean chip, int numeroChip, String raca,
-    String especie, boolean obito, String observacao){
-    
-        this.nomeAnimal = nomeAnimal; 
-        this.nascimento = nascimento;
-        this.idade = idade; 
-        this.sexo = sexo;
-        this.peso = peso;
-        this.altura = altura;
-        this.porte = porte; 
-        this.cor = cor; 
-        this.chip = chip; 
-        this.numeroChip = numeroChip; 
+
+    public TipoAnimal getTipoanimal() {
+        return tipoanimal;
+    }
+
+    public void setRaca(Raca raca) {
         this.raca = raca;
-        this.especie = especie; 
-        this.obito = obito; 
-        this.observacao = observacao;
-       }
+    }
+
+    public void setTipoanimal(TipoAnimal tipoanimal) {
+        this.tipoanimal = tipoanimal;
+    }
+
+    public int getCodProntuario() {
+        return codProntuario;
+    }
+
+    public void setCodProntuario(int codProntuario) {
+        this.codProntuario = codProntuario;
+    }
+
 }

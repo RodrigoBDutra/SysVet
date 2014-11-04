@@ -3,7 +3,17 @@ package classes;
 public class Especie {
     private int codEspecie;
     private String especie;
+    private int codTipoAnimal;  
     
+    public Especie(){
+        
+    }
+    
+    public Especie(int codEspecie, String especie){
+        this.codEspecie = codEspecie;
+        this.especie = especie;
+    }
+
     public int getCodEspecie() {
         return codEspecie;
     }
@@ -19,13 +29,13 @@ public class Especie {
     public void setEspecie(String especie) {
         this.especie = especie;
     }
-    
-     public Especie(){
-        
+
+    public int getCodTipoAnimal() {
+        return codTipoAnimal;
     }
-    
-    public Especie(int codEspecie, String especie){
-        this.codEspecie = codEspecie;
-        this.especie = especie;
+
+    public void setCodTipoAnimal(int codTipoAnimal) {
+        this.codTipoAnimal = codTipoAnimal;
     }
+
 }

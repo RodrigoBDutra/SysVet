@@ -23,7 +23,7 @@ public class Auxiliar {
             } else if (component instanceof JTextField) {
                 JTextField field = (JTextField) component;
                 field.setText("");
-            } else if(component instanceof JDateChooser){
+            } else if (component instanceof JDateChooser) {
                 JDateChooser field = (JDateChooser) component;
                 field.setDate(null);
             } else if (component instanceof Container) {
@@ -45,6 +45,20 @@ public class Auxiliar {
         }
         return date;
     }
+/*
+    public static String PegaData(java.util.Date pega)  {
+        
+        String date ;
+        try {
+            
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            date = formato.format(pega);
+
+        } catch (Exception ex) {
+            return "";
+        }
+        return date;
+    }*/
 
     // verify email
     public static boolean validarEmail(JTextField txt) {

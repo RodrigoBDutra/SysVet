@@ -4,6 +4,7 @@
  */
 package viewsteste;
 
+import Auxiliares.TextLimitado;
 import javax.swing.JOptionPane;
 import dao.Banco;
 import classes.Transferencia;
@@ -17,6 +18,8 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        loginIn.setDocument(new TextLimitado(31));
+        senhaIn.setDocument(new TextLimitado(16));
     }
 
     /**
@@ -135,7 +138,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jpLogin.add(btnSuporte);
-        btnSuporte.setBounds(211, 223, 117, 49);
+        btnSuporte.setBounds(180, 220, 117, 49);
         jpLogin.add(txt_msg);
         txt_msg.setBounds(209, 192, 210, 20);
 

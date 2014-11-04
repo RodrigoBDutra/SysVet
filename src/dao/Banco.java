@@ -39,7 +39,7 @@ public class Banco {
             String serverName = "localhost";
             String mydatabase = "bancosysvet";
             String username = "root";
-            String password = "1234";
+            String password = "root";
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;

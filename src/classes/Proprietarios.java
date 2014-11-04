@@ -12,7 +12,7 @@ public class Proprietarios {
     private DadosPessoais dadospessoais;
     private Contato contato;
     private Endereco endereco;
-    private Cliente cliente;
+    private Animal cliente;
 
 
     public Proprietarios() {
@@ -115,11 +115,11 @@ public class Proprietarios {
         this.endereco = endereco;
     }
 
-    public Cliente getCliente() {
+    public Animal getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Animal cliente) {
         this.cliente = cliente;
     }
 

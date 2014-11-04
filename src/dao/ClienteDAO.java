@@ -1,126 +1,41 @@
-
 package dao;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import classes.Cliente;
+import classes.Animal;
+import classes.Proprietarios;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ClienteDAO extends Banco{
-    
-    
-     public ArrayList<Cliente> getListagem() {
-        ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
+   
+     public String incluirCli(Animal cli) {
+        String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM cliente ORDERBY nomeAnimal";
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                Cliente cli = new Cliente();
-                cli.setNomeAnimal(rs.getString("nomeAnimal"));
-                cli.setNascimento(rs.getString("nascimento"));
-                cli.setIdade(rs.getInt("idade"));
-                cli.setSexo(rs.getBoolean("sexo"));
-                cli.setPeso(rs.getFloat("peso"));
-                cli.setAltura(rs.getFloat("altura"));
-                cli.setPorte(rs.getString("porte"));
-                cli.setCor(rs.getString("cor"));
-                cli.setChip(rs.getBoolean("chip"));
-                cli.setNumeroChip(rs.getInt("numeroChip"));
-                cli.setRaca(rs.getString("raca"));
-                cli.setEspecie(rs.getString("especie"));
-                cli.setObito(rs.getBoolean("obito")); // ainda não vi como colocar variavel CHAR acho que é assim
-                cli.setObservacao(rs.getString("observacao"));
-                listaCliente.add(cli);
-            }
-            rs.close();
+            String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, peso,"
+                    + " altura, porte, chip, numChip, codEspecie, obito, observação)"
+                    + "VALUES('" + cli.getNomeAnimal() + "','" + cli.isSexo()+ ","+ cli.getNascimento() +"," +cli.getCor()+
+                    "'," + cli.getIdade() + "," + cli.getPeso() + "," + cli.getAltura() +
+                    "," + cli.getPorte() +  "," + cli.isChip()+
+                    "," + cli.getNumeroChip()+"," +cli.getCodEspecie()+","+cli.isObito()+ 
+                    ","+cli.getObservacao()+")";
+
+            stmt.executeUpdate(sql);
             stmt.close();
             con.close();
+            resp = "OK";
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERRO: " + e.toString());
-        }
-        return listaCliente;
-    }
-
-    /**
-     * Pesquisa um Cliente pelo nome
-     *
-     * @param nomeAnimal a ser pesquisado
-     * @return null se não achar ou o objeto preenchido se achar
-     */
-
-    public Cliente getCli(String nome) {
-        Cliente cli = new Cliente();
-        try {
-            conecta();
-            Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM cliente where nome = '" + nome + "'";
-            ResultSet rs = stmt.executeQuery(sql);
-            if (rs.next()) {
-               cli.setNomeAnimal(rs.getString("nomeAnimal"));
-                cli.setNascimento(rs.getString("nascimento"));
-                cli.setIdade(rs.getInt("idade"));
-                cli.setSexo(rs.getBoolean("sexo"));
-                cli.setPeso(rs.getFloat("peso"));
-                cli.setAltura(rs.getFloat("altura"));
-                cli.setPorte(rs.getString("porte"));
-                cli.setCor(rs.getString("cor"));
-                cli.setChip(rs.getBoolean("chip"));
-                cli.setNumeroChip(rs.getInt("numeroChip"));
-                cli.setRaca(rs.getString("raca"));
-                cli.setEspecie(rs.getString("especie"));
-                cli.setObito(rs.getBoolean("obito")); // ainda não vi como colocar variavel CHAR acho que é assim
-                cli.setObservacao(rs.getString("observacao"));
-                
-            } else {
-                cli = null;
-            }
-            rs.close();
-            stmt.close();
-            con.close();
-        }catch (Exception e){
-            cli = null;
-        }
-        return cli;
-    }
-    
-    
-    
-    /**
-     * Cadastro um Cliente no banco de dados
-     * @param cli
-     * @return ok para sucesso ou mensagem de erro
-     */
-    
-    public String incluirProp(Cliente cli){
-        String resp="";
-        try{
-            conecta();
-            Statement stmt = con.createStatement();
-            String sql = "INSERT INTO clientes(nomeAnimal,nascimento,idade,sexo,peso,altura,porte"
-                    + "cor,chip,numeroChip,raca,especie,obito,observacao)";
-           sql+= "Values('" + cli.getNomeAnimal()+"','" +cli.getNascimento()+"',"+cli.getIdade()+",'"+cli.isSexo()+ "'," 
-                   + cli.getPeso()+"," + cli.getAltura()+",'" +cli.getPorte()+"','"+cli.getCor()+"',"
-                   + cli.isChip()+",'"+cli.getNumeroChip()+"','"+cli.getRaca()+"','"
-                   +cli.getEspecie()+"','"+cli.isObito()+"','"+cli.getObservacao()+"')";
-           stmt.executeUpdate(sql);
-           
-           stmt.close();
-           con.close();
-           resp= "OK";
-        }catch (Exception e){
-            resp= e.toString();
+            imprimeErro("Erro em IncluirProprietário", e.toString());
         }
         return resp;
     }
     
     
-        public String alteraCli(Cliente cli){
+        public String alteraCli(Animal cli){
         String resp="";
         try{
             conecta();
@@ -145,7 +60,7 @@ public class ClienteDAO extends Banco{
       * Inclui um Proprietario na tabela
       */   
         
-        public void adicionaLinha(Cliente cli){
+        public void adicionaLinha(Animal cli){
             
         }
         
@@ -153,7 +68,7 @@ public class ClienteDAO extends Banco{
          * Deleta um Proprietario
          */
         
-       public String excluirProp (Cliente cli){
+       public String excluirProp (Animal cli){
            String resp="";
            try{
                conecta();
@@ -170,5 +85,9 @@ public class ClienteDAO extends Banco{
            return resp;
        }
        
-       
+       private void imprimeErro(String msg, String msgErro) {
+        JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);
+        System.err.println(msg);
+        System.out.println(msgErro);
+    }
 }

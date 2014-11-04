@@ -2,6 +2,7 @@ package viewsteste;
 
 import classes.*;
 import Auxiliares.Auxiliar;
+import Auxiliares.TextLimitado;
 import dao.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Proprietario extends javax.swing.JPanel {
 
@@ -20,9 +22,34 @@ public class Proprietario extends javax.swing.JPanel {
     public Proprietario() {
         initComponents();
         jpPropri.setVisible(false);
+        
+        //limite de caracteres proprietario
+        txtNome.setDocument(new TextLimitado(50));
+        txtRG.setDocument(new TextLimitado(10));
+        txtEmail.setDocument(new TextLimitado(40));
+        txtEndereco.setDocument(new TextLimitado(40));
+        txtNumEnd.setDocument(new TextLimitado(6));
+        txtComplemento.setDocument(new TextLimitado(20));
+        txtBairro.setDocument(new TextLimitado(25));
+        txtCidade.setDocument(new TextLimitado(35));
+        txtEstado.setDocument(new TextLimitado(2));
+        txtObservacao.setDocument(new TextLimitado(60));
     }
     
     boolean verificaConsulta = true;
+    
+    /*private void CarregaDados() {
+        limparGrade();
+        String titulos[] = {"matricula", "valorHora", "qtdeHoras"};
+        Object dados[][] = {};
+        DefaultTableModel modelo = new DefaultTableModel(dados, titulos);
+        Funcionarios.setModel(modelo);
+        ArrayList<Funcionario> lista = new FuncionarioDAO().getListagem();
+        for (int i = 0; i < lista.size(); i++) {
+            modelo.addRow(new String[]{lista.get(i).getMatricula(), "" + lista.get(i).getValorHora(), ""
+                + lista.get(i).getQtdeHoras()});
+        }
+    }*/
     
     ProprietarioDAO propDa = new ProprietarioDAO();
     DadosPessoaisDAO dadosDa = new DadosPessoaisDAO();
@@ -112,10 +139,10 @@ public class Proprietario extends javax.swing.JPanel {
         txtDataCadastro = new com.toedter.calendar.JDateChooser();
         txtEstado = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
-        txtNumEnd = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         btnAdicionarCliente = new javax.swing.JButton();
         btnPesquisarCli = new javax.swing.JButton();
+        txtNumEnd = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtbCliente = new javax.swing.JTable();
@@ -124,7 +151,6 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel57 = new javax.swing.JLabel();
         txtComplemento = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        txtRG = new javax.swing.JFormattedTextField();
         txtTelResid = new javax.swing.JFormattedTextField();
         txtTelCell = new javax.swing.JFormattedTextField();
         txtCEP = new javax.swing.JFormattedTextField();
@@ -132,6 +158,7 @@ public class Proprietario extends javax.swing.JPanel {
         btnHistorico = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtRG = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         btnPesquisarProp = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
@@ -198,12 +225,9 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel33 = new javax.swing.JLabel();
         jbChipS = new javax.swing.JRadioButton();
         jbChipN = new javax.swing.JRadioButton();
-        txtTipoAnimal = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         txtProp = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         txtNumChip = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
@@ -213,6 +237,9 @@ public class Proprietario extends javax.swing.JPanel {
         txtNascimentoCli = new com.toedter.calendar.JDateChooser();
         jLabel58 = new javax.swing.JLabel();
         txtRaca = new javax.swing.JTextField();
+        txtTipoAnimal = new javax.swing.JComboBox();
+        txtID = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
@@ -273,7 +300,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpPropri.add(txtBairro);
-        txtBairro.setBounds(10, 180, 130, 28);
+        txtBairro.setBounds(10, 180, 150, 28);
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel44.setText("Bairro");
@@ -285,12 +312,12 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jLabel45);
         jLabel45.setBounds(520, 110, 90, 15);
         jpPropri.add(txtCidade);
-        txtCidade.setBounds(150, 180, 240, 28);
+        txtCidade.setBounds(170, 180, 230, 28);
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel46.setText("Cidade");
         jpPropri.add(jLabel46);
-        jLabel46.setBounds(150, 160, 120, 15);
+        jLabel46.setBounds(170, 160, 120, 15);
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel47.setText("Clientes");
@@ -338,25 +365,17 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(txtDataCadastro);
         txtDataCadastro.setBounds(470, 180, 150, 28);
         jpPropri.add(txtEstado);
-        txtEstado.setBounds(400, 180, 60, 28);
+        txtEstado.setBounds(410, 180, 50, 28);
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel53.setText("Nº");
         jpPropri.add(jLabel53);
         jLabel53.setBounds(300, 110, 60, 15);
 
-        txtNumEnd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumEndActionPerformed(evt);
-            }
-        });
-        jpPropri.add(txtNumEnd);
-        txtNumEnd.setBounds(300, 130, 60, 28);
-
         jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel54.setText("Estado");
         jpPropri.add(jLabel54);
-        jLabel54.setBounds(400, 160, 60, 15);
+        jLabel54.setBounds(410, 160, 50, 15);
 
         btnAdicionarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         btnAdicionarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -382,6 +401,14 @@ public class Proprietario extends javax.swing.JPanel {
         });
         jpPropri.add(btnPesquisarCli);
         btnPesquisarCli.setBounds(590, 330, 30, 35);
+
+        txtNumEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumEndActionPerformed(evt);
+            }
+        });
+        jpPropri.add(txtNumEnd);
+        txtNumEnd.setBounds(300, 130, 60, 28);
 
         jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel55.setText("RG");
@@ -477,14 +504,6 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel39.setBounds(10, 10, 100, 15);
 
         try {
-            txtRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###-AA")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jpPropri.add(txtRG);
-        txtRG.setBounds(510, 30, 110, 28);
-
-        try {
             txtTelResid.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
@@ -545,6 +564,16 @@ public class Proprietario extends javax.swing.JPanel {
         });
         jpPropri.add(btnCancelar);
         btnCancelar.setBounds(400, 380, 130, 35);
+
+        txtRG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRGActionPerformed(evt);
+            }
+        });
+        jpPropri.add(txtRG);
+        txtRG.setBounds(510, 30, 110, 28);
+        txtRG.getAccessibleContext().setAccessibleName("");
+        txtRG.getAccessibleContext().setAccessibleDescription("");
 
         jpProprietario.add(jpPropri);
         jpPropri.setBounds(9, 74, 630, 420);
@@ -831,7 +860,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
         jPanel3.add(txtAnimal);
-        txtAnimal.setBounds(10, 80, 290, 28);
+        txtAnimal.setBounds(10, 80, 330, 28);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Nome do Cliente");
@@ -841,7 +870,7 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Sexo");
         jPanel3.add(jLabel26);
-        jLabel26.setBounds(10, 110, 30, 15);
+        jLabel26.setBounds(410, 60, 30, 15);
 
         jbSexoM.setBackground(new java.awt.Color(204, 204, 204));
         grpSexo.add(jbSexoM);
@@ -853,7 +882,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbSexoM);
-        jbSexoM.setBounds(10, 130, 71, 23);
+        jbSexoM.setBounds(410, 80, 71, 23);
 
         jbSexoF.setBackground(new java.awt.Color(204, 204, 204));
         grpSexo.add(jbSexoF);
@@ -864,31 +893,31 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbSexoF);
-        jbSexoF.setBounds(80, 130, 70, 23);
+        jbSexoF.setBounds(480, 80, 70, 23);
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("Cor");
         jPanel3.add(jLabel27);
         jLabel27.setBounds(10, 170, 21, 15);
         jPanel3.add(txtCorAnimal);
-        txtCorAnimal.setBounds(10, 190, 130, 28);
+        txtCorAnimal.setBounds(10, 190, 250, 28);
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel28.setText("Idade");
         jPanel3.add(jLabel28);
-        jLabel28.setBounds(450, 60, 35, 15);
+        jLabel28.setBounds(120, 110, 35, 15);
         jPanel3.add(txtIdadeAnimal);
-        txtIdadeAnimal.setBounds(450, 80, 140, 28);
+        txtIdadeAnimal.setBounds(120, 130, 160, 28);
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setText("Espécie");
         jPanel3.add(jLabel29);
-        jLabel29.setBounds(10, 220, 44, 15);
+        jLabel29.setBounds(270, 220, 44, 15);
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel30.setText("Raça");
         jPanel3.add(jLabel30);
-        jLabel30.setBounds(259, 220, 40, 15);
+        jLabel30.setBounds(10, 220, 40, 15);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -897,7 +926,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jComboBox4);
-        jComboBox4.setBounds(10, 240, 110, 28);
+        jComboBox4.setBounds(270, 240, 110, 28);
 
         jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande" }));
         jcbPorteAnimal.addActionListener(new java.awt.event.ActionListener() {
@@ -906,26 +935,26 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jcbPorteAnimal);
-        jcbPorteAnimal.setBounds(450, 130, 84, 28);
+        jcbPorteAnimal.setBounds(530, 130, 84, 28);
         jPanel3.add(txtPesoAnimal);
-        txtPesoAnimal.setBounds(160, 130, 120, 28);
+        txtPesoAnimal.setBounds(290, 130, 110, 28);
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel31.setText("Peso");
         jPanel3.add(jLabel31);
-        jLabel31.setBounds(160, 110, 29, 15);
+        jLabel31.setBounds(290, 110, 50, 15);
         jPanel3.add(txtAlturaAnimal);
-        txtAlturaAnimal.setBounds(310, 130, 114, 28);
+        txtAlturaAnimal.setBounds(410, 130, 110, 28);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel32.setText("Altura");
         jPanel3.add(jLabel32);
-        jLabel32.setBounds(310, 110, 38, 15);
+        jLabel32.setBounds(410, 110, 38, 15);
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel33.setText("Chip");
         jPanel3.add(jLabel33);
-        jLabel33.setBounds(160, 170, 27, 15);
+        jLabel33.setBounds(290, 170, 27, 15);
 
         jbChipS.setBackground(new java.awt.Color(204, 204, 204));
         grpChip.add(jbChipS);
@@ -936,7 +965,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbChipS);
-        jbChipS.setBounds(160, 190, 41, 23);
+        jbChipS.setBounds(290, 190, 41, 23);
 
         jbChipN.setBackground(new java.awt.Color(204, 204, 204));
         grpChip.add(jbChipN);
@@ -948,59 +977,40 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbChipN);
-        jbChipN.setBounds(200, 190, 45, 23);
-        jPanel3.add(txtTipoAnimal);
-        txtTipoAnimal.setBounds(130, 240, 110, 28);
+        jbChipN.setBounds(330, 190, 45, 23);
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel34.setText("Porte");
         jPanel3.add(jLabel34);
-        jLabel34.setBounds(450, 110, 34, 15);
+        jLabel34.setBounds(530, 110, 34, 15);
+
+        txtProp.setEditable(false);
         jPanel3.add(txtProp);
-        txtProp.setBounds(10, 30, 580, 28);
+        txtProp.setBounds(10, 30, 510, 28);
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel35.setText("Proprietário");
         jPanel3.add(jLabel35);
         jLabel35.setBounds(10, 10, 90, 15);
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Foto do Animal"));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(178, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-
-        jPanel3.add(jPanel4);
-        jPanel4.setBounds(400, 170, 200, 230);
-
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel36.setText("Nascimento");
         jPanel3.add(jLabel36);
-        jLabel36.setBounds(330, 60, 70, 15);
+        jLabel36.setBounds(10, 110, 70, 15);
 
+        txtNumChip.setEditable(false);
         txtNumChip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumChipActionPerformed(evt);
             }
         });
         jPanel3.add(txtNumChip);
-        txtNumChip.setBounds(270, 190, 116, 28);
+        txtNumChip.setBounds(390, 190, 116, 28);
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel37.setText("Nº Chip/Anilha");
         jPanel3.add(jLabel37);
-        jLabel37.setBounds(270, 170, 90, 15);
+        jLabel37.setBounds(390, 170, 90, 15);
         jPanel3.add(txtObservacaoAnimal);
         txtObservacaoAnimal.setBounds(10, 300, 370, 100);
 
@@ -1014,14 +1024,32 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jCheckBox2);
         jCheckBox2.setBounds(280, 270, 100, 23);
         jPanel3.add(txtNascimentoCli);
-        txtNascimentoCli.setBounds(330, 80, 100, 28);
+        txtNascimentoCli.setBounds(10, 130, 100, 28);
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel58.setText("Tipo Animal");
         jPanel3.add(jLabel58);
-        jLabel58.setBounds(130, 220, 110, 15);
+        jLabel58.setBounds(390, 220, 110, 15);
         jPanel3.add(txtRaca);
-        txtRaca.setBounds(254, 240, 130, 28);
+        txtRaca.setBounds(10, 240, 250, 28);
+
+        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
+        txtTipoAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoAnimalActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtTipoAnimal);
+        txtTipoAnimal.setBounds(390, 240, 110, 28);
+
+        txtID.setEditable(false);
+        jPanel3.add(txtID);
+        txtID.setBounds(350, 80, 50, 28);
+
+        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel59.setText("ID");
+        jPanel3.add(jLabel59);
+        jLabel59.setBounds(350, 60, 40, 15);
 
         jpCliente.add(jPanel3);
         jPanel3.setBounds(10, 30, 620, 420);
@@ -1458,7 +1486,7 @@ public class Proprietario extends javax.swing.JPanel {
                 Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
             }
             txtObservacao.setText(lista.get(0).getObservacao());
-
+            verificaConsulta = true;
         }else{
                Object[] options = { "Sim", "Não" };   
                int opcao =JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado", 
@@ -1510,6 +1538,7 @@ public class Proprietario extends javax.swing.JPanel {
             } else {
                 JOptionPane.showMessageDialog(null, respP);
             }
+            verificaConsulta = true;
         }
         
         }//valida email
@@ -1529,6 +1558,10 @@ public class Proprietario extends javax.swing.JPanel {
         P = propDAO.alteraProp(prop, dad.getCPF());
         if(D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")){
             JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
+            Date pega = txtDataCadastro.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        dad.setDataNascimento(formato.format(pega));
+            JOptionPane.showMessageDialog(null, txtDataNascimento.getDate()+"// "+dad.getDataNascimento());
             
         }
         
@@ -1672,6 +1705,14 @@ public class Proprietario extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void txtTipoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoAnimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoAnimalActionPerformed
+
+    private void txtRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRGActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;
@@ -1726,7 +1767,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1757,6 +1797,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1764,7 +1805,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1815,6 +1855,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtEstado;
+    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtIdadeAnimal;
     private com.toedter.calendar.JDateChooser txtNascimentoCli;
     private javax.swing.JTextField txtNome;
@@ -1826,11 +1867,11 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JTextField txtObservacaoAnimal;
     private javax.swing.JTextField txtPesoAnimal;
     private javax.swing.JTextField txtProp;
-    private javax.swing.JFormattedTextField txtRG;
+    private javax.swing.JTextField txtRG;
     private javax.swing.JTextField txtRaca;
     private javax.swing.JButton txtSalvarAnimal;
     private javax.swing.JFormattedTextField txtTelCell;
     private javax.swing.JFormattedTextField txtTelResid;
-    private javax.swing.JTextField txtTipoAnimal;
+    private javax.swing.JComboBox txtTipoAnimal;
     // End of variables declaration//GEN-END:variables
 }
