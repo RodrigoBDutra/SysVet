@@ -35,22 +35,21 @@ public class Proprietario extends javax.swing.JPanel {
         txtEstado.setDocument(new TextLimitado(2));
         txtObservacao.setDocument(new TextLimitado(60));
     }
-    
+
     boolean verificaConsulta = true;
-    
+
     /*private void CarregaDados() {
-        limparGrade();
-        String titulos[] = {"matricula", "valorHora", "qtdeHoras"};
-        Object dados[][] = {};
-        DefaultTableModel modelo = new DefaultTableModel(dados, titulos);
-        Funcionarios.setModel(modelo);
-        ArrayList<Funcionario> lista = new FuncionarioDAO().getListagem();
-        for (int i = 0; i < lista.size(); i++) {
-            modelo.addRow(new String[]{lista.get(i).getMatricula(), "" + lista.get(i).getValorHora(), ""
-                + lista.get(i).getQtdeHoras()});
-        }
-    }*/
-    
+     limparGrade();
+     String titulos[] = {"matricula", "valorHora", "qtdeHoras"};
+     Object dados[][] = {};
+     DefaultTableModel modelo = new DefaultTableModel(dados, titulos);
+     Funcionarios.setModel(modelo);
+     ArrayList<Funcionario> lista = new FuncionarioDAO().getListagem();
+     for (int i = 0; i < lista.size(); i++) {
+     modelo.addRow(new String[]{lista.get(i).getMatricula(), "" + lista.get(i).getValorHora(), ""
+     + lista.get(i).getQtdeHoras()});
+     }
+     }*/
     ProprietarioDAO propDa = new ProprietarioDAO();
     DadosPessoaisDAO dadosDa = new DadosPessoaisDAO();
     EnderecoDAO endDa = new EnderecoDAO();
@@ -68,12 +67,12 @@ public class Proprietario extends javax.swing.JPanel {
         prop.setCodEndereco(0);
         prop.setCodAnimal(0);
         /*
-        prop.setDadospessoais(null);
-        prop.setContato(null);
-        prop.setEndereco(null);
-        prop.setCliente(null);*/
+         prop.setDadospessoais(null);
+         prop.setContato(null);
+         prop.setEndereco(null);
+         prop.setCliente(null);*/
         return prop;
-                
+
     }
 
     public Contato montarContato() {
@@ -105,7 +104,7 @@ public class Proprietario extends javax.swing.JPanel {
         dadosP.setCPF(txtCPF.getText());
         dadosP.setCodDadosPessoais(0);
         dadosP.setNome(txtNome.getText());
-        java.util.Date pega = txtDataCadastro.getDate();
+        java.util.Date pega = txtDataNascimento.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         dadosP.setDataNascimento(formato.format(pega));
         dadosP.setRG(txtRG.getText());
@@ -146,7 +145,7 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel55 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtbCliente = new javax.swing.JTable();
-        txtDataNascimento = new com.toedter.calendar.JDateChooser();
+        txtDataNascimento = new com.toedter.calendar.JDateChooser("dd/MM/yyyy", "##/##/#####", '_');
         jLabel43 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         txtComplemento = new javax.swing.JTextField();
@@ -576,7 +575,7 @@ public class Proprietario extends javax.swing.JPanel {
         txtRG.getAccessibleContext().setAccessibleDescription("");
 
         jpProprietario.add(jpPropri);
-        jpPropri.setBounds(9, 74, 630, 420);
+        jpPropri.setBounds(9, 74, 630, 430);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Proprietário");
@@ -1462,46 +1461,48 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPesquisarCliActionPerformed
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
-        if(Auxiliar.validarCPF(txtCPF)){
-        ArrayList<Proprietarios> lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
-        if(lista != null) {
-            jpPropri.setVisible(true);
-            txtNome.setText(lista.get(0).getDadospessoais().getNome());
-            txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
-            txtRG.setText(lista.get(0).getDadospessoais().getRG());
-            txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
-            txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
-            txtEmail.setText(lista.get(0).getContato().getEmail());
-            txtEndereco.setText(lista.get(0).getEndereco().getEndereco());
-            txtNumEnd.setText(lista.get(0).getEndereco().getNumero() + "");
-            txtBairro.setText(lista.get(0).getEndereco().getBairro());
-            txtComplemento.setText(lista.get(0).getEndereco().getComplemento());
-            txtCEP.setText(lista.get(0).getEndereco().getCEP());
-            txtCidade.setText(lista.get(0).getEndereco().getCidade());
-            txtEstado.setText(lista.get(0).getEndereco().getEstado());
-            try {
-                txtDataCadastro.setDate(Auxiliar.formataData(lista.get(0).getDataCadastro()));
-                txtDataNascimento.setDate(Auxiliar.formataData(lista.get(0).getDadospessoais().getDataNascimento()));
-            } catch (Exception ex) {
-                Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            txtObservacao.setText(lista.get(0).getObservacao());
-            verificaConsulta = true;
-        }else{
-               Object[] options = { "Sim", "Não" };   
-               int opcao =JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado", 
-                            JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-               if(opcao == 0 || opcao == -1){
-                   jpPropri.setVisible(true);
+        if (Auxiliar.validarCPF(txtCPF)) {
+            ArrayList<Proprietarios> lista = new ProprietarioDAO().consultaProp(txtCPF.getText());
+            if (lista != null) {
+                jpPropri.setVisible(true);
+                txtNome.setText(lista.get(0).getDadospessoais().getNome());
+                txtCPF.setText(lista.get(0).getDadospessoais().getCPF());
+                txtRG.setText(lista.get(0).getDadospessoais().getRG());
+                txtTelResid.setText(lista.get(0).getContato().getTelefoneResidencial());
+                txtTelCell.setText(lista.get(0).getContato().getTelefoneCelular());
+                txtEmail.setText(lista.get(0).getContato().getEmail());
+                txtEndereco.setText(lista.get(0).getEndereco().getEndereco());
+                txtNumEnd.setText(lista.get(0).getEndereco().getNumero() + "");
+                txtBairro.setText(lista.get(0).getEndereco().getBairro());
+                txtComplemento.setText(lista.get(0).getEndereco().getComplemento());
+                txtCEP.setText(lista.get(0).getEndereco().getCEP());
+                txtCidade.setText(lista.get(0).getEndereco().getCidade());
+                txtEstado.setText(lista.get(0).getEndereco().getEstado());
+                try {
+                    txtDataCadastro.setDate(Auxiliar.formataData(lista.get(0).getDataCadastro()));
+                    txtDataNascimento.setDate(Auxiliar.formataData(lista.get(0).getDadospessoais().getDataNascimento()));
+                } catch (Exception ex) {
+                    Logger.getLogger(Proprietario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                txtObservacao.setText(lista.get(0).getObservacao());
+                verificaConsulta = true;
+            } else {
+                Object[] options = {"Sim", "Não"};
+                int opcao = JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                if (opcao == 0 || opcao == -1) {
+                    jpPropri.setVisible(true);
+                    Auxiliar.limparTodosCampos(jpPropri);
                     txtDataCadastro.setDate(new Date());
                     verificaConsulta = false;
-               }else{
-                   jpPropri.setVisible(false);
-                   verificaConsulta = true;
-               }
-        }
+                } else {
+                    jpPropri.setVisible(false);
+                    Auxiliar.limparTodosCampos(jpPropri);
+                    verificaConsulta = true;
+                }
+            }
 
-        }else{
+        } else {
             jpPropri.setVisible(false);
         }
     }//GEN-LAST:event_btnPesquisarPropActionPerformed
@@ -1511,61 +1512,61 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jtbClienteAncestorAdded
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-       if(verificaConsulta == false){        
-        if(Auxiliar.validarEmail(txtEmail)){
-        Contato cont = montarContato();
-        Endereco end = montarEndereco();
-        DadosPessoais dad = montarDadosPessoais();
-        Proprietarios prop = montarProprietario();
-        int respD, respE, respC;
-        String respP;
-        ProprietarioDAO propDAO = new ProprietarioDAO();
-        EnderecoDAO endDAO = new EnderecoDAO();
-        DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-        ContatoDAO contDAO = new ContatoDAO();
-        respD = dadDAO.incluirDados(dad);
-        if (respD < 0) {
-            JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-        } else {
-            respE = endDAO.incluirEnd(end);
-            respC = contDAO.incluirCont(cont);
-            prop.setCodDadosPessoais(respD);
-            prop.setCodContato(respC);
-            prop.setCodEndereco(respE);
-            respP = propDAO.incluirProp(prop);
-            if (respP.equals("OK")) {
-                JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-            } else {
-                JOptionPane.showMessageDialog(null, respP);
+        if (Auxiliar.validarEmail(txtEmail)) {
+            if(Auxiliar.validarCPF(txtCPF)){
+            if (verificaConsulta == false) {
+
+                Contato cont = montarContato();
+                Endereco end = montarEndereco();
+                DadosPessoais dad = montarDadosPessoais();
+                Proprietarios prop = montarProprietario();
+                int respD, respE, respC;
+                String respP;
+                ProprietarioDAO propDAO = new ProprietarioDAO();
+                EnderecoDAO endDAO = new EnderecoDAO();
+                DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+                ContatoDAO contDAO = new ContatoDAO();
+                respD = dadDAO.incluirDados(dad);
+                if (respD < 0) {
+                    JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+                } else {
+                    respE = endDAO.incluirEnd(end);
+                    respC = contDAO.incluirCont(cont);
+                    prop.setCodDadosPessoais(respD);
+                    prop.setCodContato(respC);
+                    prop.setCodEndereco(respE);
+                    respP = propDAO.incluirProp(prop);
+                    if (respP.equals("OK")) {
+                        JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+                    } else {
+                        JOptionPane.showMessageDialog(null, respP);
+                    }
+                    verificaConsulta = true;
+                }
+
+            } else {//se nao for insercao será alteração
+                Contato cont = montarContato();
+                Endereco end = montarEndereco();
+                DadosPessoais dad = montarDadosPessoais();
+                Proprietarios prop = montarProprietario();
+                ProprietarioDAO propDAO = new ProprietarioDAO();
+                EnderecoDAO endDAO = new EnderecoDAO();
+                DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+                ContatoDAO contDAO = new ContatoDAO();
+                String D, P, C, E;
+                D = dadDAO.alteraDados(dad);
+                C = contDAO.alteraCont(cont, dad.getCPF());
+                E = endDAO.alteraEnd(end, dad.getCPF());
+                P = propDAO.alteraProp(prop, dad.getCPF());
+                if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
+                    JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
+                    Date pega = txtDataCadastro.getDate();
+
+                }
+
             }
-            verificaConsulta = true;
-        }
-        
+            }//valida cpf novamente
         }//valida email
-       }else{//se nao for insercao será alteração
-        Contato cont = montarContato();
-        Endereco end = montarEndereco();
-        DadosPessoais dad = montarDadosPessoais();
-        Proprietarios prop = montarProprietario();
-        ProprietarioDAO propDAO = new ProprietarioDAO();
-        EnderecoDAO endDAO = new EnderecoDAO();
-        DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-        ContatoDAO contDAO = new ContatoDAO();
-        String D,P,C,E;
-        D = dadDAO.alteraDados(dad);
-        C = contDAO.alteraCont(cont, dad.getCPF());
-        E = endDAO.alteraEnd(end, dad.getCPF());
-        P = propDAO.alteraProp(prop, dad.getCPF());
-        if(D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")){
-            JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
-            Date pega = txtDataCadastro.getDate();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        dad.setDataNascimento(formato.format(pega));
-            JOptionPane.showMessageDialog(null, txtDataNascimento.getDate()+"// "+dad.getDataNascimento());
-            
-        }
-        
-       }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -1696,13 +1697,13 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_txtBairroActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        if(verificaConsulta = false){
+        if (verificaConsulta = false) {
             verificaConsulta = true;
         }
         txtCPF.setText(null);
         Auxiliar.limparTodosCampos(jpPropri);
         jpPropri.setVisible(false);
-        
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtTipoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoAnimalActionPerformed

@@ -1,5 +1,4 @@
 package Auxiliares;
-
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Component;
@@ -31,6 +30,10 @@ public class Auxiliar {
             }
         }
     }
+    
+    /*public static boolean Maioridade(JDateChooser data){
+        
+    }*/
 
     public static Date formataData(String data) throws Exception {
         if (data == null || data.equals("")) {
