@@ -1,6 +1,7 @@
 package classes;
 
 public class TipoAnimal {
+
     private int codTipoAnimal;
     private String tipoAnimal;
     private int codRaca;
@@ -38,16 +39,15 @@ public class TipoAnimal {
         this.raca = raca;
     }
 
-    public TipoAnimal(){
-        
+    public TipoAnimal() {
+
     }
-    
-     public TipoAnimal(int codTipoAnimal, String tipoAnimal, int codRaca) {
+
+    public TipoAnimal(int codTipoAnimal, String tipoAnimal, int codRaca) {
         this.codTipoAnimal = codTipoAnimal;
         this.tipoAnimal = tipoAnimal;
         this.codRaca = codRaca;
-        
-        
+
     }
-  
+
 }

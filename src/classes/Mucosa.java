@@ -1,13 +1,14 @@
 package classes;
 
 public class Mucosa {
+
     private int codMucosa;
     private String bucal;
     private String labial;
     private String ocular;
     private String vulva;
     private String prepucial;
-    
+
     public int getCodMucosa() {
         return codMucosa;
     }
@@ -55,12 +56,12 @@ public class Mucosa {
     public void setPrepucial(String prepucial) {
         this.prepucial = prepucial;
     }
-    
-    public Mucosa(){
-        
+
+    public Mucosa() {
+
     }
-    
-    public Mucosa(int codMucosa, String bucal, String labial, String ocular, String vulva, String prepucial){
+
+    public Mucosa(int codMucosa, String bucal, String labial, String ocular, String vulva, String prepucial) {
         this.codMucosa = codMucosa;
         this.bucal = bucal;
         this.labial = labial;
@@ -68,5 +69,5 @@ public class Mucosa {
         this.vulva = vulva;
         this.prepucial = prepucial;
     }
-    
+
 }

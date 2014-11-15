@@ -259,7 +259,6 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
         Inicio i = new Inicio();
@@ -341,10 +340,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProdutosActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
-        Configuracao c = new Configuracao();
+        Configuracoes c = new Configuracoes();
         c.setVisible(true);
         if (bConfiguracoes) {
-            pnConteudo.add(new Configuracao(), "");
+            pnConteudo.add(new Configuracoes(), "");
         }
         this.card.show(this.pnConteudo, "");
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
@@ -393,7 +392,6 @@ public class Home extends javax.swing.JFrame {
             setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         }
     }//GEN-LAST:event_formWindowClosing
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgrpSexoCliente;

@@ -1,6 +1,7 @@
 package classes;
 
 public class MedicoVeterinario {
+
     private int codVeterinario;
     private int CRMV;
 
@@ -19,14 +20,13 @@ public class MedicoVeterinario {
     public void setCRMV(int CRMV) {
         this.CRMV = CRMV;
     }
-    
-    public MedicoVeterinario(){
-        
+
+    public MedicoVeterinario() {
+
     }
-    
-    public MedicoVeterinario(int codVeterinario, int CRMV){
+
+    public MedicoVeterinario(int codVeterinario, int CRMV) {
         this.codVeterinario = codVeterinario;
-        this.CRMV = CRMV;                
+        this.CRMV = CRMV;
     }
 }
-

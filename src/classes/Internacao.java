@@ -1,11 +1,12 @@
 package classes;
 
 public class Internacao {
+
     private int codInternacao;
     private String dataInicio;
     private String dataFim;
     private String descricao;
-    
+
     public int getCodInternacao() {
         return codInternacao;
     }
@@ -37,12 +38,12 @@ public class Internacao {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public Internacao(){
-        
+
+    public Internacao() {
+
     }
-    
-    public Internacao(int codInternacao, String dataInicio, String dataFim, String descricao){
+
+    public Internacao(int codInternacao, String dataInicio, String dataFim, String descricao) {
         this.codInternacao = codInternacao;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;

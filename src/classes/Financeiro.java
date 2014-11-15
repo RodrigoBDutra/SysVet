@@ -1,9 +1,10 @@
 package classes;
 
 public class Financeiro {
+
     private int codFinanceiro;
     private String tipoConta;
-    
+
     public int getCodFinanceiro() {
         return codFinanceiro;
     }
@@ -19,12 +20,12 @@ public class Financeiro {
     public void setTipoConta(String tipoConta) {
         this.tipoConta = tipoConta;
     }
-    
-    public Financeiro(){
-        
+
+    public Financeiro() {
+
     }
-    
-    public Financeiro(int codFinanceiro, String tipoConta){
+
+    public Financeiro(int codFinanceiro, String tipoConta) {
         this.codFinanceiro = codFinanceiro;
         this.tipoConta = tipoConta;
     }

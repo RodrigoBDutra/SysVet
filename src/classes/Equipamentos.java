@@ -1,8 +1,7 @@
-
 package classes;
 
 public class Equipamentos {
-    
+
     private int codEquipamento;
     private String nome;
     private String garantia;
@@ -39,15 +38,15 @@ public class Equipamentos {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    public Equipamentos(){
+
+    public Equipamentos() {
     }
-    
-    public Equipamentos(int codEquipamento, String nome, String garantia, String marca){
-    
+
+    public Equipamentos(int codEquipamento, String nome, String garantia, String marca) {
+
         this.codEquipamento = codEquipamento;
         this.nome = nome;
         this.garantia = garantia;
-        this.marca = marca;           
+        this.marca = marca;
     }
 }

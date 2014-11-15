@@ -1,9 +1,10 @@
 package classes;
 
 public class Limpeza {
+
     private int codLimpeza;
     private String tipoLimpeza;
-    
+
     public int getCodLimpeza() {
         return codLimpeza;
     }
@@ -19,13 +20,13 @@ public class Limpeza {
     public void setTipoLimpeza(String tipoLimpeza) {
         this.tipoLimpeza = tipoLimpeza;
     }
-    
-    public Limpeza(){
-        
+
+    public Limpeza() {
+
     }
-    
-    public Limpeza(int codLimpeza, String tipoLimpeza){
+
+    public Limpeza(int codLimpeza, String tipoLimpeza) {
         this.codLimpeza = codLimpeza;
         this.tipoLimpeza = tipoLimpeza;
-    }    
+    }
 }

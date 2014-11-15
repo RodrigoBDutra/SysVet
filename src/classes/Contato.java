@@ -1,14 +1,13 @@
 package classes;
 
 public class Contato {
-    
+
     private int codContato;
     private String telefoneResidencial;
     private String telefoneCelular;
     private String telefoneComercial;
     private String email;
     private String site;
-
 
     public int getCodContato() {
         return codContato;
@@ -57,12 +56,13 @@ public class Contato {
     public void setSite(String site) {
         this.site = site;
     }
-    public Contato(){
-        
+
+    public Contato() {
+
     }
-    
-    public Contato(int codContato, String telefoneResidencial, String telefoneCelular, String telefoneComercial, String email, String site){
-    
+
+    public Contato(int codContato, String telefoneResidencial, String telefoneCelular, String telefoneComercial, String email, String site) {
+
         this.codContato = codContato;
         this.telefoneResidencial = telefoneResidencial;
         this.telefoneCelular = telefoneCelular;

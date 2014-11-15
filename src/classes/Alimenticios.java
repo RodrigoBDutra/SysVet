@@ -1,11 +1,12 @@
 package classes;
 
 public class Alimenticios {
+
     private int codAlimenticios;
     private String nome;
     private String validade;
     private String marca;
-    
+
     public int getCodAlimenticios() {
         return codAlimenticios;
     }
@@ -37,12 +38,12 @@ public class Alimenticios {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    public Alimenticios(){
-        
+
+    public Alimenticios() {
+
     }
-    
-    public Alimenticios (int codAlimenticios, String nome, String descricao){
+
+    public Alimenticios(int codAlimenticios, String nome, String descricao) {
         this.codAlimenticios = codAlimenticios;
         this.nome = nome;
         this.validade = validade;

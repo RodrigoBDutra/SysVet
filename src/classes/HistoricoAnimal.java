@@ -1,6 +1,7 @@
 package classes;
 
 public class HistoricoAnimal {
+
     private int codHistorico;
     private String atendimento;
     private String horario;
@@ -8,7 +9,7 @@ public class HistoricoAnimal {
     private int CRMV;
     private String tipoAtendimento;
     private String status;
-    
+
     public int getCodHistorico() {
         return codHistorico;
     }
@@ -64,12 +65,12 @@ public class HistoricoAnimal {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    public HistoricoAnimal(){
-        
+
+    public HistoricoAnimal() {
+
     }
-    
-    public HistoricoAnimal(int codHistorico, String atendimento, String horario, String nomeMedico, int CRMV, String tipoAtendimento, String status){
+
+    public HistoricoAnimal(int codHistorico, String atendimento, String horario, String nomeMedico, int CRMV, String tipoAtendimento, String status) {
         this.codHistorico = codHistorico;
         this.atendimento = atendimento;
         this.horario = horario;

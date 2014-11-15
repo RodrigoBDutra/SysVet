@@ -1,11 +1,12 @@
 package classes;
 
 public class Cargo {
+
     private int codCargo;
     private String cargo;
     private String descricao;
     private String expediente;
-    
+
     public int getCodCargo() {
         return codCargo;
     }
@@ -37,12 +38,12 @@ public class Cargo {
     public void setExpediente(String expediente) {
         this.expediente = expediente;
     }
-    
-    public Cargo(){
-        
+
+    public Cargo() {
+
     }
-    
-    public Cargo(int codCargo, String cargo, String descricao, String expediente){
+
+    public Cargo(int codCargo, String cargo, String descricao, String expediente) {
         this.codCargo = codCargo;
         this.cargo = cargo;
         this.descricao = descricao;

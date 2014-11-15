@@ -13,25 +13,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-
 /**
  *
  * @author vini
  */
-public class Configuracao extends javax.swing.JPanel {
+public class Configuracoes extends javax.swing.JPanel {
 
-    
-     Banco ba = new Banco();
+    Banco ba = new Banco();
     String sen;
     int flag = 0;
 
     /**
      * Creates new form Configuracao
      */
-    public Configuracao() {
+    public Configuracoes() {
         initComponents();
     }
-    
+
     public boolean valida() {
 
         if ("".equals(txt_nome2.getText())) {
@@ -533,7 +531,6 @@ public class Configuracao extends javax.swing.JPanel {
                     txt_nome2.setText("");
                     txt_senha2.setText("");
                     txt_login2.setText("");
-                    
 
                     checkPerProprietario.setSelected(false);
                     checkPerAnimal.setSelected(false);
@@ -670,6 +667,7 @@ public class Configuracao extends javax.swing.JPanel {
         nome = txt_nome2.getText();
         login = txt_login2.getText();
         senha = txt_senha2.getText();
+        String logado = "n";
         if (checkPerProprietario.isSelected()) {
             permissao += "1";
         } else {
@@ -729,7 +727,7 @@ public class Configuracao extends javax.swing.JPanel {
 
         if (valida()) {
 
-            if (ba.gravaUsuario(codigo, nome, login, senha, permissao)) {
+            if (ba.gravaUsuario(codigo, nome, login, senha, permissao, logado)) {
 
                 txt_nome2.setText("");
                 txt_senha2.setText("");
@@ -821,7 +819,6 @@ public class Configuracao extends javax.swing.JPanel {
     private void checkPerExcluijCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerExcluijCheckBox16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerExcluijCheckBox16ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CodFuncionario;

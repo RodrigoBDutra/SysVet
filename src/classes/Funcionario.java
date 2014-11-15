@@ -1,6 +1,7 @@
 package classes;
 
 public class Funcionario {
+
     private int codFuncionario;
 
     public int getCodFuncionario() {
@@ -10,12 +11,12 @@ public class Funcionario {
     public void setCodFuncionario(int codFuncionario) {
         this.codFuncionario = codFuncionario;
     }
-    
-    public Funcionario(){
-        
+
+    public Funcionario() {
+
     }
-    
-    public Funcionario(int codFuncionario){
+
+    public Funcionario(int codFuncionario) {
         this.codFuncionario = codFuncionario;
-    }      
+    }
 }

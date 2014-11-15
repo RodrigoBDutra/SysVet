@@ -1,13 +1,14 @@
 package classes;
 
 public class Fornecedor {
+
     private int codFornecedor;
     private int CNPJ;
     private int IE;
     private String razaoSocial;
     private String nomeFantasia;
     private String observacao;
-    
+
     public int getCodFornecedor() {
         return codFornecedor;
     }
@@ -55,12 +56,12 @@ public class Fornecedor {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
-     public Fornecedor(){
-        
+
+    public Fornecedor() {
+
     }
-    
-    public Fornecedor(int codFornecedor, int CNPJ, int IE, String razaoSocial, String nomeFantasia, String observacao){
+
+    public Fornecedor(int codFornecedor, int CNPJ, int IE, String razaoSocial, String nomeFantasia, String observacao) {
         this.codFornecedor = codFornecedor;
         this.CNPJ = CNPJ;
         this.IE = IE;

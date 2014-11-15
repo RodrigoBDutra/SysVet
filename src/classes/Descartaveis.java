@@ -1,11 +1,12 @@
 package classes;
 
 public class Descartaveis {
+
     private int codDescartaveis;
     private String nome;
     private String validade;
     private String marca;
-    
+
     public int getCodDescartaveis() {
         return codDescartaveis;
     }
@@ -37,12 +38,12 @@ public class Descartaveis {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    public Descartaveis(){
-        
+
+    public Descartaveis() {
+
     }
-    
-    public Descartaveis(int codDescartaveis, String nome, String validade, String marca){
+
+    public Descartaveis(int codDescartaveis, String nome, String validade, String marca) {
         this.codDescartaveis = codDescartaveis;
         this.nome = nome;
         this.validade = validade;

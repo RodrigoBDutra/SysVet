@@ -1,22 +1,23 @@
 package dao;
+
 import classes.Contato;
 import classes.Especie;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
- public class EspecieDAO extends Banco {
+public class EspecieDAO extends Banco {
 
     public Especie consultaEspecie(int codEspecie) {
         Especie esp = new Especie();
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM especie where codEspecie = '" + esp.getCodEspecie()+ "'";
+            String sql = "SELECT * FROM especie where codEspecie = '" + esp.getCodEspecie() + "'";
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 esp.setEspecie(rs.getString("especie"));
-                
+
             } else {
                 esp = null;
             }
@@ -35,8 +36,8 @@ import javax.swing.JOptionPane;
             conecta();
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO especie(especie, codTipoAnimal)"
-                    + "VALUES('" + esp.getEspecie()+ "'," + 
-                    esp.getCodTipoAnimal() +  ")";
+                    + "VALUES('" + esp.getEspecie() + "',"
+                    + esp.getCodTipoAnimal() + ")";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
@@ -57,10 +58,10 @@ import javax.swing.JOptionPane;
         try {
             conecta();
             Statement stmt = con.createStatement();
-            
-            String sql = "UPDATE especie SET especie = '"+esp.getEspecie()+"' "+ 
-                          "WHERE codEspecie = ("+
-                     "SELECT codEspecie FROM Animal WHERE codAnimal = "	+codAnimal+")";
+
+            String sql = "UPDATE especie SET especie = '" + esp.getEspecie() + "' "
+                    + "WHERE codEspecie = ("
+                    + "SELECT codEspecie FROM Animal WHERE codAnimal = " + codAnimal + ")";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();
@@ -89,4 +90,3 @@ import javax.swing.JOptionPane;
         return resp;
     }
 }
-   

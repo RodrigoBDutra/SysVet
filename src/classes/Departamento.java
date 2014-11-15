@@ -1,7 +1,7 @@
 package classes;
 
 public class Departamento {
-    
+
     private int codDepartamento;
     private String nomeDepartamento;
     private String descricao;
@@ -29,14 +29,14 @@ public class Departamento {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public Departamento(){
+
+    public Departamento() {
     }
-    
-    public Departamento(int codDepartamento, String nomeDepartamento, String descricao){
-    
+
+    public Departamento(int codDepartamento, String nomeDepartamento, String descricao) {
+
         this.codDepartamento = codDepartamento;
         this.nomeDepartamento = nomeDepartamento;
-        this.descricao = descricao;          
+        this.descricao = descricao;
     }
 }

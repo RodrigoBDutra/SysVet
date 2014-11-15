@@ -19,7 +19,7 @@ public class Estoque extends javax.swing.JPanel {
     public Estoque() {
         initComponents();
         jpEstoque.setVisible(false);
-        
+
     }
 
     /**
@@ -444,7 +444,6 @@ public class Estoque extends javax.swing.JPanel {
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;

@@ -1,10 +1,11 @@
 package classes;
 
 public class Cirurgia {
+
     private int codCirurgia;
     private String descricao;
     private boolean alta;
-    
+
     public int getCodCirurgia() {
         return codCirurgia;
     }
@@ -28,12 +29,12 @@ public class Cirurgia {
     public void setAlta(boolean alta) {
         this.alta = alta;
     }
-    
-    public Cirurgia(){
-        
+
+    public Cirurgia() {
+
     }
-    
-    public Cirurgia(int codCirurgia, String descricao, boolean alta){
+
+    public Cirurgia(int codCirurgia, String descricao, boolean alta) {
         this.codCirurgia = codCirurgia;
         this.descricao = descricao;
         this.alta = alta;

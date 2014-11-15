@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 
-
 public class ProprietarioDAO extends Banco {
 
     /* public ArrayList<Proprietario> getListagem() {
@@ -57,7 +56,7 @@ public class ProprietarioDAO extends Banco {
      * @return null se não achar ou o objeto preenchido se achar
      */
     public ArrayList<Proprietarios> consultaProp(String cpf) {
-         ArrayList<Proprietarios> lista = new ArrayList<Proprietarios>();
+        ArrayList<Proprietarios> lista = new ArrayList<Proprietarios>();
         try {
             conecta();
             String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
@@ -73,38 +72,38 @@ public class ProprietarioDAO extends Banco {
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, cpf);
             ResultSet rs = stmt.executeQuery();
-            
+
             Proprietarios prop = new Proprietarios();
             DadosPessoais dad = new DadosPessoais();
             Contato cont = new Contato();
             Endereco end = new Endereco();
-            
-                   if(rs.next()) {
-                    dad.setNome(rs.getString("nome"));
-                    dad.setDataNascimento(rs.getString("dataNascimento"));
-                    dad.setCPF(rs.getString("cpf"));
-                    dad.setRG(rs.getString("rg"));
-                    cont.setTelefoneResidencial(rs.getString("telefoneResidencial"));
-                    cont.setTelefoneCelular(rs.getString("telefoneCelular"));
-                    cont.setEmail(rs.getString("email"));
-                    end.setEndereco(rs.getString("endereco"));
-                    end.setNumero(rs.getInt("numero"));
-                    end.setCEP(rs.getString("cep"));
-                    end.setBairro(rs.getString("bairro"));
-                    end.setComplemento(rs.getString("complemento"));
-                    end.setCidade(rs.getString("cidade"));
-                    end.setEstado(rs.getString("estado"));
-                    prop.setDataCadastro(rs.getString("dataCadastro"));
-                    prop.setObservacao(rs.getString("observacoes"));
 
-                    prop.setEndereco(end);
-                    prop.setContato(cont);
-                    prop.setDadospessoais(dad);
+            if (rs.next()) {
+                dad.setNome(rs.getString("nome"));
+                dad.setDataNascimento(rs.getString("dataNascimento"));
+                dad.setCPF(rs.getString("cpf"));
+                dad.setRG(rs.getString("rg"));
+                cont.setTelefoneResidencial(rs.getString("telefoneResidencial"));
+                cont.setTelefoneCelular(rs.getString("telefoneCelular"));
+                cont.setEmail(rs.getString("email"));
+                end.setEndereco(rs.getString("endereco"));
+                end.setNumero(rs.getInt("numero"));
+                end.setCEP(rs.getString("cep"));
+                end.setBairro(rs.getString("bairro"));
+                end.setComplemento(rs.getString("complemento"));
+                end.setCidade(rs.getString("cidade"));
+                end.setEstado(rs.getString("estado"));
+                prop.setDataCadastro(rs.getString("dataCadastro"));
+                prop.setObservacao(rs.getString("observacoes"));
 
-                    lista.add(prop);
-                    
-                }else {
-                    lista = null;
+                prop.setEndereco(end);
+                prop.setContato(cont);
+                prop.setDadospessoais(dad);
+
+                lista.add(prop);
+
+            } else {
+                lista = null;
             }
             rs.close();
             stmt.close();
@@ -148,9 +147,9 @@ public class ProprietarioDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "UPDATE proprietario SET observacoes = '"+ prop.getObservacao()+"' "+
-                          "WHERE codDadosPessoais = ("+
-                                             "SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '"+cpf+"')";
+            String sql = "UPDATE proprietario SET observacoes = '" + prop.getObservacao() + "' "
+                    + "WHERE codDadosPessoais = ("
+                    + "SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '" + cpf + "')";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();

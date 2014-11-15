@@ -1,7 +1,7 @@
 package classes;
 
 public class Endereco {
-    
+
     private int codEndereco;
     private String endereco;
     private int numero;
@@ -49,7 +49,7 @@ public class Endereco {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
-    }   
+    }
 
     public String getCidade() {
         return cidade;
@@ -66,7 +66,7 @@ public class Endereco {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
     public String getCEP() {
         return CEP;
     }
@@ -74,12 +74,12 @@ public class Endereco {
     public void setCEP(String CEP) {
         this.CEP = CEP;
     }
-    
-    public Endereco(){
-        
+
+    public Endereco() {
+
     }
-    
-    public Endereco(int codEnd, String end, int num, String bairro, String comple, String CEP, String cidade, String estado){
+
+    public Endereco(int codEnd, String end, int num, String bairro, String comple, String CEP, String cidade, String estado) {
         this.codEndereco = codEnd;
         this.endereco = end;
         this.numero = num;
@@ -89,5 +89,5 @@ public class Endereco {
         this.cidade = cidade;
         this.estado = estado;
     }
-    
+
 }

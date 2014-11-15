@@ -1,11 +1,12 @@
 package classes;
 
 public class Estoque {
+
     private int codEstoque;
     private String numeroNota;
     private String quantidade;
     private float valorUnidade;
-    
+
     public int getCodEstoque() {
         return codEstoque;
     }
@@ -37,12 +38,12 @@ public class Estoque {
     public void setValorUnidade(float valorUnidade) {
         this.valorUnidade = valorUnidade;
     }
-    
-    public Estoque(){
-        
+
+    public Estoque() {
+
     }
-    
-    public Estoque(int codEstoque, String numeroNota, String quantidade, float valorUnidade){
+
+    public Estoque(int codEstoque, String numeroNota, String quantidade, float valorUnidade) {
         this.codEstoque = codEstoque;
         this.numeroNota = numeroNota;
         this.quantidade = quantidade;

@@ -1,4 +1,5 @@
 package Auxiliares;
+
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Component;
@@ -30,11 +31,10 @@ public class Auxiliar {
             }
         }
     }
-    
+
     /*public static boolean Maioridade(JDateChooser data){
         
-    }*/
-
+     }*/
     public static Date formataData(String data) throws Exception {
         if (data == null || data.equals("")) {
             return null;
@@ -48,20 +48,20 @@ public class Auxiliar {
         }
         return date;
     }
-/*
-    public static String PegaData(java.util.Date pega)  {
+    /*
+     public static String PegaData(java.util.Date pega)  {
         
-        String date ;
-        try {
+     String date ;
+     try {
             
-            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-            date = formato.format(pega);
+     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+     date = formato.format(pega);
 
-        } catch (Exception ex) {
-            return "";
-        }
-        return date;
-    }*/
+     } catch (Exception ex) {
+     return "";
+     }
+     return date;
+     }*/
 
     // verify email
     public static boolean validarEmail(JTextField txt) {

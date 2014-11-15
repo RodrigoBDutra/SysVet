@@ -1,10 +1,11 @@
 package classes;
 
 public class MedicamentoComum {
+
     private int codMedComum;
     private String nome;
     private String descricao;
-    
+
     public int getCodMedComum() {
         return codMedComum;
     }
@@ -28,12 +29,12 @@ public class MedicamentoComum {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public MedicamentoComum(){
-        
+
+    public MedicamentoComum() {
+
     }
-    
-    public MedicamentoComum(int codMedComum, String nome, String descricao){
+
+    public MedicamentoComum(int codMedComum, String nome, String descricao) {
         this.codMedComum = codMedComum;
         this.nome = nome;
         this.descricao = descricao;

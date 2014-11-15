@@ -1,6 +1,7 @@
 package classes;
 
 public class Raca {
+
     private int codRaca;
     private String nomeRaca;
 
@@ -21,7 +22,7 @@ public class Raca {
     }
 
     public Raca() {
-        
+
     }
 
     public Raca(int codRaca, String nomeRaca) {

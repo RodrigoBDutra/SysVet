@@ -1,4 +1,3 @@
-
 package dao;
 
 import classes.Transferencia;
@@ -79,7 +78,7 @@ public class Banco {
 
     }
 
-    public boolean gravaUsuario(int codigo, String nome, String login, String senha, String permissao) {
+    public boolean gravaUsuario(int codigo, String nome, String login, String senha, String permissao, String logado) {
 
         conecta();
         String sql;
@@ -89,8 +88,8 @@ public class Banco {
 
             if (valida(codigo, login)) {
 //                System.out.println("entrou");
-                sql = "INSERT INTO usuario(codigo, nome, login, senha, permissao) VALUES (";
-                sql += codigo + ", '" + nome + "','" + login + "','" + senha + "','" + permissao + "')";
+                sql = "INSERT INTO usuario(codigo, nome, login, senha, permissao, logado) VALUES (";
+                sql += codigo + ", '" + nome + "','" + login + "','" + senha + "','" + permissao + "','" + logado + "')";
 
 //                JOptionPane.showMessageDialog(null, sql);
                 stmt.executeUpdate(sql);
@@ -107,7 +106,7 @@ public class Banco {
             System.out.println("Erro ao executar o comando SQL:" + e.toString());
             return false;
         }
-    }  
+    }
 
     public String abreUsuarios() {
         String sql;
@@ -198,7 +197,7 @@ public class Banco {
         try {
             sql = "DELETE FROM usuario WHERE codigo=" + codigo + ";";
             System.out.println(sql);
-            stmt.executeUpdate(sql);            
+            stmt.executeUpdate(sql);
 
             return true;
 
@@ -224,7 +223,7 @@ public class Banco {
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
             rs.first();
-            if(rs.getString("logado").equalsIgnoreCase("n")){
+            if (rs.getString("logado").equalsIgnoreCase("n")) {
                 if (rs.getString("senha").equals(senha)) {
                     Usuario user = new Usuario();
                     user.setCodigo(rs.getInt("codigo"));
@@ -234,10 +233,10 @@ public class Banco {
                     user.setPermissao(rs.getString("permissao"));
                     user.setLogado(rs.getString("logado"));
                     Transferencia.logado = user;
-                    
+
                     sql = "UPDATE usuario SET logado='s' WHERE login='" + login + "'";
                     System.out.println(sql);
-                    stmt.executeUpdate(sql); 
+                    stmt.executeUpdate(sql);
                     return true;
                 }
                 return false;

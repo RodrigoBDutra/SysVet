@@ -29,11 +29,11 @@ class Anestesico {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public Anestesico(){
-        
-    }    
-    
+
+    public Anestesico() {
+
+    }
+
     public Anestesico(int codAnestesico, String nome, String descricao) {
         this.codAnestesico = codAnestesico;
         this.nome = nome;

@@ -1,15 +1,16 @@
 package classes;
 
 public class Especie {
+
     private int codEspecie;
     private String especie;
-    private int codTipoAnimal;  
-    
-    public Especie(){
-        
+    private int codTipoAnimal;
+
+    public Especie() {
+
     }
-    
-    public Especie(int codEspecie, String especie){
+
+    public Especie(int codEspecie, String especie) {
         this.codEspecie = codEspecie;
         this.especie = especie;
     }

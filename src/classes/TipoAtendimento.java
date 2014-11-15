@@ -1,8 +1,9 @@
 package classes;
 
 public class TipoAtendimento {
+
     private int codTipoAtendimento;
- 
+
     public int getCodTipoAtendimento() {
         return codTipoAtendimento;
     }
@@ -10,12 +11,12 @@ public class TipoAtendimento {
     public void setCodTipoAtendimento(int codTipoAtendimento) {
         this.codTipoAtendimento = codTipoAtendimento;
     }
-    
-     public TipoAtendimento(){
-        
+
+    public TipoAtendimento() {
+
     }
-     
-    public TipoAtendimento(int codTipoAtendimento){
+
+    public TipoAtendimento(int codTipoAtendimento) {
         this.codTipoAtendimento = codTipoAtendimento;
-    } 
+    }
 }

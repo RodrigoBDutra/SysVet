@@ -1,11 +1,12 @@
 package classes;
 
 public class InstrumentosCirurgicos {
+
     private int codInstCirurgico;
     private String nome;
     private String garantia;
     private String marca;
-    
+
     public int getCodInstCirurgico() {
         return codInstCirurgico;
     }
@@ -37,15 +38,15 @@ public class InstrumentosCirurgicos {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    public InstrumentosCirurgicos(){
-        
+
+    public InstrumentosCirurgicos() {
+
     }
-    
-    public InstrumentosCirurgicos(int codInstCirurgico, String nome, String garantia, String marca){
+
+    public InstrumentosCirurgicos(int codInstCirurgico, String nome, String garantia, String marca) {
         this.codInstCirurgico = codInstCirurgico;
         this.nome = nome;
         this.garantia = garantia;
         this.marca = marca;
-    }    
+    }
 }

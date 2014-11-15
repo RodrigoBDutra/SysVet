@@ -1,10 +1,11 @@
 package classes;
 
 public class Controlados {
+
     private int codControlado;
     private String nome;
     private String descricao;
-        
+
     public int getCodControlado() {
         return codControlado;
     }
@@ -28,12 +29,12 @@ public class Controlados {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public Controlados(){
-        
+
+    public Controlados() {
+
     }
-    
-    public Controlados(int codControlado, String nome, String descricao){
+
+    public Controlados(int codControlado, String nome, String descricao) {
         this.codControlado = codControlado;
         this.nome = nome;
         this.descricao = descricao;

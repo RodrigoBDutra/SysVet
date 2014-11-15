@@ -1,7 +1,7 @@
 package classes;
 
 public class Usuario {
-    
+
     private int codigo;
     private String nome;
     private String login;
@@ -56,6 +56,5 @@ public class Usuario {
     public void setLogado(String logado) {
         this.logado = logado;
     }
-    
-    
+
 }

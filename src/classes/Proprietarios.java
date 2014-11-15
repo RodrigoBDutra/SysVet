@@ -14,7 +14,6 @@ public class Proprietarios {
     private Endereco endereco;
     private Animal cliente;
 
-
     public Proprietarios() {
         this.codProprietario = 0;
         this.dataCadastro = "";

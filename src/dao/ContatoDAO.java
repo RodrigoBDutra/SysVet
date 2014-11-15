@@ -39,9 +39,9 @@ public class ContatoDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO contatos(telefoneResidencial,telefoneCelular,telefoneComercial,email,site)"
-                    + "VALUES('" + cont.getTelefoneResidencial() + "','" + 
-                    cont.getTelefoneCelular() + "','" + cont.getTelefoneComercial() + "','" + cont.getEmail() + 
-                    "','" + cont.getSite() + "')";
+                    + "VALUES('" + cont.getTelefoneResidencial() + "','"
+                    + cont.getTelefoneCelular() + "','" + cont.getTelefoneComercial() + "','" + cont.getEmail()
+                    + "','" + cont.getSite() + "')";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
@@ -57,19 +57,19 @@ public class ContatoDAO extends Banco {
         return resp;
     }
 
-    public String alteraCont(Contato cont,String cpf) {
+    public String alteraCont(Contato cont, String cpf) {
         String resp = "";
         try {
             conecta();
             Statement stmt = con.createStatement();
-            
-            String sql = "UPDATE contatos SET telefoneResidencial = '"+cont.getTelefoneResidencial()+"', "
-                    + "telefoneCelular = '"+cont.getTelefoneCelular()+"', "
-                    + "email = '"+cont.getEmail()+"' "+
-                          "WHERE codContato = ("+
-                                   "SELECT codContato FROM proprietario WHERE codDadosPessoais = "+
-                                             "(SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '"+cpf+"')"+
-			")";
+
+            String sql = "UPDATE contatos SET telefoneResidencial = '" + cont.getTelefoneResidencial() + "', "
+                    + "telefoneCelular = '" + cont.getTelefoneCelular() + "', "
+                    + "email = '" + cont.getEmail() + "' "
+                    + "WHERE codContato = ("
+                    + "SELECT codContato FROM proprietario WHERE codDadosPessoais = "
+                    + "(SELECT codDadosPessoais FROM dadospessoais WHERE cpf = '" + cpf + "')"
+                    + ")";
             System.out.println(sql);
             stmt.executeUpdate(sql);
             stmt.close();

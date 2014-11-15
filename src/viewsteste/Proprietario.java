@@ -22,7 +22,7 @@ public class Proprietario extends javax.swing.JPanel {
     public Proprietario() {
         initComponents();
         jpPropri.setVisible(false);
-        
+
         //limite de caracteres proprietario
         txtNome.setDocument(new TextLimitado(50));
         txtRG.setDocument(new TextLimitado(10));
@@ -1513,58 +1513,58 @@ public class Proprietario extends javax.swing.JPanel {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (Auxiliar.validarEmail(txtEmail)) {
-            if(Auxiliar.validarCPF(txtCPF)){
-            if (verificaConsulta == false) {
+            if (Auxiliar.validarCPF(txtCPF)) {
+                if (verificaConsulta == false) {
 
-                Contato cont = montarContato();
-                Endereco end = montarEndereco();
-                DadosPessoais dad = montarDadosPessoais();
-                Proprietarios prop = montarProprietario();
-                int respD, respE, respC;
-                String respP;
-                ProprietarioDAO propDAO = new ProprietarioDAO();
-                EnderecoDAO endDAO = new EnderecoDAO();
-                DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-                ContatoDAO contDAO = new ContatoDAO();
-                respD = dadDAO.incluirDados(dad);
-                if (respD < 0) {
-                    JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-                } else {
-                    respE = endDAO.incluirEnd(end);
-                    respC = contDAO.incluirCont(cont);
-                    prop.setCodDadosPessoais(respD);
-                    prop.setCodContato(respC);
-                    prop.setCodEndereco(respE);
-                    respP = propDAO.incluirProp(prop);
-                    if (respP.equals("OK")) {
-                        JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+                    Contato cont = montarContato();
+                    Endereco end = montarEndereco();
+                    DadosPessoais dad = montarDadosPessoais();
+                    Proprietarios prop = montarProprietario();
+                    int respD, respE, respC;
+                    String respP;
+                    ProprietarioDAO propDAO = new ProprietarioDAO();
+                    EnderecoDAO endDAO = new EnderecoDAO();
+                    DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+                    ContatoDAO contDAO = new ContatoDAO();
+                    respD = dadDAO.incluirDados(dad);
+                    if (respD < 0) {
+                        JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
                     } else {
-                        JOptionPane.showMessageDialog(null, respP);
+                        respE = endDAO.incluirEnd(end);
+                        respC = contDAO.incluirCont(cont);
+                        prop.setCodDadosPessoais(respD);
+                        prop.setCodContato(respC);
+                        prop.setCodEndereco(respE);
+                        respP = propDAO.incluirProp(prop);
+                        if (respP.equals("OK")) {
+                            JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+                        } else {
+                            JOptionPane.showMessageDialog(null, respP);
+                        }
+                        verificaConsulta = true;
                     }
-                    verificaConsulta = true;
+
+                } else {//se nao for insercao será alteração
+                    Contato cont = montarContato();
+                    Endereco end = montarEndereco();
+                    DadosPessoais dad = montarDadosPessoais();
+                    Proprietarios prop = montarProprietario();
+                    ProprietarioDAO propDAO = new ProprietarioDAO();
+                    EnderecoDAO endDAO = new EnderecoDAO();
+                    DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+                    ContatoDAO contDAO = new ContatoDAO();
+                    String D, P, C, E;
+                    D = dadDAO.alteraDados(dad);
+                    C = contDAO.alteraCont(cont, dad.getCPF());
+                    E = endDAO.alteraEnd(end, dad.getCPF());
+                    P = propDAO.alteraProp(prop, dad.getCPF());
+                    if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
+                        JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
+                        Date pega = txtDataCadastro.getDate();
+
+                    }
+
                 }
-
-            } else {//se nao for insercao será alteração
-                Contato cont = montarContato();
-                Endereco end = montarEndereco();
-                DadosPessoais dad = montarDadosPessoais();
-                Proprietarios prop = montarProprietario();
-                ProprietarioDAO propDAO = new ProprietarioDAO();
-                EnderecoDAO endDAO = new EnderecoDAO();
-                DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-                ContatoDAO contDAO = new ContatoDAO();
-                String D, P, C, E;
-                D = dadDAO.alteraDados(dad);
-                C = contDAO.alteraCont(cont, dad.getCPF());
-                E = endDAO.alteraEnd(end, dad.getCPF());
-                P = propDAO.alteraProp(prop, dad.getCPF());
-                if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
-                    JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
-                    Date pega = txtDataCadastro.getDate();
-
-                }
-
-            }
             }//valida cpf novamente
         }//valida email
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -1713,7 +1713,6 @@ public class Proprietario extends javax.swing.JPanel {
     private void txtRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRGActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRGActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;

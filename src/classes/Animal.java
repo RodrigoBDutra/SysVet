@@ -1,7 +1,7 @@
- package classes;
-
+package classes;
 
 public class Animal {
+
     private int codAnimal;
     private String nomeAnimal;
     private String nascimento;
@@ -20,48 +20,47 @@ public class Animal {
     private Especie especie;
     private Raca raca;
     private TipoAnimal tipoanimal;
-    
-   
-    public Animal(){
-        this.codAnimal =0;
-        this.nomeAnimal ="";
-        this.nascimento ="";
-        this.idade =0;
-        this.sexo =false;
-        this.peso =0;
-        this.altura =0;
-        this.porte ="";
-        this.cor ="";
-        this.chip =false;
-        this.numeroChip=0;
-        this.codEspecie=0;
-        this.obito=false;
-        this.observacao="";
-        
-         }
-    
+
+    public Animal() {
+        this.codAnimal = 0;
+        this.nomeAnimal = "";
+        this.nascimento = "";
+        this.idade = 0;
+        this.sexo = false;
+        this.peso = 0;
+        this.altura = 0;
+        this.porte = "";
+        this.cor = "";
+        this.chip = false;
+        this.numeroChip = 0;
+        this.codEspecie = 0;
+        this.obito = false;
+        this.observacao = "";
+
+    }
+
     public Animal(String nomeAnimal, String nascimento,
             int idade, boolean sexo, float peso, float altura,
             String porte, String cor, boolean chip, int numeroChip,
-            String raca, int codEspecie, boolean obito, 
-            String observacao){
-    
-        this.nomeAnimal = nomeAnimal; 
+            String raca, int codEspecie, boolean obito,
+            String observacao) {
+
+        this.nomeAnimal = nomeAnimal;
         this.nascimento = nascimento;
-        this.idade = idade; 
+        this.idade = idade;
         this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
-        this.porte = porte; 
-        this.cor = cor; 
-        this.chip = chip; 
-        this.numeroChip = numeroChip; 
-        
-        this.codEspecie = codEspecie; 
-        
-        this.obito = obito; 
+        this.porte = porte;
+        this.cor = cor;
+        this.chip = chip;
+        this.numeroChip = numeroChip;
+
+        this.codEspecie = codEspecie;
+
+        this.obito = obito;
         this.observacao = observacao;
-       }
+    }
 
     public String getNomeAnimal() {
         return nomeAnimal;

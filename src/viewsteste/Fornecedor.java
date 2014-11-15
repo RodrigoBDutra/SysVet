@@ -484,7 +484,6 @@ public class Fornecedor extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable2AncestorAdded
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

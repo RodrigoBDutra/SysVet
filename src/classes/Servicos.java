@@ -1,11 +1,12 @@
 package classes;
 
 public class Servicos {
+
     private int codServicos;
     private String dataServico;
     private String observacao;
     private float valorFinal;
-    
+
     public int getCodServicos() {
         return codServicos;
     }
@@ -37,12 +38,12 @@ public class Servicos {
     public void setValorFinal(float valorFinal) {
         this.valorFinal = valorFinal;
     }
-    
-    public Servicos(){
-        
+
+    public Servicos() {
+
     }
-    
-    public Servicos(int codServicos, String dataServico, String observacao, float valorFinal){
+
+    public Servicos(int codServicos, String dataServico, String observacao, float valorFinal) {
         this.codServicos = codServicos;
         this.dataServico = dataServico;
         this.observacao = observacao;

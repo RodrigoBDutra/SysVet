@@ -1,6 +1,7 @@
 package classes;
 
 public class Produto {
+
     private int codProduto;
     private int EAN;
     private String nomeProduto;
@@ -10,7 +11,7 @@ public class Produto {
     private float lucro;
     private float valorVenda;
     private int estoqueMinimo;
-    
+
     public int getCodProduto() {
         return codProduto;
     }
@@ -82,12 +83,12 @@ public class Produto {
     public void setEstoqueMinimo(int estoqueMinimo) {
         this.estoqueMinimo = estoqueMinimo;
     }
-    
-     public Produto (){
-        
+
+    public Produto() {
+
     }
-    
-    public Produto(int codProduto, int EAN, String nomeProduto, int NCM, int unidade, float valorUnidade, float lucro, float valorVenda, int estoqueMinimo){
+
+    public Produto(int codProduto, int EAN, String nomeProduto, int NCM, int unidade, float valorUnidade, float lucro, float valorVenda, int estoqueMinimo) {
         this.codProduto = codProduto;
         this.EAN = EAN;
         this.nomeProduto = nomeProduto;

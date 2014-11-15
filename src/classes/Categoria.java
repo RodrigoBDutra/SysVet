@@ -1,8 +1,9 @@
 package classes;
 
 public class Categoria {
+
     private int codCategoria;
-    
+
     public int getCodCategoria() {
         return codCategoria;
     }
@@ -10,12 +11,12 @@ public class Categoria {
     public void setCodCategoria(int codCategoria) {
         this.codCategoria = codCategoria;
     }
-    
-    public Categoria(){
-        
+
+    public Categoria() {
+
     }
-    
-    public Categoria(int codCategoria){
+
+    public Categoria(int codCategoria) {
         this.codCategoria = codCategoria;
     }
 }

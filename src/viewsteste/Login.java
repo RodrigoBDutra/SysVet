@@ -8,6 +8,7 @@ import Auxiliares.TextLimitado;
 import javax.swing.JOptionPane;
 import dao.Banco;
 import classes.Transferencia;
+
 /**
  *
  * @author Equipe Sysvet
@@ -171,7 +172,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void senhaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaInActionPerformed
-        
+
     }//GEN-LAST:event_senhaInActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

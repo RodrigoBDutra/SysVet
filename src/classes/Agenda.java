@@ -56,12 +56,12 @@ public class Agenda {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
-    public Agenda(){
-        
+
+    public Agenda() {
+
     }
-    
-    public Agenda(int codAgenda, String dataAgendamento, String horaAgendamento, String tipoAtendimento, String status, String observacoes){
+
+    public Agenda(int codAgenda, String dataAgendamento, String horaAgendamento, String tipoAtendimento, String status, String observacoes) {
         this.codAgenda = codAgenda;
         this.dataAgendamento = dataAgendamento;
         this.horaAgendamento = horaAgendamento;

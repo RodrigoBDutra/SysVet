@@ -1,7 +1,7 @@
 package classes;
 
 public class DadosPessoais {
-    
+
     private int codDadosPessoais;
     private String nome;
     private String dataNascimento;
@@ -47,12 +47,12 @@ public class DadosPessoais {
     public void setRG(String RG) {
         this.RG = RG;
     }
-    
-    public DadosPessoais(){
-        
+
+    public DadosPessoais() {
+
     }
-    
-    public DadosPessoais(int codDadosPesso, String nome, String dataNasc, String CPF, String RG){
+
+    public DadosPessoais(int codDadosPesso, String nome, String dataNasc, String CPF, String RG) {
         this.codDadosPessoais = codDadosPesso;
         this.nome = nome;
         this.dataNascimento = dataNasc;
