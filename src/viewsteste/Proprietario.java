@@ -916,12 +916,12 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setText("Espécie");
         jPanel3.add(jLabel29);
-        jLabel29.setBounds(270, 210, 44, 15);
+        jLabel29.setBounds(170, 210, 80, 15);
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel30.setText("Raça");
         jPanel3.add(jLabel30);
-        jLabel30.setBounds(10, 210, 40, 15);
+        jLabel30.setBounds(320, 210, 80, 15);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -930,7 +930,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jComboBox4);
-        jComboBox4.setBounds(270, 230, 110, 28);
+        jComboBox4.setBounds(170, 230, 140, 28);
 
         jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande" }));
         jcbPorteAnimal.addActionListener(new java.awt.event.ActionListener() {
@@ -939,7 +939,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jcbPorteAnimal);
-        jcbPorteAnimal.setBounds(530, 130, 84, 28);
+        jcbPorteAnimal.setBounds(514, 130, 100, 28);
         jPanel3.add(txtPesoAnimal);
         txtPesoAnimal.setBounds(290, 130, 110, 28);
 
@@ -948,7 +948,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jLabel31);
         jLabel31.setBounds(290, 110, 50, 15);
         jPanel3.add(txtAlturaAnimal);
-        txtAlturaAnimal.setBounds(410, 130, 110, 28);
+        txtAlturaAnimal.setBounds(410, 130, 90, 28);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel32.setText("Altura");
@@ -986,7 +986,7 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel34.setText("Porte");
         jPanel3.add(jLabel34);
-        jLabel34.setBounds(530, 110, 34, 15);
+        jLabel34.setBounds(514, 110, 50, 15);
 
         txtProp.setEditable(false);
         txtProp.setRequestFocusEnabled(false);
@@ -1038,18 +1038,18 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel58.setText("Tipo Animal");
         jPanel3.add(jLabel58);
-        jLabel58.setBounds(390, 210, 110, 15);
+        jLabel58.setBounds(10, 210, 150, 15);
         jPanel3.add(txtRaca);
-        txtRaca.setBounds(10, 230, 250, 28);
+        txtRaca.setBounds(320, 230, 290, 28);
 
-        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
+        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamífero", "Ave", "Réptil", "Anfíbio", "Peixe", " " }));
         txtTipoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTipoAnimalActionPerformed(evt);
             }
         });
         jPanel3.add(txtTipoAnimal);
-        txtTipoAnimal.setBounds(390, 230, 110, 28);
+        txtTipoAnimal.setBounds(10, 230, 150, 28);
 
         txtID.setEditable(false);
         jPanel3.add(txtID);
@@ -1753,13 +1753,21 @@ public class Proprietario extends javax.swing.JPanel {
         ani.setNumeroChip(Integer.parseInt(txtNumChip.getText()));
         ani.setObito(ValidaObito);
         ani.setObservacao(txtObservacao.getText());
-        //ani.setCodEspecie();
+        ani.setCodProntuario(1);
+        ani.setCodTipoAnimal(txtTipoAnimal.getSelectedIndex());
         
         return ani;
     }
     
     private void txtSalvarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarAnimalActionPerformed
-        if (verificaConsulta == false){
+        Animal ani = MontarAnimal();
+        String aniA;
+        AnimalDAO aniDao = new AnimalDAO();
+        
+        aniA = aniDao.incluirAnimal(ani); 
+                
+                
+        /*if (verificaConsulta == false){
             
             Contato cont = montarContato();
             Endereco end = montarEndereco();
@@ -1809,7 +1817,7 @@ public class Proprietario extends javax.swing.JPanel {
 
             }
 
-        }
+        }*/
     }//GEN-LAST:event_txtSalvarAnimalActionPerformed
     
     boolean ValidaObito = false;
