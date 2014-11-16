@@ -13,8 +13,8 @@ public class AnimalDAO extends Banco {
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO animal(nome, sexo, cor, data, peso, altura, porte, chip, numChip, obito, "
                     + "observacao, codEspecie, codProntuario) "
-                    + "VALUES('" + ani.getNomeAnimal() + "'," + ani.isSexo() + ",'" + ani.getNascimento() + "',"
-                    + ani.getPeso() + "," + ani.getAltura() + ",'" + ani.getPorte() + "'," + ani.getNumeroChip() + "," + ani.isSexo() + ",'"
+                    + "VALUES('" + ani.getNomeAnimal() + "'," + ani.getSexo() + ",'" + ani.getNascimento() + "',"
+                    + ani.getPeso() + "," + ani.getAltura() + ",'" + ani.getPorte() + "'," + ani.getNumeroChip() + ",'"
                     + ani.getObservacao() + "'," + ani.getCodEspecie() + "," + ani.getCodProntuario() + ");";
 
             stmt.executeUpdate(sql);
@@ -22,7 +22,7 @@ public class AnimalDAO extends Banco {
             con.close();
             resp = "OK";
         } catch (Exception e) {
-            imprimeErro("Erro em IncluirProprietário", e.toString());
+            imprimeErro("Erro em Incluir Cliente", e.toString());
         }
         return resp;
     }

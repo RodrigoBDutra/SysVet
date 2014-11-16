@@ -1,17 +1,19 @@
 package classes;
 
+import viewsteste.Proprietario;
+
 public class Animal {
 
     private int codAnimal;
     private String nomeAnimal;
     private String nascimento;
     private int idade;
-    private boolean sexo;
+    private String sexo;
     private float peso;
     private float altura;
     private String porte;
     private String cor;
-    private boolean chip;
+    private String chip;
     private int numeroChip;
     private int codEspecie;
     private int codProntuario;
@@ -26,12 +28,12 @@ public class Animal {
         this.nomeAnimal = "";
         this.nascimento = "";
         this.idade = 0;
-        this.sexo = false;
+        this.sexo = "";
         this.peso = 0;
         this.altura = 0;
         this.porte = "";
         this.cor = "";
-        this.chip = false;
+        this.chip = "";
         this.numeroChip = 0;
         this.codEspecie = 0;
         this.obito = false;
@@ -40,8 +42,8 @@ public class Animal {
     }
 
     public Animal(String nomeAnimal, String nascimento,
-            int idade, boolean sexo, float peso, float altura,
-            String porte, String cor, boolean chip, int numeroChip,
+            int idade, String sexo, float peso, float altura,
+            String porte, String cor, String chip, int numeroChip,
             String raca, int codEspecie, boolean obito,
             String observacao) {
 
@@ -55,9 +57,7 @@ public class Animal {
         this.cor = cor;
         this.chip = chip;
         this.numeroChip = numeroChip;
-
         this.codEspecie = codEspecie;
-
         this.obito = obito;
         this.observacao = observacao;
     }
@@ -86,11 +86,11 @@ public class Animal {
         this.idade = idade;
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -126,11 +126,11 @@ public class Animal {
         this.cor = cor;
     }
 
-    public boolean isChip() {
+    public String getChip() {
         return chip;
     }
 
-    public void setChip(boolean chip) {
+    public void setChip(String chip) {
         this.chip = chip;
     }
 
@@ -197,5 +197,4 @@ public class Animal {
     public void setCodProntuario(int codProntuario) {
         this.codProntuario = codProntuario;
     }
-
 }

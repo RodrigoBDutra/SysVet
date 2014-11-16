@@ -1,6 +1,6 @@
 /*
 SQLyog Community v12.01 (64 bit)
-MySQL - 5.6.16 : Database - bancosysvet
+MySQL - 5.6.14 : Database - bancosysvet
 *********************************************************************
 */
 
@@ -23,24 +23,26 @@ DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `codAnimal` int(6) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
-  `sexo` tinyint(1) DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
   `cor` varchar(15) DEFAULT NULL,
   `dataNascimento` varchar(10) DEFAULT NULL,
   `peso` float DEFAULT NULL,
   `altura` float DEFAULT NULL,
   `porte` varchar(15) DEFAULT NULL,
-  `chip` tinyint(1) DEFAULT NULL,
+  `chip` varchar(1) DEFAULT NULL,
   `numChip` int(12) DEFAULT NULL,
   `obito` tinyint(1) DEFAULT NULL,
   `observacao` varchar(1000) DEFAULT NULL,
-  `codEspecie` int(6) DEFAULT NULL,
   `codProntuario` int(6) DEFAULT NULL,
+  `CodTipoAnimal` int(6) DEFAULT NULL,
   PRIMARY KEY (`codAnimal`),
-  KEY `FK_especie` (`codEspecie`),
   KEY `FK_prontuario` (`codProntuario`),
-  CONSTRAINT `FK_Especie` FOREIGN KEY (`codEspecie`) REFERENCES `especie` (`codEspecie`),
+  KEY `FK_TipoAnimal` (`CodTipoAnimal`),
+  CONSTRAINT `FK_TipoAnimal` FOREIGN KEY (`CodTipoAnimal`) REFERENCES `tipoanimal` (`codTipoAnimal`),
   CONSTRAINT `FK_prontuario` FOREIGN KEY (`codProntuario`) REFERENCES `prontuario` (`codProntuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `animal` */
 
 /*Table structure for table `contatos` */
 
@@ -54,7 +56,11 @@ CREATE TABLE `contatos` (
   `email` varchar(50) DEFAULT NULL,
   `site` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+
+/*Data for the table `contatos` */
+
+insert  into `contatos`(`codContato`,`telefoneResidencial`,`telefoneCelular`,`telefoneComercial`,`email`,`site`) values (50,'(11)4647-6035','(11)98087-1006','','ppaarrr@gmail.com','');
 
 /*Table structure for table `dadospessoais` */
 
@@ -67,7 +73,11 @@ CREATE TABLE `dadospessoais` (
   `cpf` varchar(14) DEFAULT NULL,
   `rg` varchar(13) NOT NULL,
   PRIMARY KEY (`codDadosPessoais`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+
+/*Data for the table `dadospessoais` */
+
+insert  into `dadospessoais`(`codDadosPessoais`,`nome`,`dataNascimento`,`cpf`,`rg`) values (45,'Rodrigo','20/05/1987','008.692.379-00','4187989-9');
 
 /*Table structure for table `endereco` */
 
@@ -83,7 +93,11 @@ CREATE TABLE `endereco` (
   `cidade` varchar(50) DEFAULT NULL,
   `estado` char(2) DEFAULT NULL,
   PRIMARY KEY (`codEndereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+
+/*Data for the table `endereco` */
+
+insert  into `endereco`(`codEndereco`,`endereco`,`numero`,`bairro`,`complemento`,`cep`,`cidade`,`estado`) values (42,'Rua Petropolis',204,'Vila São Roberto','','08572-280','Itaquaquecetuba','SP');
 
 /*Table structure for table `especie` */
 
@@ -92,11 +106,13 @@ DROP TABLE IF EXISTS `especie`;
 CREATE TABLE `especie` (
   `codEspecie` int(6) NOT NULL AUTO_INCREMENT,
   `especie` varchar(50) DEFAULT NULL,
-  `codTipoAnimal` int(6) DEFAULT NULL,
+  `CodRaca` int(6) DEFAULT NULL,
   PRIMARY KEY (`codEspecie`),
-  KEY `FK_tipoAnimal` (`codTipoAnimal`),
-  CONSTRAINT `FK_tipoAnimal` FOREIGN KEY (`codTipoAnimal`) REFERENCES `tipoanimal` (`codTipoAnimal`)
+  KEY `FK_Raca` (`CodRaca`),
+  CONSTRAINT `FK_Raca` FOREIGN KEY (`CodRaca`) REFERENCES `raca` (`codRaca`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `especie` */
 
 /*Table structure for table `mucosa` */
 
@@ -111,6 +127,8 @@ CREATE TABLE `mucosa` (
   `prepucial` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`codMucosa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `mucosa` */
 
 /*Table structure for table `prontuario` */
 
@@ -132,6 +150,8 @@ CREATE TABLE `prontuario` (
   CONSTRAINT `FK_mucosa` FOREIGN KEY (`codMucosa`) REFERENCES `mucosa` (`codMucosa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*Data for the table `prontuario` */
+
 /*Table structure for table `proprietario` */
 
 DROP TABLE IF EXISTS `proprietario`;
@@ -152,7 +172,11 @@ CREATE TABLE `proprietario` (
   CONSTRAINT `FK_codDadosPessoais` FOREIGN KEY (`codDadosPessoais`) REFERENCES `dadospessoais` (`codDadosPessoais`),
   CONSTRAINT `FK_contato` FOREIGN KEY (`codContato`) REFERENCES `contatos` (`codContato`),
   CONSTRAINT `FK_endereco` FOREIGN KEY (`codEndereco`) REFERENCES `endereco` (`codEndereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+
+/*Data for the table `proprietario` */
+
+insert  into `proprietario`(`codProprietario`,`dataCadastro`,`observacoes`,`codDadosPessoais`,`codContato`,`codEndereco`,`codAnimal`) values (39,'15/11/2014','nenhuma',45,50,42,NULL);
 
 /*Table structure for table `raca` */
 
@@ -162,7 +186,9 @@ CREATE TABLE `raca` (
   `codRaca` int(6) NOT NULL AUTO_INCREMENT,
   `nomeRaca` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codRaca`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `raca` */
 
 /*Table structure for table `tipoanimal` */
 
@@ -171,11 +197,13 @@ DROP TABLE IF EXISTS `tipoanimal`;
 CREATE TABLE `tipoanimal` (
   `codTipoAnimal` int(6) NOT NULL AUTO_INCREMENT,
   `tipoAnimal` varchar(50) DEFAULT NULL,
-  `codRaca` int(6) DEFAULT NULL,
+  `CodEspecie` int(6) DEFAULT NULL,
   PRIMARY KEY (`codTipoAnimal`),
-  KEY `FK_raca` (`codRaca`),
-  CONSTRAINT `FK_Raca` FOREIGN KEY (`codRaca`) REFERENCES `raca` (`codRaca`)
+  KEY `FK_Especie` (`CodEspecie`),
+  CONSTRAINT `FK_Especie` FOREIGN KEY (`CodEspecie`) REFERENCES `especie` (`codEspecie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tipoanimal` */
 
 /*Table structure for table `usuario` */
 
@@ -190,6 +218,10 @@ CREATE TABLE `usuario` (
   `logado` char(2) NOT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `usuario` */
+
+insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Sysvet','sysvet','sysvet','11111111111','n'),(2,'Pavao','pavaozinho','pavao','11111111100','n');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

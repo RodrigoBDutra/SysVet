@@ -134,7 +134,7 @@ public class ProprietarioDAO extends Banco {
             con.close();
             resp = "OK";
         } catch (Exception e) {
-            imprimeErro("Erro em IncluirProprietário", e.toString());
+            imprimeErro("Erro em Incluir Proprietário", e.toString());
         }
         return resp;
     }

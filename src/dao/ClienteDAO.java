@@ -19,9 +19,9 @@ public class ClienteDAO extends Banco {
             Statement stmt = con.createStatement();
             String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, peso,"
                     + " altura, porte, chip, numChip, codEspecie, obito, observação)"
-                    + "VALUES('" + cli.getNomeAnimal() + "','" + cli.isSexo() + "," + cli.getNascimento() + "," + cli.getCor()
+                    + "VALUES('" + cli.getNomeAnimal() + "','" + cli.getSexo() + "," + cli.getNascimento() + "," + cli.getCor()
                     + "'," + cli.getIdade() + "," + cli.getPeso() + "," + cli.getAltura()
-                    + "," + cli.getPorte() + "," + cli.isChip()
+                    + "," + cli.getPorte() + "," + cli.getChip()
                     + "," + cli.getNumeroChip() + "," + cli.getCodEspecie() + "," + cli.isObito()
                     + "," + cli.getObservacao() + ")";
 
@@ -41,8 +41,8 @@ public class ClienteDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
             String sql = "UPDATE proprietario set nomeAnimal ='" + cli.getNomeAnimal() + "' , nascimento ='" + cli.getNascimento() + "' , idade ='" + cli.getIdade()
-                    + "', sexo='" + cli.isSexo() + "', peso='" + cli.getPeso() + "', altura='" + cli.getAltura()
-                    + "', porte='" + cli.getPorte() + "', cor='" + cli.getCor() + "', chip='" + cli.isChip() + "', numeroChip='" + cli.getNumeroChip()
+                    + "', sexo='" + cli.getSexo() + "', peso='" + cli.getPeso() + "', altura='" + cli.getAltura()
+                    + "', porte='" + cli.getPorte() + "', cor='" + cli.getCor() + "', chip='" + cli.getChip() + "', numeroChip='" + cli.getNumeroChip()
                     + "', especie='" + cli.getEspecie() + "', obito='" + cli.isObito() + "', observacao=" + cli.getObservacao() + "')";
             System.out.println(sql);
             stmt.executeUpdate(sql);
