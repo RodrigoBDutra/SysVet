@@ -63,18 +63,18 @@ public class Financeiro extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jButton21 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jTextField11 = new javax.swing.JTextField();
-        jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
         jButton22 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
@@ -86,7 +86,7 @@ public class Financeiro extends javax.swing.JPanel {
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(jTextField6);
-        jTextField6.setBounds(10, 40, 324, 28);
+        jTextField6.setBounds(14, 40, 320, 28);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -111,24 +111,24 @@ public class Financeiro extends javax.swing.JPanel {
         jButton12.setBounds(483, 42, 129, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setText("Fornecedor");
+        jLabel14.setText("Contas");
         jPanel6.add(jLabel14);
-        jLabel14.setBounds(10, 20, 68, 15);
+        jLabel14.setBounds(20, 20, 43, 15);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton20.setText("Histórico");
         jPanel6.add(jButton20);
-        jButton20.setBounds(196, 446, 105, 35);
+        jButton20.setBounds(195, 450, 140, 35);
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         jButton15.setText("Salvar");
         jPanel6.add(jButton15);
-        jButton15.setBounds(311, 446, 93, 35);
+        jButton15.setBounds(343, 450, 130, 35);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
         jPanel6.add(jButton16);
-        jButton16.setBounds(519, 446, 105, 35);
+        jButton16.setBounds(480, 450, 140, 35);
 
         jpFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
         jpFinanceiro.setBorder(javax.swing.BorderFactory.createTitledBorder("Financeiro"));
@@ -195,7 +195,7 @@ public class Financeiro extends javax.swing.JPanel {
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Data Venc.");
         jpFinanceiro.add(jLabel15);
-        jLabel15.setBounds(16, 134, 66, 15);
+        jLabel15.setBounds(20, 140, 66, 15);
 
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,17 +259,12 @@ public class Financeiro extends javax.swing.JPanel {
         jpFinanceiro.add(jLabel19);
         jLabel19.setBounds(484, 24, 97, 15);
         jpFinanceiro.add(jDateChooser1);
-        jDateChooser1.setBounds(10, 100, 140, 28);
+        jDateChooser1.setBounds(20, 100, 140, 28);
         jpFinanceiro.add(jDateChooser2);
-        jDateChooser2.setBounds(10, 150, 140, 28);
+        jDateChooser2.setBounds(20, 160, 140, 28);
 
         jPanel6.add(jpFinanceiro);
         jpFinanceiro.setBounds(9, 76, 610, 360);
-
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        jButton21.setText("Excluir");
-        jPanel6.add(jButton21);
-        jButton21.setBounds(414, 446, 95, 35);
 
         jTabbedPane1.addTab("Financeiro", jPanel6);
 
@@ -359,54 +354,53 @@ public class Financeiro extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel7.add(jPanel3);
-        jPanel3.setBounds(11, 89, 613, 346);
-
-        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel7.add(jTextField11);
-        jTextField11.setBounds(11, 46, 324, 28);
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton11.setText("Consultar");
-        jButton11.setToolTipText("");
-        jButton11.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton11);
-        jButton11.setBounds(345, 41, 128, 32);
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton13.setText("Inserir");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton13);
-        jButton13.setBounds(483, 42, 129, 30);
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel20.setText("Fornecedor");
-        jPanel7.add(jLabel20);
-        jLabel20.setBounds(11, 22, 68, 15);
+        jPanel3.setBounds(11, 65, 613, 370);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
         jButton22.setText("Imprimir");
         jPanel7.add(jButton22);
-        jButton22.setBounds(402, 445, 101, 35);
+        jButton22.setBounds(350, 450, 130, 35);
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
         jButton17.setText("Voltar");
         jPanel7.add(jButton17);
-        jButton17.setBounds(521, 445, 103, 35);
+        jButton17.setBounds(490, 450, 130, 35);
+
+        jRadioButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton4.setText("Quinzenal");
+        jPanel7.add(jRadioButton4);
+        jRadioButton4.setBounds(290, 40, 90, 23);
+
+        jRadioButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton5.setText("Mensal");
+        jPanel7.add(jRadioButton5);
+        jRadioButton5.setBounds(390, 40, 80, 23);
+
+        jRadioButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton6.setText("Anual");
+        jPanel7.add(jRadioButton6);
+        jRadioButton6.setBounds(480, 40, 70, 23);
+
+        jRadioButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton3.setText("Semanal");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jRadioButton3);
+        jRadioButton3.setBounds(200, 40, 80, 23);
+
+        jRadioButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton2.setSelected(true);
+        jRadioButton2.setText("Hoje");
+        jPanel7.add(jRadioButton2);
+        jRadioButton2.setBounds(130, 40, 60, 23);
 
         jTabbedPane1.addTab("Histórico Financeiro", jPanel7);
 
@@ -433,11 +427,11 @@ public class Financeiro extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        jpFinanceiro.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+     jpFinanceiro.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -472,24 +466,18 @@ public class Financeiro extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable2AncestorAdded
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JComboBox jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -504,7 +492,6 @@ public class Financeiro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -513,12 +500,16 @@ public class Financeiro extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField2;

@@ -34,26 +34,24 @@ public class Vendas extends javax.swing.JPanel {
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jpVendas = new javax.swing.JPanel();
-        jTextField8 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jTextField9 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
         jTextField12 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jTextField14 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
         jButton12 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -69,6 +67,8 @@ public class Vendas extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox();
+        jSpinner3 = new javax.swing.JSpinner();
         jButton21 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -118,7 +118,7 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton15);
-        jButton15.setBounds(380, 460, 135, 35);
+        jButton15.setBounds(350, 460, 160, 35);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
@@ -128,15 +128,11 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.setBackground(new java.awt.Color(204, 204, 204));
         jpVendas.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendas"));
         jpVendas.setLayout(null);
-        jpVendas.add(jTextField8);
-        jTextField8.setBounds(20, 110, 309, 28);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Produto");
         jpVendas.add(jLabel14);
         jLabel14.setBounds(16, 87, 51, 15);
-        jpVendas.add(jTextField10);
-        jTextField10.setBounds(340, 110, 42, 28);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setText("Quant.");
@@ -211,26 +207,20 @@ public class Vendas extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
-        jPanel2.add(jTextField9);
-        jTextField9.setBounds(15, 28, 91, 28);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Desconto(%)");
         jPanel2.add(jLabel15);
         jLabel15.setBounds(15, 7, 82, 15);
 
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField11);
-        jTextField11.setBounds(116, 28, 91, 28);
-
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Desconto($)");
         jPanel2.add(jLabel26);
         jLabel26.setBounds(115, 7, 76, 15);
+        jPanel2.add(jSpinner1);
+        jSpinner1.setBounds(110, 30, 90, 20);
+        jPanel2.add(jSpinner2);
+        jSpinner2.setBounds(10, 30, 90, 20);
 
         jpVendas.add(jPanel2);
         jPanel2.setBounds(20, 250, 220, 60);
@@ -252,20 +242,24 @@ public class Vendas extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
-        jPanel3.add(jTextField14);
-        jTextField14.setBounds(12, 23, 275, 28);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Proprietário");
         jPanel3.add(jLabel17);
         jLabel17.setBounds(12, 2, 73, 15);
-        jPanel3.add(jTextField15);
-        jTextField15.setBounds(297, 23, 272, 28);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel23.setText("Animal");
+        jLabel23.setText("Cliente");
         jPanel3.add(jLabel23);
-        jLabel23.setBounds(297, 2, 41, 15);
+        jLabel23.setBounds(297, 2, 100, 15);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lady Gaga" }));
+        jPanel3.add(jComboBox1);
+        jComboBox1.setBounds(300, 20, 250, 30);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Abronzio" }));
+        jPanel3.add(jComboBox2);
+        jComboBox2.setBounds(10, 20, 250, 30);
 
         jpVendas.add(jPanel3);
         jPanel3.setBounds(16, 16, 581, 71);
@@ -289,7 +283,7 @@ public class Vendas extends javax.swing.JPanel {
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("Forma de Pagamento");
         jPanel4.add(jLabel24);
-        jLabel24.setBounds(45, 2, 130, 15);
+        jLabel24.setBounds(50, 0, 130, 15);
 
         jRadioButton1.setBackground(new java.awt.Color(204, 204, 204));
         jRadioButton1.setText("Dinheiro");
@@ -317,7 +311,7 @@ public class Vendas extends javax.swing.JPanel {
         jRadioButton4.setBounds(130, 20, 61, 23);
 
         jpVendas.add(jPanel4);
-        jPanel4.setBounds(20, 320, 220, 70);
+        jPanel4.setBounds(20, 310, 220, 70);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -355,13 +349,19 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.add(jLabel28);
         jLabel28.setBounds(510, 330, 70, 15);
 
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paracetamol" }));
+        jpVendas.add(jComboBox3);
+        jComboBox3.setBounds(20, 110, 310, 30);
+        jpVendas.add(jSpinner3);
+        jSpinner3.setBounds(340, 110, 50, 30);
+
         jPanel6.add(jpVendas);
         jpVendas.setBounds(11, 66, 613, 390);
 
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton21.setText("Historico");
         jPanel6.add(jButton21);
-        jButton21.setBounds(270, 460, 105, 35);
+        jButton21.setBounds(210, 460, 130, 35);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setText("Total da Venda:");
@@ -390,7 +390,7 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(100, 30, 111, 28);
+        jButton10.setBounds(100, 30, 140, 28);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton14.setText("Inserir");
@@ -400,7 +400,7 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton14);
-        jButton14.setBounds(220, 30, 95, 28);
+        jButton14.setBounds(250, 30, 140, 28);
 
         jTabbedPane1.addTab("Vendas", jPanel6);
 
@@ -415,12 +415,12 @@ public class Vendas extends javax.swing.JPanel {
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
         jButton17.setText("Imprimir");
         jPanel7.add(jButton17);
-        jButton17.setBounds(400, 460, 101, 35);
+        jButton17.setBounds(321, 460, 140, 35);
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
         jButton18.setText("Voltar");
         jPanel7.add(jButton18);
-        jButton18.setBounds(520, 460, 100, 35);
+        jButton18.setBounds(470, 460, 150, 35);
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendas"));
@@ -494,27 +494,27 @@ public class Vendas extends javax.swing.JPanel {
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel30.setText("R$300,00");
         jPanel8.add(jLabel30);
-        jLabel30.setBounds(82, 339, 95, 17);
+        jLabel30.setBounds(80, 330, 95, 17);
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel31.setText("R$300,00");
         jPanel8.add(jLabel31);
-        jLabel31.setBounds(245, 339, 95, 17);
+        jLabel31.setBounds(240, 330, 95, 17);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel32.setText("Débito:");
         jPanel8.add(jLabel32);
-        jLabel32.setBounds(24, 339, 52, 17);
+        jLabel32.setBounds(20, 330, 52, 17);
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel33.setText("Dinheiro:");
         jPanel8.add(jLabel33);
-        jLabel33.setBounds(346, 339, 62, 17);
+        jLabel33.setBounds(340, 330, 62, 17);
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel34.setText("R$55,00");
         jPanel8.add(jLabel34);
-        jLabel34.setBounds(414, 339, 95, 17);
+        jLabel34.setBounds(410, 330, 95, 17);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jPanel8.add(jLabel8);
@@ -523,12 +523,12 @@ public class Vendas extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Até");
         jPanel8.add(jLabel9);
-        jLabel9.setBounds(300, 10, 22, 15);
+        jLabel9.setBounds(300, 20, 22, 15);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Data de");
         jPanel8.add(jLabel10);
-        jLabel10.setBounds(90, 10, 48, 15);
+        jLabel10.setBounds(90, 20, 48, 15);
 
         jCheckBox1.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox1.setSelected(true);
@@ -539,26 +539,26 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel8.add(jCheckBox1);
-        jCheckBox1.setBounds(460, 10, 69, 23);
+        jCheckBox1.setBounds(460, 20, 90, 23);
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel35.setText("Crédito:");
         jPanel8.add(jLabel35);
-        jLabel35.setBounds(183, 339, 56, 17);
+        jLabel35.setBounds(180, 330, 56, 17);
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setText("Total");
         jPanel8.add(jLabel36);
-        jLabel36.setBounds(24, 362, 35, 17);
+        jLabel36.setBounds(20, 350, 35, 17);
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel37.setText("R$655,00");
         jPanel8.add(jLabel37);
-        jLabel37.setBounds(65, 362, 95, 17);
+        jLabel37.setBounds(70, 350, 95, 17);
         jPanel8.add(jDateChooser1);
-        jDateChooser1.setBounds(150, 10, 120, 28);
+        jDateChooser1.setBounds(140, 20, 120, 28);
         jPanel8.add(jDateChooser2);
-        jDateChooser2.setBounds(330, 10, 120, 28);
+        jDateChooser2.setBounds(330, 20, 120, 28);
 
         jPanel7.add(jPanel8);
         jPanel8.setBounds(11, 74, 613, 380);
@@ -580,7 +580,7 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton11);
-        jButton11.setBounds(90, 40, 111, 30);
+        jButton11.setBounds(90, 40, 140, 30);
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         jButton19.setText("Inserir");
@@ -590,7 +590,7 @@ public class Vendas extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton19);
-        jButton19.setBounds(210, 40, 95, 30);
+        jButton19.setBounds(240, 40, 140, 30);
 
         jTabbedPane1.addTab("Historico Vendas", jPanel7);
 
@@ -620,12 +620,8 @@ public class Vendas extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable2AncestorAdded
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -633,11 +629,11 @@ public class Vendas extends javax.swing.JPanel {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+         jpVendas.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
+         jpVendas.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jTable3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable3AncestorAdded
@@ -660,6 +656,7 @@ public class Vendas extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -672,6 +669,9 @@ public class Vendas extends javax.swing.JPanel {
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton21;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel10;
@@ -718,21 +718,18 @@ public class Vendas extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel jpVendas;
     // End of variables declaration//GEN-END:variables
 }

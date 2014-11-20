@@ -240,10 +240,6 @@ public class Proprietario extends javax.swing.JPanel {
         txtID = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        txtNomePropH = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -251,10 +247,6 @@ public class Proprietario extends javax.swing.JPanel {
         jButton19 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        txtNomeCliH = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -1068,41 +1060,6 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton10.setText("Consultar");
-        jButton10.setToolTipText("");
-        jButton10.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton10);
-        jButton10.setBounds(360, 30, 121, 35);
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton12.setText("Inserir");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton12);
-        jButton12.setBounds(510, 30, 113, 35);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Proprietário");
-        jPanel6.add(jLabel5);
-        jLabel5.setBounds(20, 12, 73, 15);
-
-        txtNomePropH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomePropHActionPerformed(evt);
-            }
-        });
-        jPanel6.add(txtNomePropH);
-        txtNomePropH.setBounds(20, 30, 334, 28);
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Histórico Proprietário");
         jPanel6.add(jLabel7);
@@ -1110,6 +1067,7 @@ public class Proprietario extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Proprietário"));
+        jPanel5.setLayout(null);
 
         jTable3.setBorder(new javax.swing.border.MatteBorder(null));
         jTable3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1177,29 +1135,11 @@ public class Proprietario extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(5, 5, 5)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jPanel5.add(jScrollPane3);
+        jScrollPane3.setBounds(16, 21, 581, 380);
 
         jPanel6.add(jPanel5);
-        jPanel5.setBounds(11, 68, 613, 370);
+        jPanel5.setBounds(11, 28, 613, 410);
 
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
         jButton19.setText("Voltar");
@@ -1216,39 +1156,9 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setLayout(null);
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton14.setText("Consultar");
-        jButton14.setToolTipText("");
-        jButton14.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton14);
-        jButton14.setBounds(360, 30, 121, 35);
-
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton26.setText("Inserir");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton26);
-        jButton26.setBounds(500, 30, 113, 35);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setText("Animal");
-        jPanel7.add(jLabel9);
-        jLabel9.setBounds(20, 12, 41, 15);
-
-        txtNomeCliH.setText("Rex");
-        jPanel7.add(txtNomeCliH);
-        txtNomeCliH.setBounds(20, 30, 334, 28);
-
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Animal"));
+        jPanel8.setLayout(null);
 
         jTable4.setBorder(new javax.swing.border.MatteBorder(null));
         jTable4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1316,29 +1226,11 @@ public class Proprietario extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(jTable4);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addGap(5, 5, 5)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jPanel8.add(jScrollPane4);
+        jScrollPane4.setBounds(16, 21, 581, 390);
 
         jPanel7.add(jPanel8);
-        jPanel8.setBounds(11, 86, 613, 370);
+        jPanel8.setBounds(11, 26, 613, 430);
 
         jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/kedit.png"))); // NOI18N
         jButton27.setText("Prontuário");
@@ -1649,25 +1541,9 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumChipActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
     private void jTable3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable3AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable3AncestorAdded
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jTable4AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable4AncestorAdded
         // TODO add your handling code here:
@@ -1682,18 +1558,12 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void btnHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoricoMouseClicked
-        jtpPropCli.setSelectedIndex(2);
-        txtNomePropH.requestFocusInWindow();
+        jtpPropCli.setSelectedIndex(2);       
     }//GEN-LAST:event_btnHistoricoMouseClicked
-
-    private void txtNomePropHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePropHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomePropHActionPerformed
 
     private void btnHistoricoAnimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoricoAnimalMouseClicked
         // TODO add your handling code here:
-        jtpPropCli.setSelectedIndex(3);
-        txtNomeCliH.requestFocusInWindow();
+        jtpPropCli.setSelectedIndex(3);        
     }//GEN-LAST:event_btnHistoricoAnimalMouseClicked
 
     private void btnProntuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProntuarioMouseClicked
@@ -1841,12 +1711,8 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JCheckBox ckObito;
     private javax.swing.ButtonGroup grpChip;
     private javax.swing.ButtonGroup grpSexo;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
@@ -1901,7 +1767,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -1915,7 +1780,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1973,8 +1837,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JTextField txtIdadeAnimal;
     private com.toedter.calendar.JDateChooser txtNascimentoCli;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNomeCliH;
-    private javax.swing.JTextField txtNomePropH;
     private javax.swing.JTextField txtNumChip;
     private javax.swing.JTextField txtNumEnd;
     private javax.swing.JTextField txtObservacao;

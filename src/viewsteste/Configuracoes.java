@@ -452,8 +452,6 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-
-        
         if (checkPerAgenda.isSelected()) {
             permissao += "1";
         } else {
@@ -484,8 +482,6 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-      
-     
         if (checkPerConfiguracoes.isSelected()) {
             permissao += "1";
         } else {
@@ -502,14 +498,12 @@ public class Configuracoes extends javax.swing.JPanel {
                     txt_login2.setText("");
 
                     checkPerProprietario.setSelected(false);
-         
                     checkPerAgenda.setSelected(false);
                     checkPerServico.setSelected(false);
                     checkPerEstoque.setSelected(false);
                     checkPerVenda.setSelected(false);
                     checkPerFinanceiro.setSelected(false);
                     checkPerProdutos.setSelected(false);
-                   
                     checkPerConfiguracoes.setSelected(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "senha Atual incorreta para o login " + login);
@@ -563,10 +557,7 @@ public class Configuracoes extends javax.swing.JPanel {
                     permissao += "1";
                 } else {
                     permissao += "0";
-                }
-
-               
-                if (checkPerAgenda.isSelected()) {
+                }                if (checkPerAgenda.isSelected()) {
                     permissao += "1";
                 } else {
                     permissao += "0";
@@ -596,13 +587,11 @@ public class Configuracoes extends javax.swing.JPanel {
                 } else {
                     permissao += "0";
                 }
-                
                 if (checkPerConfiguracoes.isSelected()) {
                     permissao += "1";
                 } else {
                     permissao += "0";
                 }
-
                 txt_login2.setText(txt_BuscaLogin2.getText());
 
             } else {
@@ -628,8 +617,6 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-
-        
         if (checkPerAgenda.isSelected()) {
             permissao += "1";
         } else {
@@ -660,13 +647,11 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-      
         if (checkPerConfiguracoes.isSelected()) {
             permissao += "1";
         } else {
             permissao += "0";
         }
-
         if (valida()) {
 
             if (ba.gravaUsuario(codigo, nome, login, senha, permissao, logado)) {
@@ -676,14 +661,14 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_login2.setText("");
 
                 checkPerProprietario.setSelected(false);
-            
+
                 checkPerAgenda.setSelected(false);
                 checkPerServico.setSelected(false);
                 checkPerEstoque.setSelected(false);
                 checkPerVenda.setSelected(false);
                 checkPerFinanceiro.setSelected(false);
                 checkPerProdutos.setSelected(false);
-      
+
                 checkPerConfiguracoes.setSelected(false);
                 int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
                 CodFuncionario.setText(cod + "");

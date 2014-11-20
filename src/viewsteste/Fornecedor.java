@@ -33,7 +33,6 @@ public class Fornecedor extends javax.swing.JPanel {
         jTextField8 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
         jpFornecedor = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -73,12 +72,7 @@ public class Fornecedor extends javax.swing.JPanel {
         jButton16 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jTextField25 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -89,12 +83,12 @@ public class Fornecedor extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
         jPanel6.add(jTextField8);
-        jTextField8.setBounds(19, 42, 334, 28);
+        jTextField8.setBounds(20, 30, 430, 28);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Fornecedor");
         jPanel6.add(jLabel5);
-        jLabel5.setBounds(19, 22, 64, 14);
+        jLabel5.setBounds(20, 10, 64, 14);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton10.setText("Consultar");
@@ -106,17 +100,7 @@ public class Fornecedor extends javax.swing.JPanel {
             }
         });
         jPanel6.add(jButton10);
-        jButton10.setBounds(371, 30, 110, 32);
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton12.setText("Inserir");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton12);
-        jButton12.setBounds(499, 31, 125, 30);
+        jButton10.setBounds(460, 30, 150, 32);
 
         jpFornecedor.setBackground(new java.awt.Color(204, 204, 204));
         jpFornecedor.setBorder(javax.swing.BorderFactory.createTitledBorder("Fornecedor"));
@@ -267,7 +251,7 @@ public class Fornecedor extends javax.swing.JPanel {
         jLabel11.setBounds(308, 16, 15, 14);
 
         jPanel6.add(jpFornecedor);
-        jpFornecedor.setBounds(1, 73, 630, 380);
+        jpFornecedor.setBounds(1, 63, 630, 390);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Fornecedor");
@@ -277,56 +261,22 @@ public class Fornecedor extends javax.swing.JPanel {
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
         jPanel6.add(jButton16);
-        jButton16.setBounds(519, 458, 105, 35);
+        jButton16.setBounds(500, 460, 120, 35);
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         jButton15.setText("Salvar");
         jPanel6.add(jButton15);
-        jButton15.setBounds(311, 458, 93, 35);
+        jButton15.setBounds(370, 460, 120, 35);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filefind.png"))); // NOI18N
         jButton20.setText("Histórico");
         jPanel6.add(jButton20);
-        jButton20.setBounds(196, 458, 105, 35);
-
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        jButton21.setText("Excluir");
-        jPanel6.add(jButton21);
-        jButton21.setBounds(414, 458, 95, 35);
+        jButton20.setBounds(230, 460, 130, 35);
 
         jTabbedPane1.addTab("Fornecedor", jPanel6);
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setLayout(null);
-        jPanel8.add(jTextField25);
-        jTextField25.setBounds(20, 38, 334, 28);
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel12.setText("Fornecedor");
-        jPanel8.add(jLabel12);
-        jLabel12.setBounds(20, 12, 64, 14);
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        jButton11.setText("Consultar");
-        jButton11.setToolTipText("");
-        jButton11.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton11);
-        jButton11.setBounds(372, 32, 110, 32);
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton13.setText("Inserir");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton13);
-        jButton13.setBounds(500, 33, 101, 30);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Histórico do Fornecedor");
@@ -415,26 +365,26 @@ public class Fornecedor extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(5, 5, 5)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
         jPanel8.add(jPanel1);
-        jPanel1.setBounds(11, 72, 613, 384);
+        jPanel1.setBounds(11, 26, 613, 430);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
         jButton22.setText("Imprimir");
         jPanel8.add(jButton22);
-        jButton22.setBounds(400, 460, 101, 35);
+        jButton22.setBounds(311, 460, 150, 35);
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
         jButton17.setText("Voltar");
         jPanel8.add(jButton17);
-        jButton17.setBounds(520, 460, 103, 35);
+        jButton17.setBounds(473, 460, 150, 35);
 
         jTabbedPane1.addTab("Histórico Fornecedor", jPanel8);
 
@@ -461,44 +411,28 @@ public class Fornecedor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        jpFornecedor.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
     private void jTable2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable2AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable2AncestorAdded
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -538,7 +472,6 @@ public class Fornecedor extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel jpFornecedor;

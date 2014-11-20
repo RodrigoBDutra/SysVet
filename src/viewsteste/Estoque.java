@@ -19,7 +19,7 @@ public class Estoque extends javax.swing.JPanel {
     public Estoque() {
         initComponents();
         jpEstoque.setVisible(false);
-
+        
     }
 
     /**
@@ -41,6 +41,11 @@ public class Estoque extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
@@ -69,10 +74,9 @@ public class Estoque extends javax.swing.JPanel {
         jRadioButton3 = new javax.swing.JRadioButton();
         jButton22 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
@@ -93,27 +97,37 @@ public class Estoque extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Nome do Produto:");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(12, 13, 113, 15);
+        jLabel5.setBounds(10, 40, 113, 15);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Estoque Atual:");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(12, 46, 91, 15);
+        jLabel7.setBounds(10, 80, 91, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Valor de Custo:");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(12, 79, 94, 15);
+        jLabel8.setBounds(10, 120, 94, 15);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Perc. de Lucro:");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(12, 112, 91, 15);
+        jLabel9.setBounds(10, 160, 91, 15);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Valor:");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(12, 145, 35, 15);
+        jLabel10.setBounds(10, 200, 35, 15);
+        jPanel2.add(jTextField1);
+        jTextField1.setBounds(130, 200, 130, 28);
+        jPanel2.add(jTextField2);
+        jTextField2.setBounds(130, 30, 400, 28);
+        jPanel2.add(jTextField5);
+        jTextField5.setBounds(130, 70, 130, 28);
+        jPanel2.add(jTextField6);
+        jTextField6.setBounds(130, 110, 130, 28);
+        jPanel2.add(jTextField7);
+        jTextField7.setBounds(130, 160, 80, 28);
 
         jpEstoque.add(jPanel2);
         jPanel2.setBounds(16, 32, 570, 240);
@@ -173,7 +187,7 @@ public class Estoque extends javax.swing.JPanel {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         jButton15.setText("Salvar");
         jPanel6.add(jButton15);
-        jButton15.setBounds(370, 460, 110, 35);
+        jButton15.setBounds(340, 460, 140, 35);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         jButton16.setText("Cancelar");
@@ -187,7 +201,7 @@ public class Estoque extends javax.swing.JPanel {
         jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jPanel3.add(jTextField3);
-        jTextField3.setBounds(10, 30, 460, 28);
+        jTextField3.setBounds(10, 30, 430, 28);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Produto");
@@ -204,7 +218,7 @@ public class Estoque extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jButton10);
-        jButton10.setBounds(480, 30, 110, 32);
+        jButton10.setBounds(450, 30, 140, 32);
 
         jPanel6.add(jPanel3);
         jPanel3.setBounds(10, 24, 610, 70);
@@ -354,22 +368,17 @@ public class Estoque extends javax.swing.JPanel {
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fileprint.png"))); // NOI18N
         jButton22.setText("Imprimir");
         jPanel7.add(jButton22);
-        jButton22.setBounds(402, 455, 101, 35);
+        jButton22.setBounds(331, 450, 140, 35);
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reload.png"))); // NOI18N
         jButton17.setText("Voltar");
         jPanel7.add(jButton17);
-        jButton17.setBounds(521, 455, 103, 35);
-
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel7.add(jTextField4);
-        jTextField4.setBounds(11, 55, 353, 28);
+        jButton17.setBounds(483, 450, 140, 35);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Procurar Poduto");
         jPanel7.add(jLabel13);
-        jLabel13.setBounds(11, 34, 102, 15);
+        jLabel13.setBounds(20, 30, 102, 15);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
         jButton11.setText("Consultar");
@@ -381,17 +390,11 @@ public class Estoque extends javax.swing.JPanel {
             }
         });
         jPanel7.add(jButton11);
-        jButton11.setBounds(382, 44, 110, 32);
+        jButton11.setBounds(440, 50, 170, 32);
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        jButton13.setText("Inserir");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton13);
-        jButton13.setBounds(502, 45, 122, 30);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paracetamol" }));
+        jPanel7.add(jComboBox1);
+        jComboBox1.setBounds(20, 50, 410, 30);
 
         jTabbedPane1.addTab("Historia Estoque", jPanel7);
 
@@ -418,7 +421,7 @@ public class Estoque extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        jpEstoque.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jTable2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable2AncestorAdded
@@ -433,10 +436,6 @@ public class Estoque extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
     private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField14ActionPerformed
@@ -445,14 +444,15 @@ public class Estoque extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton22;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -481,12 +481,16 @@ public class Estoque extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel jpEstoque;
     // End of variables declaration//GEN-END:variables
 }
