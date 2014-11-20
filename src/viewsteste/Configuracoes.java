@@ -87,16 +87,15 @@ public class Configuracoes extends javax.swing.JPanel {
         jPanel8 = new javax.swing.JPanel();
         checkPerAgenda = new javax.swing.JCheckBox();
         checkPerProprietario = new javax.swing.JCheckBox();
-        checkPerAnimal = new javax.swing.JCheckBox();
+        checkPerFornecedor = new javax.swing.JCheckBox();
         checkPerServico = new javax.swing.JCheckBox();
         checkPerEstoque = new javax.swing.JCheckBox();
         checkPerVenda = new javax.swing.JCheckBox();
         checkPerFinanceiro = new javax.swing.JCheckBox();
         checkPerProdutos = new javax.swing.JCheckBox();
         jSeparator11 = new javax.swing.JSeparator();
-        checkPerHistoricos = new javax.swing.JCheckBox();
-        checkPerAltera = new javax.swing.JCheckBox();
-        checkPerExclui = new javax.swing.JCheckBox();
+        checkPerConfiguracoes = new javax.swing.JCheckBox();
+        jSeparator12 = new javax.swing.JSeparator();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
@@ -294,7 +293,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerAgenda);
-        checkPerAgenda.setBounds(12, 68, 67, 23);
+        checkPerAgenda.setBounds(10, 60, 67, 23);
 
         checkPerProprietario.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProprietario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -305,18 +304,18 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerProprietario);
-        checkPerProprietario.setBounds(12, 16, 125, 23);
+        checkPerProprietario.setBounds(10, 20, 90, 23);
 
-        checkPerAnimal.setBackground(new java.awt.Color(204, 204, 204));
-        checkPerAnimal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        checkPerAnimal.setText("Animal");
-        checkPerAnimal.addActionListener(new java.awt.event.ActionListener() {
+        checkPerFornecedor.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerFornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerFornecedor.setText("Fornecedor");
+        checkPerFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkPerAnimaljCheckBox8ActionPerformed(evt);
+                checkPerFornecedorjCheckBox8ActionPerformed(evt);
             }
         });
-        jPanel8.add(checkPerAnimal);
-        checkPerAnimal.setBounds(12, 42, 125, 23);
+        jPanel8.add(checkPerFornecedor);
+        checkPerFornecedor.setBounds(140, 20, 87, 23);
 
         checkPerServico.setBackground(new java.awt.Color(204, 204, 204));
         checkPerServico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -327,7 +326,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerServico);
-        checkPerServico.setBounds(12, 95, 65, 23);
+        checkPerServico.setBounds(10, 100, 65, 23);
 
         checkPerEstoque.setBackground(new java.awt.Color(204, 204, 204));
         checkPerEstoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -338,7 +337,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerEstoque);
-        checkPerEstoque.setBounds(139, 16, 71, 23);
+        checkPerEstoque.setBounds(140, 60, 71, 23);
 
         checkPerVenda.setBackground(new java.awt.Color(204, 204, 204));
         checkPerVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -349,7 +348,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerVenda);
-        checkPerVenda.setBounds(139, 42, 65, 23);
+        checkPerVenda.setBounds(140, 100, 65, 23);
 
         checkPerFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
         checkPerFinanceiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -360,7 +359,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerFinanceiro);
-        checkPerFinanceiro.setBounds(139, 68, 79, 23);
+        checkPerFinanceiro.setBounds(260, 20, 79, 23);
 
         checkPerProdutos.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProdutos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -371,44 +370,26 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerProdutos);
-        checkPerProdutos.setBounds(139, 95, 75, 23);
+        checkPerProdutos.setBounds(260, 60, 75, 20);
 
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel8.add(jSeparator11);
         jSeparator11.setBounds(240, 30, 2, 102);
 
-        checkPerHistoricos.setBackground(new java.awt.Color(204, 204, 204));
-        checkPerHistoricos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        checkPerHistoricos.setText("Visualizar Históricos");
-        checkPerHistoricos.addActionListener(new java.awt.event.ActionListener() {
+        checkPerConfiguracoes.setBackground(new java.awt.Color(204, 204, 204));
+        checkPerConfiguracoes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        checkPerConfiguracoes.setText("Configurações");
+        checkPerConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkPerHistoricosjCheckBox14ActionPerformed(evt);
+                checkPerConfiguracoesjCheckBox16ActionPerformed(evt);
             }
         });
-        jPanel8.add(checkPerHistoricos);
-        checkPerHistoricos.setBounds(256, 16, 127, 23);
+        jPanel8.add(checkPerConfiguracoes);
+        checkPerConfiguracoes.setBounds(260, 100, 110, 23);
 
-        checkPerAltera.setBackground(new java.awt.Color(204, 204, 204));
-        checkPerAltera.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        checkPerAltera.setText("Alterar Dados");
-        checkPerAltera.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkPerAlterajCheckBox15ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(checkPerAltera);
-        checkPerAltera.setBounds(256, 42, 99, 23);
-
-        checkPerExclui.setBackground(new java.awt.Color(204, 204, 204));
-        checkPerExclui.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        checkPerExclui.setText("Excluir Dados");
-        checkPerExclui.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkPerExcluijCheckBox16ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(checkPerExclui);
-        checkPerExclui.setBounds(256, 68, 97, 23);
+        jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel8.add(jSeparator12);
+        jSeparator12.setBounds(120, 30, 10, 102);
 
         jPanel9.add(jPanel8);
         jPanel8.setBounds(20, 270, 410, 150);
@@ -472,11 +453,7 @@ public class Configuracoes extends javax.swing.JPanel {
             permissao += "0";
         }
 
-        if (checkPerAnimal.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
+        
         if (checkPerAgenda.isSelected()) {
             permissao += "1";
         } else {
@@ -507,17 +484,9 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-        if (checkPerHistoricos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAltera.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerExclui.isSelected()) {
+      
+     
+        if (checkPerConfiguracoes.isSelected()) {
             permissao += "1";
         } else {
             permissao += "0";
@@ -533,16 +502,15 @@ public class Configuracoes extends javax.swing.JPanel {
                     txt_login2.setText("");
 
                     checkPerProprietario.setSelected(false);
-                    checkPerAnimal.setSelected(false);
+         
                     checkPerAgenda.setSelected(false);
                     checkPerServico.setSelected(false);
                     checkPerEstoque.setSelected(false);
                     checkPerVenda.setSelected(false);
                     checkPerFinanceiro.setSelected(false);
                     checkPerProdutos.setSelected(false);
-                    checkPerHistoricos.setSelected(false);
-                    checkPerAltera.setSelected(false);
-                    checkPerExclui.setSelected(false);
+                   
+                    checkPerConfiguracoes.setSelected(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "senha Atual incorreta para o login " + login);
                 }
@@ -597,11 +565,7 @@ public class Configuracoes extends javax.swing.JPanel {
                     permissao += "0";
                 }
 
-                if (checkPerAnimal.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
+               
                 if (checkPerAgenda.isSelected()) {
                     permissao += "1";
                 } else {
@@ -632,17 +596,8 @@ public class Configuracoes extends javax.swing.JPanel {
                 } else {
                     permissao += "0";
                 }
-                if (checkPerHistoricos.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerAltera.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerExclui.isSelected()) {
+                
+                if (checkPerConfiguracoes.isSelected()) {
                     permissao += "1";
                 } else {
                     permissao += "0";
@@ -674,11 +629,7 @@ public class Configuracoes extends javax.swing.JPanel {
             permissao += "0";
         }
 
-        if (checkPerAnimal.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
+        
         if (checkPerAgenda.isSelected()) {
             permissao += "1";
         } else {
@@ -709,17 +660,8 @@ public class Configuracoes extends javax.swing.JPanel {
         } else {
             permissao += "0";
         }
-        if (checkPerHistoricos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAltera.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerExclui.isSelected()) {
+      
+        if (checkPerConfiguracoes.isSelected()) {
             permissao += "1";
         } else {
             permissao += "0";
@@ -734,16 +676,15 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_login2.setText("");
 
                 checkPerProprietario.setSelected(false);
-                checkPerAnimal.setSelected(false);
+            
                 checkPerAgenda.setSelected(false);
                 checkPerServico.setSelected(false);
                 checkPerEstoque.setSelected(false);
                 checkPerVenda.setSelected(false);
                 checkPerFinanceiro.setSelected(false);
                 checkPerProdutos.setSelected(false);
-                checkPerHistoricos.setSelected(false);
-                checkPerAltera.setSelected(false);
-                checkPerExclui.setSelected(false);
+      
+                checkPerConfiguracoes.setSelected(false);
                 int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
                 CodFuncionario.setText(cod + "");
             }
@@ -784,10 +725,6 @@ public class Configuracoes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerProprietariojCheckBox3ActionPerformed
 
-    private void checkPerAnimaljCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerAnimaljCheckBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkPerAnimaljCheckBox8ActionPerformed
-
     private void checkPerServicojCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerServicojCheckBox9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerServicojCheckBox9ActionPerformed
@@ -808,17 +745,13 @@ public class Configuracoes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerProdutosjCheckBox13ActionPerformed
 
-    private void checkPerHistoricosjCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerHistoricosjCheckBox14ActionPerformed
+    private void checkPerFornecedorjCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerFornecedorjCheckBox8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkPerHistoricosjCheckBox14ActionPerformed
+    }//GEN-LAST:event_checkPerFornecedorjCheckBox8ActionPerformed
 
-    private void checkPerAlterajCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerAlterajCheckBox15ActionPerformed
+    private void checkPerConfiguracoesjCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerConfiguracoesjCheckBox16ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkPerAlterajCheckBox15ActionPerformed
-
-    private void checkPerExcluijCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerExcluijCheckBox16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkPerExcluijCheckBox16ActionPerformed
+    }//GEN-LAST:event_checkPerConfiguracoesjCheckBox16ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CodFuncionario;
@@ -828,12 +761,10 @@ public class Configuracoes extends javax.swing.JPanel {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
     private javax.swing.JCheckBox checkPerAgenda;
-    private javax.swing.JCheckBox checkPerAltera;
-    private javax.swing.JCheckBox checkPerAnimal;
+    private javax.swing.JCheckBox checkPerConfiguracoes;
     private javax.swing.JCheckBox checkPerEstoque;
-    private javax.swing.JCheckBox checkPerExclui;
     private javax.swing.JCheckBox checkPerFinanceiro;
-    private javax.swing.JCheckBox checkPerHistoricos;
+    private javax.swing.JCheckBox checkPerFornecedor;
     private javax.swing.JCheckBox checkPerProdutos;
     private javax.swing.JCheckBox checkPerProprietario;
     private javax.swing.JCheckBox checkPerServico;
@@ -852,6 +783,7 @@ public class Configuracoes extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JCheckBox manterSenha3;
