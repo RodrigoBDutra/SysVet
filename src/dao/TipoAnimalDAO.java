@@ -14,8 +14,8 @@ public class TipoAnimalDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
 
-            String sql = "INSERT INTO tipoanimal(tipoanimal,codraca) "
-                    + "VALUES('" + tpAni.getTipoAnimal() + "'," + tpAni.getCodRaca() + ")";
+            String sql = "INSERT INTO tipoanimal(tipoAnimal,codEspecie) "
+                    + "VALUES('" + tpAni.getTipoAnimal() + "'," + tpAni.getCodEspecie() + ")";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");

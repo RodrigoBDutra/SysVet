@@ -4,7 +4,7 @@ public class Especie {
 
     private int codEspecie;
     private String especie;
-    private int codTipoAnimal;
+    private int codRaca;
 
     public Especie() {
 
@@ -31,12 +31,12 @@ public class Especie {
         this.especie = especie;
     }
 
-    public int getCodTipoAnimal() {
-        return codTipoAnimal;
+    public int getCodRaca() {
+        return codRaca;
     }
 
-    public void setCodTipoAnimal(int codTipoAnimal) {
-        this.codTipoAnimal = codTipoAnimal;
+    public void setCodRaca(int codRaca) {
+        this.codRaca = codRaca;
     }
 
 }

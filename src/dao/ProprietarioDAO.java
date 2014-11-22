@@ -14,41 +14,6 @@ import java.sql.PreparedStatement;
 
 public class ProprietarioDAO extends Banco {
 
-    /* public ArrayList<Proprietario> getListagem() {
-     ArrayList<Proprietario> listaProprietario = new ArrayList<Proprietario>();
-     try {
-     conecta();
-     Statement stmt = con.createStatement();
-     String sql = "SELECT * FROM proprietario ORDER BY nome";
-     ResultSet rs = stmt.executeQuery(sql);
-     while (rs.next()) {
-     Proprietarios prop = new Proprietarios();
-     prop.setNome(rs.getString("nome"));
-     prop.setData(rs.getString("data"));
-     prop.setCpf(rs.getInt("cpf"));
-     prop.setRg(rs.getString("rg"));
-     prop.setTelResidencia(rs.getInt("telResidencial"));
-     prop.setTelCelular(rs.getInt("telCelular"));
-     prop.setEmail(rs.getString("email"));
-     prop.setEndereco(rs.getString("endereco"));
-     prop.setNumero(rs.getInt("numero"));
-     prop.setCep(rs.getInt("cep"));
-     prop.setBairro(rs.getString("bairro"));
-     prop.setCidade(rs.getString("cidade"));
-     prop.setEstado((char) rs.getObject("estado")); // ainda não vi como colocar variavel CHAR acho que é assim
-     prop.setDataCadastro(rs.getString("dataCadastro"));
-     prop.setObservacao(rs.getString("observacao"));
-     listaProprietario.add(prop);
-     }
-     rs.close();
-     stmt.close();
-     con.close();
-     } catch (Exception e) {
-     JOptionPane.showMessageDialog(null, "ERRO: " + e.toString());
-     }
-     return listaProprietario;
-     }
-     */
     /**
      * Pesquisa um Proprietarios pelo nome
      *

@@ -17,17 +17,16 @@ public class AnimalDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, peso, altura, porte, chip, numChip, obito, observacao, codProntuario, codTipoAnimal)"
-                    + "VALUES('" + cli.getNomeAnimal() + "','" + cli.getSexo() + "," + cli.getCor() + "," + cli.getNascimento() +  "'," + cli.getPeso() + "," 
-                    + cli.getAltura() + "," + cli.getPorte() + "," + cli.getChip() + "," + cli.getNumeroChip() + "," + cli.isObito() + "," 
-                    + cli.getObservacao() + ","+ cli.getCodProntuario()+ "," + cli.getCodTipoAnimal()+ ")";
-
+            String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, peso, altura, porte, chip, numChip, obito, observacao, CodTipoAnimal)"
+                    + " VALUES ('" + cli.getNomeAnimal() + "','" + cli.getSexo() + "','" + cli.getCor() + "','" + cli.getNascimento() +  "'," + cli.getPeso() + "," 
+                    + cli.getAltura() + ",'" + cli.getPorte() + "','" + cli.getChip() + "'," + cli.getNumeroChip() + "," + cli.isObito() + ",'" 
+                    + cli.getObservacao() + "'," + cli.getCodTipoAnimal()+ ")";
             stmt.executeUpdate(sql);
             stmt.close();
             con.close();
             resp = "OK";
         } catch (Exception e) {
-            imprimeErro("Erro em IncluirProprietário", e.toString());
+            imprimeErro("Erro em Incluir Cliente", e.toString());
         }
         return resp;
     }

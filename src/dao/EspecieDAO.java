@@ -35,9 +35,9 @@ public class EspecieDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "INSERT INTO especie(especie, codTipoAnimal)"
+            String sql = "INSERT INTO especie(especie, codRaca)"
                     + "VALUES('" + esp.getEspecie() + "',"
-                    + esp.getCodTipoAnimal() + ")";
+                    + esp.getCodRaca()+ ")";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");

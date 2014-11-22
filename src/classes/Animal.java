@@ -35,17 +35,18 @@ public class Animal {
         this.cor = "";
         this.chip = "";
         this.numeroChip = 0;
-        this.codTipoAnimal = 0;
         this.obito = false;
         this.observacao = "";
+        this.codTipoAnimal = 0;
+        this.codProntuario = 0;
 
     }
 
     public Animal(String nomeAnimal, String nascimento,
             int idade, String sexo, float peso, float altura,
             String porte, String cor, String chip, int numeroChip,
-            String raca, int codTipoAnimal, boolean obito,
-            String observacao) {
+            String raca, boolean obito,
+            String observacao, int codTipoAnimal, int coProntuario) {
 
         this.nomeAnimal = nomeAnimal;
         this.nascimento = nascimento;
@@ -57,9 +58,10 @@ public class Animal {
         this.cor = cor;
         this.chip = chip;
         this.numeroChip = numeroChip;
-        this.codTipoAnimal = codTipoAnimal;
         this.obito = obito;
         this.observacao = observacao;
+        this.codTipoAnimal = codTipoAnimal;
+        this.codProntuario = codProntuario;
     }
 
     public String getNomeAnimal() {
@@ -178,12 +180,12 @@ public class Animal {
         return raca;
     }
 
-    public TipoAnimal getTipoanimal() {
-        return tipoanimal;
-    }
-
     public void setRaca(Raca raca) {
         this.raca = raca;
+    }
+
+    public TipoAnimal getTipoanimal() {
+        return tipoanimal;
     }
 
     public void setTipoanimal(TipoAnimal tipoanimal) {

@@ -215,7 +215,7 @@ public class Proprietario extends javax.swing.JPanel {
         txtIdadeAnimal = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox();
+        txtEspecie = new javax.swing.JComboBox();
         jcbPorteAnimal = new javax.swing.JComboBox();
         txtPesoAnimal = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
@@ -237,8 +237,6 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel58 = new javax.swing.JLabel();
         txtRaca = new javax.swing.JTextField();
         txtTipoAnimal = new javax.swing.JComboBox();
-        txtID = new javax.swing.JTextField();
-        jLabel59 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -856,12 +854,12 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
         jPanel3.add(txtAnimal);
-        txtAnimal.setBounds(90, 80, 350, 28);
+        txtAnimal.setBounds(10, 80, 430, 28);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Nome do Cliente");
         jPanel3.add(jLabel25);
-        jLabel25.setBounds(90, 60, 240, 15);
+        jLabel25.setBounds(10, 60, 320, 15);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Sexo");
@@ -878,7 +876,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbSexoM);
-        jbSexoM.setBounds(450, 80, 71, 23);
+        jbSexoM.setBounds(450, 80, 80, 23);
 
         jbSexoF.setBackground(new java.awt.Color(204, 204, 204));
         grpSexo.add(jbSexoF);
@@ -889,7 +887,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbSexoF);
-        jbSexoF.setBounds(530, 80, 70, 23);
+        jbSexoF.setBounds(530, 80, 80, 23);
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("Cor");
@@ -915,16 +913,20 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jLabel30);
         jLabel30.setBounds(320, 210, 80, 15);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamifero" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        txtEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cachorro", "Gato", "Passarinho", "Peixe", " " }));
+        txtEspecie.setSelectedIndex(4);
+        txtEspecie.setToolTipText("");
+        txtEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                txtEspecieActionPerformed(evt);
             }
         });
-        jPanel3.add(jComboBox4);
-        jComboBox4.setBounds(170, 230, 140, 28);
+        jPanel3.add(txtEspecie);
+        txtEspecie.setBounds(170, 230, 140, 28);
 
-        jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande" }));
+        jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande", " " }));
+        jcbPorteAnimal.setSelectedIndex(4);
+        jcbPorteAnimal.setToolTipText("");
         jcbPorteAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbPorteAnimalActionPerformed(evt);
@@ -954,6 +956,7 @@ public class Proprietario extends javax.swing.JPanel {
 
         jbChipS.setBackground(new java.awt.Color(204, 204, 204));
         grpChip.add(jbChipS);
+        jbChipS.setSelected(true);
         jbChipS.setText("Sim");
         jbChipS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -961,11 +964,10 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbChipS);
-        jbChipS.setBounds(290, 180, 41, 23);
+        jbChipS.setBounds(290, 180, 60, 23);
 
         jbChipN.setBackground(new java.awt.Color(204, 204, 204));
         grpChip.add(jbChipN);
-        jbChipN.setSelected(true);
         jbChipN.setText("Não");
         jbChipN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -973,7 +975,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jbChipN);
-        jbChipN.setBounds(350, 180, 45, 23);
+        jbChipN.setBounds(350, 180, 50, 23);
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel34.setText("Porte");
@@ -1008,7 +1010,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jLabel37);
         jLabel37.setBounds(410, 160, 90, 15);
         jPanel3.add(txtObservacaoAnimal);
-        txtObservacaoAnimal.setBounds(10, 290, 370, 120);
+        txtObservacaoAnimal.setBounds(10, 290, 600, 120);
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel38.setText("Observação");
@@ -1023,7 +1025,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(ckObito);
-        ckObito.setBounds(280, 260, 100, 23);
+        ckObito.setBounds(280, 260, 130, 23);
         jPanel3.add(txtNascimentoCli);
         txtNascimentoCli.setBounds(10, 130, 120, 28);
 
@@ -1034,7 +1036,9 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(txtRaca);
         txtRaca.setBounds(320, 230, 290, 28);
 
-        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamífero", "Ave", "Réptil", "Anfíbio", "Peixe", " " }));
+        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamífero", "Ave", "Réptil", "Anfíbio", "Peixe", "" }));
+        txtTipoAnimal.setSelectedIndex(5);
+        txtTipoAnimal.setToolTipText("");
         txtTipoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTipoAnimalActionPerformed(evt);
@@ -1042,15 +1046,6 @@ public class Proprietario extends javax.swing.JPanel {
         });
         jPanel3.add(txtTipoAnimal);
         txtTipoAnimal.setBounds(10, 230, 150, 28);
-
-        txtID.setEditable(false);
-        jPanel3.add(txtID);
-        txtID.setBounds(10, 80, 70, 28);
-
-        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel59.setText("ID");
-        jPanel3.add(jLabel59);
-        jLabel59.setBounds(10, 60, 60, 15);
 
         jpCliente.add(jPanel3);
         jPanel3.setBounds(10, 30, 620, 420);
@@ -1414,7 +1409,7 @@ public class Proprietario extends javax.swing.JPanel {
     private void jtbClienteAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtbClienteAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jtbClienteAncestorAdded
-    
+
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (Auxiliar.validarEmail(txtEmail)) {
             if (Auxiliar.validarCPF(txtCPF)) {
@@ -1500,40 +1495,42 @@ public class Proprietario extends javax.swing.JPanel {
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
-    
-    String ValidaSexo = "";  
-    
+
+    String ValidaSexo = "";
+
     private void jbSexoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSexoMActionPerformed
-        if(jbSexoM.isSelected()){
+        if (jbSexoM.isSelected()) {
             ValidaSexo = "M";
         }
     }//GEN-LAST:event_jbSexoMActionPerformed
 
     private void jbSexoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSexoFActionPerformed
-        if(jbSexoF.isSelected()){
+        if (jbSexoF.isSelected()) {
             ValidaSexo = "F";
         }
     }//GEN-LAST:event_jbSexoFActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void txtEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_txtEspecieActionPerformed
 
     private void jcbPorteAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPorteAnimalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbPorteAnimalActionPerformed
 
     String ValidaChip = "";
-    
+
     private void jbChipSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChipSActionPerformed
-        if(jbChipS.isSelected()){
+        if (jbChipS.isSelected()) {
             ValidaChip = "S";
+            txtNumChip.setEnabled(true);
         }
     }//GEN-LAST:event_jbChipSActionPerformed
 
     private void jbChipNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChipNActionPerformed
-        if(jbChipN.isSelected()){
+        if (jbChipN.isSelected()) {
             ValidaChip = "N";
+            txtNumChip.setEnabled(false);
         }
     }//GEN-LAST:event_jbChipNActionPerformed
 
@@ -1558,12 +1555,12 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void btnHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoricoMouseClicked
-        jtpPropCli.setSelectedIndex(2);       
+        jtpPropCli.setSelectedIndex(2);
     }//GEN-LAST:event_btnHistoricoMouseClicked
 
     private void btnHistoricoAnimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoricoAnimalMouseClicked
         // TODO add your handling code here:
-        jtpPropCli.setSelectedIndex(3);        
+        jtpPropCli.setSelectedIndex(3);
     }//GEN-LAST:event_btnHistoricoAnimalMouseClicked
 
     private void btnProntuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProntuarioMouseClicked
@@ -1597,7 +1594,6 @@ public class Proprietario extends javax.swing.JPanel {
         txtCPF.setText(null);
         Auxiliar.limparTodosCampos(jpPropri);
         jpPropri.setVisible(false);
-
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtTipoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoAnimalActionPerformed
@@ -1608,7 +1604,7 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRGActionPerformed
 
-    public Animal MontarAnimal(){
+    public Animal MontarAnimal() {
         Animal ani = new Animal();
         ani.setNomeAnimal(txtAnimal.getText());
         ani.setSexo(ValidaSexo);
@@ -1623,77 +1619,111 @@ public class Proprietario extends javax.swing.JPanel {
         ani.setNumeroChip(Integer.parseInt(txtNumChip.getText()));
         ani.setObito(ValidaObito);
         ani.setObservacao(txtObservacao.getText());
-        ani.setCodProntuario(1);
+        //ani.setCodProntuario(1);
         ani.setCodTipoAnimal(txtTipoAnimal.getSelectedIndex());
-        
+
         return ani;
     }
+
+    public TipoAnimal MontarTipoAnimal() {
+        TipoAnimal tpani = new TipoAnimal();
+        tpani.setTipoAnimal(txtTipoAnimal.getSelectedItem().toString());
+
+        return tpani;
+    }
     
-    private void txtSalvarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarAnimalActionPerformed
-        Animal ani = MontarAnimal();
-        String aniA;
-        AnimalDAO aniDao = new AnimalDAO();
+    public Especie MontarEspecie(){
+        Especie esp = new Especie();
+        esp.setEspecie(txtEspecie.getSelectedItem().toString());
         
-        aniA = aniDao.incluirAnimal(ani); 
-                
-                
+        return esp;
+    }
+    
+    public Raca MontarRaca(){
+        Raca rc = new Raca();
+        rc.setNomeRaca(txtRaca.getText());
+        
+        return rc;
+    }
+
+    private void txtSalvarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarAnimalActionPerformed
+        Raca rac = MontarRaca();
+        Especie esp = MontarEspecie();
+        TipoAnimal tpani = MontarTipoAnimal();
+        Animal ani = MontarAnimal();
+
+        String aniA;
+        int respA, respB, respC;
+        
+        RacaDAO racDao = new RacaDAO();
+        EspecieDAO espDao = new EspecieDAO();
+        TipoAnimalDAO tpDao = new TipoAnimalDAO();
+        AnimalDAO aniDao = new AnimalDAO();
+
+        respC = racDao.incluirRaca(rac);
+        respB = espDao.incluirEspecie(esp);
+        respA = tpDao.incluirTipoAnimal(tpani);
+        aniA = aniDao.incluirAnimal(ani);
+
+        esp.setCodRaca(respC);
+        tpani.setCodEspecie(respB);
+        ani.setCodTipoAnimal(respA);
+
         /*if (verificaConsulta == false){
             
-            Contato cont = montarContato();
-            Endereco end = montarEndereco();
-            DadosPessoais dad = montarDadosPessoais();
-            Proprietarios prop = montarProprietario();
-            int respD, respE, respC;
-            String respP;
-            ProprietarioDAO propDAO = new ProprietarioDAO();
-            EnderecoDAO endDAO = new EnderecoDAO();
-            DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-            ContatoDAO contDAO = new ContatoDAO();
-            respD = dadDAO.incluirDados(dad);
-            if (respD < 0) {
-                JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-            } else {
-                respE = endDAO.incluirEnd(end);
-                respC = contDAO.incluirCont(cont);
-                prop.setCodDadosPessoais(respD);
-                prop.setCodContato(respC);
-                prop.setCodEndereco(respE);
-                respP = propDAO.incluirProp(prop);
-                if (respP.equals("OK")) {
-                    JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-                } else {
-                    JOptionPane.showMessageDialog(null, respP);
-                }
-                verificaConsulta = true;
-            }
+         Contato cont = montarContato();
+         Endereco end = montarEndereco();
+         DadosPessoais dad = montarDadosPessoais();
+         Proprietarios prop = montarProprietario();
+         int respD, respE, respC;
+         String respP;
+         ProprietarioDAO propDAO = new ProprietarioDAO();
+         EnderecoDAO endDAO = new EnderecoDAO();
+         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+         ContatoDAO contDAO = new ContatoDAO();
+         respD = dadDAO.incluirDados(dad);
+         if (respD < 0) {
+         JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+         } else {
+         respE = endDAO.incluirEnd(end);
+         respC = contDAO.incluirCont(cont);
+         prop.setCodDadosPessoais(respD);
+         prop.setCodContato(respC);
+         prop.setCodEndereco(respE);
+         respP = propDAO.incluirProp(prop);
+         if (respP.equals("OK")) {
+         JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
+         } else {
+         JOptionPane.showMessageDialog(null, respP);
+         }
+         verificaConsulta = true;
+         }
 
-        } else {//se nao for insercao será alteração
-            Contato cont = montarContato();
-            Endereco end = montarEndereco();
-            DadosPessoais dad = montarDadosPessoais();
-            Proprietarios prop = montarProprietario();
-            ProprietarioDAO propDAO = new ProprietarioDAO();
-            EnderecoDAO endDAO = new EnderecoDAO();
-            DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-            ContatoDAO contDAO = new ContatoDAO();
-            String D, P, C, E;
-            D = dadDAO.alteraDados(dad);
-            C = contDAO.alteraCont(cont, dad.getCPF());
-            E = endDAO.alteraEnd(end, dad.getCPF());
-            P = propDAO.alteraProp(prop, dad.getCPF());
-            if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
-                JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
-                Date pega = txtDataCadastro.getDate();
-
-            }
-
-        }*/
+         } else {//se nao for insercao será alteração
+         Contato cont = montarContato();
+         Endereco end = montarEndereco();
+         DadosPessoais dad = montarDadosPessoais();
+         Proprietarios prop = montarProprietario();
+         ProprietarioDAO propDAO = new ProprietarioDAO();
+         EnderecoDAO endDAO = new EnderecoDAO();
+         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
+         ContatoDAO contDAO = new ContatoDAO();
+         String D, P, C, E;
+         D = dadDAO.alteraDados(dad);
+         C = contDAO.alteraCont(cont, dad.getCPF());
+         E = endDAO.alteraEnd(end, dad.getCPF());
+         P = propDAO.alteraProp(prop, dad.getCPF());
+         if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
+         JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
+         Date pega = txtDataCadastro.getDate();
+         }
+         }*/
     }//GEN-LAST:event_txtSalvarAnimalActionPerformed
-    
+
     boolean ValidaObito = false;
-    
+
     private void ckObitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckObitoActionPerformed
-        if(ckObito.isSelected()){
+        if (ckObito.isSelected()) {
             ValidaObito = true;
         }
     }//GEN-LAST:event_ckObitoActionPerformed
@@ -1724,7 +1754,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel10;
@@ -1776,7 +1805,6 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1832,8 +1860,8 @@ public class Proprietario extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser txtDataNascimento;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
+    private javax.swing.JComboBox txtEspecie;
     private javax.swing.JTextField txtEstado;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtIdadeAnimal;
     private com.toedter.calendar.JDateChooser txtNascimentoCli;
     private javax.swing.JTextField txtNome;

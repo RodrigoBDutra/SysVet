@@ -4,8 +4,8 @@ public class TipoAnimal {
 
     private int codTipoAnimal;
     private String tipoAnimal;
-    private int codRaca;
-    private Raca raca;
+    private int codEspecie;
+    private Especie especie;
 
     public int getCodTipoAnimal() {
         return codTipoAnimal;
@@ -23,20 +23,20 @@ public class TipoAnimal {
         this.tipoAnimal = tipoAnimal;
     }
 
-    public int getCodRaca() {
-        return codRaca;
+    public int getCodEspecie() {
+        return codEspecie;
     }
 
-    public void setCodRaca(int codRaca) {
-        this.codRaca = codRaca;
+    public void setCodEspecie(int codEspecie) {
+        this.codEspecie = codEspecie;
     }
 
-    public Raca getRaca() {
-        return raca;
+    public Especie getEspecie() {
+        return especie;
     }
 
-    public void setRaca(Raca raca) {
-        this.raca = raca;
+    public void setEspecie(Especie especie) {
+        this.especie = especie;
     }
 
     public TipoAnimal() {
@@ -46,7 +46,7 @@ public class TipoAnimal {
     public TipoAnimal(int codTipoAnimal, String tipoAnimal, int codRaca) {
         this.codTipoAnimal = codTipoAnimal;
         this.tipoAnimal = tipoAnimal;
-        this.codRaca = codRaca;
+        this.codEspecie = codEspecie;
 
     }
 
