@@ -14,8 +14,7 @@ public class RacaDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
 
-            String sql = "INSERT INTO raca(nomeRaca) "
-                    + "VALUES('" + rac.getNomeRaca() + "')";
+            String sql = "INSERT INTO raca(nomeRaca, codEspecie) VALUES('" + rac.getNomeRaca() + "'," + rac.getCodEspecie() + ")";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");

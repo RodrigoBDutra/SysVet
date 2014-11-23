@@ -225,7 +225,7 @@ public class JDateChooser extends JPanel implements ActionListener,
 
         lastSelectedDate = date;
 
-		// Corrects a problem that occurred when the JMonthChooser's combobox is
+        // Corrects a problem that occurred when the JMonthChooser's combobox is
         // displayed, and a click outside the popup does not close it.
         // The following idea was originally provided by forum user
         // podiatanapraia:
@@ -546,7 +546,7 @@ public class JDateChooser extends JPanel implements ActionListener,
         // dateChooser.setLocale(new Locale("de"));
         // dateChooser.setDateFormatString("dd. MMMM yyyy");
 
-		// dateChooser.setPreferredSize(new Dimension(130, 20));
+        // dateChooser.setPreferredSize(new Dimension(130, 20));
         // dateChooser.setFont(new Font("Verdana", Font.PLAIN, 10));
         // dateChooser.setDateFormatString("yyyy-MM-dd HH:mm");
         // URL iconURL = dateChooser.getClass().getResource(

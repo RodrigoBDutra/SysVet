@@ -16,6 +16,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class Proprietario extends javax.swing.JPanel {
 
+    
+    public ArrayList<TipoAnimal> listatipo;
+    public ArrayList<Especie> listaEspecie;
     /**
      * Creates new form Proprietario
      */
@@ -34,6 +37,11 @@ public class Proprietario extends javax.swing.JPanel {
         txtCidade.setDocument(new TextLimitado(35));
         txtEstado.setDocument(new TextLimitado(2));
         txtObservacao.setDocument(new TextLimitado(60));
+        
+        listatipo = new TipoAnimalDAO().consultaTipo();
+        for(int i = 0; i < listatipo.size(); i++){
+            txtTipoAnimal.addItem(listatipo.get(i).getTipoAnimal());
+        }
     }
 
     boolean verificaConsulta = true;
@@ -868,8 +876,7 @@ public class Proprietario extends javax.swing.JPanel {
 
         jbSexoM.setBackground(new java.awt.Color(204, 204, 204));
         grpSexo.add(jbSexoM);
-        jbSexoM.setSelected(true);
-        jbSexoM.setText("Masculino");
+        jbSexoM.setText("Macho");
         jbSexoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSexoMActionPerformed(evt);
@@ -880,7 +887,7 @@ public class Proprietario extends javax.swing.JPanel {
 
         jbSexoF.setBackground(new java.awt.Color(204, 204, 204));
         grpSexo.add(jbSexoF);
-        jbSexoF.setText("Feminino");
+        jbSexoF.setText("Fêmea");
         jbSexoF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSexoFActionPerformed(evt);
@@ -916,6 +923,11 @@ public class Proprietario extends javax.swing.JPanel {
         txtEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cachorro", "Gato", "Passarinho", "Peixe", " " }));
         txtEspecie.setSelectedIndex(4);
         txtEspecie.setToolTipText("");
+        txtEspecie.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                txtEspecieItemStateChanged(evt);
+            }
+        });
         txtEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEspecieActionPerformed(evt);
@@ -956,7 +968,6 @@ public class Proprietario extends javax.swing.JPanel {
 
         jbChipS.setBackground(new java.awt.Color(204, 204, 204));
         grpChip.add(jbChipS);
-        jbChipS.setSelected(true);
         jbChipS.setText("Sim");
         jbChipS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1036,9 +1047,12 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(txtRaca);
         txtRaca.setBounds(320, 230, 290, 28);
 
-        txtTipoAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mamífero", "Ave", "Réptil", "Anfíbio", "Peixe", "" }));
-        txtTipoAnimal.setSelectedIndex(5);
         txtTipoAnimal.setToolTipText("");
+        txtTipoAnimal.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                txtTipoAnimalItemStateChanged(evt);
+            }
+        });
         txtTipoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTipoAnimalActionPerformed(evt);
@@ -1530,6 +1544,7 @@ public class Proprietario extends javax.swing.JPanel {
     private void jbChipNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChipNActionPerformed
         if (jbChipN.isSelected()) {
             ValidaChip = "N";
+            txtNumChip.setText("");
             txtNumChip.setEnabled(false);
         }
     }//GEN-LAST:event_jbChipNActionPerformed
@@ -1604,6 +1619,8 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRGActionPerformed
 
+    int CES = 0;
+    
     public Animal MontarAnimal() {
         Animal ani = new Animal();
         ani.setNomeAnimal(txtAnimal.getText());
@@ -1616,108 +1633,40 @@ public class Proprietario extends javax.swing.JPanel {
         ani.setAltura(Float.parseFloat(txtAlturaAnimal.getText()));
         ani.setPorte(jcbPorteAnimal.getSelectedItem().toString());
         ani.setChip(ValidaChip);
-        ani.setNumeroChip(Integer.parseInt(txtNumChip.getText()));
+        if (ValidaChip.equals("S")) {
+            ani.setNumeroChip(txtNumChip.getText());
+        } else {
+            ani.setNumeroChip(" ");
+        }
         ani.setObito(ValidaObito);
         ani.setObservacao(txtObservacao.getText());
         //ani.setCodProntuario(1);
-        ani.setCodTipoAnimal(txtTipoAnimal.getSelectedIndex());
+        ani.setCodRaca(0);
 
         return ani;
     }
 
-    public TipoAnimal MontarTipoAnimal() {
-        TipoAnimal tpani = new TipoAnimal();
-        tpani.setTipoAnimal(txtTipoAnimal.getSelectedItem().toString());
-
-        return tpani;
-    }
-    
-    public Especie MontarEspecie(){
-        Especie esp = new Especie();
-        esp.setEspecie(txtEspecie.getSelectedItem().toString());
-        
-        return esp;
-    }
-    
-    public Raca MontarRaca(){
+    public Raca MontarRaca() {
         Raca rc = new Raca();
+        rc.setCodRaca(0);
         rc.setNomeRaca(txtRaca.getText());
-        
+        rc.setCodEspecie(CES);
+
         return rc;
     }
-
     private void txtSalvarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarAnimalActionPerformed
         Raca rac = MontarRaca();
-        Especie esp = MontarEspecie();
-        TipoAnimal tpani = MontarTipoAnimal();
         Animal ani = MontarAnimal();
 
         String aniA;
-        int respA, respB, respC;
-        
-        RacaDAO racDao = new RacaDAO();
-        EspecieDAO espDao = new EspecieDAO();
-        TipoAnimalDAO tpDao = new TipoAnimalDAO();
+        int respA;
+
         AnimalDAO aniDao = new AnimalDAO();
+        RacaDAO racDao = new RacaDAO();
+        respA = racDao.incluirRaca(rac);
 
-        respC = racDao.incluirRaca(rac);
-        respB = espDao.incluirEspecie(esp);
-        respA = tpDao.incluirTipoAnimal(tpani);
+        ani.setCodRaca(respA);
         aniA = aniDao.incluirAnimal(ani);
-
-        esp.setCodRaca(respC);
-        tpani.setCodEspecie(respB);
-        ani.setCodTipoAnimal(respA);
-
-        /*if (verificaConsulta == false){
-            
-         Contato cont = montarContato();
-         Endereco end = montarEndereco();
-         DadosPessoais dad = montarDadosPessoais();
-         Proprietarios prop = montarProprietario();
-         int respD, respE, respC;
-         String respP;
-         ProprietarioDAO propDAO = new ProprietarioDAO();
-         EnderecoDAO endDAO = new EnderecoDAO();
-         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-         ContatoDAO contDAO = new ContatoDAO();
-         respD = dadDAO.incluirDados(dad);
-         if (respD < 0) {
-         JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
-         } else {
-         respE = endDAO.incluirEnd(end);
-         respC = contDAO.incluirCont(cont);
-         prop.setCodDadosPessoais(respD);
-         prop.setCodContato(respC);
-         prop.setCodEndereco(respE);
-         respP = propDAO.incluirProp(prop);
-         if (respP.equals("OK")) {
-         JOptionPane.showMessageDialog(null, "Proprietario gravado com sucesso");
-         } else {
-         JOptionPane.showMessageDialog(null, respP);
-         }
-         verificaConsulta = true;
-         }
-
-         } else {//se nao for insercao será alteração
-         Contato cont = montarContato();
-         Endereco end = montarEndereco();
-         DadosPessoais dad = montarDadosPessoais();
-         Proprietarios prop = montarProprietario();
-         ProprietarioDAO propDAO = new ProprietarioDAO();
-         EnderecoDAO endDAO = new EnderecoDAO();
-         DadosPessoaisDAO dadDAO = new DadosPessoaisDAO();
-         ContatoDAO contDAO = new ContatoDAO();
-         String D, P, C, E;
-         D = dadDAO.alteraDados(dad);
-         C = contDAO.alteraCont(cont, dad.getCPF());
-         E = endDAO.alteraEnd(end, dad.getCPF());
-         P = propDAO.alteraProp(prop, dad.getCPF());
-         if (D.equals("ok") & E.equals("ok") & C.equals("ok") & P.equals("ok")) {
-         JOptionPane.showMessageDialog(null, "Alteraçao efetuada com sucesso");
-         Date pega = txtDataCadastro.getDate();
-         }
-         }*/
     }//GEN-LAST:event_txtSalvarAnimalActionPerformed
 
     boolean ValidaObito = false;
@@ -1727,6 +1676,23 @@ public class Proprietario extends javax.swing.JPanel {
             ValidaObito = true;
         }
     }//GEN-LAST:event_ckObitoActionPerformed
+
+    private void txtTipoAnimalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtTipoAnimalItemStateChanged
+       int id = txtTipoAnimal.getSelectedIndex();
+       int codTP = listatipo.get(id).getCodTipoAnimal();
+       listaEspecie = new EspecieDAO().consultaEsp(codTP);
+       
+       txtEspecie.removeAllItems();
+       for(int i=0; i<listaEspecie.size();i++){
+           txtEspecie.addItem(listaEspecie.get(i).getEspecie());
+       }
+    }//GEN-LAST:event_txtTipoAnimalItemStateChanged
+    
+    private void txtEspecieItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtEspecieItemStateChanged
+        int id = txtEspecie.getSelectedIndex();
+        int codES = listaEspecie.get(id).getCodEspecie();
+        //CES = codES;
+    }//GEN-LAST:event_txtEspecieItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;

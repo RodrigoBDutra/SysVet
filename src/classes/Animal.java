@@ -14,8 +14,8 @@ public class Animal {
     private String porte;
     private String cor;
     private String chip;
-    private int numeroChip;
-    private int codTipoAnimal;
+    private String numeroChip;
+    private int codRaca;
     private int codProntuario;
     private boolean obito;
     private String observacao;
@@ -34,19 +34,19 @@ public class Animal {
         this.porte = "";
         this.cor = "";
         this.chip = "";
-        this.numeroChip = 0;
+        this.numeroChip = "";
         this.obito = false;
         this.observacao = "";
-        this.codTipoAnimal = 0;
+        this.codRaca = 0;
         this.codProntuario = 0;
 
     }
 
     public Animal(String nomeAnimal, String nascimento,
             int idade, String sexo, float peso, float altura,
-            String porte, String cor, String chip, int numeroChip,
+            String porte, String cor, String chip, String numeroChip,
             String raca, boolean obito,
-            String observacao, int codTipoAnimal, int coProntuario) {
+            String observacao, int codRaca, int coProntuario) {
 
         this.nomeAnimal = nomeAnimal;
         this.nascimento = nascimento;
@@ -60,8 +60,16 @@ public class Animal {
         this.numeroChip = numeroChip;
         this.obito = obito;
         this.observacao = observacao;
-        this.codTipoAnimal = codTipoAnimal;
+        this.codRaca = codRaca;
         this.codProntuario = codProntuario;
+    }
+
+    public int getCodAnimal() {
+        return codAnimal;
+    }
+
+    public void setCodAnimal(int codAnimal) {
+        this.codAnimal = codAnimal;
     }
 
     public String getNomeAnimal() {
@@ -136,28 +144,28 @@ public class Animal {
         this.chip = chip;
     }
 
-    public int getNumeroChip() {
+    public String getNumeroChip() {
         return numeroChip;
     }
 
-    public void setNumeroChip(int numeroChip) {
+    public void setNumeroChip(String numeroChip) {
         this.numeroChip = numeroChip;
     }
 
-    public int getCodTipoAnimal() {
-        return codTipoAnimal;
+    public int getCodRaca() {
+        return codRaca;
     }
 
-    public void setCodTipoAnimal(int codTipoAnimal) {
-        this.codTipoAnimal = codTipoAnimal;
+    public void setCodRaca(int codRaca) {
+        this.codRaca = codRaca;
     }
 
-    public Especie getEspecie() {
-        return especie;
+    public int getCodProntuario() {
+        return codProntuario;
     }
 
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
+    public void setCodProntuario(int codProntuario) {
+        this.codProntuario = codProntuario;
     }
 
     public boolean isObito() {
@@ -176,6 +184,14 @@ public class Animal {
         this.observacao = observacao;
     }
 
+    public Especie getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(Especie especie) {
+        this.especie = especie;
+    }
+
     public Raca getRaca() {
         return raca;
     }
@@ -192,11 +208,4 @@ public class Animal {
         this.tipoanimal = tipoanimal;
     }
 
-    public int getCodProntuario() {
-        return codProntuario;
-    }
-
-    public void setCodProntuario(int codProntuario) {
-        this.codProntuario = codProntuario;
-    }
 }

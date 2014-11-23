@@ -4,15 +4,19 @@ public class Especie {
 
     private int codEspecie;
     private String especie;
-    private int codRaca;
+    private int codTipoAnimal;
+    private TipoAnimal tipoaAnimal;
 
     public Especie() {
-
+        this.codEspecie = 0;
+        this.especie = "";
+        this.codTipoAnimal = 0;
     }
 
-    public Especie(int codEspecie, String especie) {
+    public Especie(int codEspecie, String especie, int codTipoAnimal) {
         this.codEspecie = codEspecie;
         this.especie = especie;
+        this.codTipoAnimal = codTipoAnimal;
     }
 
     public int getCodEspecie() {
@@ -31,12 +35,20 @@ public class Especie {
         this.especie = especie;
     }
 
-    public int getCodRaca() {
-        return codRaca;
+    public int getCodTipoAnimal() {
+        return codTipoAnimal;
     }
 
-    public void setCodRaca(int codRaca) {
-        this.codRaca = codRaca;
+    public void setCodTipoAnimal(int codTipoAnimal) {
+        this.codTipoAnimal = codTipoAnimal;
+    }
+
+    public TipoAnimal getTipoaAnimal() {
+        return tipoaAnimal;
+    }
+
+    public void setTipoaAnimal(TipoAnimal tipoaAnimal) {
+        this.tipoaAnimal = tipoaAnimal;
     }
 
 }

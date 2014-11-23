@@ -557,7 +557,8 @@ public class Configuracoes extends javax.swing.JPanel {
                     permissao += "1";
                 } else {
                     permissao += "0";
-                }                if (checkPerAgenda.isSelected()) {
+                }
+                if (checkPerAgenda.isSelected()) {
                     permissao += "1";
                 } else {
                     permissao += "0";

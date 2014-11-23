@@ -673,9 +673,8 @@ public class Agenda extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-         jpAgenda.setVisible(true);
+        jpAgenda.setVisible(true);
     }//GEN-LAST:event_jButton21ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton12;

@@ -4,8 +4,6 @@ public class TipoAnimal {
 
     private int codTipoAnimal;
     private String tipoAnimal;
-    private int codEspecie;
-    private Especie especie;
 
     public int getCodTipoAnimal() {
         return codTipoAnimal;
@@ -23,31 +21,15 @@ public class TipoAnimal {
         this.tipoAnimal = tipoAnimal;
     }
 
-    public int getCodEspecie() {
-        return codEspecie;
-    }
-
-    public void setCodEspecie(int codEspecie) {
-        this.codEspecie = codEspecie;
-    }
-
-    public Especie getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
-    }
-
     public TipoAnimal() {
+        this.codTipoAnimal = 0;
+        this.tipoAnimal = "";
 
     }
 
     public TipoAnimal(int codTipoAnimal, String tipoAnimal, int codRaca) {
         this.codTipoAnimal = codTipoAnimal;
         this.tipoAnimal = tipoAnimal;
-        this.codEspecie = codEspecie;
-
     }
 
 }

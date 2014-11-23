@@ -499,7 +499,7 @@ public class Servico extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-     jpServicos.setVisible(true);
+        jpServicos.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -537,7 +537,6 @@ public class Servico extends javax.swing.JPanel {
     private void jTable3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable3AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable3AncestorAdded
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton12;
