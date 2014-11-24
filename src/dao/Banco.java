@@ -1,14 +1,9 @@
 package dao;
-
 import classes.Transferencia;
 import classes.Usuario;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Equipe SysVet
- */
 public class Banco {
 
     Connection con;
@@ -52,13 +47,11 @@ public class Banco {
         }
     }
 
-    public boolean valida(int codigo, String login) {
+    public boolean valida(String login) {
         conecta();
         String sql;
-
         try {
-//Cria comando SQl para inserir na tabela
-            sql = "SELECT codigo, login FROM usuario WHERE login='" + login + "'";
+            sql = "SELECT * FROM usuario WHERE login='" + login + "'";
             rs = stmt.executeQuery(sql);
 
             if (rs.first()) {
@@ -78,27 +71,21 @@ public class Banco {
 
     }
 
-    public boolean gravaUsuario(int codigo, String nome, String login, String senha, String permissao, String logado) {
-
+    public boolean gravaUsuario(String nome, String login, String senha, String permissao, String logado) {
         conecta();
         String sql;
-
-//Captura os dados digitados
         try {
+            if (valida(login)) {
+                sql = "INSERT INTO usuario(nome, login, senha, permissao, logado) VALUES ('";
+                sql += nome + "','" + login + "','" + senha + "','" + permissao + "','" + logado + "')";
 
-            if (valida(codigo, login)) {
-//                System.out.println("entrou");
-                sql = "INSERT INTO usuario(codigo, nome, login, senha, permissao, logado) VALUES (";
-                sql += codigo + ", '" + nome + "','" + login + "','" + senha + "','" + permissao + "','" + logado + "')";
-
-//                JOptionPane.showMessageDialog(null, sql);
                 stmt.executeUpdate(sql);
 
-                JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
+                JOptionPane.showMessageDialog(null, "Usuario inserido com sucesso!");
                 return true;
 
             } else {
-                JOptionPane.showMessageDialog(null, "O login já existe");
+                JOptionPane.showMessageDialog(null, "Login já existente, por favor, digite outro login");
                 return false;
             }
 
@@ -108,7 +95,7 @@ public class Banco {
         }
     }
 
-    public String abreUsuarios() {
+   /* public String abreUsuarios() {
         String sql;
         conecta();
         try {
@@ -116,8 +103,7 @@ public class Banco {
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
             rs.first();
-//            rs.previous();
-
+            
             return rs.getString("MAX(codigo)");
 
         } catch (SQLException e) {
@@ -125,32 +111,26 @@ public class Banco {
             return null;
         }
 
-    }
+    }*/
 
-    public void atualizaUsuario(int codigo, String nome, String login, String senha, String permissao) {
+    public boolean atualizaUsuario(int codigo, String nome, String login, String senha, String permissao) {
         String sql;
         conecta();
-
         try {
-
-            sql = "UPDATE usuario SET nome='" + nome + "', login='" + login + "', " + "senha='" + senha + "', permissao='" + permissao + "' WHERE codigo=" + codigo + ";";
+            sql = "UPDATE usuario SET nome='" + nome + "', login='" + login + "', " + "senha='" + senha + "', permissao='" + permissao +"' WHERE codigo=" + codigo + ";";
             System.out.println(sql);
             stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Usuário Atualizado com sucesso");
-
-//            JOptionPane.showMessageDialog(null, "Usuario atualizado");
+            return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-
+            return false;
         }
-
     }
 
     public boolean verificaSenha(int codigo, String senha) {
         String sql;
         conecta();
-
-        try {
+        try{
             sql = "SELECT senha FROM usuario WHERE codigo=" + codigo + ";";
             System.out.println(sql);
             rs = stmt.executeQuery(sql);
@@ -160,9 +140,7 @@ public class Banco {
             } else {
                 return false;
             }
-
         } catch (SQLException e) {
-
             return false;
         }
 
@@ -320,58 +298,6 @@ public class Banco {
             System.out.println("Erro ao executar o comando SQL:" + e.toString());
         }
     }
+    
 
-    public String historico(int codigo) {
-        String sql;
-        conecta();
-        String infixa;
-        String npr;
-        String resultado;
-        String tudo = "";
-
-        try {
-            sql = "SELECT * FROM calcnpr WHERE codigo=" + codigo;
-            System.out.println(sql);
-            rs = stmt.executeQuery(sql);
-            rs.first();
-            rs.previous();
-
-            while (rs.next()) {
-
-                infixa = rs.getString("infixa");
-                npr = rs.getString("npr");
-                resultado = rs.getString("resultado");
-                tudo += "Infixa= " + infixa + "\n";
-                tudo += "NPR= " + npr + "\n";
-                tudo += "resultado= " + resultado + "\n";
-                tudo += "----------------------\n";
-
-            }
-
-            return tudo;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-            return null;
-        }
-
-    }
-
-    public void apagaHistorico() {
-        String sql;
-        conecta();
-
-        try {
-            sql = "DELETE FROM calcnpr where codigo=" + codi;
-            System.out.println(sql);
-            stmt.executeUpdate(sql);
-            rs.first();
-            JOptionPane.showMessageDialog(null, "Excluido com sucesso");
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL:" + e.toString());
-
-        }
-
-    }
 }

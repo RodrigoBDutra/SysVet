@@ -22,30 +22,60 @@ public class Configuracoes extends javax.swing.JPanel {
     Banco ba = new Banco();
     String sen;
     int flag = 0;
+    int codigoCons = 0;
+
 
     /**
      * Creates new form Configuracao
      */
     public Configuracoes() {
         initComponents();
+        PainelConf.setVisible(false);
     }
 
-    public boolean valida() {
+    public boolean validaCampos(JTextField nome, JTextField login, JTextField senha, JCheckBox mantSen, JTextField senhaAtual, JTextField senhaNova) {
+        String expr = "";
+        if (nome.equals("") || nome == null) {
+            nome.requestFocus();
+            expr += " Nome ";
+        }
+        if (login.equals("") || login == null) {
+            login.requestFocus();
+            expr += " login ";
+        }
+        if (senha.equals("") && flag == 1) {
+            expr += " senha ";
+            return false;
+        }
 
-        if ("".equals(txt_nome2.getText())) {
-            JOptionPane.showMessageDialog(null, "Preenche o campo nome");
-            return false;
+        if (flag == 0 && !mantSen.isSelected() && mantSen.equals("")) {
+            mantSen.requestFocus();
+            expr += " nova senha ";
         }
-        if ("".equals(txt_login2.getText())) {
-            JOptionPane.showMessageDialog(null, "Preenche o campo login");
-            return false;
-        }
-        if ("".equals(txt_senha2.getText()) && flag == 1) {
-            JOptionPane.showMessageDialog(null, "Preenche o campo senha");
-            return false;
+
+        if (flag == 0 && !mantSen.isSelected() && senhaAtual.equals("")) {
+            senhaAtual.requestFocus();
+            expr += " senha atual ";
         }
         return true;
-
+    }
+    
+    public void limpaTela() {
+        txt_nome2.setText("");
+        txt_login2.setText("");
+        txt_senhaAtual2.setText("");
+        txt_senha2.setText("");
+        txt_NovaSenha2.setText("");
+        manterSenha3.setSelected(true);
+        checkPerProprietario.setSelected(false);
+        checkPerAgenda.setSelected(false);
+        checkPerServico.setSelected(false);
+        checkPerEstoque.setSelected(false);
+        checkPerVenda.setSelected(false);
+        checkPerFornecedor.setSelected(false);
+        checkPerFinanceiro.setSelected(false);
+        checkPerProdutos.setSelected(false);
+        checkPerConfiguracoes.setSelected(false);
     }
 
     /**
@@ -63,25 +93,17 @@ public class Configuracoes extends javax.swing.JPanel {
         btnBackup = new javax.swing.JButton();
         jTextField16 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        txt_BuscaLogin2 = new javax.swing.JTextField();
+        PainelConf = new javax.swing.JPanel();
         btnAlterar = new javax.swing.JButton();
-        jLabel50 = new javax.swing.JLabel();
         txt_login2 = new javax.swing.JTextField();
         txt_nome2 = new javax.swing.JTextField();
         txt_senha2 = new javax.swing.JPasswordField();
         txt_senhaAtual2 = new javax.swing.JPasswordField();
         manterSenha3 = new javax.swing.JCheckBox();
         jLabel51 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
-        btnInserir = new javax.swing.JButton();
-        CodFuncionario = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
         jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
         txt_NovaSenha2 = new javax.swing.JPasswordField();
         jLabel56 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -93,9 +115,12 @@ public class Configuracoes extends javax.swing.JPanel {
         checkPerVenda = new javax.swing.JCheckBox();
         checkPerFinanceiro = new javax.swing.JCheckBox();
         checkPerProdutos = new javax.swing.JCheckBox();
-        jSeparator11 = new javax.swing.JSeparator();
         checkPerConfiguracoes = new javax.swing.JCheckBox();
         jSeparator12 = new javax.swing.JSeparator();
+        jLabel57 = new javax.swing.JLabel();
+        txt_BuscaLogin2 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
@@ -131,13 +156,9 @@ public class Configuracoes extends javax.swing.JPanel {
         jPanel6.add(jLabel18);
         jLabel18.setBounds(30, 470, 97, 10);
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Configurações"));
-        jPanel9.setLayout(null);
-
-        txt_BuscaLogin2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.add(txt_BuscaLogin2);
-        txt_BuscaLogin2.setBounds(20, 40, 180, 28);
+        PainelConf.setBackground(new java.awt.Color(204, 204, 204));
+        PainelConf.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        PainelConf.setLayout(null);
 
         btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         btnAlterar.setText("Salvar");
@@ -146,13 +167,8 @@ public class Configuracoes extends javax.swing.JPanel {
                 btnAlterar1ActionPerformed(evt);
             }
         });
-        jPanel9.add(btnAlterar);
-        btnAlterar.setBounds(480, 330, 100, 30);
-
-        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel50.setText("Login");
-        jPanel9.add(jLabel50);
-        jLabel50.setBounds(20, 20, 90, 20);
+        PainelConf.add(btnAlterar);
+        btnAlterar.setBounds(490, 140, 100, 30);
 
         txt_login2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_login2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,12 +184,12 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_login2txt_loginActionPerformed(evt);
             }
         });
-        jPanel9.add(txt_login2);
-        txt_login2.setBounds(20, 210, 210, 28);
+        PainelConf.add(txt_login2);
+        txt_login2.setBounds(10, 90, 210, 28);
 
         txt_nome2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.add(txt_nome2);
-        txt_nome2.setBounds(70, 160, 390, 28);
+        PainelConf.add(txt_nome2);
+        txt_nome2.setBounds(10, 40, 440, 28);
 
         txt_senha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senha2.addActionListener(new java.awt.event.ActionListener() {
@@ -181,8 +197,8 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_senha2txt_senhaActionPerformed(evt);
             }
         });
-        jPanel9.add(txt_senha2);
-        txt_senha2.setBounds(250, 210, 210, 28);
+        PainelConf.add(txt_senha2);
+        txt_senha2.setBounds(240, 90, 210, 28);
 
         txt_senhaAtual2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_senhaAtual2.addActionListener(new java.awt.event.ActionListener() {
@@ -190,49 +206,34 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_senhaAtual2txt_senhaAtualActionPerformed(evt);
             }
         });
-        jPanel9.add(txt_senhaAtual2);
-        txt_senhaAtual2.setBounds(410, 40, 180, 28);
+        PainelConf.add(txt_senhaAtual2);
+        txt_senhaAtual2.setBounds(260, 180, 180, 28);
 
         manterSenha3.setBackground(new java.awt.Color(204, 204, 204));
         manterSenha3.setSelected(true);
         manterSenha3.setText("Manter senha atual");
+        manterSenha3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                manterSenha3ItemStateChanged(evt);
+            }
+        });
+        manterSenha3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                manterSenha3StateChanged(evt);
+            }
+        });
         manterSenha3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manterSenha3manterSenha1ActionPerformed(evt);
             }
         });
-        jPanel9.add(manterSenha3);
-        manterSenha3.setBounds(20, 80, 170, 20);
+        PainelConf.add(manterSenha3);
+        manterSenha3.setBounds(260, 260, 170, 20);
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel51.setText("Nome");
-        jPanel9.add(jLabel51);
-        jLabel51.setBounds(70, 140, 100, 20);
-
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
-        btnBuscar.setText("Consultar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar1ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnBuscar);
-        btnBuscar.setBounds(210, 40, 120, 28);
-
-        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
-        btnInserir.setText("Inserir");
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserir1ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnInserir);
-        btnInserir.setBounds(480, 290, 100, 30);
-
-        CodFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        CodFuncionario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.add(CodFuncionario);
-        CodFuncionario.setBounds(20, 160, 40, 28);
+        PainelConf.add(jLabel51);
+        jLabel51.setBounds(10, 20, 100, 20);
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
         btnExcluir.setText("Excluir");
@@ -241,30 +242,18 @@ public class Configuracoes extends javax.swing.JPanel {
                 btnExcluir1ActionPerformed(evt);
             }
         });
-        jPanel9.add(btnExcluir);
-        btnExcluir.setBounds(480, 370, 100, 30);
+        PainelConf.add(btnExcluir);
+        btnExcluir.setBounds(490, 180, 100, 30);
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel52.setText("Login");
-        jPanel9.add(jLabel52);
-        jLabel52.setBounds(20, 190, 90, 20);
-        jPanel9.add(jSeparator10);
-        jSeparator10.setBounds(20, 130, 580, 10);
+        jLabel52.setText("Senha");
+        PainelConf.add(jLabel52);
+        jLabel52.setBounds(240, 70, 80, 20);
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel53.setText("Senha Atual");
-        jPanel9.add(jLabel53);
-        jLabel53.setBounds(410, 20, 140, 20);
-
-        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel54.setText("Código");
-        jPanel9.add(jLabel54);
-        jLabel54.setBounds(20, 140, 50, 20);
-
-        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel55.setText("Senha");
-        jPanel9.add(jLabel55);
-        jLabel55.setBounds(250, 190, 90, 20);
+        PainelConf.add(jLabel53);
+        jLabel53.setBounds(260, 160, 140, 20);
 
         txt_NovaSenha2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_NovaSenha2.addActionListener(new java.awt.event.ActionListener() {
@@ -272,13 +261,13 @@ public class Configuracoes extends javax.swing.JPanel {
                 txt_NovaSenha2txt_NovaSenhaActionPerformed(evt);
             }
         });
-        jPanel9.add(txt_NovaSenha2);
-        txt_NovaSenha2.setBounds(410, 90, 180, 28);
+        PainelConf.add(txt_NovaSenha2);
+        txt_NovaSenha2.setBounds(260, 230, 180, 28);
 
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel56.setText("Nova Senha");
-        jPanel9.add(jLabel56);
-        jLabel56.setBounds(410, 70, 140, 20);
+        PainelConf.add(jLabel56);
+        jLabel56.setBounds(260, 210, 140, 20);
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Permissões"));
@@ -293,7 +282,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerAgenda);
-        checkPerAgenda.setBounds(10, 60, 67, 23);
+        checkPerAgenda.setBounds(10, 50, 67, 23);
 
         checkPerProprietario.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProprietario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -315,7 +304,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerFornecedor);
-        checkPerFornecedor.setBounds(140, 20, 87, 23);
+        checkPerFornecedor.setBounds(10, 110, 87, 23);
 
         checkPerServico.setBackground(new java.awt.Color(204, 204, 204));
         checkPerServico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -326,7 +315,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerServico);
-        checkPerServico.setBounds(10, 100, 65, 23);
+        checkPerServico.setBounds(10, 80, 65, 23);
 
         checkPerEstoque.setBackground(new java.awt.Color(204, 204, 204));
         checkPerEstoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -337,7 +326,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerEstoque);
-        checkPerEstoque.setBounds(140, 60, 71, 23);
+        checkPerEstoque.setBounds(10, 140, 71, 23);
 
         checkPerVenda.setBackground(new java.awt.Color(204, 204, 204));
         checkPerVenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -348,7 +337,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerVenda);
-        checkPerVenda.setBounds(140, 100, 65, 23);
+        checkPerVenda.setBounds(110, 20, 65, 23);
 
         checkPerFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
         checkPerFinanceiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -359,7 +348,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerFinanceiro);
-        checkPerFinanceiro.setBounds(260, 20, 79, 23);
+        checkPerFinanceiro.setBounds(110, 50, 79, 23);
 
         checkPerProdutos.setBackground(new java.awt.Color(204, 204, 204));
         checkPerProdutos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -370,11 +359,7 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerProdutos);
-        checkPerProdutos.setBounds(260, 60, 75, 20);
-
-        jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel8.add(jSeparator11);
-        jSeparator11.setBounds(240, 30, 2, 102);
+        checkPerProdutos.setBounds(110, 80, 75, 20);
 
         checkPerConfiguracoes.setBackground(new java.awt.Color(204, 204, 204));
         checkPerConfiguracoes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -385,17 +370,41 @@ public class Configuracoes extends javax.swing.JPanel {
             }
         });
         jPanel8.add(checkPerConfiguracoes);
-        checkPerConfiguracoes.setBounds(260, 100, 110, 23);
+        checkPerConfiguracoes.setBounds(110, 110, 110, 23);
 
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel8.add(jSeparator12);
-        jSeparator12.setBounds(120, 30, 10, 102);
+        jSeparator12.setBounds(100, 30, 10, 102);
 
-        jPanel9.add(jPanel8);
-        jPanel8.setBounds(20, 270, 410, 150);
+        PainelConf.add(jPanel8);
+        jPanel8.setBounds(10, 140, 230, 170);
 
-        jPanel6.add(jPanel9);
-        jPanel9.setBounds(10, 20, 620, 430);
+        jLabel57.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel57.setText("Login");
+        PainelConf.add(jLabel57);
+        jLabel57.setBounds(10, 70, 90, 20);
+
+        jPanel6.add(PainelConf);
+        PainelConf.setBounds(10, 100, 620, 350);
+
+        txt_BuscaLogin2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel6.add(txt_BuscaLogin2);
+        txt_BuscaLogin2.setBounds(30, 50, 180, 28);
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel50.setText("Login");
+        jPanel6.add(jLabel50);
+        jLabel50.setBounds(30, 30, 90, 20);
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
+        btnBuscar.setText("Consultar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnBuscar);
+        btnBuscar.setBounds(220, 50, 120, 28);
 
         jTabbedPane1.addTab("Configurações", jPanel6);
 
@@ -430,94 +439,167 @@ public class Configuracoes extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField16ActionPerformed
 
     private void btnAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterar1ActionPerformed
-        flag = 0;
-        int codigo;
-
-        String nome, login, senhaNova, senhaAtual, permissao = "", senha;
-        codigo = Integer.parseInt(txt_login2.getText());
-        nome = txt_nome2.getText();
-        login = txt_login2.getText();
-        senhaNova = txt_NovaSenha2.getText();
-
-        if (manterSenha3.isSelected()) {
-            senha = sen;
-        } else {
-
-            senha = senhaNova;
-        }
-        senhaAtual = txt_senhaAtual2.getText();
-
-        if (checkPerProprietario.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAgenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerServico.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerEstoque.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerVenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerFinanceiro.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerProdutos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerConfiguracoes.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (valida()) {
-
-            if (Integer.parseInt(ba.abreUsuarios()) + 1 != codigo) {
-
-                if (ba.verificaSenha(codigo, senhaAtual) || manterSenha3.isSelected()) {
-                    ba.atualizaUsuario(codigo, nome, login, senha, permissao);
-                    txt_nome2.setText("");
-                    txt_senha2.setText("");
-                    txt_login2.setText("");
-
-                    checkPerProprietario.setSelected(false);
-                    checkPerAgenda.setSelected(false);
-                    checkPerServico.setSelected(false);
-                    checkPerEstoque.setSelected(false);
-                    checkPerVenda.setSelected(false);
-                    checkPerFinanceiro.setSelected(false);
-                    checkPerProdutos.setSelected(false);
-                    checkPerConfiguracoes.setSelected(false);
+        if (flag == 0) {//alterar
+            ResultSet rs1 = ba.buscaUsuario(txt_login2.getText());
+            try {
+                if (!rs1.getString("login").equals(txt_login2.getText()) && rs1.getString("login") != null) {
+                    JOptionPane.showMessageDialog(null, "Este login já está sendo usado, Por favor, digite outro login!");
+                    txt_login2.requestFocus();
+                    txt_BuscaLogin2.setText("");
                 } else {
-                    JOptionPane.showMessageDialog(null, "senha Atual incorreta para o login " + login);
+                    String nome, login, senhaNova, senhaAtual, permissao = "", senha;
+                    nome = txt_nome2.getText();
+                    login = txt_login2.getText();
+                    senhaNova = txt_NovaSenha2.getText();
+                    txt_senha2.setEditable(false);
+
+                    if (manterSenha3.isSelected()) {
+                        senha = sen;
+                    } else {
+                        senha = senhaNova;
+                    }
+                    senhaAtual = txt_senhaAtual2.getText();
+
+                    if (checkPerProprietario.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerAgenda.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerServico.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerFornecedor.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerEstoque.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerVenda.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerFinanceiro.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerProdutos.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+
+                    if (checkPerConfiguracoes.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+
+                    if (ba.verificaSenha(codigoCons, senhaAtual) || manterSenha3.isSelected()) {
+                        if (ba.atualizaUsuario(codigoCons, nome, login, senha, permissao)) {
+                            codigoCons = 0;
+                            limpaTela();
+                            PainelConf.setVisible(false);
+                            JOptionPane.showMessageDialog(null, "O Usuario foi atualizado corretamente!");
+
+                        } else {
+                            JOptionPane.showMessageDialog(null, "O Usuario não foi atualizado corretamente!");
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "senha Atual incorreta para o login: " + login);
+                    }
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "O código do usuario não existe,"
-                        + " para alterar um usuario faça uma busca.");
+            } catch (SQLException ex) {
+                Logger.getLogger(Configuracoes.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (flag == 1) {//insercao
+            if (validaCampos(txt_nome2, txt_login2, txt_senha2, manterSenha3, txt_NovaSenha2, txt_senhaAtual2)) {
+                if (ba.buscaUsuario(txt_login2.getText()) != null) {
+                    JOptionPane.showMessageDialog(null, "Este login já está sendo usado, Por favor, digite outro login!");
+                    txt_login2.requestFocus();
+                } else {
+                    String nome, login, senha, permissao = "";
+                    nome = txt_nome2.getText();
+                    login = txt_login2.getText();
+                    senha = txt_senha2.getText();
+                    String logado = "n";
+                    txt_senha2.setEditable(true);
+                    if (checkPerProprietario.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+
+                    if (checkPerAgenda.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerServico.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerFornecedor.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerEstoque.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerVenda.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerFinanceiro.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (checkPerProdutos.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+
+                    if (checkPerConfiguracoes.isSelected()) {
+                        permissao += "1";
+                    } else {
+                        permissao += "0";
+                    }
+                    if (ba.gravaUsuario(nome, login, senha, permissao, logado)) {
+                        PainelConf.setVisible(false);
+                        limpaTela();
+                        codigoCons = 0;
+                    }
+
+                }
+
+            } else {//se estiver os campos vazios
+                JOptionPane.showMessageDialog(null, "Por favor preencha todos os campos.");
             }
         }
     }//GEN-LAST:event_btnAlterar1ActionPerformed
 
     private void txt_login2txt_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_login2txt_loginMouseClicked
-        int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
-        CodFuncionario.setText(cod + "");
+
     }//GEN-LAST:event_txt_login2txt_loginMouseClicked
 
     private void txt_login2txt_loginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_login2txt_loginMouseReleased
@@ -536,164 +618,36 @@ public class Configuracoes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_senhaAtual2txt_senhaAtualActionPerformed
 
+    private void manterSenha3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_manterSenha3ItemStateChanged
+
+    }//GEN-LAST:event_manterSenha3ItemStateChanged
+
+    private void manterSenha3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_manterSenha3StateChanged
+       if (manterSenha3.isSelected()) {
+            txt_senhaAtual2.setEnabled(false);
+            txt_NovaSenha2.setEnabled(false);
+        } else {
+            txt_senhaAtual2.setEnabled(true);
+            txt_NovaSenha2.setEnabled(true);
+        }
+    }//GEN-LAST:event_manterSenha3StateChanged
+
     private void manterSenha3manterSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manterSenha3manterSenha1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_manterSenha3manterSenha1ActionPerformed
 
-    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
-        ResultSet rs;
-        String login = txt_BuscaLogin2.getText();
-        String permissao;
-
-        rs = ba.buscaUsuario(login);
-        try {
-            if (ba.buscaUsuario(login) != null) {
-                txt_nome2.setText(rs.getString("nome"));
-                CodFuncionario.setText(rs.getString("codigo"));
-                sen = rs.getString("senha");
-                permissao = rs.getString("permissao");
-
-                if (checkPerProprietario.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerAgenda.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerServico.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerEstoque.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerVenda.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerFinanceiro.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerProdutos.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                if (checkPerConfiguracoes.isSelected()) {
-                    permissao += "1";
-                } else {
-                    permissao += "0";
-                }
-                txt_login2.setText(txt_BuscaLogin2.getText());
-
-            } else {
-                JOptionPane.showMessageDialog(null, "não encontrado");
-                txt_nome2.setText("");
-                txt_login2.setText("");
-            }
-        } catch (SQLException ex) {
-        }
-    }//GEN-LAST:event_btnBuscar1ActionPerformed
-
-    private void btnInserir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserir1ActionPerformed
-        flag = 1;
-        int codigo;
-        String nome, login, senha, permissao = "";
-        codigo = Integer.parseInt(ba.abreUsuarios()) + 1;
-        nome = txt_nome2.getText();
-        login = txt_login2.getText();
-        senha = txt_senha2.getText();
-        String logado = "n";
-        if (checkPerProprietario.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerAgenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerServico.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerEstoque.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerVenda.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerFinanceiro.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerProdutos.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (checkPerConfiguracoes.isSelected()) {
-            permissao += "1";
-        } else {
-            permissao += "0";
-        }
-        if (valida()) {
-
-            if (ba.gravaUsuario(codigo, nome, login, senha, permissao, logado)) {
-
-                txt_nome2.setText("");
-                txt_senha2.setText("");
-                txt_login2.setText("");
-
-                checkPerProprietario.setSelected(false);
-
-                checkPerAgenda.setSelected(false);
-                checkPerServico.setSelected(false);
-                checkPerEstoque.setSelected(false);
-                checkPerVenda.setSelected(false);
-                checkPerFinanceiro.setSelected(false);
-                checkPerProdutos.setSelected(false);
-
-                checkPerConfiguracoes.setSelected(false);
-                int cod = Integer.parseInt(ba.abreUsuarios()) + 1;
-                CodFuncionario.setText(cod + "");
-            }
-        }
-    }//GEN-LAST:event_btnInserir1ActionPerformed
-
     private void btnExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluir1ActionPerformed
-        flag = 0;
-        int codigo = Integer.parseInt(CodFuncionario.getText());
-        if (valida()) {
+        if (flag == 1) {
+            JOptionPane.showMessageDialog(null, "Pesquise um Usuario para excluir");
 
-            if (Integer.parseInt(ba.abreUsuarios()) + 1 != codigo) {
+        } else if (flag == 0) {
 
-                if (ba.excluiUsuario(codigo)) {
-                    JOptionPane.showMessageDialog(null, "Excluido com sucesso");
-                    txt_nome2.setText("");
-                    txt_login2.setText("");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Não encontrado");
-                }
-
+            if (ba.excluiUsuario(codigoCons)) {
+                txt_BuscaLogin2.setText("");
+                JOptionPane.showMessageDialog(null, "Excluido com sucesso");
+                limpaTela();
             } else {
-                JOptionPane.showMessageDialog(null, "Codigo do usuario incorreto. Para excluir busque o usuário primeiro");
+                JOptionPane.showMessageDialog(null, "Não encontrado");
             }
 
         }
@@ -710,6 +664,10 @@ public class Configuracoes extends javax.swing.JPanel {
     private void checkPerProprietariojCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerProprietariojCheckBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerProprietariojCheckBox3ActionPerformed
+
+    private void checkPerFornecedorjCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerFornecedorjCheckBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPerFornecedorjCheckBox8ActionPerformed
 
     private void checkPerServicojCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerServicojCheckBox9ActionPerformed
         // TODO add your handling code here:
@@ -731,21 +689,115 @@ public class Configuracoes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerProdutosjCheckBox13ActionPerformed
 
-    private void checkPerFornecedorjCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerFornecedorjCheckBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkPerFornecedorjCheckBox8ActionPerformed
-
     private void checkPerConfiguracoesjCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPerConfiguracoesjCheckBox16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPerConfiguracoesjCheckBox16ActionPerformed
 
+    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
+        if (txt_BuscaLogin2 == null || txt_BuscaLogin2.getText().equals("") || txt_BuscaLogin2.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, digite um login para efetuar a busca.");
+        } else {
+            ResultSet rs;
+            String login = txt_BuscaLogin2.getText();
+            String permissao;
+
+            rs = ba.buscaUsuario(login);
+            try {
+                if (ba.buscaUsuario(login) != null) {
+                    PainelConf.setVisible(true);
+                    manterSenha3.setEnabled(true);
+                    txt_senhaAtual2.setEnabled(false);
+                    txt_NovaSenha2.setEnabled(false);
+                    txt_nome2.setText(rs.getString("nome"));
+                    codigoCons = rs.getInt("codigo");
+                    sen = rs.getString("senha");
+                    permissao = rs.getString("permissao");
+                    txt_login2.setText(txt_BuscaLogin2.getText());
+
+                    char a = '1';
+
+                    if (permissao.charAt(0) == a) {
+                        checkPerProprietario.setSelected(true);
+                    } else {
+                        checkPerProprietario.setSelected(false);
+                    }
+
+                    if (permissao.charAt(1) == a) {
+                        checkPerAgenda.setSelected(true);
+                    } else {
+                        checkPerAgenda.setSelected(false);
+                    }
+
+                    if (permissao.charAt(2) == a) {
+                        checkPerServico.setSelected(true);
+                    } else {
+                        checkPerServico.setSelected(false);
+                    }
+
+                    if (permissao.charAt(3) == a) {
+                        checkPerFornecedor.setSelected(true);
+                    } else {
+                        checkPerFornecedor.setSelected(false);
+                    }
+
+                    if (permissao.charAt(4) == a) {
+                        checkPerEstoque.setSelected(true);
+                    } else {
+                        checkPerEstoque.setSelected(false);
+                    }
+
+                    if (permissao.charAt(5) == a) {
+                        checkPerVenda.setSelected(true);
+                    } else {
+                        checkPerVenda.setSelected(false);
+                    }
+                    if (permissao.charAt(6) == a) {
+                        checkPerFinanceiro.setSelected(true);
+                    } else {
+                        checkPerFinanceiro.setSelected(false);
+                    }
+                    if (permissao.charAt(7) == a) {
+                        checkPerProdutos.setSelected(true);
+                    } else {
+                        checkPerProdutos.setSelected(false);
+                    }
+                    if (permissao.charAt(8) == a) {
+                        checkPerConfiguracoes.setSelected(true);
+                    } else {
+                        checkPerConfiguracoes.setSelected(false);
+                    }
+                } else {
+                    limpaTela();
+                    Object[] options = {"Sim", "Não"};
+                    int opcao = JOptionPane.showOptionDialog(null, "O Usuario não foi encontrado, Deseja inserir um novo Usuario?", "Não Encontrado",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                    if (opcao == 0 || opcao == -1) {
+                        limpaTela();
+                        PainelConf.setVisible(true);
+                        flag = 1;
+                        codigoCons = 0;
+                        txt_login2.setText(txt_BuscaLogin2.getText());
+                        txt_BuscaLogin2.setText("");
+                        manterSenha3.setEnabled(false);
+                    } else {
+                        PainelConf.setVisible(false);
+                        limpaTela();
+                        flag = 0;
+                    }
+
+                }
+
+            } catch (SQLException ex) {
+            }
+        }
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CodFuncionario;
+    private javax.swing.JPanel PainelConf;
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnBackup;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnInserir;
     private javax.swing.JCheckBox checkPerAgenda;
     private javax.swing.JCheckBox checkPerConfiguracoes;
     private javax.swing.JCheckBox checkPerEstoque;
@@ -760,15 +812,11 @@ public class Configuracoes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField16;
