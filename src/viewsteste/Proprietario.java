@@ -1691,7 +1691,7 @@ public class Proprietario extends javax.swing.JPanel {
     private void txtEspecieItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtEspecieItemStateChanged
         int id = txtEspecie.getSelectedIndex();
         int codES = listaEspecie.get(id).getCodEspecie();
-        //CES = codES;
+        CES = codES;
     }//GEN-LAST:event_txtEspecieItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -189,9 +189,7 @@ public class Banco {
     public boolean login(String login, String senha) {
         String sql;
         conecta();
-
         try {
-
             /*Retirado este trecho de codigo para não deslogar quem estiver logado no sistema em REDE.*/
             /*sql = "UPDATE usuario SET logado='n' WHERE login='" + login + "'";
              System.out.println(sql);
@@ -220,7 +218,6 @@ public class Banco {
                 return false;
             } else {
                 System.out.println("Usuario já está logado na rede!");
-                JOptionPane.showMessageDialog(null, "O Usuario já está logado na rede em outra maquina!");
                 return false;
             }
 

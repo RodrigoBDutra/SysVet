@@ -1,9 +1,7 @@
 package viewsteste;
-
 import classes.*;
 import dao.Banco;
 import java.awt.CardLayout;
-
 import javax.swing.*;
 
 public class Home extends javax.swing.JFrame {
@@ -12,11 +10,18 @@ public class Home extends javax.swing.JFrame {
     private CardLayout card;
 
     public Home() {
+
         initComponents();
         lblFulano.setText("Bem vindo " + Transferencia.logado.getNome());
         card = new CardLayout();
         pnConteudo.setLayout(card);
         pnConteudo.add(new Inicio());
+
+        /*if (Transferencia.logado.getCodigo() == 1) {
+            btnConfiguracoes.setVisible(true);
+        } else {
+            btnConfiguracoes.setVisible(false);
+        }*/
         char a = '1';
                     if (Transferencia.logado.getPermissao().charAt(0) == a) {
                         btnProprietario.setEnabled(true);
@@ -68,6 +73,7 @@ public class Home extends javax.swing.JFrame {
                     } else {
                         btnConfiguracoes.setVisible(false);
                     }
+
     }
 
     boolean bInicio = true;
@@ -110,7 +116,6 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
-        setFocusableWindowState(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -304,6 +309,7 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        // TODO add your handling code here:
         Inicio i = new Inicio();
         i.setVisible(true);
         if (bInicio) {
