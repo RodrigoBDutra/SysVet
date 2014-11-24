@@ -220,6 +220,7 @@ public class Banco {
                 return false;
             } else {
                 System.out.println("Usuario já está logado na rede!");
+                JOptionPane.showMessageDialog(null, "O Usuario já está logado na rede em outra maquina!");
                 return false;
             }
 

@@ -122,6 +122,8 @@ public class Configuracoes extends javax.swing.JPanel {
         jLabel50 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(null);
 
