@@ -440,13 +440,10 @@ public class Configuracoes extends javax.swing.JPanel {
 
     private void btnAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterar1ActionPerformed
         if (flag == 0) {//alterar
-//            ResultSet rs1 = ba.buscaUsuario(txt_login2.getText());
             if (!txt_login2.getText().equals(loginAtual) &&  !ba.valida(txt_login2.getText())) {
-                //if (!rs1.getString("login").equals(txt_login2.getText()) || rs1.getString("login") == null) {
                 JOptionPane.showMessageDialog(null, "Este login já está sendo usado, Por favor, digite outro login!");
                 txt_login2.requestFocus();
                 txt_BuscaLogin2.setText("");
-                // }
             } else {
                 String nome, login, senhaNova, senhaAtual, permissao = "", senha;
                 nome = txt_nome2.getText();
@@ -586,6 +583,7 @@ public class Configuracoes extends javax.swing.JPanel {
                         PainelConf.setVisible(false);
                         limpaTela();
                         codigoCons = 0;
+                        flag = 0;
                     }
 
                 }
@@ -778,6 +776,7 @@ public class Configuracoes extends javax.swing.JPanel {
                         codigoCons = 0;
                         txt_login2.setText(txt_BuscaLogin2.getText());
                         txt_BuscaLogin2.setText("");
+                        txt_senha2.setEnabled(true);
                         manterSenha3.setEnabled(false);
                         loginAtual = "";
                     } else {
