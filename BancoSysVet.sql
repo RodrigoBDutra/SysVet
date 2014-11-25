@@ -1,6 +1,6 @@
 /*
 SQLyog Community v12.01 (64 bit)
-MySQL - 5.6.14 : Database - bancosysvet
+MySQL - 5.6.21 : Database - bancosysvet
 *********************************************************************
 */
 
@@ -30,17 +30,17 @@ CREATE TABLE `animal` (
   `altura` float DEFAULT NULL,
   `porte` varchar(15) DEFAULT NULL,
   `chip` varchar(1) DEFAULT NULL,
-  `numChip` int(12) DEFAULT NULL,
+  `numChip` varchar(12) DEFAULT NULL,
   `obito` tinyint(1) DEFAULT NULL,
   `observacao` varchar(1000) DEFAULT NULL,
   `codProntuario` int(6) DEFAULT NULL,
-  `CodTipoAnimal` int(6) DEFAULT NULL,
+  `CodRaca` int(6) DEFAULT NULL,
   PRIMARY KEY (`codAnimal`),
   KEY `FK_prontuario` (`codProntuario`),
-  KEY `FK_TipoAnimal` (`CodTipoAnimal`),
-  CONSTRAINT `FK_TipoAnimal` FOREIGN KEY (`CodTipoAnimal`) REFERENCES `tipoanimal` (`codTipoAnimal`),
+  KEY `FK_codRaca` (`CodRaca`),
+  CONSTRAINT `FK_codRaca` FOREIGN KEY (`CodRaca`) REFERENCES `raca` (`codRaca`),
   CONSTRAINT `FK_prontuario` FOREIGN KEY (`codProntuario`) REFERENCES `prontuario` (`codProntuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `animal` */
 
@@ -77,7 +77,7 @@ CREATE TABLE `dadospessoais` (
 
 /*Data for the table `dadospessoais` */
 
-insert  into `dadospessoais`(`codDadosPessoais`,`nome`,`dataNascimento`,`cpf`,`rg`) values (45,'Rodrigo','20/05/1987','008.692.379-00','4187989-9');
+insert  into `dadospessoais`(`codDadosPessoais`,`nome`,`dataNascimento`,`cpf`,`rg`) values (45,'Rodrigo Bastos Dutra','20/05/1987','008.692.379-00','4187989-9');
 
 /*Table structure for table `endereco` */
 
@@ -106,13 +106,13 @@ DROP TABLE IF EXISTS `especie`;
 CREATE TABLE `especie` (
   `codEspecie` int(6) NOT NULL AUTO_INCREMENT,
   `especie` varchar(50) DEFAULT NULL,
-  `CodRaca` int(6) DEFAULT NULL,
-  PRIMARY KEY (`codEspecie`),
-  KEY `FK_Raca` (`CodRaca`),
-  CONSTRAINT `FK_Raca` FOREIGN KEY (`CodRaca`) REFERENCES `raca` (`codRaca`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `codTipoAnimal` int(6) DEFAULT NULL,
+  PRIMARY KEY (`codEspecie`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `especie` */
+
+insert  into `especie`(`codEspecie`,`especie`,`codTipoAnimal`) values (1,'Cachorro',1),(2,'Gato',1),(3,'Papagaio',4),(4,'Aguia',4),(5,'Tubarão',5),(6,'Peixe-Palhaço',5),(7,'Iguana',2),(8,'Lagarto',2);
 
 /*Table structure for table `mucosa` */
 
@@ -185,8 +185,11 @@ DROP TABLE IF EXISTS `raca`;
 CREATE TABLE `raca` (
   `codRaca` int(6) NOT NULL AUTO_INCREMENT,
   `nomeRaca` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`codRaca`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `codEspecie` int(6) DEFAULT NULL,
+  PRIMARY KEY (`codRaca`),
+  KEY `FK_codEspecie` (`codEspecie`),
+  CONSTRAINT `FK_codEspecie` FOREIGN KEY (`codEspecie`) REFERENCES `especie` (`codEspecie`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `raca` */
 
@@ -197,13 +200,12 @@ DROP TABLE IF EXISTS `tipoanimal`;
 CREATE TABLE `tipoanimal` (
   `codTipoAnimal` int(6) NOT NULL AUTO_INCREMENT,
   `tipoAnimal` varchar(50) DEFAULT NULL,
-  `CodEspecie` int(6) DEFAULT NULL,
-  PRIMARY KEY (`codTipoAnimal`),
-  KEY `FK_Especie` (`CodEspecie`),
-  CONSTRAINT `FK_Especie` FOREIGN KEY (`CodEspecie`) REFERENCES `especie` (`codEspecie`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`codTipoAnimal`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tipoanimal` */
+
+insert  into `tipoanimal`(`codTipoAnimal`,`tipoAnimal`) values (1,'Mamífero'),(2,'Répteis'),(3,'Anfíbios'),(4,'Aves'),(5,'Peixes');
 
 /*Table structure for table `usuario` */
 
@@ -221,7 +223,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Sysvet','sysvet','sysvet','11111111111','n'),(2,'Pavao','pavaozinho','pavao','11111111100','n');
+insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Sysvet','sysvet','sysvet','111111111','n'),(2,'Pavao','pavao','pavao','111111110','n');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

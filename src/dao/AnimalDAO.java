@@ -17,8 +17,8 @@ public class AnimalDAO extends Banco {
         try {
             conecta();
             Statement stmt = con.createStatement();
-            String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, peso, altura, porte, chip, numChip, obito, observacao, CodRaca)"
-                    + " VALUES ('" + cli.getNomeAnimal() + "','" + cli.getSexo() + "','" + cli.getCor() + "','" + cli.getNascimento() + "'," + cli.getPeso() + ","
+            String sql = "INSERT INTO animal(nome, sexo, cor, dataNascimento, idade, peso, altura, porte, chip, numChip, obito, observacao, CodRaca)"
+                    + " VALUES ('" + cli.getNomeAnimal() + "','" + cli.getSexo() + "','" + cli.getCor() + "','" + cli.getNascimento() + "'," + cli.getIdade() + "," + cli.getPeso() + ","
                     + cli.getAltura() + ",'" + cli.getPorte() + "','" + cli.getChip() + "','" + cli.getNumeroChip() + "'," + cli.isObito() + ",'"
                     + cli.getObservacao() + "'," + cli.getCodRaca() + ")";
             stmt.executeUpdate(sql);

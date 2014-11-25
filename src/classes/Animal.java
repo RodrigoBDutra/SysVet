@@ -7,7 +7,7 @@ public class Animal {
     private int codAnimal;
     private String nomeAnimal;
     private String nascimento;
-    private int idade;
+    private float idade;
     private String sexo;
     private float peso;
     private float altura;
@@ -43,7 +43,7 @@ public class Animal {
     }
 
     public Animal(String nomeAnimal, String nascimento,
-            int idade, String sexo, float peso, float altura,
+            float idade, String sexo, float peso, float altura,
             String porte, String cor, String chip, String numeroChip,
             String raca, boolean obito,
             String observacao, int codRaca, int coProntuario) {
@@ -88,11 +88,11 @@ public class Animal {
         this.nascimento = nascimento;
     }
 
-    public int getIdade() {
+    public float getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(float idade) {
         this.idade = idade;
     }
 

@@ -27,7 +27,7 @@ public class TipoAnimal {
 
     }
 
-    public TipoAnimal(int codTipoAnimal, String tipoAnimal, int codRaca) {
+    public TipoAnimal(int codTipoAnimal, String tipoAnimal) {
         this.codTipoAnimal = codTipoAnimal;
         this.tipoAnimal = tipoAnimal;
     }

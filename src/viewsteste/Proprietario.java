@@ -1619,7 +1619,7 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRGActionPerformed
 
-    int CES = 0;
+    int id = 0;
     
     public Animal MontarAnimal() {
         Animal ani = new Animal();
@@ -1629,6 +1629,7 @@ public class Proprietario extends javax.swing.JPanel {
         java.util.Date pega = txtNascimentoCli.getDate();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         ani.setNascimento(formato.format(pega));
+        ani.setIdade(Float.parseFloat(txtIdadeAnimal.getText()));
         ani.setPeso(Float.parseFloat(txtPesoAnimal.getText()));
         ani.setAltura(Float.parseFloat(txtAlturaAnimal.getText()));
         ani.setPorte(jcbPorteAnimal.getSelectedItem().toString());
@@ -1636,7 +1637,7 @@ public class Proprietario extends javax.swing.JPanel {
         if (ValidaChip.equals("S")) {
             ani.setNumeroChip(txtNumChip.getText());
         } else {
-            ani.setNumeroChip(" ");
+            ani.setNumeroChip("");
         }
         ani.setObito(ValidaObito);
         ani.setObservacao(txtObservacao.getText());
@@ -1650,7 +1651,7 @@ public class Proprietario extends javax.swing.JPanel {
         Raca rc = new Raca();
         rc.setCodRaca(0);
         rc.setNomeRaca(txtRaca.getText());
-        rc.setCodEspecie(CES);
+        rc.setCodEspecie(listaEspecie.get(id).getCodEspecie());
 
         return rc;
     }
@@ -1658,15 +1659,11 @@ public class Proprietario extends javax.swing.JPanel {
         Raca rac = MontarRaca();
         Animal ani = MontarAnimal();
 
-        String aniA;
-        int respA;
-
         AnimalDAO aniDao = new AnimalDAO();
         RacaDAO racDao = new RacaDAO();
-        respA = racDao.incluirRaca(rac);
-
-        ani.setCodRaca(respA);
-        aniA = aniDao.incluirAnimal(ani);
+        
+        ani.setCodRaca(racDao.incluirRaca(rac));
+        String aniA = aniDao.incluirAnimal(ani);
     }//GEN-LAST:event_txtSalvarAnimalActionPerformed
 
     boolean ValidaObito = false;
@@ -1689,9 +1686,8 @@ public class Proprietario extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTipoAnimalItemStateChanged
     
     private void txtEspecieItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtEspecieItemStateChanged
-        int id = txtEspecie.getSelectedIndex();
-        int codES = listaEspecie.get(id).getCodEspecie();
-        CES = codES;
+        id = txtEspecie.getSelectedIndex();
+        
     }//GEN-LAST:event_txtEspecieItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
