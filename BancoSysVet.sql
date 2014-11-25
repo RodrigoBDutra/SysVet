@@ -26,6 +26,7 @@ CREATE TABLE `animal` (
   `sexo` varchar(1) DEFAULT NULL,
   `cor` varchar(15) DEFAULT NULL,
   `dataNascimento` varchar(10) DEFAULT NULL,
+  `idade` float DEFAULT NULL,
   `peso` float DEFAULT NULL,
   `altura` float DEFAULT NULL,
   `porte` varchar(15) DEFAULT NULL,
@@ -40,9 +41,11 @@ CREATE TABLE `animal` (
   KEY `FK_codRaca` (`CodRaca`),
   CONSTRAINT `FK_codRaca` FOREIGN KEY (`CodRaca`) REFERENCES `raca` (`codRaca`),
   CONSTRAINT `FK_prontuario` FOREIGN KEY (`codProntuario`) REFERENCES `prontuario` (`codProntuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `animal` */
+
+insert  into `animal`(`codAnimal`,`nome`,`sexo`,`cor`,`dataNascimento`,`idade`,`peso`,`altura`,`porte`,`chip`,`numChip`,`obito`,`observacao`,`codProntuario`,`CodRaca`) values (6,'mngfde','F','daedbs','01/11/2014',12,12,12,'Pequeno','N','',0,'nenhuma',NULL,12);
 
 /*Table structure for table `contatos` */
 
@@ -189,9 +192,11 @@ CREATE TABLE `raca` (
   PRIMARY KEY (`codRaca`),
   KEY `FK_codEspecie` (`codEspecie`),
   CONSTRAINT `FK_codEspecie` FOREIGN KEY (`codEspecie`) REFERENCES `especie` (`codEspecie`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `raca` */
+
+insert  into `raca`(`codRaca`,`nomeRaca`,`codEspecie`) values (11,'brfrarfa',1),(12,'grwgsdds',1);
 
 /*Table structure for table `tipoanimal` */
 
@@ -223,7 +228,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Sysvet','sysvet','sysvet','111111111','n'),(2,'Pavao','pavao','pavao','111111110','n');
+insert  into `usuario`(`codigo`,`nome`,`login`,`senha`,`permissao`,`logado`) values (1,'Sysvet','sysvet','sysvet','111111111','n'),(2,'Pavao','pavao','pavao','111011110','n');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

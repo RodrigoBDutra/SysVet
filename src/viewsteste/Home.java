@@ -8,7 +8,7 @@ public class Home extends javax.swing.JFrame {
 
     Banco ba = new Banco();
     private CardLayout card;
-
+    
     public Home() {
 
         initComponents();
@@ -16,6 +16,8 @@ public class Home extends javax.swing.JFrame {
         card = new CardLayout();
         pnConteudo.setLayout(card);
         pnConteudo.add(new Inicio());
+        setFocusableWindowState(true);
+        
 
         /*if (Transferencia.logado.getCodigo() == 1) {
             btnConfiguracoes.setVisible(true);
@@ -116,6 +118,7 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        setFocusableWindowState(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -285,6 +288,7 @@ public class Home extends javax.swing.JFrame {
         pnConteudo.setBounds(20, 40, 660, 540);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
+        jLabel2.setDoubleBuffered(true);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 960, 600);
 
