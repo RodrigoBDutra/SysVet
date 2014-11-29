@@ -194,13 +194,13 @@ public class Servico extends javax.swing.JPanel {
         jpServicos.add(jLabel12);
         jLabel12.setBounds(16, 319, 62, 15);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Tipo");
 
-        jCheckBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox1.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox1.setText("Consulta");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,22 +208,22 @@ public class Servico extends javax.swing.JPanel {
             }
         });
 
-        jCheckBox2.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox2.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox2.setText("Exame");
 
-        jCheckBox3.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox3.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox3.setText("Cirurgia");
 
-        jCheckBox4.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox4.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox4.setText("Inserção de Chip");
 
-        jCheckBox5.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox5.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox5.setText("Limpeza");
 
-        jCheckBox6.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox6.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox6.setText("Vacina");
 
-        jCheckBox7.setBackground(new java.awt.Color(204, 204, 204));
+        jCheckBox7.setBackground(new java.awt.Color(153, 153, 153));
         jCheckBox7.setText("Medicamento");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -350,6 +350,8 @@ public class Servico extends javax.swing.JPanel {
 
         jpServicos.add(jScrollPane2);
         jScrollPane2.setBounds(17, 222, 580, 91);
+
+        jDateChooser1.setBackground(new java.awt.Color(153, 153, 153));
         jpServicos.add(jDateChooser1);
         jDateChooser1.setBounds(20, 40, 160, 28);
 
