@@ -17,6 +17,7 @@ public class Animal {
     private String numeroChip;
     private int codRaca;
     private int codProntuario;
+    private int codProprietario;
     private boolean obito;
     private String observacao;
     private Especie especie;
@@ -39,14 +40,14 @@ public class Animal {
         this.observacao = "";
         this.codRaca = 0;
         this.codProntuario = 0;
-
+        this.codProprietario = 0;
     }
 
     public Animal(String nomeAnimal, String nascimento,
             float idade, String sexo, float peso, float altura,
             String porte, String cor, String chip, String numeroChip,
             String raca, boolean obito,
-            String observacao, int codRaca, int coProntuario) {
+            String observacao, int codRaca, int codProntuario, int codProprietario) {
 
         this.nomeAnimal = nomeAnimal;
         this.nascimento = nascimento;
@@ -62,6 +63,7 @@ public class Animal {
         this.observacao = observacao;
         this.codRaca = codRaca;
         this.codProntuario = codProntuario;
+        this.codProprietario = codProprietario;
     }
 
     public int getCodAnimal() {
@@ -206,6 +208,14 @@ public class Animal {
 
     public void setTipoanimal(TipoAnimal tipoanimal) {
         this.tipoanimal = tipoanimal;
+    }
+
+    public int getCodProprietario() {
+        return codProprietario;
+    }
+
+    public void setCodProprietario(int codProprietario) {
+        this.codProprietario = codProprietario;
     }
 
 }

@@ -16,9 +16,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class Proprietario extends javax.swing.JPanel {
 
-    
     public ArrayList<TipoAnimal> listatipo;
     public ArrayList<Especie> listaEspecie;
+
     /**
      * Creates new form Proprietario
      */
@@ -37,13 +37,18 @@ public class Proprietario extends javax.swing.JPanel {
         txtCidade.setDocument(new TextLimitado(35));
         txtEstado.setDocument(new TextLimitado(2));
         txtObservacao.setDocument(new TextLimitado(60));
-        
+
         listatipo = new TipoAnimalDAO().consultaTipo();
-        for(int i = 0; i < listatipo.size(); i++){
+        for (int i = 0; i < listatipo.size(); i++) {
             txtTipoAnimal.addItem(listatipo.get(i).getTipoAnimal());
         }
-    }
 
+        //animal/cliente
+        ValidaChip = "N";
+        txtNumChip.setEnabled(false);
+
+    }
+    String ValidaChip = "";
     boolean verificaConsulta = true;
 
     /*private void CarregaDados() {
@@ -80,7 +85,6 @@ public class Proprietario extends javax.swing.JPanel {
          prop.setEndereco(null);
          prop.setCliente(null);*/
         return prop;
-
     }
 
     public Contato montarContato() {
@@ -117,6 +121,29 @@ public class Proprietario extends javax.swing.JPanel {
         dadosP.setDataNascimento(formato.format(pega));
         dadosP.setRG(txtRG.getText());
         return dadosP;
+    }
+
+    private void limparDados() {
+        DefaultTableModel modelo = (DefaultTableModel) jtbCliente.getModel();
+        if (jtbCliente.getRowCount() > 0) {
+            for (int i = jtbCliente.getRowCount() - 1; i >= 0; i--) {
+                modelo.removeRow(i);
+            }
+        }
+    }
+
+    private void CarregaDados(int id) {
+        limparDados();
+        String titulos[] = {"Codigo", "Cliente", "Espécie", "Raca"};
+        Object dados[][] = {};
+        DefaultTableModel modelo = new DefaultTableModel(dados, titulos);
+        jtbCliente.setModel(modelo);
+        ArrayList<Animal> lista = new AnimalDAO().getListagem(id);
+        for (int i = 0; i < lista.size(); i++) {
+            modelo.addRow(new String[]{"" + lista.get(i).getCodAnimal(),
+                "" + lista.get(i).getNomeAnimal(), "" + lista.get(i).getEspecie().getEspecie(),
+                "" + lista.get(i).getRaca().getNomeRaca()});
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -210,7 +237,6 @@ public class Proprietario extends javax.swing.JPanel {
         txtCancelarAnimal = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         btnProntuario = new javax.swing.JButton();
-        btnExcluirAnimal = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtAnimal = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -238,13 +264,14 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel36 = new javax.swing.JLabel();
         txtNumChip = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        txtObservacaoAnimal = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         ckObito = new javax.swing.JCheckBox();
-        txtNascimentoCli = new com.toedter.calendar.JDateChooser();
+        txtNascimentoCli = new com.toedter.calendar.JDateChooser("dd/MM/yyyy", "##/##/#####", '_');
         jLabel58 = new javax.swing.JLabel();
         txtRaca = new javax.swing.JTextField();
         txtTipoAnimal = new javax.swing.JComboBox();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txtObservacaoAnimal = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -272,15 +299,17 @@ public class Proprietario extends javax.swing.JPanel {
         jButton33 = new javax.swing.JButton();
         jButton34 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(153, 153, 153));
         setLayout(null);
 
         jtpPropCli.setBackground(new java.awt.Color(204, 204, 204));
-        jtpPropCli.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        jtpPropCli.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jpProprietario.setBackground(new java.awt.Color(204, 204, 204));
+        jpProprietario.setBackground(new java.awt.Color(153, 153, 153));
+        jpProprietario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpProprietario.setLayout(null);
 
-        jpPropri.setBackground(new java.awt.Color(204, 204, 204));
+        jpPropri.setBackground(new java.awt.Color(153, 153, 153));
         jpPropri.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpPropri.setLayout(null);
         jpPropri.add(txtEndereco);
@@ -445,7 +474,7 @@ public class Proprietario extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "CLIENTE", "ESPÉCIE", "RAÇA", "Nº CHIP/ANILHA"
+                "CODIGO", "CLIENTE", "ESPÉCIE", "RAÇA"
             }
         ) {
             Class[] types = new Class [] {
@@ -477,7 +506,7 @@ public class Proprietario extends javax.swing.JPanel {
         jpPropri.add(jScrollPane2);
         jScrollPane2.setBounds(10, 280, 570, 90);
 
-        txtDataNascimento.setBackground(new java.awt.Color(204, 204, 204));
+        txtDataNascimento.setBackground(new java.awt.Color(153, 153, 153));
         txtDataNascimento.setAlignmentX(0.0F);
         txtDataNascimento.setAlignmentY(0.0F);
         jpPropri.add(txtDataNascimento);
@@ -617,7 +646,8 @@ public class Proprietario extends javax.swing.JPanel {
 
         jtpPropCli.addTab("Proprietário", jpProprietario);
 
-        jpCliente.setBackground(new java.awt.Color(204, 204, 204));
+        jpCliente.setBackground(new java.awt.Color(153, 153, 153));
+        jpCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpCliente.setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -821,7 +851,7 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpCliente.add(btnHistoricoAnimal);
-        btnHistoricoAnimal.setBounds(140, 460, 120, 35);
+        btnHistoricoAnimal.setBounds(270, 460, 120, 35);
 
         txtSalvarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/apply.png"))); // NOI18N
         txtSalvarAnimal.setText("Salvar");
@@ -831,12 +861,17 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpCliente.add(txtSalvarAnimal);
-        txtSalvarAnimal.setBounds(390, 460, 110, 35);
+        txtSalvarAnimal.setBounds(400, 460, 110, 35);
 
         txtCancelarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_excluir.png"))); // NOI18N
         txtCancelarAnimal.setText("Cancelar");
+        txtCancelarAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCancelarAnimalActionPerformed(evt);
+            }
+        });
         jpCliente.add(txtCancelarAnimal);
-        txtCancelarAnimal.setBounds(505, 460, 120, 35);
+        txtCancelarAnimal.setBounds(520, 460, 110, 35);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Cliente");
@@ -851,14 +886,9 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jpCliente.add(btnProntuario);
-        btnProntuario.setBounds(3, 460, 130, 35);
+        btnProntuario.setBounds(140, 460, 120, 35);
 
-        btnExcluirAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/remove.png"))); // NOI18N
-        btnExcluirAnimal.setText("Excluir");
-        jpCliente.add(btnExcluirAnimal);
-        btnExcluirAnimal.setBounds(266, 460, 120, 35);
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
         jPanel3.add(txtAnimal);
@@ -874,8 +904,9 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jLabel26);
         jLabel26.setBounds(450, 60, 30, 15);
 
-        jbSexoM.setBackground(new java.awt.Color(204, 204, 204));
+        jbSexoM.setBackground(new java.awt.Color(153, 153, 153));
         grpSexo.add(jbSexoM);
+        jbSexoM.setSelected(true);
         jbSexoM.setText("Macho");
         jbSexoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -885,7 +916,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jbSexoM);
         jbSexoM.setBounds(450, 80, 80, 23);
 
-        jbSexoF.setBackground(new java.awt.Color(204, 204, 204));
+        jbSexoF.setBackground(new java.awt.Color(153, 153, 153));
         grpSexo.add(jbSexoF);
         jbSexoF.setText("Fêmea");
         jbSexoF.addActionListener(new java.awt.event.ActionListener() {
@@ -936,8 +967,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(txtEspecie);
         txtEspecie.setBounds(170, 230, 140, 28);
 
-        jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande", " " }));
-        jcbPorteAnimal.setSelectedIndex(4);
+        jcbPorteAnimal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeno", "Medio", "Grande", "Muito Grande" }));
         jcbPorteAnimal.setToolTipText("");
         jcbPorteAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -966,9 +996,14 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jLabel33);
         jLabel33.setBounds(290, 160, 50, 15);
 
-        jbChipS.setBackground(new java.awt.Color(204, 204, 204));
+        jbChipS.setBackground(new java.awt.Color(153, 153, 153));
         grpChip.add(jbChipS);
         jbChipS.setText("Sim");
+        jbChipS.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbChipSItemStateChanged(evt);
+            }
+        });
         jbChipS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbChipSActionPerformed(evt);
@@ -977,8 +1012,9 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(jbChipS);
         jbChipS.setBounds(290, 180, 60, 23);
 
-        jbChipN.setBackground(new java.awt.Color(204, 204, 204));
+        jbChipN.setBackground(new java.awt.Color(153, 153, 153));
         grpChip.add(jbChipN);
+        jbChipN.setSelected(true);
         jbChipN.setText("Não");
         jbChipN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1020,15 +1056,13 @@ public class Proprietario extends javax.swing.JPanel {
         jLabel37.setText("Nº Chip/Anilha");
         jPanel3.add(jLabel37);
         jLabel37.setBounds(410, 160, 90, 15);
-        jPanel3.add(txtObservacaoAnimal);
-        txtObservacaoAnimal.setBounds(10, 290, 600, 120);
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel38.setText("Observação");
         jPanel3.add(jLabel38);
         jLabel38.setBounds(10, 270, 70, 15);
 
-        ckObito.setBackground(new java.awt.Color(204, 204, 204));
+        ckObito.setBackground(new java.awt.Color(153, 153, 153));
         ckObito.setText("Declarar Óbito");
         ckObito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1036,7 +1070,9 @@ public class Proprietario extends javax.swing.JPanel {
             }
         });
         jPanel3.add(ckObito);
-        ckObito.setBounds(280, 260, 130, 23);
+        ckObito.setBounds(480, 260, 130, 23);
+
+        txtNascimentoCli.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.add(txtNascimentoCli);
         txtNascimentoCli.setBounds(10, 130, 120, 28);
 
@@ -1061,12 +1097,20 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel3.add(txtTipoAnimal);
         txtTipoAnimal.setBounds(10, 230, 150, 28);
 
+        txtObservacaoAnimal.setColumns(20);
+        txtObservacaoAnimal.setRows(5);
+        jScrollPane6.setViewportView(txtObservacaoAnimal);
+
+        jPanel3.add(jScrollPane6);
+        jScrollPane6.setBounds(10, 290, 600, 120);
+
         jpCliente.add(jPanel3);
         jPanel3.setBounds(10, 30, 620, 420);
 
         jtpPropCli.addTab("Cliente", jpCliente);
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel6.setLayout(null);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1074,7 +1118,7 @@ public class Proprietario extends javax.swing.JPanel {
         jPanel6.add(jLabel7);
         jLabel7.setBounds(268, 1, 131, 15);
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Proprietário"));
         jPanel5.setLayout(null);
 
@@ -1162,10 +1206,11 @@ public class Proprietario extends javax.swing.JPanel {
 
         jtpPropCli.addTab("Histórico Proprietário", jPanel6);
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel7.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel7.setLayout(null);
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel8.setBackground(new java.awt.Color(153, 153, 153));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Histórico Animal"));
         jPanel8.setLayout(null);
 
@@ -1268,7 +1313,8 @@ public class Proprietario extends javax.swing.JPanel {
 
         jtpPropCli.addTab("Histórico Cliente", jPanel7);
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.setLayout(null);
 
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1366,10 +1412,42 @@ public class Proprietario extends javax.swing.JPanel {
     private void btnAdicionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarClienteActionPerformed
         txtProp.setText(txtNome.getText());
         txtAnimal.requestFocusInWindow();
+        txtNumChip.setEnabled(false);
     }//GEN-LAST:event_btnAdicionarClienteActionPerformed
 
     private void btnPesquisarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCliActionPerformed
-        // TODO add your handling code here:
+        /*Animal ani = MontarAnimal();
+        Animal an = new Animal();
+        AnimalDAO metodos = new AnimalDAO ();
+        
+        int selecionada = jtbCliente.getSelectedRow();
+        if (selecionada == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, selecione um cliente.");
+        } else {
+            Object codigo = jtbCliente.getValueAt(selecionada, 0);
+        }
+        
+        
+        int indexC = jtbCliente.getSelectedColumn();
+        
+        
+        jtbCliente.get f = metodos.getAnim(jtbCliente.getModel();
+        
+        Funcionario func = montaFuncionario();
+        Funcionario f = new Funcionario();
+        FuncionarioDAO metodos = new FuncionarioDAO();
+        f = metodos.getFunc(txtMatricula.getText());
+        if (f == null) {
+            JOptionPane.showMessageDialog(null, "Funcionario não cadastrado");
+        } else {
+
+            metodos.alterarFunc(func);
+
+            JOptionPane.showMessageDialog(null, "Funcionario alterado com sucesso");
+
+            limpaDados();
+            CarregaDados();
+        }*/
     }//GEN-LAST:event_btnPesquisarCliActionPerformed
 
     private void btnPesquisarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPropActionPerformed
@@ -1399,6 +1477,7 @@ public class Proprietario extends javax.swing.JPanel {
                 }
                 txtObservacao.setText(lista.get(0).getObservacao());
                 verificaConsulta = true;
+                CarregaDados(lista.get(0).getCodProprietario());
             } else {
                 Object[] options = {"Sim", "Não"};
                 int opcao = JOptionPane.showOptionDialog(null, "Proprietário não cadastrado, Deseja inserir um novo Proprietario?", "Não Encontrado",
@@ -1456,7 +1535,6 @@ public class Proprietario extends javax.swing.JPanel {
                         }
                         verificaConsulta = true;
                     }
-
                 } else {//se nao for insercao será alteração
                     Contato cont = montarContato();
                     Endereco end = montarEndereco();
@@ -1532,12 +1610,15 @@ public class Proprietario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbPorteAnimalActionPerformed
 
-    String ValidaChip = "";
 
     private void jbChipSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChipSActionPerformed
         if (jbChipS.isSelected()) {
             ValidaChip = "S";
             txtNumChip.setEnabled(true);
+        } else {
+            ValidaChip = "N";
+            txtNumChip.setText("");
+            txtNumChip.setEnabled(false);
         }
     }//GEN-LAST:event_jbChipSActionPerformed
 
@@ -1618,9 +1699,9 @@ public class Proprietario extends javax.swing.JPanel {
     private void txtRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRGActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRGActionPerformed
-
+    boolean ValidaObito = false;
     int id = 0;
-    
+
     public Animal MontarAnimal() {
         Animal ani = new Animal();
         ani.setNomeAnimal(txtAnimal.getText());
@@ -1640,7 +1721,7 @@ public class Proprietario extends javax.swing.JPanel {
             ani.setNumeroChip("");
         }
         ani.setObito(ValidaObito);
-        ani.setObservacao(txtObservacao.getText());
+        ani.setObservacao(txtObservacaoAnimal.getText());
         //ani.setCodProntuario(1);
         ani.setCodRaca(0);
 
@@ -1661,39 +1742,67 @@ public class Proprietario extends javax.swing.JPanel {
 
         AnimalDAO aniDao = new AnimalDAO();
         RacaDAO racDao = new RacaDAO();
-        
+
         ani.setCodRaca(racDao.incluirRaca(rac));
         String aniA = aniDao.incluirAnimal(ani);
+        if (aniA.equals("OK")) {
+            JOptionPane.showMessageDialog(null, "Animal Inserido com sucesso!");
+        }
     }//GEN-LAST:event_txtSalvarAnimalActionPerformed
 
-    boolean ValidaObito = false;
 
     private void ckObitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckObitoActionPerformed
         if (ckObito.isSelected()) {
             ValidaObito = true;
+        } else {
+            ValidaObito = false;
+
         }
     }//GEN-LAST:event_ckObitoActionPerformed
 
     private void txtTipoAnimalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtTipoAnimalItemStateChanged
-       int id = txtTipoAnimal.getSelectedIndex();
-       int codTP = listatipo.get(id).getCodTipoAnimal();
-       listaEspecie = new EspecieDAO().consultaEsp(codTP);
-       
-       txtEspecie.removeAllItems();
-       for(int i=0; i<listaEspecie.size();i++){
-           txtEspecie.addItem(listaEspecie.get(i).getEspecie());
-       }
+        int id = txtTipoAnimal.getSelectedIndex();
+        int codTP = listatipo.get(id).getCodTipoAnimal();
+        listaEspecie = new EspecieDAO().consultaEsp(codTP);
+
+        txtEspecie.removeAllItems();
+        for (int i = 0; i < listaEspecie.size(); i++) {
+            txtEspecie.addItem(listaEspecie.get(i).getEspecie());
+        }
     }//GEN-LAST:event_txtTipoAnimalItemStateChanged
-    
+
     private void txtEspecieItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_txtEspecieItemStateChanged
         id = txtEspecie.getSelectedIndex();
-        
+
     }//GEN-LAST:event_txtEspecieItemStateChanged
+
+    private void jbChipSItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbChipSItemStateChanged
+        if (jbChipS.isSelected()) {
+            ValidaChip = "S";
+            txtNumChip.setEnabled(true);
+        } else {
+            ValidaChip = "N";
+            txtNumChip.setText("");
+            txtNumChip.setEnabled(false);
+        }
+    }//GEN-LAST:event_jbChipSItemStateChanged
+
+    private void txtCancelarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCancelarAnimalActionPerformed
+        Auxiliar.limparTodosCampos(jPanel3);
+        ValidaChip = "N";
+        txtNumChip.setText("");
+        txtNumChip.setEnabled(false);
+        ckObito.setEnabled(false);
+        jcbPorteAnimal.setSelectedIndex(0);
+        txtTipoAnimal.setSelectedIndex(0);
+        txtEspecie.setSelectedIndex(0);
+        ckObito.setSelected(false);
+        ValidaObito = false;
+    }//GEN-LAST:event_txtCancelarAnimalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCliente;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnExcluirAnimal;
     private javax.swing.JButton btnHistorico;
     private javax.swing.JButton btnHistoricoAnimal;
     private javax.swing.JButton btnPesquisarCli;
@@ -1787,6 +1896,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField10;
@@ -1830,7 +1940,7 @@ public class Proprietario extends javax.swing.JPanel {
     private javax.swing.JTextField txtNumChip;
     private javax.swing.JTextField txtNumEnd;
     private javax.swing.JTextField txtObservacao;
-    private javax.swing.JTextField txtObservacaoAnimal;
+    private javax.swing.JTextArea txtObservacaoAnimal;
     private javax.swing.JTextField txtPesoAnimal;
     private javax.swing.JTextField txtProp;
     private javax.swing.JTextField txtRG;

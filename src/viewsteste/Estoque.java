@@ -78,7 +78,7 @@ public class Estoque extends javax.swing.JPanel {
         jButton11 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -86,11 +86,11 @@ public class Estoque extends javax.swing.JPanel {
         jPanel6.add(jLabel6);
         jLabel6.setBounds(271, 1, 50, 15);
 
-        jpEstoque.setBackground(new java.awt.Color(204, 204, 204));
+        jpEstoque.setBackground(new java.awt.Color(153, 153, 153));
         jpEstoque.setBorder(javax.swing.BorderFactory.createTitledBorder("Estoque"));
         jpEstoque.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
@@ -194,7 +194,7 @@ public class Estoque extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(490, 460, 130, 35);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
 

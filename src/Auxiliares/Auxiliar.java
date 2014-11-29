@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Auxiliar {
@@ -26,7 +27,10 @@ public class Auxiliar {
             } else if (component instanceof JDateChooser) {
                 JDateChooser field = (JDateChooser) component;
                 field.setDate(null);
-            } else if (component instanceof Container) {
+            } else if (component instanceof JTextArea) {
+                JTextArea field = (JTextArea) component;
+                field.setText("");
+            }else if (component instanceof Container){
                 limparTodosCampos((Container) component);
             }
         }

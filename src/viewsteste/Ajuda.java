@@ -53,7 +53,7 @@ public class Ajuda extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -66,7 +66,7 @@ public class Ajuda extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(513, 454, 99, 35);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ajuda"));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));

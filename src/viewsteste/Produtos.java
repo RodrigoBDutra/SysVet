@@ -105,7 +105,7 @@ public class Produtos extends javax.swing.JPanel {
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_pesquisar.png"))); // NOI18N
@@ -259,7 +259,7 @@ public class Produtos extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(500, 450, 120, 35);
 
-        jpProdutos.setBackground(new java.awt.Color(204, 204, 204));
+        jpProdutos.setBackground(new java.awt.Color(153, 153, 153));
         jpProdutos.setBorder(javax.swing.BorderFactory.createTitledBorder("Produtos"));
         jpProdutos.setLayout(null);
 

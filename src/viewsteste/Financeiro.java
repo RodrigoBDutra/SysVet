@@ -76,7 +76,7 @@ public class Financeiro extends javax.swing.JPanel {
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -130,7 +130,7 @@ public class Financeiro extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(480, 450, 140, 35);
 
-        jpFinanceiro.setBackground(new java.awt.Color(204, 204, 204));
+        jpFinanceiro.setBackground(new java.awt.Color(153, 153, 153));
         jpFinanceiro.setBorder(javax.swing.BorderFactory.createTitledBorder("Financeiro"));
         jpFinanceiro.setLayout(null);
 

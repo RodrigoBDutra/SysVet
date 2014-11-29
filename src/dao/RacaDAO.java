@@ -14,7 +14,7 @@ public class RacaDAO extends Banco {
             conecta();
             Statement stmt = con.createStatement();
 
-            String sql = "INSERT INTO raca(nomeRaca, codEspecie) VALUES('" + rac.getNomeRaca() + "'," + rac.getCodEspecie() + ")";
+            String sql = "INSERT INTO raca(nomeRaca, codEspecie) VALUES('" + rac.getNomeRaca() + "'," + rac.getCodEspecie() + "); ";
 
             stmt.executeUpdate(sql);
             ResultSet rs2 = stmt.executeQuery("SELECT LAST_INSERT_ID()");
@@ -22,9 +22,7 @@ public class RacaDAO extends Banco {
                 resp = rs2.getInt(1);
             }
             rs2.close();
-
             stmt.close();
-            rs.close();
             con.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());

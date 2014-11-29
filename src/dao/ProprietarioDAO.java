@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 
 public class ProprietarioDAO extends Banco {
 
+    
+
     /**
      * Pesquisa um Proprietarios pelo nome
      *
@@ -24,7 +26,7 @@ public class ProprietarioDAO extends Banco {
         ArrayList<Proprietarios> lista = new ArrayList<Proprietarios>();
         try {
             conecta();
-            String sql = "SELECT d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
+            String sql = "SELECT p.codproprietario, d.nome, d.dataNascimento, d.cpf, d.rg, p.dataCadastro, p.observacoes, c.telefoneResidencial, c.telefoneCelular,"
                     + "c.email, e.endereco, e.numero, e.bairro, e.complemento, e.cep, e.cidade, e.estado "
                     + "FROM dadospessoais d "
                     + "INNER JOIN proprietario p "
@@ -44,6 +46,7 @@ public class ProprietarioDAO extends Banco {
             Endereco end = new Endereco();
 
             if (rs.next()) {
+                
                 dad.setNome(rs.getString("nome"));
                 dad.setDataNascimento(rs.getString("dataNascimento"));
                 dad.setCPF(rs.getString("cpf"));
@@ -60,7 +63,7 @@ public class ProprietarioDAO extends Banco {
                 end.setEstado(rs.getString("estado"));
                 prop.setDataCadastro(rs.getString("dataCadastro"));
                 prop.setObservacao(rs.getString("observacoes"));
-
+                prop.setCodProprietario(rs.getInt("codProprietario"));
                 prop.setEndereco(end);
                 prop.setContato(cont);
                 prop.setDadospessoais(dad);

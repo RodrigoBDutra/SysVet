@@ -268,9 +268,9 @@ public class Agenda extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jTabbedPane1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Consulta", "Exame", "Cirúrgia" }));

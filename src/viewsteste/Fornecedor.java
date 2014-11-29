@@ -80,7 +80,7 @@ public class Fornecedor extends javax.swing.JPanel {
         jButton22 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
         jPanel6.add(jTextField8);
         jTextField8.setBounds(20, 30, 430, 28);
@@ -102,7 +102,7 @@ public class Fornecedor extends javax.swing.JPanel {
         jPanel6.add(jButton10);
         jButton10.setBounds(460, 30, 150, 32);
 
-        jpFornecedor.setBackground(new java.awt.Color(204, 204, 204));
+        jpFornecedor.setBackground(new java.awt.Color(153, 153, 153));
         jpFornecedor.setBorder(javax.swing.BorderFactory.createTitledBorder("Fornecedor"));
         jpFornecedor.setLayout(null);
 

@@ -102,7 +102,7 @@ public class Vendas extends javax.swing.JPanel {
         jButton11 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -125,7 +125,7 @@ public class Vendas extends javax.swing.JPanel {
         jPanel6.add(jButton16);
         jButton16.setBounds(520, 460, 105, 35);
 
-        jpVendas.setBackground(new java.awt.Color(204, 204, 204));
+        jpVendas.setBackground(new java.awt.Color(153, 153, 153));
         jpVendas.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendas"));
         jpVendas.setLayout(null);
 
@@ -204,7 +204,7 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.add(jScrollPane2);
         jScrollPane2.setBounds(16, 152, 581, 90);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
@@ -239,7 +239,7 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.add(jTextField13);
         jTextField13.setBounds(380, 350, 91, 28);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
 
@@ -276,7 +276,7 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.add(jButton12);
         jButton12.setBounds(400, 110, 143, 30);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setLayout(null);
 
@@ -285,7 +285,7 @@ public class Vendas extends javax.swing.JPanel {
         jPanel4.add(jLabel24);
         jLabel24.setBounds(50, 0, 130, 15);
 
-        jRadioButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton1.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton1.setText("Dinheiro");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,17 +295,17 @@ public class Vendas extends javax.swing.JPanel {
         jPanel4.add(jRadioButton1);
         jRadioButton1.setBounds(30, 20, 65, 23);
 
-        jRadioButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton2.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton2.setText("Cheque");
         jPanel4.add(jRadioButton2);
         jRadioButton2.setBounds(30, 40, 63, 23);
 
-        jRadioButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton3.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton3.setText("Débito");
         jPanel4.add(jRadioButton3);
         jRadioButton3.setBounds(130, 40, 57, 23);
 
-        jRadioButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton4.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton4.setText("Crédito");
         jPanel4.add(jRadioButton4);
         jRadioButton4.setBounds(130, 20, 61, 23);
@@ -313,7 +313,7 @@ public class Vendas extends javax.swing.JPanel {
         jpVendas.add(jPanel4);
         jPanel4.setBounds(20, 310, 220, 70);
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setLayout(null);
 
@@ -322,12 +322,12 @@ public class Vendas extends javax.swing.JPanel {
         jPanel5.add(jLabel25);
         jLabel25.setBounds(30, 10, 116, 15);
 
-        jRadioButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton5.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton5.setText("CPF");
         jPanel5.add(jRadioButton5);
         jRadioButton5.setBounds(150, 10, 45, 23);
 
-        jRadioButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton6.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton6.setText("CNPJ");
         jPanel5.add(jRadioButton6);
         jRadioButton6.setBounds(200, 10, 51, 23);

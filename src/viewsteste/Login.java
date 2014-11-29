@@ -144,7 +144,7 @@ public class Login extends javax.swing.JFrame {
         txt_msg.setBounds(209, 192, 210, 20);
 
         getContentPane().add(jpLogin);
-        jpLogin.setBounds(140, 110, 480, 300);
+        jpLogin.setBounds(200, 150, 480, 300);
 
         jlPincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         getContentPane().add(jlPincipal);

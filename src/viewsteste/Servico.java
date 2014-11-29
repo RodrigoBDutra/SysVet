@@ -74,7 +74,7 @@ public class Servico extends javax.swing.JPanel {
         jButton17 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -107,7 +107,7 @@ public class Servico extends javax.swing.JPanel {
         jPanel6.add(jLabel14);
         jLabel14.setBounds(11, 12, 73, 15);
 
-        jpServicos.setBackground(new java.awt.Color(204, 204, 204));
+        jpServicos.setBackground(new java.awt.Color(153, 153, 153));
         jpServicos.setBorder(javax.swing.BorderFactory.createTitledBorder("Serviço"));
         jpServicos.setLayout(null);
 
@@ -141,7 +141,7 @@ public class Servico extends javax.swing.JPanel {
         jpServicos.add(jLabel9);
         jLabel9.setBounds(190, 20, 39, 15);
 
-        jRadioButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton2.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton2.setText("não");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +151,7 @@ public class Servico extends javax.swing.JPanel {
         jpServicos.add(jRadioButton2);
         jRadioButton2.setBounds(240, 40, 43, 23);
 
-        jRadioButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jRadioButton3.setBackground(new java.awt.Color(153, 153, 153));
         jRadioButton3.setText("sim");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

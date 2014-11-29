@@ -122,7 +122,7 @@ public class Configuracoes extends javax.swing.JPanel {
         jLabel50 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -156,7 +156,7 @@ public class Configuracoes extends javax.swing.JPanel {
         jPanel6.add(jLabel18);
         jLabel18.setBounds(30, 470, 97, 10);
 
-        PainelConf.setBackground(new java.awt.Color(204, 204, 204));
+        PainelConf.setBackground(new java.awt.Color(153, 153, 153));
         PainelConf.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         PainelConf.setLayout(null);
 

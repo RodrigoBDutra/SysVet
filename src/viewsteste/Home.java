@@ -145,7 +145,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnInicio);
-        btnInicio.setBounds(700, 40, 70, 80);
+        btnInicio.setBounds(720, 30, 70, 80);
 
         btnProprietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_proprietario1.png"))); // NOI18N
         btnProprietario.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnProprietario);
-        btnProprietario.setBounds(770, 40, 70, 80);
+        btnProprietario.setBounds(790, 30, 70, 80);
 
         btnEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_estoque1.png"))); // NOI18N
         btnEstoque.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +163,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEstoque);
-        btnEstoque.setBounds(840, 120, 70, 80);
+        btnEstoque.setBounds(860, 110, 70, 80);
 
         btnServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_serviço1.png"))); // NOI18N
         btnServicos.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +172,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnServicos);
-        btnServicos.setBounds(700, 120, 70, 80);
+        btnServicos.setBounds(720, 110, 70, 80);
 
         btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_agenda1.png"))); // NOI18N
         btnAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +181,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAgenda);
-        btnAgenda.setBounds(840, 40, 70, 80);
+        btnAgenda.setBounds(860, 30, 70, 80);
 
         btnVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_vendas1.png"))); // NOI18N
         btnVendas.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +190,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVendas);
-        btnVendas.setBounds(700, 200, 70, 80);
+        btnVendas.setBounds(720, 190, 70, 80);
 
         btnFinanceiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_financeiro1.png"))); // NOI18N
         btnFinanceiro.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +199,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFinanceiro);
-        btnFinanceiro.setBounds(770, 200, 70, 80);
+        btnFinanceiro.setBounds(790, 190, 70, 80);
 
         btnProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_produtos1.png"))); // NOI18N
         btnProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +208,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnProdutos);
-        btnProdutos.setBounds(840, 200, 70, 80);
+        btnProdutos.setBounds(860, 190, 70, 80);
 
         btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icones_configurações1.png"))); // NOI18N
         btnConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +217,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnConfiguracoes);
-        btnConfiguracoes.setBounds(770, 280, 70, 80);
+        btnConfiguracoes.setBounds(790, 270, 70, 80);
 
         btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_Fornecedor.png"))); // NOI18N
         btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +226,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFornecedor);
-        btnFornecedor.setBounds(770, 120, 70, 80);
+        btnFornecedor.setBounds(790, 110, 70, 80);
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
         btnSair.setContentAreaFilled(false);
@@ -270,6 +270,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(btnSuporte);
         btnSuporte.setBounds(690, 550, 80, 50);
 
+        pnConteudo.setBackground(new java.awt.Color(153, 153, 153));
         pnConteudo.setName(""); // NOI18N
         pnConteudo.setPreferredSize(new java.awt.Dimension(660, 560));
 
@@ -277,15 +278,15 @@ public class Home extends javax.swing.JFrame {
         pnConteudo.setLayout(pnConteudoLayout);
         pnConteudoLayout.setHorizontalGroup(
             pnConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
         pnConteudoLayout.setVerticalGroup(
             pnConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         getContentPane().add(pnConteudo);
-        pnConteudo.setBounds(20, 40, 660, 540);
+        pnConteudo.setBounds(10, 30, 670, 560);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo telas.jpg"))); // NOI18N
         jLabel2.setDoubleBuffered(true);
